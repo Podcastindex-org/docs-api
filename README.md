@@ -29,7 +29,7 @@ These are the endpoints currently supported:
     
     *   "**/api/1.0/search/byterm**" - Pass a search term to look for with ?q=\[search terms\].
         
-        `Example: GET [https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university](https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty)`
+        `Example: GET [https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university]`
         
         This call returns all of the feeds that match the search terms **in the title** of the feed.
         
@@ -37,26 +37,26 @@ These are the endpoints currently supported:
     
     *   "**/api/1.0/podcasts/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
         
-        `Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)`
+        `Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity]`
         
         This call returns everything we know about the feed.
         
     *   "**/api/1.0/podcasts/byfeedid**" - Pass a feed id with ?id=\[feed id\].
         
-        `Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075&pretty)`
+        `Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075]`
         
         This call returns everything we know about the feed.
         
     *   "**/api/1.0/podcasts/byitunesid**" - Pass an itunes id with ?id=\[itunes id\].
         
-        `Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632&pretty)`
+        `Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632]`
         
         If we have an itunes id on file for a feed, then this call returns everything we know about that feed.
         
         *   Note: The itunes id parameter can either be the number alone, or be prepended with "id".
     *   "**/api/1.0/add/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
         
-        `Example: GET [https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)`
+        `Example: GET [https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity]`
         
         \*\*This call requires a read-write api key.
         
@@ -66,20 +66,20 @@ These are the endpoints currently supported:
     
     *   "**/api/1.0/episodes/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
         
-        `Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)`
+        `Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity]`
         
         This call returns all the episodes we know about for this feed, in reverse chronological order.
         
     *   "**/api/1.0/episodes/byfeedid**" - Pass a feed id with ?id=\[id\].
         
-        `Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty)`
+        `Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075]`
         
         This call returns all the episodes we know about for this feed, in reverse chronological order.
         
         *   Note: The id parameter is the internal Podcastindex id for this feed.
     *   "**/api/1.0/episodes/byitunesid**" - Pass an itunes id with ?id=\[itunes id\].
         
-        `Example: GET [https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty)`
+        `Example: GET [https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632]`
         
         If we have an itunes id on file for a feed, then this call returns all the episodes we know about for the feed, in reverse chronological order.
         
@@ -90,7 +90,7 @@ These are the endpoints currently supported:
         
         Optional: excludeString=\[url encoded string\] - If you pass this argument, any item containing this string will be discarded from the result set. This may, in certain cases, reduce your set size below your "max" value.
         
-        `Example: GET [https://api.podcastindex.org/api/1.0/recent/episodes?max=7](https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty)`
+        `Example: GET [https://api.podcastindex.org/api/1.0/recent/episodes?max=7]`
         
         This call returns the most recent \[max\] number of episodes globally across the whole index, in reverse chronological order.
         
@@ -126,7 +126,7 @@ Here is the current list:
 
 We give you everything we know about the feed. Here is a breakdown of the different values and their meaning. You can expect additional properties to be added going forward. We attempt to "normalize" podcast feeds into a predictable property set, to minimize the need for vendor specifics and namespaces.
 
- `{
+ {
         "status": "true",
         "feeds": [
         {
@@ -160,7 +160,7 @@ We give you everything we know about the feed. Here is a breakdown of the differ
         "count": 1,
         "query": "batman university",
         "description": "Found matching feeds."
-    }` 
+    }
 
 *   "**id**" - The internal podcastindex.org feed id.
 *   "**title**" - The feed title.
