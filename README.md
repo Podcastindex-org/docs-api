@@ -23,7 +23,6 @@ Note that all parameters passed should be url encoded where necessary.
 
 These are the endpoints currently supported:
 
-\*\* You must be logged in for the example links below to work.
 
 *   ##### Search
     
