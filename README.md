@@ -23,6 +23,8 @@ Note that all parameters passed should be url encoded where necessary.
 
 These are the endpoints currently supported:
 
+\*\* You must be logged in for the example links below to work.
+
 *   ##### Search
     
     *   "**/api/1.0/search/byterm**" - Pass a search term to look for with ?q=\[search terms\].
@@ -86,11 +88,14 @@ These are the endpoints currently supported:
     
     *   "**/api/1.0/recent/episodes**" - Pass the count you want with ?max=\[count\].
         
+        Optional: excludeString=\[url encoded string\] - If you pass this argument, any item containing this string will be discarded from the result set. This may, in certain cases, reduce your set size below your "max" value.
+        
         `Example: GET [https://api.podcastindex.org/api/1.0/recent/episodes?max=7](https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty)`
         
         This call returns the most recent \[max\] number of episodes globally across the whole index, in reverse chronological order.
         
         *   Note: If no \[max\] is specified, the default is 10.
+        *   Note: The \[excludeString\] value matches against title and urls.
 
 #### Return Values
 
@@ -111,10 +116,76 @@ There are various optional parameters you can pass when calling API endpoints to
 
 Here is the current list:
 
-*   "**pretty**" (bool) - Makes the output "pretty" to help with debugging.
-*   "**apple**" (bool) - Only returns podcasts that also exist in Apple's directory, if we can determine that. Coming soon
-*   "**itunes**" (bool) - Gives you back exactly what an itunes lookup API call would. Coming soon
+*   "**pretty**" (bool) - If present, makes the output "pretty" to help with debugging.
+*   "**apple**" (bool) - If present, only returns podcasts that also exist in Apple's directory, if we can determine that. Coming soon
+*   "**itunes**" (bool) - If present, gives you back exactly what an itunes lookup API call would. Coming soon
 *   "**max=<99>**" (int) - Limits the number of results returned to the maximum number specified, where contextually appropriate.
+*   "**fulltext**" (bool) - If present, returns the full text of long text properties, like 'description'. Otherwise, all text fields are truncated to 100 words.
+
+#### Response Structure (Podcasts/Feeds)
+
+We give you everything we know about the feed. Here is a breakdown of the different values and their meaning. You can expect additional properties to be added going forward. We attempt to "normalize" podcast feeds into a predictable property set, to minimize the need for vendor specifics and namespaces.
+
+ `{
+        "status": "true",
+        "feeds": [
+        {
+            "id": 75075,
+            "title": "Batman University",
+            "url": "https:\/\/feeds.theincomparable.com\/batmanuniversity",
+            "originalUrl": "https:\/\/feeds.theincomparable.com\/batmanuniversity",
+            "link": "https:\/\/www.theincomparable.com\/batmanuniversity\/",
+            "description": "Batman University is a seasonal podcast about you know who. It began with
+               an analysis of episodes of Batman: The Animated Series but has now expanded
+               to cover other series, movies, and media. Your professor is Tony Sindelar.",
+            "author": "Tony Sindelar",
+            "ownerName": "The Incomparable",
+            "ownerEmail": "jsnell@intertext.com",
+            "image": "https:\/\/www.theincomparable.com\/imgs\/logos\/logo-batmanuniversity-3x.jpg",
+            "artwork": "https:\/\/www.theincomparable.com\/imgs\/logos\/logo-batmanuniversity-3x.jpg",
+            "lastUpdateTime": 1546399813,
+            "lastCrawlTime": 1599328949,
+            "lastParseTime": 1599012694,
+            "lastGoodHttpStatusTime": 1599328949,
+            "lastHttpStatus": 200,
+            "contentType": "application\/x-rss+xml",
+            "itunesId": 1441923632,
+            "generator": null,
+            "type": 0,
+            "dead": 0,
+            "crawlErrors": 0,
+            "parseErrors": 0
+        }
+        ],
+        "count": 1,
+        "query": "batman university",
+        "description": "Found matching feeds."
+    }` 
+
+*   "**id**" - The internal podcastindex.org feed id.
+*   "**title**" - The feed title.
+*   "**url**" - The current feed url.
+*   "**originalUrl**" - The url of the feed, before it changed to it's current url.
+*   "**link**" - The channel level link in the feed.
+*   "**description**" - The channel-level description.
+*   "**author**" - The channel-level author element. Usually iTunes specific, but could be from another namespace if not present.
+*   "**ownerName**" - The channel-level owner:name element. Usually iTunes specific, but could be from another namespace if not present.
+*   "**ownerEmail**" - The channel-level owner:email element. Usually iTunes specific, but could be from another namespace if not present.
+*   "**image**" - The channel-level image element.
+*   "**artwork**" - The seemingly best artwork we can find for the feed. Might be the same as 'image' in most instances.
+*   "**lastUpdateTime**" - \[Unix Epoch\] The channel-level pubDate for the feed, if it's sane. If not, this is a heuristic valu, arrived at by analyzing other parts of the feed, like item-level pubDates.
+*   "**lastCrawlTime**" - \[Unix Epoch\] The last time we attempted to pull this feed from it's url.
+*   "**lastParseTime**" - \[Unix Epoch\] The last time we tried to parse the downloaded feed content.
+*   "**lastGoodHttpStatusTime**" - \[Unix Epoch\] Timestamp of the last time we got a "good", meaning non-4xx/non-5xx, status code when pulling this feed from it's url.
+*   "**lastHttpStatus**" - The last http status code we got when pulling this feed from it's url. You will see some made up status codes sometimes. These are what we use to track state within the feed puller. These all start with 9xx.
+*   "**contentType**" - The Content-Type header from the last time we pulled this feed from it's url.
+*   "**lastCrawlTime**" - \[Unix Epoch\] The last time we attempted to pull this feed from it's url.
+*   "**itunesId**" - The itunes id of this feed if there is one, and we know what it is.
+*   "**generator**" - The channel-level generator element if there is one.
+*   "**type**" - 0 = RSS, 1 = ATOM
+*   "**dead**" - At some point, we give up trying to process a feed and mark it as dead. This is usually after 1000 errors without a successful pull/parse cycle. Once the feed is marked dead, we only check it once per month.
+*   "**crawlErrors**" - The number of errors we've encountered trying to pull a copy of the feed. Errors are things like a 500 or 404 resopnse, a server timeout, bad encoding, etc.
+*   "**parseErrors**" - The number of errors we've encountered trying to parse the feed content. Errors here are things like not well-formed xml, bad character encoding, etc. We fix many of these types of issues on the fly when parsing. We only increment the errors count when we can't fix it.
 
 #### Example code
 
