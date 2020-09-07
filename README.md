@@ -126,7 +126,7 @@ Here is the current list:
 
 We give you everything we know about the feed. Here is a breakdown of the different values and their meaning. You can expect additional properties to be added going forward. We attempt to "normalize" podcast feeds into a predictable property set, to minimize the need for vendor specifics and namespaces.
 
- {
+    {
         "status": "true",
         "feeds": [
         {
