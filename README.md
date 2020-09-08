@@ -139,7 +139,6 @@ We give you everything we know about the feed. Here is a breakdown of the differ
                to cover other series, movies, and media. Your professor is Tony Sindelar.",
             "author": "Tony Sindelar",
             "ownerName": "The Incomparable",
-            "ownerEmail": "jsnell@intertext.com",
             "image": "https:\/\/www.theincomparable.com\/imgs\/logos\/logo-batmanuniversity-3x.jpg",
             "artwork": "https:\/\/www.theincomparable.com\/imgs\/logos\/logo-batmanuniversity-3x.jpg",
             "lastUpdateTime": 1546399813,
@@ -169,7 +168,6 @@ We give you everything we know about the feed. Here is a breakdown of the differ
 *   "**description**" - The channel-level description.
 *   "**author**" - The channel-level author element. Usually iTunes specific, but could be from another namespace if not present.
 *   "**ownerName**" - The channel-level owner:name element. Usually iTunes specific, but could be from another namespace if not present.
-*   "**ownerEmail**" - The channel-level owner:email element. Usually iTunes specific, but could be from another namespace if not present.
 *   "**image**" - The channel-level image element.
 *   "**artwork**" - The seemingly best artwork we can find for the feed. Might be the same as 'image' in most instances.
 *   "**lastUpdateTime**" - \[Unix Epoch\] The channel-level pubDate for the feed, if it's sane. If not, this is a heuristic valu, arrived at by analyzing other parts of the feed, like item-level pubDates.
