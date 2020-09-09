@@ -318,3 +318,10 @@ Here are some examples to get you started.
 
     task.resume()
     semaphore.wait()
+
+
+#### Libraries
+
+**Javascript (Node.js)**
+
+- [podcast-index-api](https://github.com/comster/podcast-index-api)
