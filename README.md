@@ -274,3 +274,47 @@ Here are some examples to get you started.
         Console.WriteLine("Error.");  
     }  
 
+**Swift**
+
+* * *
+
+    import Foundation
+    import CommonCrypto
+
+    extension String {
+        func sha1() -> String {
+            let data = Data(self.utf8)
+            var digest = [UInt8](repeating: 0, count:Int(CC_SHA1_DIGEST_LENGTH))
+            data.withUnsafeBytes {
+                _ = CC_SHA1($0.baseAddress, CC_LONG(data.count), &digest)
+            }
+            let hexBytes = digest.map { String(format: "%02hhx", $0) }
+            return hexBytes.joined()
+        }
+    }
+
+    let apiKey = "UXKCGDSYGUUEVQJSYDZH"
+    let apiSecret = "yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|"
+    let apiHeaderTime = String(Int(Date().timeIntervalSince1970))
+    let hash = (apiKey + apiSecret + apiHeaderTime).sha1()
+
+    var semaphore = DispatchSemaphore (value: 0)
+    var request = URLRequest(url: URL(string: "https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat")!,timeoutInterval: Double.infinity)
+    request.addValue("SuperPodcastPlayer/1.3", forHTTPHeaderField: "User-Agent")
+    request.addValue(apiKey, forHTTPHeaderField: "X-Auth-Key")
+    request.addValue(apiHeaderTime, forHTTPHeaderField: "X-Auth-Date")
+    request.addValue(hash, forHTTPHeaderField: "Authorization")
+
+    request.httpMethod = "GET"
+
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        guard let data = data else {
+            print(String(describing: error))
+            return
+        }
+        print(String(data: data, encoding: .utf8)!)
+        semaphore.signal()
+    }
+
+    task.resume()
+    semaphore.wait()
