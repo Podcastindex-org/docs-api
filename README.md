@@ -10,7 +10,7 @@ These are the required headers for each request:
     
 *   "**X-Auth-Key**" - Your API key string.
     
-*   "**Authorization**" - A SHA-1 hash of the X-Auth-Key, the corresponding key secret and the X-Auth-Date value concatenated as a string.
+*   "**Authorization**" - A SHA-1 hash of the X-Auth-Key, the corresponding key secret and the X-Auth-Date value concatenated as a string. The resulting hash should be encoded as hexadecimal value.
     
     The Authorizaton header is computed with something like this (pseudo-code):
     
