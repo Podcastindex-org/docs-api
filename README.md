@@ -10,7 +10,7 @@ These are the required headers for each request:
     
 *   "**X-Auth-Key**" - Your API key string.
     
-*   "**Authorization**" - A SHA-1 hash of the X-Auth-Key, the corresponding key secret and the X-Auth-Date value concatenated as a string.
+*   "**Authorization**" - A SHA-1 hash of the X-Auth-Key, the corresponding key secret and the X-Auth-Date value concatenated as a string. The resulting hash should be encoded as hexadecimal value.
     
     The Authorizaton header is computed with something like this (pseudo-code):
     
@@ -318,6 +318,17 @@ Here are some examples to get you started.
 
     task.resume()
     semaphore.wait()
+
+**Postman**
+
+* * *
+
+1) Download the contents of the `Postman Docs` folder.
+2) Import the `PodcastIndex.postman_collection.json` collection to Postman
+3) Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman
+4) Set the `AuthKey` environment variable 
+5) Set the `SecretKey` environment variable
+6) Hit the `Send` button (⌘ + return)
 
 
 #### Libraries

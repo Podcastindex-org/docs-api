@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "005794c7-d322-4c4d-aa2a-2e21af901358",
+		"name": "PodcastIndex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getPodcasts",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "29b27df2-6a03-4c74-9bb8-38e5787207da",
+						"exec": [
+							"const authKey = pm.variables.get(\"AuthKey\");",
+							"const secretKey = pm.variables.get(\"SecretKey\");",
+							"const apiHeaderTime = new Date().getTime() / 1000;",
+							"const hash = CryptoJS.SHA1(authKey + secretKey + apiHeaderTime).toString(CryptoJS.enc.Hex);",
+							"",
+							"pm.variables.set('AuthDate', apiHeaderTime);",
+							"pm.variables.set('HashedAuth', hash);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "SuperPodcastPlayer/1.3",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Key",
+						"value": "{{AuthKey}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Date",
+						"value": "{{AuthDate}}",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{HashedAuth}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat",
+					"protocol": "https",
+					"host": [
+						"api",
+						"podcastindex",
+						"org"
+					],
+					"path": [
+						"api",
+						"1.0",
+						"search",
+						"byterm"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "bastiat"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
