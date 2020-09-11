@@ -6,11 +6,11 @@ These are the required headers for each request:
 
 *   "**User-Agent**" - Please identify the system/product you are using to make this request.
     
-*   "**X-Auth-Date**" - The current unix epoch time as a string. 5 minute window.  If accessing from Python, use only the integer portion of the time value.  Note that JavaScript's time value from a Date's getTime() is compatible, but needs to be scaled down by 1,000 before also being converted to an integer.
+*   "**X-Auth-Date**" - The current unix epoch time as a string.  5 minute window.  This value is an integer; round down if needed.  The value must not include a decimal point.
     
 *   "**X-Auth-Key**" - Your API key string.
     
-*   "**Authorization**" - An SHA-1 hash of the X-Auth-Key, the corresponding key, secret and the X-Auth-Date value concatenated as a string. The resulting hash should be encoded as a hexadecimal value, two digits per byte, using lower case letters for the hex digits "a" through "f".
+*   "**Authorization**" - A SHA-1 hash of the X-Auth-Key, the corresponding key, secret and the X-Auth-Date value concatenated as a string.  The resulting hash should be encoded as a hexadecimal value, two digits per byte, using lower case letters for the hex digits "a" through "f".
     
     The Authorizaton header is computed with something like this (pseudo-code):
     
