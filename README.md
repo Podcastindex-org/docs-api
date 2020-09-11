@@ -329,3 +329,10 @@ Here are some examples to get you started.
 4) Set the `AuthKey` environment variable 
 5) Set the `SecretKey` environment variable
 6) Hit the `Send` button (⌘ + return)
+
+
+#### Libraries
+
+**Javascript (Node.js)**
+
+- [podcast-index-api](https://github.com/comster/podcast-index-api)
