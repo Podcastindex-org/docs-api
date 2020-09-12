@@ -32,17 +32,17 @@ These are the endpoints currently supported:
     
 "**/api/1.0/search/byterm**" - Pass a search term to look for with ?q=\[search terms\].
 
-> Example: [https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university](https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university)
+> Example: [https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university](https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty)
 
 This call returns all of the feeds that match the search terms **in the title** of the feed.
 
------
+
 
 ### Podcasts
     
 "**/api/1.0/podcasts/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
 
-> Example: [https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity)
+> Example: [https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
 
 This call returns everything we know about the feed.
 
@@ -64,17 +64,6 @@ If we have an itunes id on file for a feed, then this call returns everything we
 
 *   Note: The itunes id parameter can either be the number alone, or be prepended with "id".
 
-----
-
-"**/api/1.0/add/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
-
-> Example: [https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity)
-
-\*\*This call requires a read-write api key.
-
-This call adds a podcast to the index using it's feed url. If a feed already exists, you will get it's existing feed id returned.
-
------
 
 ### Episodes
     
@@ -88,7 +77,7 @@ This call returns all the episodes we know about for this feed, in reverse chron
 
 "**/api/1.0/episodes/byfeedid**" - Pass a feed id with ?id=\[id\].
 
-> Example: [https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075)
+> Example: [https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty)
 
 This call returns all the episodes we know about for this feed, in reverse chronological order.
 
@@ -98,13 +87,13 @@ This call returns all the episodes we know about for this feed, in reverse chron
    
 "**/api/1.0/episodes/byitunesid**" - Pass an itunes id with ?id=\[itunes id\].
 
-> Example: [https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632)
+> Example: [https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty)
 
 If we have an itunes id on file for a feed, then this call returns all the episodes we know about for the feed, in reverse chronological order.
 
 *   Note: The itunes id parameter can either be the number alone, or be prepended with "id".
 
------
+
 
 ### Recent
     
@@ -112,12 +101,34 @@ If we have an itunes id on file for a feed, then this call returns all the episo
 
 Optional: excludeString=\[url encoded string\] - If you pass this argument, any item containing this string will be discarded from the result set. This may, in certain cases, reduce your set size below your "max" value.
 
-> Example: [https://api.podcastindex.org/api/1.0/recent/episodes?max=7](https://api.podcastindex.org/api/1.0/recent/episodes?max=7)
+> Example: [https://api.podcastindex.org/api/1.0/recent/episodes?max=7](https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty)
 
 This call returns the most recent \[max\] number of episodes globally across the whole index, in reverse chronological order.
 
 *   Note: If no \[max\] is specified, the default is 10.
 *   Note: The \[excludeString\] value matches against title and urls.
+
+
+### Adding
+
+"**/api/1.0/add/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
+
+> Example: [https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
+
+\*\*This call requires a read-write api key.
+
+This call adds a podcast to the index using it's feed url. If a feed already exists, you will get it's existing feed id returned.
+
+-----
+
+"**/api/1.0/add/byitunesid**" - Pass an itunes id with ?id=\[id\].
+
+> Example: [https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty)
+
+\*\*This call requires a read-write api key.
+
+This call adds a podcast to the index using it's itunes id. If a feed already exists, it will be noted in the response.
+
 
 -----
 
