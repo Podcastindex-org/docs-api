@@ -10,11 +10,11 @@ These are the required headers for each request:
 
 *   "**User-Agent**" - Please identify the system/product you are using to make this request.
     
-*   "**X-Auth-Date**" - The current unix epoch time as a string. 5 minute window.
+*   "**X-Auth-Date**" - The current unix epoch time as a string.  5 minute window.  This value is an integer; round down if needed.  The value must not include a decimal point.
     
 *   "**X-Auth-Key**" - Your API key string.
     
-*   "**Authorization**" - A SHA-1 hash of the X-Auth-Key, the corresponding key secret and the X-Auth-Date value concatenated as a string. The resulting hash should be encoded as hexadecimal value.
+*   "**Authorization**" - A SHA-1 hash of the X-Auth-Key, the corresponding key, secret and the X-Auth-Date value concatenated as a string.  The resulting hash should be encoded as a hexadecimal value, two digits per byte, using lower case letters for the hex digits "a" through "f".
     
     The Authorizaton header is computed with something like this (pseudo-code):
     
