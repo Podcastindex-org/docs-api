@@ -20,16 +20,14 @@ These are the required headers for each request:
     
     `authHeader = sha1(apiKey+apiSecret+unixTime)`
     
+<br><br>
 
 ## Endpoints
 
 Note that all parameters passed should be url encoded where necessary.
 
-These are the endpoints currently supported:
+### Searching
 
-
-### Search
-    
 "**/api/1.0/search/byterm**" - Pass a search term to look for with ?q=\[search terms\].
 
 > Example: [https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university](https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty)
@@ -37,9 +35,8 @@ These are the endpoints currently supported:
 This call returns all of the feeds that match the search terms **in the title** of the feed.
 
 
-
 ### Podcasts
-    
+
 "**/api/1.0/podcasts/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
 
 > Example: [https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
@@ -66,7 +63,7 @@ If we have an itunes id on file for a feed, then this call returns everything we
 
 
 ### Episodes
-    
+
 "**/api/1.0/episodes/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
 
 > Example: [https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity)
@@ -84,7 +81,7 @@ This call returns all the episodes we know about for this feed, in reverse chron
 *   Note: The id parameter is the internal Podcastindex id for this feed.
 
 -----
-   
+
 "**/api/1.0/episodes/byitunesid**" - Pass an itunes id with ?id=\[itunes id\].
 
 > Example: [https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty)
@@ -96,7 +93,7 @@ If we have an itunes id on file for a feed, then this call returns all the episo
 
 
 ### Recent
-    
+
 "**/api/1.0/recent/episodes**" - Pass the count you want with ?max=\[count\].
 
 Optional: excludeString=\[url encoded string\] - If you pass this argument, any item containing this string will be discarded from the result set. This may, in certain cases, reduce your set size below your "max" value.
@@ -130,7 +127,7 @@ This call adds a podcast to the index using it's feed url. If a feed already exi
 This call adds a podcast to the index using it's itunes id. If a feed already exists, it will be noted in the response.
 
 
------
+<br><br>
 
 ## Return Values
 
@@ -145,6 +142,8 @@ These are the response data types we support:
 *   "**rss**" - An RSS v2.0 representation of the data if you wanted to follow a result set as if it were a feed. Coming soon
 *   "**csv**" - The result set formatted as comma separated values, with double-quote value delimiters. Coming soon
 
+<br><br>
+
 ## Optional Parameters
 
 There are various optional parameters you can pass when calling API endpoints to modify the reponses. Some are boolean true by their presence (like "itunes"), while others require a value to be passed.
@@ -156,6 +155,8 @@ Here is the current list:
 *   "**itunes**" (bool) - If present, gives you back exactly what an itunes lookup API call would. Coming soon
 *   "**max=<99>**" (int) - Limits the number of results returned to the maximum number specified, where contextually appropriate.
 *   "**fulltext**" (bool) - If present, returns the full text of long text properties, like 'description'. Otherwise, all text fields are truncated to 100 words.
+
+<br><br>
 
 ## Response Structure (Podcasts/Feeds)
 
@@ -186,6 +187,7 @@ We give you everything we know about the feed. Here is a breakdown of the differ
         "contentType": "application\/x-rss+xml",
         "itunesId": 1441923632,
         "generator": null,
+        "language" : "en-us",
         "type": 0,
         "dead": 0,
         "crawlErrors": 0,
@@ -216,96 +218,102 @@ We give you everything we know about the feed. Here is a breakdown of the differ
 *   "**lastCrawlTime**" - \[Unix Epoch\] The last time we attempted to pull this feed from it's url.
 *   "**itunesId**" - The itunes id of this feed if there is one, and we know what it is.
 *   "**generator**" - The channel-level generator element if there is one.
+*   "**language**" - The channel-level language specification of the feed.
 *   "**type**" - 0 = RSS, 1 = ATOM
 *   "**dead**" - At some point, we give up trying to process a feed and mark it as dead. This is usually after 1000 errors without a successful pull/parse cycle. Once the feed is marked dead, we only check it once per month.
 *   "**crawlErrors**" - The number of errors we've encountered trying to pull a copy of the feed. Errors are things like a 500 or 404 resopnse, a server timeout, bad encoding, etc.
 *   "**parseErrors**" - The number of errors we've encountered trying to parse the feed content. Errors here are things like not well-formed xml, bad character encoding, etc. We fix many of these types of issues on the fly when parsing. We only increment the errors count when we can't fix it.
 
+\*\* Note that when we return properties for episodes, we also send back some of what we consider critical info about the feed the episode came from.  For these properies, we just prepend "feed" to the front
+of the camel-cased version of the property name.  For instance, "language" becomes "feedLanguage".
+
+<br><br>
+
 ## Example code
 
 Here are some examples to get you started.
 
-  
+
 
 **PHP**
 
 ```php
-//Required values  
-$apiKey = "UXKCGDSYGUUEVQJSYDZH";  
-$apiSecret = "yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|";  
-$apiHeaderTime = time();  
+//Required values
+$apiKey = "UXKCGDSYGUUEVQJSYDZH";
+$apiSecret = "yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|";
+$apiHeaderTime = time();
 
-//Hash them to get the Authorization token  
-$hash = sha1($apiKey.$apiSecret.$apiHeaderTime);  
+//Hash them to get the Authorization token
+$hash = sha1($apiKey.$apiSecret.$apiHeaderTime);
 
-//Set the required headers  
-$headers = [  
-    "User-Agent: SuperPodcastPlayer/1.3",  
-    "X-Auth-Key: $apiKey",  
-    "X-Auth-Date: $apiHeaderTime",  
-    "Authorization: $hash"  
-];  
+//Set the required headers
+$headers = [
+    "User-Agent: SuperPodcastPlayer/1.3",
+    "X-Auth-Key: $apiKey",
+    "X-Auth-Date: $apiHeaderTime",
+    "Authorization: $hash"
+];
 
-//Make the request to an API endpoint  
-$ch = curl_init();  
-curl_setopt($ch, CURLOPT_URL,"https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat");  
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);  
+//Make the request to an API endpoint
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,"https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-//Collect and show the results  
-$response = curl_exec ($ch);  
-curl_close ($ch);  
-echo print_r(json_decode($response), TRUE);  
+//Collect and show the results
+$response = curl_exec ($ch);
+curl_close ($ch);
+echo print_r(json_decode($response), TRUE);
 ```
 
 
 **C#**
 
 ```csharp
-//Required values  
-string apiKey = "UXKCGDSYGUUEVQJSYDZH";  
-string apiSecret = "yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|";  
-TimeSpan t = DateTime.UtcNow - new DateTime(1970, 1, 1);  
-int apiHeaderTime = (int)t.TotalSeconds;  
+//Required values
+string apiKey = "UXKCGDSYGUUEVQJSYDZH";
+string apiSecret = "yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|";
+TimeSpan t = DateTime.UtcNow - new DateTime(1970, 1, 1);
+int apiHeaderTime = (int)t.TotalSeconds;
 
-//Hash them to get the Authorization token  
-string hash = "";  
-using (SHA1Managed sha1 = new SHA1Managed())  
-{  
-    var hashed = sha1.ComputeHash(Encoding.UTF8.GetBytes(apiKey + apiSecret + apiHeaderTime));  
-    var sb = new StringBuilder(hashed.Length * 2);  
+//Hash them to get the Authorization token
+string hash = "";
+using (SHA1Managed sha1 = new SHA1Managed())
+{
+    var hashed = sha1.ComputeHash(Encoding.UTF8.GetBytes(apiKey + apiSecret + apiHeaderTime));
+    var sb = new StringBuilder(hashed.Length * 2);
 
-    foreach (byte b in hashed)  
-    {  
-        // can be "x2" if you want lowercase  
-        sb.Append(b.ToString("x2"));  
-    }  
+    foreach (byte b in hashed)
+    {
+        // can be "x2" if you want lowercase
+        sb.Append(b.ToString("x2"));
+    }
 
-    hash = sb.ToString();  
-}  
+    hash = sb.ToString();
+}
 
-//Create the web request and add the required headers  
-HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat");  
-request.Headers.Add("User-Agent", "SuperPodcastPlayer/1.3");  
-request.Headers.Add("X-Auth-Date", apiHeaderTime.ToString());  
-request.Headers.Add("X-Auth-Key", apiKey);  
-request.Headers.Add("Authorization", hash);  
+//Create the web request and add the required headers
+HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat");
+request.Headers.Add("User-Agent", "SuperPodcastPlayer/1.3");
+request.Headers.Add("X-Auth-Date", apiHeaderTime.ToString());
+request.Headers.Add("X-Auth-Key", apiKey);
+request.Headers.Add("Authorization", hash);
 
-//Send the request and collect/show the results  
-try  
-{  
-    WebResponse webResponse2 = request.GetResponse();  
-    Stream stream2 = webResponse2.GetResponseStream();  
-    StreamReader reader2 = new StreamReader(stream2);  
+//Send the request and collect/show the results
+try
+{
+    WebResponse webResponse2 = request.GetResponse();
+    Stream stream2 = webResponse2.GetResponseStream();
+    StreamReader reader2 = new StreamReader(stream2);
 
-    Console.WriteLine(reader2.ReadToEnd());  
+    Console.WriteLine(reader2.ReadToEnd());
 
-    webResponse2.Close();  
-}  
-catch (Exception e)  
-{  
-    Console.WriteLine("Error.");  
-}  
+    webResponse2.Close();
+}
+catch (Exception e)
+{
+    Console.WriteLine("Error.");
+}
 ```
 
 **Swift**
@@ -360,10 +368,11 @@ semaphore.wait()
 1) Download the contents of the `Postman Docs` folder.
 2) Import the `PodcastIndex.postman_collection.json` collection to Postman
 3) Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman
-4) Set the `AuthKey` environment variable 
+4) Set the `AuthKey` environment variable
 5) Set the `SecretKey` environment variable
 6) Hit the `Send` button (⌘ + return)
 
+<br><br>
 
 ## Libraries
 
