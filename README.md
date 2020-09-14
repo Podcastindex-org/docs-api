@@ -1,4 +1,7 @@
 # Podcast Index API Documentation
+<small>v1.3.1 - 2020.09.13</small>
+
+<br>
 
 [Homepage](https://podcastindex.org/) | [Developers](https://api.podcastindex.org/) | [Documentation](http://podcastindex-org.github.io/docs-api)
 
@@ -172,9 +175,7 @@ We give you everything we know about the feed. Here is a breakdown of the differ
         "url": "https:\/\/feeds.theincomparable.com\/batmanuniversity",
         "originalUrl": "https:\/\/feeds.theincomparable.com\/batmanuniversity",
         "link": "https:\/\/www.theincomparable.com\/batmanuniversity\/",
-        "description": "Batman University is a seasonal podcast about you know who. It began with
-           an analysis of episodes of Batman: The Animated Series but has now expanded
-           to cover other series, movies, and media. Your professor is Tony Sindelar.",
+        "description": "Batman University is a seasonal podcast about you know who...",
         "author": "Tony Sindelar",
         "ownerName": "The Incomparable",
         "image": "https:\/\/www.theincomparable.com\/imgs\/logos\/logo-batmanuniversity-3x.jpg",
@@ -218,7 +219,7 @@ We give you everything we know about the feed. Here is a breakdown of the differ
 *   "**lastCrawlTime**" - \[Unix Epoch\] The last time we attempted to pull this feed from it's url.
 *   "**itunesId**" - The itunes id of this feed if there is one, and we know what it is.
 *   "**generator**" - The channel-level generator element if there is one.
-*   "**language**" - The channel-level language specification of the feed.
+*   "**language**" - The channel-level language specification of the feed. Languages accord with the RSS [language spec](https://www.rssboard.org/rss-language-codes).
 *   "**type**" - 0 = RSS, 1 = ATOM
 *   "**dead**" - At some point, we give up trying to process a feed and mark it as dead. This is usually after 1000 errors without a successful pull/parse cycle. Once the feed is marked dead, we only check it once per month.
 *   "**crawlErrors**" - The number of errors we've encountered trying to pull a copy of the feed. Errors are things like a 500 or 404 resopnse, a server timeout, bad encoding, etc.
