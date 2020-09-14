@@ -140,7 +140,7 @@ This call adds a podcast to the index using it's itunes id. If a feed already ex
 
 "**/api/1.0/add/batch/byfeedurl**" - POST - Pass an array of urls in a form encoded post request.
 
-> Example: POST [https://api.podcastindex.org/api/1.0/add/batch/byfeedurl](https://api.podcastindex.org/api/1.0/add/batch/byfeedurl&pretty)
+> Example: POST [https://api.podcastindex.org/api/1.0/add/batch/byfeedurl](https://api.podcastindex.org/api/1.0/add/batch/byfeedurl?pretty)
 
 Form data:
 * url[]:http://feed.nashownotes.com/rss.xml
