@@ -35,7 +35,7 @@ Note that all parameters passed should be url encoded where necessary.
 
 "**/api/1.0/search/byterm**" - Pass a search term to look for with ?q=\[search terms\].
 
-> Example: [https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university](https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty)
+> Example: GET [https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university](https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty)
 
 This call returns all of the feeds that match the search terms **in the title** of the feed.
 
@@ -44,7 +44,7 @@ This call returns all of the feeds that match the search terms **in the title** 
 
 "**/api/1.0/podcasts/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
 
-> Example: [https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
+> Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
 
 This call returns everything we know about the feed.
 
@@ -52,7 +52,7 @@ This call returns everything we know about the feed.
 
 "**/api/1.0/podcasts/byfeedid**" - Pass a feed id with ?id=\[feed id\].
 
-> Example: [https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075)
+> Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075)
 
 This call returns everything we know about the feed.
 
@@ -60,7 +60,7 @@ This call returns everything we know about the feed.
 
 "**/api/1.0/podcasts/byitunesid**" - Pass an itunes id with ?id=\[itunes id\].
 
-> Example: [https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632)
+> Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632)
 
 If we have an itunes id on file for a feed, then this call returns everything we know about that feed.
 
@@ -71,7 +71,7 @@ If we have an itunes id on file for a feed, then this call returns everything we
 
 "**/api/1.0/episodes/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
 
-> Example: [https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity)
+> Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity)
 
 This call returns all the episodes we know about for this feed, in reverse chronological order.
 
@@ -79,7 +79,7 @@ This call returns all the episodes we know about for this feed, in reverse chron
 
 "**/api/1.0/episodes/byfeedid**" - Pass a feed id with ?id=\[id\].
 
-> Example: [https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty)
+> Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty)
 
 This call returns all the episodes we know about for this feed, in reverse chronological order.
 
@@ -89,7 +89,7 @@ This call returns all the episodes we know about for this feed, in reverse chron
 
 "**/api/1.0/episodes/byitunesid**" - Pass an itunes id with ?id=\[itunes id\].
 
-> Example: [https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty)
+> Example: GET [https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty)
 
 If we have an itunes id on file for a feed, then this call returns all the episodes we know about for the feed, in reverse chronological order.
 
@@ -103,7 +103,7 @@ If we have an itunes id on file for a feed, then this call returns all the episo
 
 Optional: excludeString=\[url encoded string\] - If you pass this argument, any item containing this string will be discarded from the result set. This may, in certain cases, reduce your set size below your "max" value.
 
-> Example: [https://api.podcastindex.org/api/1.0/recent/episodes?max=7](https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty)
+> Example: GET [https://api.podcastindex.org/api/1.0/recent/episodes?max=7](https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty)
 
 This call returns the most recent \[max\] number of episodes globally across the whole index, in reverse chronological order.
 
@@ -113,9 +113,9 @@ This call returns the most recent \[max\] number of episodes globally across the
 
 ### Adding
 
-"**/api/1.0/add/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
+"**/api/1.0/add/byfeedurl**" - POST/GET - Pass a feed url with ?url=\[feed url\].
 
-> Example: [https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
+> Example: POST/GET [https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
 
 \*\*This call requires a read-write api key.
 
@@ -123,13 +123,30 @@ This call adds a podcast to the index using it's feed url. If a feed already exi
 
 -----
 
-"**/api/1.0/add/byitunesid**" - Pass an itunes id with ?id=\[id\].
+"**/api/1.0/add/byitunesid**" - POST/GET - Pass an itunes id with ?id=\[id\].
 
-> Example: [https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty)
+> Example: POST/GET [https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty)
 
 \*\*This call requires a read-write api key.
 
 This call adds a podcast to the index using it's itunes id. If a feed already exists, it will be noted in the response.
+
+-----
+
+"**/api/1.0/add/batch/byfeedurl**" - POST - Pass an array of urls in a form encoded post request.
+
+> Example: POST [https://api.podcastindex.org/api/1.0/add/batch/byfeedurl](https://api.podcastindex.org/api/1.0/add/batch/byfeedurl&pretty)
+Form data:
+* url[]:http://feed.nashownotes.com/rss.xml
+* url[]:http://feeds.soundcloud.com/users/soundcloud:users:475750905/sounds.rss
+* url[]:https://feeds.theincomparable.com/batmanuniversity
+
+\*\*This call requires a publisher api key.  Available by request/approval.
+
+This call adds multiple feed urls at once.  It returns an array listing the results of each one.  If the feed existed already, or if it was added, you will get back it's podcastindex.org feed id.  If we have linkage to an itunes id for
+this feed it will be returned as well.  There are also "error" and "valid" properties returned.  A false in the "valid" property indicates the feed url was structurally invalid.  A true in the "error" property indicates something went
+wrong internally while adding the feed.
+
 
 
 <br><br>
