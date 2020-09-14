@@ -31,6 +31,8 @@ These are the required headers for each request:
 
 Note that all parameters passed should be url encoded where necessary.
 
+<br>
+
 ### Searching
 
 "**/api/1.0/search/byterm**" - Pass a search term to look for with ?q=\[search terms\].
@@ -39,6 +41,7 @@ Note that all parameters passed should be url encoded where necessary.
 
 This call returns all of the feeds that match the search terms **in the title** of the feed.
 
+<br>
 
 ### Podcasts
 
@@ -66,6 +69,7 @@ If we have an itunes id on file for a feed, then this call returns everything we
 
 *   Note: The itunes id parameter can either be the number alone, or be prepended with "id".
 
+<br>
 
 ### Episodes
 
@@ -95,7 +99,7 @@ If we have an itunes id on file for a feed, then this call returns all the episo
 
 *   Note: The itunes id parameter can either be the number alone, or be prepended with "id".
 
-
+<br>
 
 ### Recent
 
@@ -110,6 +114,7 @@ This call returns the most recent \[max\] number of episodes globally across the
 *   Note: If no \[max\] is specified, the default is 10.
 *   Note: The \[excludeString\] value matches against title and urls.
 
+<br>
 
 ### Adding
 
