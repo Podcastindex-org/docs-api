@@ -126,7 +126,7 @@ This call returns the most recent \[max\] number of episodes globally across the
 
 \*\*This call requires a read-write api key.
 
-This call adds a podcast to the index using it's feed url. If a feed already exists, you will get it's existing feed id returned.
+This call adds a podcast to the index using its feed url. If a feed already exists, you will get its existing feed id returned.
 
 -----
 
@@ -136,7 +136,7 @@ This call adds a podcast to the index using it's feed url. If a feed already exi
 
 \*\*This call requires a read-write api key.
 
-This call adds a podcast to the index using it's itunes id. If a feed already exists, it will be noted in the response.
+This call adds a podcast to the index using its itunes id. If a feed already exists, it will be noted in the response.
 
 -----
 
@@ -151,7 +151,7 @@ Form data:
 
 \*\*This call requires a publisher api key.  Available by request/approval.
 
-This call adds multiple feed urls at once.  It returns an array listing the results of each one.  If the feed existed already, or if it was added, you will get back it's podcastindex.org feed id.  If we have linkage to an itunes id for
+This call adds multiple feed urls at once.  It returns an array listing the results of each one.  If the feed existed already, or if it was added, you will get back its podcastindex.org feed id.  If we have linkage to an itunes id for
 this feed it will be returned as well.  There are also "error" and "valid" properties returned.  A false in the "valid" property indicates the feed url was structurally invalid.  A true in the "error" property indicates something went
 wrong internally while adding the feed.
 
@@ -230,7 +230,7 @@ We give you everything we know about the feed. Here is a breakdown of the differ
 *   "**id**" - The internal podcastindex.org feed id.
 *   "**title**" - The feed title.
 *   "**url**" - The current feed url.
-*   "**originalUrl**" - The url of the feed, before it changed to it's current url.
+*   "**originalUrl**" - The url of the feed, before it changed to its current url.
 *   "**link**" - The channel level link in the feed.
 *   "**description**" - The channel-level description.
 *   "**author**" - The channel-level author element. Usually iTunes specific, but could be from another namespace if not present.
@@ -238,12 +238,12 @@ We give you everything we know about the feed. Here is a breakdown of the differ
 *   "**image**" - The channel-level image element.
 *   "**artwork**" - The seemingly best artwork we can find for the feed. Might be the same as 'image' in most instances.
 *   "**lastUpdateTime**" - \[Unix Epoch\] The channel-level pubDate for the feed, if it's sane. If not, this is a heuristic valu, arrived at by analyzing other parts of the feed, like item-level pubDates.
-*   "**lastCrawlTime**" - \[Unix Epoch\] The last time we attempted to pull this feed from it's url.
+*   "**lastCrawlTime**" - \[Unix Epoch\] The last time we attempted to pull this feed from its url.
 *   "**lastParseTime**" - \[Unix Epoch\] The last time we tried to parse the downloaded feed content.
-*   "**lastGoodHttpStatusTime**" - \[Unix Epoch\] Timestamp of the last time we got a "good", meaning non-4xx/non-5xx, status code when pulling this feed from it's url.
-*   "**lastHttpStatus**" - The last http status code we got when pulling this feed from it's url. You will see some made up status codes sometimes. These are what we use to track state within the feed puller. These all start with 9xx.
-*   "**contentType**" - The Content-Type header from the last time we pulled this feed from it's url.
-*   "**lastCrawlTime**" - \[Unix Epoch\] The last time we attempted to pull this feed from it's url.
+*   "**lastGoodHttpStatusTime**" - \[Unix Epoch\] Timestamp of the last time we got a "good", meaning non-4xx/non-5xx, status code when pulling this feed from its url.
+*   "**lastHttpStatus**" - The last http status code we got when pulling this feed from its url. You will see some made up status codes sometimes. These are what we use to track state within the feed puller. These all start with 9xx.
+*   "**contentType**" - The Content-Type header from the last time we pulled this feed from its url.
+*   "**lastCrawlTime**" - \[Unix Epoch\] The last time we attempted to pull this feed from its url.
 *   "**itunesId**" - The itunes id of this feed if there is one, and we know what it is.
 *   "**generator**" - The channel-level generator element if there is one.
 *   "**language**" - The channel-level language specification of the feed. Languages accord with the RSS [language spec](https://www.rssboard.org/rss-language-codes).
