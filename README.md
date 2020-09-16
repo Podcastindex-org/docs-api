@@ -100,6 +100,7 @@ This call returns all the episodes we know about for this feed, in reverse chron
 If we have an itunes id on file for a feed, then this call returns all the episodes we know about for the feed, in reverse chronological order.
 
 *   Note: The itunes id parameter can either be the number alone, or be prepended with "id".
+
 -----
 
 "**/api/1.0/episodes/byid**" - Pass an episode id with ?id=\[id\].
