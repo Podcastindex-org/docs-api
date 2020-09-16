@@ -1,7 +1,7 @@
 ![Podcast Index banner](https://raw.githubusercontent.com/Podcastindex-org/art-graphics-logos/master/pci_banner.jpg)
 
 # Podcast Index API Documentation
-<small>v1.3.2 - 2020.09.14</small>
+<small>v1.3.4 - 2020.09.16</small>
 
 <br>
 
@@ -57,7 +57,7 @@ This call returns everything we know about the feed.
 
 "**/api/1.0/podcasts/byfeedid**" - Pass a feed id with ?id=\[feed id\].
 
-> Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075)
+> Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075&pretty)
 
 This call returns everything we know about the feed.
 
@@ -65,7 +65,7 @@ This call returns everything we know about the feed.
 
 "**/api/1.0/podcasts/byitunesid**" - Pass an itunes id with ?id=\[itunes id\].
 
-> Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632)
+> Example: GET [https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632&pretty)
 
 If we have an itunes id on file for a feed, then this call returns everything we know about that feed.
 
@@ -77,7 +77,7 @@ If we have an itunes id on file for a feed, then this call returns everything we
 
 "**/api/1.0/episodes/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
 
-> Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity)
+> Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
 
 This call returns all the episodes we know about for this feed, in reverse chronological order.
 
@@ -100,6 +100,14 @@ This call returns all the episodes we know about for this feed, in reverse chron
 If we have an itunes id on file for a feed, then this call returns all the episodes we know about for the feed, in reverse chronological order.
 
 *   Note: The itunes id parameter can either be the number alone, or be prepended with "id".
+-----
+
+"**/api/1.0/episodes/byid**" - Pass an episode id with ?id=\[id\].
+
+> Example: GET [https://api.podcastindex.org/api/1.0/episodes/byid?id=16795090](https://api.podcastindex.org/api/1.0/episodes/byid?id=16795090&pretty)
+
+Get all the metadata for a single episode by passing its id.
+
 
 <br>
 
@@ -108,6 +116,7 @@ If we have an itunes id on file for a feed, then this call returns all the episo
 "**/api/1.0/recent/episodes**" - Pass the count you want with ?max=\[count\].
 
 Optional: excludeString=\[url encoded string\] - If you pass this argument, any item containing this string will be discarded from the result set. This may, in certain cases, reduce your set size below your "max" value.
+Optional: before=\[episode id\] - If you pass an episode id, you will get recent episodes before that id, allowing you to walk back through the episode history sequentially.
 
 > Example: GET [https://api.podcastindex.org/api/1.0/recent/episodes?max=7](https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty)
 
