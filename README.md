@@ -41,6 +41,8 @@ Note that all parameters passed should be url encoded where necessary.
 
 This call returns all of the feeds that match the search terms **in the title** of the feed.
 
+This is ordered by the last-released episode, with the latest at the top of the results.
+
 <br>
 
 ### Podcasts
