@@ -5,7 +5,7 @@
 
 <br>
 
-[Homepage](https://podcastindex.org/) | [Developers](https://api.podcastindex.org/) | [Documentation](http://podcastindex-org.github.io/docs-api)
+[Homepage](https://podcastindex.org/) | [Developers](https://api.podcastindex.org/) | [Documentation](http://podcastindex-org.github.io/docs-api) | [Example Code](https://github.com/Podcastindex-org-Examples)
 
 ## Basics
 
