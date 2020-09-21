@@ -130,7 +130,7 @@ This call returns the most recent \[max\] number of episodes globally across the
 
 "**/api/1.0/recent/newfeeds**"
 
-> Example: GET [https://api.podcastindex.org/api/1.0/recent/newfeeds](https://api.podcastindex.org/api/1.0/recent/newfeeds&pretty)
+> Example: GET [https://api.podcastindex.org/api/1.0/recent/newfeeds](https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty)
 
 This call returns every new feed added to the index over the past 24 hours in reverse chronological order.
 
