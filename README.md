@@ -126,6 +126,16 @@ This call returns the most recent \[max\] number of episodes globally across the
 *   Note: If no \[max\] is specified, the default is 10.
 *   Note: The \[excludeString\] value matches against title and urls.
 
+-----
+
+"**/api/1.0/recent/newfeeds**"
+
+> Example: GET [https://api.podcastindex.org/api/1.0/recent/newfeeds](https://api.podcastindex.org/api/1.0/recent/newfeeds&pretty)
+
+This call returns every new feed added to the index over the past 24 hours in reverse chronological order.
+
+*   Note: There is an upper limit for now of 1000 feeds returned.
+
 <br>
 
 ### Adding
