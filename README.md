@@ -427,3 +427,4 @@ semaphore.wait()
 **Javascript (Node.js)**
 
 - [podcast-index-api](https://github.com/comster/podcast-index-api)
+- [podcastdx-client](https://github.com/RyanHirsch/podcastdx-client) - typescript support
