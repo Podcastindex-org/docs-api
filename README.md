@@ -116,8 +116,8 @@ Get all the metadata for a single episode by passing its id.
 
 "**/api/1.0/recent/episodes**" - Pass the count you want with ?max=\[count\].
 
-Optional: excludeString=\[url encoded string\] - If you pass this argument, any item containing this string will be discarded from the result set. This may, in certain cases, reduce your set size below your "max" value.
-Optional: before=\[episode id\] - If you pass an episode id, you will get recent episodes before that id, allowing you to walk back through the episode history sequentially.
+- Optional: excludeString=\[url encoded string\] (string) - If you pass this argument, any item containing this string will be discarded from the result set. This may, in certain cases, reduce your set size below your "max" value.
+- Optional: before=\[episode id\] (int) - If you pass an episode id, you will get recent episodes before that id, allowing you to walk back through the episode history sequentially.
 
 > Example: GET [https://api.podcastindex.org/api/1.0/recent/episodes?max=7](https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty)
 
@@ -125,6 +125,26 @@ This call returns the most recent \[max\] number of episodes globally across the
 
 *   Note: If no \[max\] is specified, the default is 10.
 *   Note: The \[excludeString\] value matches against title and urls.
+
+-----
+
+"**/api/1.0/recent/feeds**" - Pass the count you want with ?max=\[count\].
+
+- Optional: since=\[unix timestamp\] or \[-seconds\] (int) - You can specify a hard-coded unix timestamp, or a negative integer
+            that represents a number of seconds prior to now.  Either way you specify, the search will start from that
+            time and only return feeds updated since then.
+- Optional: language=\[rss language code\] (string) - Specifying a language code (like "en") will return only feeds having that
+            specific language.
+- Optional: notCategory\[\]=\[category id number\] (int array) - You can pass multiple of these to form an array. The category
+            ids given will be excluded from the result set.
+- Optional: isCategory\[\]=\[category id number\] (int array) - You can pass multiple of these to form an array. It will
+            take precedent over the notCategory[] array, and instead only show you feeds with those categories in the result set.
+
+> Example: GET [https://api.podcastindex.org/api/1.0/recent/feeds?max=20&isCategory[]=102&language=de](https://api.podcastindex.org/api/1.0/recent/feeds?max=20&isCategory[]=102&language=de&pretty)
+
+This call returns the most recent 20 updated german language Technology feeds in reverse chronological order.
+
+*   Note: If no \[max\] is specified, the default is 40.
 
 -----
 
@@ -239,7 +259,12 @@ We give you everything we know about the feed. Here is a breakdown of the differ
         "type": 0,
         "dead": 0,
         "crawlErrors": 0,
-        "parseErrors": 0
+        "parseErrors": 0,
+        "categories": {
+            "104": "TV",
+            "105": "Film",
+            "107": "Reviews"
+        }
     }
     ],
     "count": 1,
@@ -271,6 +296,7 @@ We give you everything we know about the feed. Here is a breakdown of the differ
 *   "**dead**" - At some point, we give up trying to process a feed and mark it as dead. This is usually after 1000 errors without a successful pull/parse cycle. Once the feed is marked dead, we only check it once per month.
 *   "**crawlErrors**" - The number of errors we've encountered trying to pull a copy of the feed. Errors are things like a 500 or 404 resopnse, a server timeout, bad encoding, etc.
 *   "**parseErrors**" - The number of errors we've encountered trying to parse the feed content. Errors here are things like not well-formed xml, bad character encoding, etc. We fix many of these types of issues on the fly when parsing. We only increment the errors count when we can't fix it.
+*   "**categories**" - An array of categories, where the index is the category id and the value is the category name.
 
 \*\* Note that when we return properties for episodes, we also send back some of what we consider critical info about the feed the episode came from.  For these properies, we just prepend "feed" to the front
 of the camel-cased version of the property name.  For instance, "language" becomes "feedLanguage".
