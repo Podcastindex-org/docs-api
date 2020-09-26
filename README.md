@@ -131,20 +131,23 @@ This call returns the most recent \[max\] number of episodes globally across the
 "**/api/1.0/recent/feeds**" - Pass the count you want with ?max=\[count\].
 
 - Optional: since=\[unix timestamp\] or \[-seconds\] (int) - You can specify a hard-coded unix timestamp, or a negative integer
-            that represents a number of seconds prior to now.  Either way you specify, the search will start from that
+            that represents a number of seconds prior to right now.  Either way you specify, the search will start from that
             time and only return feeds updated since then.
-- Optional: language=\[rss language code\] (string) - Specifying a language code (like "en") will return only feeds having that
-            specific language.
-- Optional: notCategory\[\]=\[category id number\] (int array) - You can pass multiple of these to form an array. The category
-            ids given will be excluded from the result set.
-- Optional: isCategory\[\]=\[category id number\] (int array) - You can pass multiple of these to form an array. It will
-            take precedent over the notCategory[] array, and instead only show you feeds with those categories in the result set.
+- Optional: lang=\[rss language code\] (string) - Specifying a language code (like "en") will return only feeds having that
+            specific language.  You can specify multiple languages by separating them with commas. If you also want
+            to return feeds that have no language given, use the token "unknown".  (ex. en,es,ja,unknown)
+- Optional: !cat\[\]=\[category id|name\] (int|string) - You may use this argument to specify categories of feeds to NOT show
+            in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.
+- Optional: cat\[\]=\[category id|name\] (int|string) - You may use this argument to specify that you ONLY want feeds with these categories
+            in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.  If
+            this argument is given, it takes precedence over the "!cat" argument.  They are mutually exclusive.
 
-> Example: GET [https://api.podcastindex.org/api/1.0/recent/feeds?max=20&isCategory[]=102&language=de](https://api.podcastindex.org/api/1.0/recent/feeds?max=20&isCategory[]=102&language=de&pretty)
+> Example: GET [https://api.podcastindex.org/api/1.0/recent/feeds?max=20&cat=102,health&lang=de,ja](https://api.podcastindex.org/api/1.0/recent/feeds?max=20&cat=102,health&lang=de,ja&pretty)
 
-This call returns the most recent 20 updated german language Technology feeds in reverse chronological order.
+This call returns the most recent \[max\] feeds, in reverse chronological order.
 
 *   Note: If no \[max\] is specified, the default is 40.
+*   Note: Language and category names are case-insensitive.
 
 -----
 
