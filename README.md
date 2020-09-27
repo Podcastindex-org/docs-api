@@ -138,9 +138,8 @@ This call returns the most recent \[max\] number of episodes globally across the
             to return feeds that have no language given, use the token "unknown".  (ex. en,es,ja,unknown)
 - Optional: cat\[\]=\[category id|name\] (int|string) - You may use this argument to specify that you ONLY want feeds with these categories
             in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.
-- Optional: !cat\[\]=\[category id|name\] (int|string) - You may use this argument to specify categories of feeds to NOT show
+- Optional: notcat\[\]=\[category id|name\] (int|string) - You may use this argument to specify categories of feeds to NOT show
             in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.
-
 
 > Example: GET [https://api.podcastindex.org/api/1.0/recent/feeds?max=20&cat=102,health&lang=de,ja](https://api.podcastindex.org/api/1.0/recent/feeds?max=20&cat=102,health&lang=de,ja&pretty)
 
