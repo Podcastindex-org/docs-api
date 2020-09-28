@@ -77,6 +77,11 @@ If we have an itunes id on file for a feed, then this call returns everything we
 
 "**/api/1.0/episodes/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
 
+- Optional: since=\[unix timestamp\] or \[-seconds\] (int) - You can specify a hard-coded unix timestamp, or a negative integer
+            that represents a number of seconds prior to right now.  Either way you specify, the search will start from that
+            time and only return feeds updated since then.
+- Optional: max=\[count\] (int) - You can specify a maximum number of results to return.
+
 > Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
 
 This call returns all the episodes we know about for this feed, in reverse chronological order.
@@ -84,6 +89,11 @@ This call returns all the episodes we know about for this feed, in reverse chron
 -----
 
 "**/api/1.0/episodes/byfeedid**" - Pass a feed id with ?id=\[id\].
+
+- Optional: since=\[unix timestamp\] or \[-seconds\] (int) - You can specify a hard-coded unix timestamp, or a negative integer
+            that represents a number of seconds prior to right now.  Either way you specify, the search will start from that
+            time and only return feeds updated since then.
+- Optional: max=\[count\] (int) - You can specify a maximum number of results to return.
 
 > Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty)
 
@@ -94,6 +104,11 @@ This call returns all the episodes we know about for this feed, in reverse chron
 -----
 
 "**/api/1.0/episodes/byitunesid**" - Pass an itunes id with ?id=\[itunes id\].
+
+- Optional: since=\[unix timestamp\] or \[-seconds\] (int) - You can specify a hard-coded unix timestamp, or a negative integer
+            that represents a number of seconds prior to right now.  Either way you specify, the search will start from that
+            time and only return feeds updated since then.
+- Optional: max=\[count\] (int) - You can specify a maximum number of results to return.
 
 > Example: GET [https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty)
 
