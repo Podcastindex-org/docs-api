@@ -1,7 +1,7 @@
 ![Podcast Index banner](https://raw.githubusercontent.com/Podcastindex-org/art-graphics-logos/master/pci_banner.jpg)
 
 # Podcast Index API Documentation
-<small>v1.3.4 - 2020.09.16</small>
+<small>v1.3.5 - 2020.09.16</small>
 
 <br>
 
