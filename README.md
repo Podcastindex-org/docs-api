@@ -124,6 +124,25 @@ If we have an itunes id on file for a feed, then this call returns all the episo
 
 Get all the metadata for a single episode by passing its id.
 
+-----
+
+"**/api/1.0/episodes/random**" - Pass the count you want with ?max=\[count\].
+
+- Optional: lang=\[rss language code\] (string) - Specifying a language code (like "en") will return only episodes having that
+            specific language.  You can specify multiple languages by separating them with commas. If you also want
+            to return episodes that have no language given, use the token "unknown".  (ex. en,es,ja,unknown)
+- Optional: cat=\[category id|name\] (int|string) - You may use this argument to specify that you ONLY want episodes with these categories
+            in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.
+- Optional: notcat=\[category id|name\] (int|string) - You may use this argument to specify categories of episodes to NOT show
+            in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.
+
+> Example: GET [https://api.podcastindex.org/api/1.0/testing/dave?notcat=News,Religion&lang=en,es](https://api.podcastindex.org/api/1.0/testing/dave?notcat=News,Religion&lang=en,es&pretty)
+
+This call returns a random batch of \[max\] episodes, in no specific order.
+
+*   Note: If no \[max\] is specified, the default is 1.  You can return up to 40 episodes at a time.
+*   Note: Language and category names are case-insensitive.
+*   Note: You can mix and match the cat and notcat filters to fine tune a very specific result set.
 
 <br>
 
@@ -162,7 +181,7 @@ This call returns the most recent \[max\] feeds, in reverse chronological order.
 
 *   Note: If no \[max\] is specified, the default is 40.
 *   Note: Language and category names are case-insensitive.
-*   Note: You can mix and match the cat and !cat filters to fine tune a very specific result set.
+*   Note: You can mix and match the cat and notcat filters to fine tune a very specific result set.
 
 -----
 
