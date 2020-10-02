@@ -136,7 +136,7 @@ Get all the metadata for a single episode by passing its id.
 - Optional: notcat=\[category id|name\] (int|string) - You may use this argument to specify categories of episodes to NOT show
             in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.
 
-> Example: GET [https://api.podcastindex.org/api/1.0/testing/dave?notcat=News,Religion&lang=en,es](https://api.podcastindex.org/api/1.0/testing/dave?notcat=News,Religion&lang=en,es&pretty)
+> Example: GET [https://api.podcastindex.org/api/1.0/episodes/random?notcat=News,Religion&lang=en,es](https://api.podcastindex.org/api/1.0/episodes/random?notcat=News,Religion&lang=en,es&pretty)
 
 This call returns a random batch of \[max\] episodes, in no specific order.
 
