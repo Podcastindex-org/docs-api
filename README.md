@@ -199,6 +199,9 @@ This call returns every new feed added to the index over the past 24 hours in re
 
 "**/api/1.0/add/byfeedurl**" - POST/GET - Pass a feed url with ?url=\[feed url\].
 
+- Optional: itunesid=\[itunes id number\] (int) - If this parameter is given, and the existing feed has no associated itunes id, it will be associated with this
+                                                  id.  If an existing itunes id is already associated with this feed it will NOT be changed.
+
 > Example: POST/GET [https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
 
 \*\*This call requires a read-write api key.
