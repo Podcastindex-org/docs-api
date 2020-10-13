@@ -29,7 +29,7 @@ These are the required headers for each request:
 
 ## Endpoints
 
-Note that all parameters passed should be url encoded where necessary.
+Note that all parameters passed should be url encoded where necessary.  There is a default count of 40 items returned for most calls if the "max" param isn't used.
 
 <br>
 
