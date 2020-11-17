@@ -39,6 +39,8 @@ Note that all parameters passed should be url encoded where necessary.  There is
 
 > Example: GET [https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university](https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty)
 
+- Optional: clean (bool) - If the "clean" parameter is passed along with this call, then only non-explicit feeds will be returned - meaning, feeds where the `itunes:explicit` flag is set to false.
+
 This call returns all of the feeds that match the search terms **in the title** of the feed.
 
 This is ordered by the last-released episode, with the latest at the top of the results.
@@ -192,6 +194,16 @@ This call returns the most recent \[max\] feeds, in reverse chronological order.
 This call returns every new feed added to the index over the past 24 hours in reverse chronological order.
 
 *   Note: There is an upper limit for now of 1000 feeds returned.
+
+-----
+
+"**/api/1.0/recent/soundbites**"
+
+> Example: GET [https://api.podcastindex.org/api/1.0/recent/soundbites](https://api.podcastindex.org/api/1.0/recent/soundbites?pretty)
+
+This call returns the most recent 60 soundbites that the index has discovered.  A soundbite consists of an enclosure url, a start time and a duration.  It is documented in the "podcast" namespace [here](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md).
+
+
 
 <br>
 
