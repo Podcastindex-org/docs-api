@@ -193,6 +193,16 @@ This call returns every new feed added to the index over the past 24 hours in re
 
 *   Note: There is an upper limit for now of 1000 feeds returned.
 
+-----
+
+"**/api/1.0/recent/soundbites**"
+
+> Example: GET [https://api.podcastindex.org/api/1.0/recent/soundbites](https://api.podcastindex.org/api/1.0/recent/soundbites?pretty)
+
+This call returns the most recent 60 soundbites that the index has discovered.  A soundbite consists of an enclosure url, a start time and a duration.  It is documented in the "podcast" namespace [here](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md).
+
+
+
 <br>
 
 ### Adding
