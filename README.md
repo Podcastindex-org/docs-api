@@ -489,12 +489,12 @@ semaphore.wait()
 
 * * *
 
-1) Download the contents of the `Postman Docs` folder.
-2) Import the `PodcastIndex.postman_collection.json` collection to Postman
-3) Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman
-4) Set the `AuthKey` environment variable
-5) Set the `SecretKey` environment variable
-6) Hit the `Send` button (⌘ + return)
+1. Download the contents of the `Postman Docs` folder.
+2. Import the `PodcastIndex.postman_collection.json` collection to Postman
+3. Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman
+4. Set the `AuthKey` environment variable
+5. Set the `SecretKey` environment variable
+6. Hit the `Send` button (⌘ + return)
 
 <br><br>
 
