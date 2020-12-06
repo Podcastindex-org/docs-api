@@ -41,7 +41,7 @@ Note that all parameters passed should be url encoded where necessary.  There is
 
  - Optional: `clean` (bool) - If the "clean" parameter is passed along with this call, then only non-explicit feeds will be returned - meaning, feeds where the `itunes:explicit` flag is set to false.
 
-This call returns all of the feeds that match the search terms **in the title** of the feed.
+This call returns all of the feeds that match the search terms in the **title**, **author** or **owner** of the feed.
 
 This is ordered by the last-released episode, with the latest at the top of the results.
 
