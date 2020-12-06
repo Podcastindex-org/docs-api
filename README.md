@@ -39,7 +39,7 @@ Note that all parameters passed should be url encoded where necessary.  There is
 
 > Example: GET [https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university](https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty)
 
-- Optional: clean (bool) - If the "clean" parameter is passed along with this call, then only non-explicit feeds will be returned - meaning, feeds where the `itunes:explicit` flag is set to false.
+ - Optional: `clean` (bool) - If the "clean" parameter is passed along with this call, then only non-explicit feeds will be returned - meaning, feeds where the `itunes:explicit` flag is set to false.
 
 This call returns all of the feeds that match the search terms **in the title** of the feed.
 
@@ -79,10 +79,10 @@ If we have an itunes id on file for a feed, then this call returns everything we
 
 "**/api/1.0/episodes/byfeedid**" - Pass a feed id with ?id=\[id\]. This can be a list of multiple feed ids separated with a comma.
 
-- Optional: since=\[unix timestamp\] or \[-seconds\] (int) - You can specify a hard-coded unix timestamp, or a negative integer
+ - Optional: `since=[unix timestamp] or [-seconds]` (int) - You can specify a hard-coded unix timestamp, or a negative integer
             that represents a number of seconds prior to right now.  Either way you specify, the search will start from that
             time and only return feeds updated since then.
-- Optional: max=\[count\] (int) - You can specify a maximum number of results to return.
+ - Optional: `max=[count]` (int) - You can specify a maximum number of results to return.
 
 > Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075](https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty)
 
@@ -94,10 +94,10 @@ This call returns all the episodes we know about for this feed, in reverse chron
 
 "**/api/1.0/episodes/byfeedurl**" - Pass a feed url with ?url=\[feed url\].
 
-- Optional: since=\[unix timestamp\] or \[-seconds\] (int) - You can specify a hard-coded unix timestamp, or a negative integer
+- Optional: `since=[unix timestamp] or [-seconds]` (int) - You can specify a hard-coded unix timestamp, or a negative integer
             that represents a number of seconds prior to right now.  Either way you specify, the search will start from that
             time and only return feeds updated since then.
-- Optional: max=\[count\] (int) - You can specify a maximum number of results to return.
+- Optional: `max=[count]` (int) - You can specify a maximum number of results to return.
 
 > Example: GET [https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
 
@@ -107,10 +107,10 @@ This call returns all the episodes we know about for this feed, in reverse chron
 
 "**/api/1.0/episodes/byitunesid**" - Pass an itunes id with ?id=\[itunes id\].
 
-- Optional: since=\[unix timestamp\] or \[-seconds\] (int) - You can specify a hard-coded unix timestamp, or a negative integer
+- Optional: `since=[unix timestamp] or [-seconds]` (int) - You can specify a hard-coded unix timestamp, or a negative integer
             that represents a number of seconds prior to right now.  Either way you specify, the search will start from that
             time and only return feeds updated since then.
-- Optional: max=\[count\] (int) - You can specify a maximum number of results to return.
+- Optional: `max=[count]` (int) - You can specify a maximum number of results to return.
 
 > Example: GET [https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632](https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty)
 
@@ -130,12 +130,12 @@ Get all the metadata for a single episode by passing its id.
 
 "**/api/1.0/episodes/random**" - Pass the count you want with ?max=\[count\].
 
-- Optional: lang=\[rss language code\] (string) - Specifying a language code (like "en") will return only episodes having that
+- Optional: `lang=[rss language code]` (string) - Specifying a language code (like "en") will return only episodes having that
             specific language.  You can specify multiple languages by separating them with commas. If you also want
             to return episodes that have no language given, use the token "unknown".  (ex. en,es,ja,unknown)
-- Optional: cat=\[category id|name\] (int|string) - You may use this argument to specify that you ONLY want episodes with these categories
+- Optional: `cat=[category id|name]` (int|string) - You may use this argument to specify that you ONLY want episodes with these categories
             in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.
-- Optional: notcat=\[category id|name\] (int|string) - You may use this argument to specify categories of episodes to NOT show
+- Optional: `notcat=[category id|name]` (int|string) - You may use this argument to specify categories of episodes to NOT show
             in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.
 
 > Example: GET [https://api.podcastindex.org/api/1.0/episodes/random?notcat=News,Religion&lang=en,es](https://api.podcastindex.org/api/1.0/episodes/random?notcat=News,Religion&lang=en,es&pretty)
@@ -166,15 +166,15 @@ This call returns the most recent \[max\] number of episodes globally across the
 
 "**/api/1.0/recent/feeds**" - Pass the count you want with ?max=\[count\].
 
-- Optional: since=\[unix timestamp\] or \[-seconds\] (int) - You can specify a hard-coded unix timestamp, or a negative integer
+- Optional: `since=[unix timestamp] or [-seconds]` (int) - You can specify a hard-coded unix timestamp, or a negative integer
             that represents a number of seconds prior to right now.  Either way you specify, the search will start from that
             time and only return feeds updated since then.
-- Optional: lang=\[rss language code\] (string) - Specifying a language code (like "en") will return only feeds having that
+- Optional: `lang=[rss language code]` (string) - Specifying a language code (like "en") will return only feeds having that
             specific language.  You can specify multiple languages by separating them with commas. If you also want
             to return feeds that have no language given, use the token "unknown".  (ex. en,es,ja,unknown)
-- Optional: cat=\[category id|name\] (int|string) - You may use this argument to specify that you ONLY want feeds with these categories
+- Optional: `cat=[category id|name]` (int|string) - You may use this argument to specify that you ONLY want feeds with these categories
             in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.
-- Optional: notcat=\[category id|name\] (int|string) - You may use this argument to specify categories of feeds to NOT show
+- Optional: `notcat=[category id|name]` (int|string) - You may use this argument to specify categories of feeds to NOT show
             in the results.  Separate multiple categories with commas.  You may specify either the category id or the category name.
 
 > Example: GET [https://api.podcastindex.org/api/1.0/recent/feeds?max=20&cat=102,health&lang=de,ja](https://api.podcastindex.org/api/1.0/recent/feeds?max=20&cat=102,health&lang=de,ja&pretty)
@@ -211,7 +211,7 @@ This call returns the most recent 60 soundbites that the index has discovered.  
 
 "**/api/1.0/add/byfeedurl**" - POST/GET - Pass a feed url with ?url=\[feed url\].
 
-- Optional: itunesid=\[itunes id number\] (int) - If this parameter is given, and the existing feed has no associated itunes id, it will be associated with this
+- Optional: `itunesid=[itunes id number]` (int) - If this parameter is given, and the existing feed has no associated itunes id, it will be associated with this
                                                   id.  If an existing itunes id is already associated with this feed it will NOT be changed.
 
 > Example: POST/GET [https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity](https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty)
