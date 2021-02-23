@@ -506,3 +506,7 @@ semaphore.wait()
 
 - [podcast-index-api](https://github.com/comster/podcast-index-api)
 - [podcastdx-client](https://github.com/RyanHirsch/podcastdx-client) - typescript support
+
+** Go **
+
+- [podcastindex](https://github.com/TheHippo/podcastindex)
