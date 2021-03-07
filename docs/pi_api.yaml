@@ -25,7 +25,7 @@ info:
 
     # Example Code
 
-    User's have provided example code for working the API in the following
+    Users have provided example code for working the API in the following
     languages:
 
       - [AWS Lambda - python](https://github.com/tbowers/python-podcastindex-org-lambda)
