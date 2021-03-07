@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Podcasts
+  summary: By Tag
+  # language=Markdown
+  description: >
+    This call returns all feeds that support the specified
+    [podcast namespace](https://podcastindex.org/namespace/1.0) tag.
+
+
+    Example: https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&pretty
+  operationId: podcasts/bytag
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/podcast-value.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/podcasts_bytag.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

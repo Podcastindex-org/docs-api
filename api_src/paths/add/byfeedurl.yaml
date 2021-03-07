@@ -1,0 +1,61 @@
+get:
+  tags:
+    - Add
+  summary: By Feed URL
+  # language=Markdown
+  description: >
+    This call adds a podcast to the index using its feed url. If a feed already exists, you will get its existing Feed ID returned.
+
+
+    **NOTE**: this endpoint requires an API Key with the **write** permission.
+
+
+    Example: https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty
+  operationId: add/byfeedurl:get
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/url.yaml'
+    - $ref: '../../components/parameters/chash.yaml'
+    - $ref: '../../components/parameters/itunesid.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/add_byfeedurl.yaml'
+    '302':
+      $ref: '../../components/responses/add_byfeedurl.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'
+post:
+  tags:
+    - Add
+  summary: By Feed URL
+  # language=Markdown
+  description: >
+    This call adds a podcast to the index using its feed url. If a feed already exists, you will get its existing Feed ID returned.
+
+
+    **NOTE**: this endpoint requires an API Key with the **write** permission.
+
+
+    Example: https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty
+  operationId: add/byfeedurl:post
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/url.yaml'
+    - $ref: '../../components/parameters/itunesid.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/add_byfeedurl.yaml'
+    '302':
+      $ref: '../../components/responses/add_byfeedurl.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

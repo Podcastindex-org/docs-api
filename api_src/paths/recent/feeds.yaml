@@ -1,0 +1,31 @@
+get:
+  tags:
+    - Recent
+  summary: Feeds
+  # language=Markdown
+  description: >
+    This call returns the most recent `max` feeds, in reverse chronological order.
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/recent/feeds?pretty
+      - https://api.podcastindex.org/api/1.0/recent/feeds?max=20&cat=102,health&lang=de,ja&pretty
+  operationId: recent/feeds
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/max_recent_feeds.yaml'
+    - $ref: '../../components/parameters/since.yaml'
+    - $ref: '../../components/parameters/lang.yaml'
+    - $ref: '../../components/parameters/cat.yaml'
+    - $ref: '../../components/parameters/notcat.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/recent_feeds.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

@@ -1,0 +1,23 @@
+name: lang
+in: query
+# language=Markdown
+description: >
+  Specifying a language code (like "en") will return only episodes having that specific language.
+
+
+  You can specify multiple languages by separating them with commas.
+
+
+  If you also want to return episodes that have no language given, use the token "unknown". (ex. en,es,ja,unknown).
+
+
+  Values are not case sensitive.
+schema:
+  type: string
+examples:
+  single:
+    value: "en"
+    description: Single ID
+  multiple:
+    value: "en,es"
+    description: Multiple IDs

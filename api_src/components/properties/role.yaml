@@ -1,0 +1,12 @@
+  # language=Markdown
+description: >
+  Used to identify what role the person serves on the show or episode.
+
+
+  Value should be an official role within the Podcast Taxonomy Project
+  [list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json).
+
+
+  See the [podcast namespace spec](https://podcastindex.org/namespace/1.0#person) for more information.
+type: string
+example: "Host"

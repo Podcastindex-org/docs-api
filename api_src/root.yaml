@@ -1,0 +1,177 @@
+openapi: 3.0.2
+info:
+  version: 1.4.0
+  title: PodcastIndex.org API
+  termsOfService: 'https://api.podcastindex.org/tos_v1.0.html'
+  contact:
+    email: info@podcastindex.org
+    url: 'https://podcastindex.org/'
+  license:
+    name: MIT
+    url: 'https://github.com/Podcastindex-org/docs-api/blob/master/LICENSE'
+  x-logo:
+    url: 'logo.svg'
+    href: '/'
+  # language=Markdown
+  description: >
+    Download the openapi spec in [json](pi_api.json) or [yaml](pi_api.yaml) format.
+
+    # Overview
+
+    The Podcast Index (Podcast Index LLC) is a software developer focused partnership that provides tools and data to
+    anyone who aspires to create new and exciting Podcast experiences without the heavy lifting of indexing,
+    aggregation and data management.
+
+    # Example Code
+
+    User's have provided example code for working the API in the following languages:
+
+      - [AWS Lambda - python](https://github.com/tbowers/python-podcastindex-org-lambda)
+      - [C#](https://github.com/ComicStrip/csharp-podcastindex-org-example)
+      - [Elisp](https://github.com/sabexx/elisp-example)
+      - [Flutter/Dart](https://github.com/crediblecreative/flutter-dart-podcastindex-org-example)
+      - [Go](https://github.com/ComicStrip/Go-podcastindex-org-example)
+      - [Go](https://github.com/kilobit/podcast-index-client)
+      - [Java](https://github.com/ComicStrip/Java-podcastindex-org-example)
+      - [Java](https://github.com/stucoates/PodcastIndexJavaClient)
+      - [Node.js](https://github.com/ComicStrip/node.js-podcastindex-org-example)
+      - [PHP](https://github.com/Podcastindex-org/example-code)
+      - [Python](https://github.com/tbowers/python-podcastindex-org-example)
+      - [Swift](https://github.com/ComicStrip/Swift-podcastindex-org-example)
+      - ... [More](https://github.com/Podcastindex-org-Examples)
+
+    Don't see your desired language, create an example repo and create a
+    [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to your example code project!
+
+    # Libraries
+
+    User created libraries for working with the API:
+
+      - Node.js/npm/yarn
+          - [podcast-index-api](https://www.npmjs.com/package/podcast-index-api)
+          - [podcastdx-client](https://www.npmjs.com/package/podcastdx-client)
+      - Python/pip
+          - [python-podcastindex](https://pypi.org/project/python-podcastindex/)
+
+    Are we missing a library? Did you create one for a different language? Create a
+    [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to the new library!
+
+    # Postman
+
+    A collection file for use in the [Postman](https://www.postman.com/) application is available for this API.
+
+      1. Download the contents of the [Postman Docs](https://github.com/Podcastindex-org/docs-api/tree/master/Postman%20Docs) folder.
+      2. Import the `PodcastIndex.postman_collection.json` collection to Postman
+      3. Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman
+      4. Set the `AuthKey` environment variable
+      5. Set the `SecretKey` environment variable
+      6. Hit the Send button (⌘ + return)
+
+    # Contributing
+
+    The source for this API documentation is available at
+    [https://github.com/Podcastindex-org/docs-api](https://github.com/Podcastindex-org/docs-api).
+    Submit an Issue or create a Pull Request.
+
+    # Authentication Details
+
+    Sending an API request is easy. We use an Amazon-style request authorization token to secure each request.
+
+
+    Register for a free API key at https://api.podcastindex.org/
+
+
+    These headers parameters are required for each request: `User-Agent`, `X-Auth-Date`, `X-Auth-Key`, `Authorization`
+
+
+    See [Authentication](#auth) for description of parameters.
+tags:
+  - name: Search
+    # language=Markdown
+    description: >
+      Search the index
+  - name: Podcasts
+    # language=Markdown
+    description: >
+      Find details about a Podcast and its feed.
+  - name: Episodes
+    # language=Markdown
+    description: >
+      Find details about one or more episodes of a podcast or podcasts.
+  - name: Recent
+    # language=Markdown
+    description: >
+      Find recent additions to the index
+  - name: Value
+    # language=Markdown
+    description: >
+      The podcast's "Value for Value" information
+  - name: Stats
+    # language=Markdown
+    description: >
+      Statistics for items in the Podcast Index
+  - name: Add
+    # language=Markdown
+    description: >
+      Add new podcast feeds to the index.
+
+
+      **NOTE**: To add to the index, the API Key must have write or publisher permissions.
+servers:
+  - url: 'https://api.podcastindex.org/api/1.0'
+components:
+  securitySchemes:
+    User Agent:
+      $ref: 'components/securitySchemes/User-Agent.yaml'
+    API Key:
+      $ref: 'components/securitySchemes/API-Key.yaml'
+    Date:
+      $ref: 'components/securitySchemes/Date.yaml'
+    Authorization:
+      $ref: 'components/securitySchemes/Authorization.yaml'
+paths:
+  '/search/byterm':
+    $ref: 'paths/search/byterm.yaml'
+  '/search/byperson':
+    $ref: 'paths/search/byperson.yaml'
+  '/podcasts/byfeedid':
+    $ref: 'paths/podcasts/byfeedid.yaml'
+  '/podcasts/byfeedurl':
+    $ref: 'paths/podcasts/byfeedurl.yaml'
+  '/podcasts/byitunesid':
+    $ref: 'paths/podcasts/byitunesid.yaml'
+  '/podcasts/bytag':
+    $ref: 'paths/podcasts/bytag.yaml'
+  '/podcasts/dead':
+    $ref: 'paths/podcasts/dead.yaml'
+  '/episodes/byfeedid':
+    $ref: 'paths/episodes/byfeedid.yaml'
+  '/episodes/byfeedurl':
+    $ref: 'paths/episodes/byfeedurl.yaml'
+  '/episodes/byitunesid':
+    $ref: 'paths/episodes/byitunesid.yaml'
+  '/episodes/byid':
+    $ref: 'paths/episodes/byid.yaml'
+  '/episodes/random':
+    $ref: 'paths/episodes/random.yaml'
+  '/recent/episodes':
+    $ref: 'paths/recent/episodes.yaml'
+  '/recent/feeds':
+    $ref: 'paths/recent/feeds.yaml'
+  '/recent/newfeeds':
+    $ref: 'paths/recent/newfeeds.yaml'
+  '/recent/soundbites':
+    $ref: 'paths/recent/soundbites.yaml'
+  '/value/byfeedid':
+    $ref: 'paths/value/byfeedid.yaml'
+  '/value/byfeedurl':
+    $ref: 'paths/value/byfeedurl.yaml'
+  '/stats/current':
+    $ref: 'paths/stats/current.yaml'
+  '/add/byfeedurl':
+    $ref: 'paths/add/byfeedurl.yaml'
+  '/add/byitunesid':
+    $ref: 'paths/add/byitunesid.yaml'
+  # currently not used and has some bugs. leaving off for now
+  #'/add/batch/byfeedurl':
+  #  $ref: 'paths/add/batch/byfeedurl.yaml'

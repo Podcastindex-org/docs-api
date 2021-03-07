@@ -1,0 +1,11 @@
+  # language=Markdown
+description: >
+  Soundbite for episode
+type: object
+properties:
+  startTime:
+    $ref: '../properties/startTime.yaml'
+  duration:
+    $ref: '../properties/duration_soundbite.yaml'
+  title:
+    $ref: '../properties/title_soundbite.yaml'

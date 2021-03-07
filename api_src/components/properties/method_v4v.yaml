@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Method for sending payment
+type: string
+example: "keysend"

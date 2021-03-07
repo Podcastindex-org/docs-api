@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The time this episode was found in the feed
+type: integer
+format: Unix Epoch
+example: 1598369047

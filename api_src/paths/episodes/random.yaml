@@ -1,0 +1,31 @@
+get:
+  tags:
+    - Episodes
+  summary: Random
+  # language=Markdown
+  description: >
+    This call returns a random batch of episodes, in no specific order.
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/episodes/random?notcat=News,Religion&lang=en,es&pretty
+      - https://api.podcastindex.org/api/1.0/episodes/random?max=2&pretty
+  operationId: episodes/random
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/max_random.yaml'
+    - $ref: '../../components/parameters/lang.yaml'
+    - $ref: '../../components/parameters/cat.yaml'
+    - $ref: '../../components/parameters/notcat.yaml'
+    - $ref: '../../components/parameters/fulltext.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/episodes_random.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

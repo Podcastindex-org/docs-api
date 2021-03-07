@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  The unique identifier for the episode
+type: string
+example: "incomparable/batman/19"

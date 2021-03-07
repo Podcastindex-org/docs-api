@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Description of the response
+type: string
+example: "Found matching feed"

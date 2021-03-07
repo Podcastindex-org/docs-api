@@ -1,0 +1,12 @@
+  # language=Markdown
+description: >
+  Information for donation/funding the podcast.
+
+
+  See the [podcast namespace spec](https://podcastindex.org/namespace/1.0#funding) for more information.
+type: object
+properties:
+  url:
+    $ref: '../properties/url_funding.yaml'
+  message:
+    $ref: '../properties/message.yaml'

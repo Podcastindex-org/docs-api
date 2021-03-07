@@ -1,0 +1,9 @@
+  # language=Markdown
+description: >
+  List of people with an interest in this episode.
+
+
+  See the [podcast namespace spec](https://podcastindex.org/namespace/1.0#person) for more information.
+type: array
+items:
+  $ref: '../schemas/person.yaml'

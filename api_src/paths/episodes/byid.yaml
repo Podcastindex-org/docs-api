@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Episodes
+  summary: By ID
+  # language=Markdown
+  description: >
+    Get all the metadata for a single episode by passing its id.
+
+
+    Example: https://api.podcastindex.org/api/1.0/episodes/byid?id=16795090&pretty
+  operationId: episodes/byid
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/id_episode_pi.yaml'
+    - $ref: '../../components/parameters/fulltext.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/episodes_byid.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

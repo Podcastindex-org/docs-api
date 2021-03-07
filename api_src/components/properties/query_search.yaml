@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Search terms passed to request
+type: string
+example: "batman university"

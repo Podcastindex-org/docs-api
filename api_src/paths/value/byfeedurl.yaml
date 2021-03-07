@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Value
+  summary: By Feed URL
+  # language=Markdown
+  description: >
+    This call returns the information for supporting the podcast via one of the "Value for Value" methods from feed URL.
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty
+      - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty
+  operationId: value/byfeedurl
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/url.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/value_byfeedurl.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

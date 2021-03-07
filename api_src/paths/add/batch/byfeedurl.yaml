@@ -1,0 +1,49 @@
+post:
+  tags:
+    - Add
+  summary: By Feed URL Batch
+  # language=Markdown
+  description: >
+    This call adds multiple feed urls at once.
+
+
+    It returns an array listing the results of each one. If the feed existed already, or if it was added, you will get
+    back its PodcastIndex.org feed id. If we have linkage to an iTunes ID for this feed it will be returned as well.
+
+
+    There are also "error" and "valid" properties returned. A false in the "valid" property indicates the feed url was
+    structurally invalid. A true in the "error" property indicates something went wrong internally while adding the feed.
+
+
+    **NOTE**: this endpoint requires an API Key with the **publisher** permission.
+
+
+    Example: https://api.podcastindex.org/api/1.0/add/batch/byfeedurl?pretty
+  operationId: add/batch/byfeedurl
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../../components/parameters/pretty.yaml'
+  requestBody:
+    # language=Markdown
+    description: >
+      List of Feed URLs to add
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: array
+          items:
+            type: string
+            format: URL
+# TODO: what is the actual format since this cannot be tested
+  responses:
+    '200':
+      $ref: '../../../components/responses/add_byfeedurl.yaml'
+    '400':
+      $ref: '../../../components/responses/add_batch_byfeedurl_400.yaml'
+    '401':
+      $ref: '../../../components/responses/401.yaml'

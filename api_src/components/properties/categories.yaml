@@ -1,0 +1,12 @@
+  # language=Markdown
+description: >
+  An array of categories, where the index is the Category ID and the value is the Category Name.
+
+
+  Category numbers and names can be found in the
+  [Podcast Namespace documentation](https://github.com/Podcastindex-org/podcast-namespace/blob/main/categories.json)
+type: object
+example:
+  104: "Tv"
+  105: "Film"
+  107: "Reviews"

@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  URL/link to the soundbite file
+type: string
+format: URL
+example: "https://pdcn.co/e/www.buzzsprout.com/1074223/7921324-episode-30-the-teacher-as-top-ten-math-routines-with-dr-nicki-newton-and-ann-elise-record.mp3?blob_id=35415988"

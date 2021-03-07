@@ -1,0 +1,9 @@
+name: q
+in: query
+# language=Markdown
+description: >
+  Person search for
+required: true
+schema:
+  type: string
+example: "adam curry"

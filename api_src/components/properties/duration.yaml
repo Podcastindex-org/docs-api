@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The estimated length of the item specified by the `enclosureUrl` in minutes
+type: integer
+format: minutes
+example: 54

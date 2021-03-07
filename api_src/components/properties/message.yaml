@@ -1,0 +1,8 @@
+  # language=Markdown
+description: >
+  Description of `url`
+
+
+  See the [podcast namespace spec](https://podcastindex.org/namespace/1.0#funding) for more information.
+type: string
+example: "Pragmatic on Patreon"

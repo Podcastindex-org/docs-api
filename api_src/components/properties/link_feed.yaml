@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The channel-level link in the feed
+type: string
+format: URL
+example: "https://www.theincomparable.com/batmanuniversity/"

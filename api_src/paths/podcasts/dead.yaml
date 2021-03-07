@@ -1,0 +1,23 @@
+get:
+  tags:
+    - Podcasts
+  summary: Dead
+  # language=Markdown
+  description: >
+    This call returns all feeds that have been marked dead (`dead` == 1)
+
+
+    Example: https://api.podcastindex.org/api/1.0/podcasts/dead?pretty
+  operationId: podcasts/dead
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/podcasts_dead.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

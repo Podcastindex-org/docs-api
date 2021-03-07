@@ -1,0 +1,12 @@
+name: fulltext
+in: query
+# language=Markdown
+description: >
+  If present, return the full text value of any text fields (ex: `description`).
+  If not provided, field value is truncated to 100 words.
+
+
+  Parameter shall not have a value
+schema:
+  type: boolean
+allowEmptyValue: true

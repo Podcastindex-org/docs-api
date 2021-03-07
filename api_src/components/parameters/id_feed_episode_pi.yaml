@@ -1,0 +1,18 @@
+name: id
+in: query
+# language=Markdown
+description: >
+  The PodcastIndex Feed ID or IDs to search for.
+
+
+  If searching for multiple IDs, separate values with a comma. A maximum of 200 IDs can be provided.
+required: true
+schema:
+  type: string
+examples:
+  single:
+    value: 75075
+    description: Single ID
+  multiple:
+    value: 41504,920666
+    description: Multiple IDs

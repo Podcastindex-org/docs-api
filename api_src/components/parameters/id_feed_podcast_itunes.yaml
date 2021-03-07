@@ -1,0 +1,15 @@
+name: id
+in: query
+# language=Markdown
+description: >
+  The iTunes Feed ID to search for
+required: true
+schema:
+  type: integer
+examples:
+  id_only:
+    value: 1441923632
+    description: iTunes ID without any prefix
+  prefix:
+    value: id1441923632
+    description: iTunes ID with optional "id" prefix

@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  List of destinations where "Value for Value" payments should be sent.
+type: array
+items:
+  $ref: '../schemas/destination_v4v.yaml'

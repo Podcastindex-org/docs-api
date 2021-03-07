@@ -1,0 +1,13 @@
+title: Multiple IDs
+# language=Markdown
+description: >
+  IDs passed to request
+type: array
+items:
+  # language=Markdown
+  description: >
+    Podcast ID passed to request
+  type: string
+example:
+  - "75075"
+  - "920666"

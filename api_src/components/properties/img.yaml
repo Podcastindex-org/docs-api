@@ -1,0 +1,9 @@
+  # language=Markdown
+description: >
+  URL to a picture or avatar of the person.
+
+
+  See the [podcast namespace spec](https://podcastindex.org/namespace/1.0#person) for more information.
+type: string
+format: URL
+example: "https://engineered.network/img/people/dave-jones.jp"

@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  The channel-level generator element if there is one.
+type: string
+example: "my podcast host"

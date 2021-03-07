@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The item-level link in the feed for the episode
+type: string
+format: URL
+example: "https://www.theincomparable.com/batmanuniversity/19"

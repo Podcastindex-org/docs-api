@@ -1,0 +1,19 @@
+type: apiKey
+in: header
+name: Authorization
+# language=Markdown
+description: >
+  A SHA-1 hash of the `X-Auth-Key`, the corresponding secret and the `X-Auth-Date` value concatenated as a string.
+  The resulting hash should be encoded as a hexadecimal value, two digits per byte, using lower case letters for
+  the hex digits "a" through "f".
+
+
+  The Authorization header is computed with something like this (pseudo-code):
+
+      authHeader = sha1(apiKey+apiSecret+unixTime)
+
+  Example value, uses example values of `X-Auth-Key` and `X-Auth-Date` and an api secret of
+  `yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|`
+
+
+  *Example*: `UXKCGDSYGUUEVQJSYDZH`

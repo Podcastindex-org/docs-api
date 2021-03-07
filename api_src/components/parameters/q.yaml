@@ -1,0 +1,9 @@
+name: q
+in: query
+# language=Markdown
+description: >
+  Terms to search for
+required: true
+schema:
+  type: string
+example: "batman university"

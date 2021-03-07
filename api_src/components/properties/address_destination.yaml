@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Address of node to receive payment
+type: string
+example: "03ae9f91a0cb8ff43840e3c322c4c61f019d8c1c3cea15a25cfc425ac605e61a4a"

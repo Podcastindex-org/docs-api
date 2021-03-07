@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The channel-level image element.
+type: string
+format: URL
+example: "https://www.theincomparable.com/imgs/logos/logo-batmanuniversity-3x.jpg?cache-buster=2019-06-11"

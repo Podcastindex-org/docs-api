@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Number of episodes for this feed known to the index.
+type: integer
+example: 19

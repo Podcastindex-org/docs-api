@@ -1,0 +1,8 @@
+  # language=Markdown
+description: >
+  Indicates API request status
+type: string
+enum:
+  - "true"
+  - "false"
+example: "true"

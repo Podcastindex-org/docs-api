@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  URL/link to the episode file
+type: string
+format: URL
+example: "https://www.theincomparable.com/podcast/batmanuniversity302.mp3"

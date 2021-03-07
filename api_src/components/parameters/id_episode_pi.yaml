@@ -1,0 +1,9 @@
+name: id
+in: query
+# language=Markdown
+description: >
+  The PodcastIndex episode ID to search for.
+required: true
+schema:
+  type: integer
+example: 16795089

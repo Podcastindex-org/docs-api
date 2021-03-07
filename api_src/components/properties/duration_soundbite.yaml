@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The length to play the item specified by the `enclosureUrl`
+type: integer
+format: seconds
+example: 40

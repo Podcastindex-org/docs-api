@@ -1,0 +1,9 @@
+type: apiKey
+in: header
+name: User-Agent
+# language=Markdown
+description: >
+  Please identify the system/product you are using to make this request.
+
+
+  *Example*: `SuperPodcastPlayer/1.3`

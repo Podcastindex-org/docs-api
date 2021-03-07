@@ -1,0 +1,14 @@
+name: excludeString
+in: query
+# language=Markdown
+description: >
+  Any item containing this string will be discarded from the result set.
+
+
+  This may, in certain cases, reduce your set size below your `max` value.
+
+
+  Matches against the `title` and URL properties.
+schema:
+  type: string
+example: "religion"

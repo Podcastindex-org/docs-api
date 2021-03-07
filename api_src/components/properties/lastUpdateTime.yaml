@@ -1,0 +1,8 @@
+  # language=Markdown
+description: >
+  The channel-level pubDate for the feed, if it’s sane.
+
+  If not, this is a heuristic value, arrived at by analyzing other parts of the feed, like item-level pubDates.
+type: integer
+format: Unix Epoch
+example: 1613394044

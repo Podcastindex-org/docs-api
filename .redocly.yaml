@@ -1,0 +1,24 @@
+# See https://redoc.ly/docs/cli/configuration/ for more information.
+apiDefinitions:
+  main: ./api_src/root.yaml
+lint:
+  extends:
+    - recommended
+  rules:
+    no-unused-components: warning
+referenceDocs:
+  htmlTemplate: ./docs/template.html
+  hideDownloadButton: true
+  expandDefaultServerVariables : all # nice for debugging
+  expandResponses: all # nice for debugging
+  expandSingleSchemaField: all # nice for debugging
+  jsonSampleExpandLevel: all # nice for debugging
+  hideSchemaTitles: true
+  requiredPropsFirst: true
+  theme:
+    spacing:
+      sectionVertical: 10
+    colors:
+      primary:
+        main: "#e90000"
+# Additional configuration options: https://github.com/Redocly/redoc

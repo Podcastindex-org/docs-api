@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  Link to the JSON file containing the episode chapters
+type: string
+format: URL
+example: "https://studio.hypercatcher.com/chapters/podcast/http:feed.nashownotes.comrss.xml/episode/http:1322.noagendanotes.com"

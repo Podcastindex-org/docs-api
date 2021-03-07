@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Indicates if destination is included due to a fee being charged
+type: boolean
+example: true

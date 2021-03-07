@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  Soundbites for episode
+type: array
+items:
+  $ref: '../properties/soundbite.yaml'

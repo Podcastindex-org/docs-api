@@ -1,0 +1,15 @@
+  # language=Markdown
+description: >
+  Destination for "Value for Value" payment.
+type: object
+properties:
+  name:
+    $ref: '../properties/name_destination.yaml'
+  address:
+    $ref: '../properties/address_destination.yaml'
+  type:
+    $ref: '../properties/type_destination.yaml'
+  split:
+    $ref: '../properties/split_destination.yaml'
+  fee:
+    $ref: '../properties/fee_destination.yaml'
