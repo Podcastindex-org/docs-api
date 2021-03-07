@@ -1,0 +1,52 @@
+type: object
+properties:
+  id:
+    $ref: '../properties/id_episode.yaml'
+  title:
+    $ref: '../properties/title_feed.yaml'
+  link:
+    $ref: '../properties/link_feed.yaml'
+  description:
+    $ref: '../properties/description_episode.yaml'
+  guid:
+    $ref: '../properties/guid.yaml'
+  datePublished:
+    $ref: '../properties/datePublished.yaml'
+  dateCrawled:
+    $ref: '../properties/dateCrawled.yaml'
+  enclosureUrl:
+    $ref: '../properties/enclosureUrl.yaml'
+  enclosureType:
+    $ref: '../properties/enclosureType.yaml'
+  enclosureLength:
+    $ref: '../properties/enclosureLength.yaml'
+  duration:
+    $ref: '../properties/duration.yaml'
+  explicit:
+    $ref: '../properties/explicit.yaml'
+  episode:
+    $ref: '../properties/episode_number.yaml'
+  episodeType:
+    $ref: '../properties/episodeType.yaml'
+  season:
+    $ref: '../properties/season.yaml'
+  image:
+    $ref: '../properties/image_episode.yaml'
+  feedItunesId:
+    $ref: '../properties/itunesId_feed.yaml'
+  feedImage:
+    $ref: '../properties/image_feed.yaml'
+  feedId:
+    $ref: '../properties/id_feed.yaml'
+  feedUrl:
+    $ref: '../properties/url_feed.yaml'
+  feedAuthor:
+    $ref: '../properties/author.yaml'
+  feedTitle:
+    $ref: '../properties/title_feed.yaml'
+  feedLanguage:
+    $ref: '../properties/language.yaml'
+  chaptersUrl:
+    $ref: '../properties/chaptersUrl.yaml'
+  transcriptUrl:
+    $ref: '../properties/transcriptUrl.yaml'

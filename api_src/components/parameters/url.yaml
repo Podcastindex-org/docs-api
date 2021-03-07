@@ -1,0 +1,10 @@
+name: url
+in: query
+# language=Markdown
+description: >
+  Podcast feed URL
+required: true
+allowReserved: true
+schema:
+  type: string
+example: "https://feeds.theincomparable.com/batmanuniversity"

@@ -1,0 +1,8 @@
+  # language=Markdown
+description: >
+  The date and time the episode was published formatted as a human readable string.
+
+
+  Note: uses the PodcastIndex server local time to do conversion.
+type: string
+example: "January 01, 2019 9:30pm"

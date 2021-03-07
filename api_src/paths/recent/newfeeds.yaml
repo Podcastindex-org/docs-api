@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Recent
+  summary: New Feeds
+  # language=Markdown
+  description: >
+    This call returns every new feed added to the index over the past 24 hours in reverse chronological order.
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty
+      - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty&since=1613805000
+  operationId: recent/newfeeds
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/max_recent_feeds.yaml'
+    - $ref: '../../components/parameters/since.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/recent_newfeeds.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

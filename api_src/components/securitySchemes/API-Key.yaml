@@ -1,0 +1,9 @@
+type: apiKey
+in: header
+name: X-Auth-Key
+# language=Markdown
+description: >
+  Your API key string
+
+
+  *Example*: `UXKCGDSYGUUEVQJSYDZH`

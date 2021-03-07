@@ -1,0 +1,9 @@
+  # language=Markdown
+description: >
+  The last http status code we got when pulling this feed from its url.
+
+
+  You will see some made up status codes sometimes. These are what we use to track state within the feed puller.
+  These all start with 9xx.
+type: integer
+example: 200

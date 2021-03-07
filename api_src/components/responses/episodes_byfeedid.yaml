@@ -1,0 +1,18 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        items:
+          $ref: '../properties/items_podcast.yaml'
+        count:
+          $ref: '../properties/count.yaml'
+        query:
+          oneOf:
+            - $ref: '../properties/query_podcast_id_single.yaml'
+            - $ref: '../properties/query_podcast_id_multiple.yaml'
+        description:
+          $ref: '../properties/description_response.yaml'

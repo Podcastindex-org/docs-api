@@ -1,0 +1,14 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        id:
+          $ref: '../properties/id_episode.yaml'
+        episode:
+          $ref: '../properties/episode_object.yaml'
+        description:
+          $ref: '../properties/description_response.yaml'

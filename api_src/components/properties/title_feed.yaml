@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Name of the feed
+type: string
+example: "Batman University"

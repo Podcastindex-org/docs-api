@@ -1,0 +1,35 @@
+  # language=Markdown
+description: >
+  An array statistic properties
+type: object
+properties:
+  feedCountTotal:
+    # language=Markdown
+    description: Total podcast feeds in the index.
+    type: integer
+    example: 1383751
+  episodeCountTotal:
+    # language=Markdown
+    description: Total individual podcast episodes in the index.
+    type: integer
+    example: 16987920
+  feedsWithNewEpisodes3days:
+    # language=Markdown
+    description: Podcast feeds with a new episode released in the last 3 days.
+    type: integer
+    example: 63942
+  feedsWithNewEpisodes10days:
+    # language=Markdown
+    description: Podcast feeds with a new episode released in the last 10 days.
+    type: integer
+    example: 176435
+  feedsWithNewEpisodes30days:
+    # language=Markdown
+    description: Podcast feeds with a new episode released in the last 30 days.
+    type: integer
+    example: 264845
+  feedsWithNewEpisodes90days:
+    # language=Markdown
+    description: Podcast feeds with a new episode released in the last 90 days.
+    type: integer
+    example: 362248

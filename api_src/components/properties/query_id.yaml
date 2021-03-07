@@ -1,0 +1,7 @@
+  # language=Markdown
+description: >
+  Object containing the input query data
+type: object
+properties:
+  id:
+    $ref: '../properties/id_query.yaml'

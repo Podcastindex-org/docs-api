@@ -1,0 +1,15 @@
+name: since
+in: query
+# language=Markdown
+description: >
+  Return items since the specified time.
+  The value can be a unix epoch timestamp or a negative integer that represents a number of seconds prior to right now.
+schema:
+  type: integer
+examples:
+  timestamp:
+    value: 1612125785
+    description: Unix timestamp
+  seconds:
+    value: -100000
+    description: Seconds from now

@@ -1,0 +1,9 @@
+name: id
+in: query
+# language=Markdown
+description: >
+  The PodcastIndex Feed ID to search for
+required: true
+schema:
+  type: integer
+example: 75075

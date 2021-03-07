@@ -1,0 +1,8 @@
+# language=Markdown
+description: >
+  The seemingly best artwork we can find for the feed.
+
+  Might be the same as `image` in most instances.
+type: string
+format: URL
+example: "https://www.theincomparable.com/imgs/logos/logo-batmanuniversity-3x.jpg?cache-buster=2019-06-11"

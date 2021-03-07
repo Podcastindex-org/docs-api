@@ -1,0 +1,23 @@
+get:
+  tags:
+    - Stats
+  summary: Current
+  # language=Markdown
+  description: >
+    Return the most recent index statistics.
+
+
+    Example: https://api.podcastindex.org/api/1.0/stats/current?pretty
+  operationId: stats/current
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/stats_current.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

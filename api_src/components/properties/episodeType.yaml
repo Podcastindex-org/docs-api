@@ -1,0 +1,9 @@
+  # language=Markdown
+description: >
+  The type of episode
+type: string
+enum:
+  - full
+  - trailer
+  - bonus
+example: "full"

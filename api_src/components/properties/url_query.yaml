@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  Value passed to request in the `url` field
+type: string
+format: URL
+example: "https://feeds.theincomparable.com/batmanuniversity"

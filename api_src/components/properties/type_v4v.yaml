@@ -1,0 +1,9 @@
+  # language=Markdown
+description: >
+  Payment type
+type: string
+enum:
+  - "lightning"
+  - "hive"
+  - "webmonetization"
+example: "lightning"

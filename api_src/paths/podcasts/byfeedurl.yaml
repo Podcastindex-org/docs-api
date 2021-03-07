@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Podcasts
+  summary: By Feed URL
+  # language=Markdown
+  description: >
+    This call returns everything we know about the feed from the feed URL
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty
+      - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty
+  operationId: podcasts/byfeedurl
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/url.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/podcasts_byfeedurl.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

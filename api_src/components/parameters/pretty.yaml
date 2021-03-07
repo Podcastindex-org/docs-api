@@ -1,0 +1,11 @@
+name: pretty
+in: query
+# language=Markdown
+description: >
+  If present, makes the output “pretty” to help with debugging.
+
+
+  Parameter shall not have a value
+schema:
+  type: boolean
+allowEmptyValue: true

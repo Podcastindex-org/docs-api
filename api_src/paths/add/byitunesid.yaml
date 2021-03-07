@@ -1,0 +1,58 @@
+get:
+  tags:
+    - Add
+  summary: By iTunes ID
+  # language=Markdown
+  description: >
+    This call adds a podcast to the index using its iTunes ID. If a feed already exists, it will be noted in the response.
+
+
+    **NOTE**: this endpoint requires an API Key with the **write** permission.
+
+
+    Example: https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty
+  operationId: add/byitunesid:get
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/id_itunes_add.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/add_byitunesid.yaml'
+    '302':
+      $ref: '../../components/responses/add_byitunesid.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'
+post:
+  tags:
+    - Add
+  summary: By iTunes ID
+  # language=Markdown
+  description: >
+    This call adds a podcast to the index using its iTunes ID. If a feed already exists, it will be noted in the response.
+
+
+    **NOTE**: this endpoint requires an API Key with the **write** permission.
+
+
+    Example: https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty
+  operationId: add/byitunesid:post
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/id_itunes_add.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/add_byitunesid.yaml'
+    '302':
+      $ref: '../../components/responses/add_byitunesid.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

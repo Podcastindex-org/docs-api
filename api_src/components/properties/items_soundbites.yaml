@@ -1,0 +1,25 @@
+  # language=Markdown
+description: >
+  List of soundbites matching request
+type: array
+items:
+  type: object
+  properties:
+    enclosureUrl:
+      $ref: '../properties/enclosureUrl.yaml'
+    title:
+      $ref: '../properties/title_soundbite.yaml'
+    startTime:
+      $ref: '../properties/startTime.yaml'
+    duration:
+      $ref: '../properties/duration_soundbite.yaml'
+    episodeId:
+      $ref: '../properties/id_episode.yaml'
+    episodeTitle:
+      $ref: '../properties/title_episode.yaml'
+    feedTitle:
+      $ref: '../properties/title_feed.yaml'
+    feedUrl:
+      $ref: '../properties/url_feed.yaml'
+    feedId:
+      $ref: '../properties/id_feed.yaml'

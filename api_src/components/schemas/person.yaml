@@ -1,0 +1,12 @@
+type: object
+properties:
+  name:
+    $ref: '../properties/name_person.yaml'
+  role:
+    $ref: '../properties/role.yaml'
+  group:
+    $ref: '../properties/group.yaml'
+  href:
+    $ref: '../properties/href.yaml'
+  img:
+    $ref: '../properties/img.yaml'

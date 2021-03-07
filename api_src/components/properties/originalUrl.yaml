@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The URL of the feed, before it changed to the current `url` value.
+type: string
+format: URL
+example: "https://feeds.theincomparable.com/batmanuniversity"

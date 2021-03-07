@@ -1,0 +1,8 @@
+  # language=Markdown
+description: >
+  Indicates if feed already exists in the index
+type: string
+enum:
+  - "true"
+  - "false"
+example: "true"

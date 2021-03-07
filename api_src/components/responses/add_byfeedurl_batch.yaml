@@ -1,0 +1,15 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+#        feedId:
+#          $ref: '../properties/id_feed.yaml'
+#        existed:
+#          $ref: '../properties/existed.yaml'
+#        description:
+#          $ref: '../properties/description_response.yaml'
+# TODO: successful response format unknown

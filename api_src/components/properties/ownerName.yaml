@@ -1,0 +1,8 @@
+  # language=Markdown
+description: >
+  The channel-level owner:name element.
+
+
+  Usually iTunes specific, but could be from another namespace if not present.
+type: string
+example: "The Incomparable"

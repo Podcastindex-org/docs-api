@@ -1,0 +1,29 @@
+get:
+  tags:
+    - Search
+  summary: Search Episodes by Person
+  # language=Markdown
+  description: >
+    This call returns all of the episodes where the specified person is mentioned.
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/search/byperson?q=adam%20curry&pretty
+      - https://api.podcastindex.org/api/1.0/search/byperson?q=Martin+Mouritzen&pretty
+      - https://api.podcastindex.org/api/1.0/search/byperson?q=Klaus+Schwab&pretty
+  operationId: search/byperson
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/q_person.yaml'
+    - $ref: '../../components/parameters/fulltext.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/search_byperson.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

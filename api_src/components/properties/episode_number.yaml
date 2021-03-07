@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Episode number
+type: integer
+example: 19

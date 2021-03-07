@@ -1,0 +1,7 @@
+  # language=Markdown
+description: >
+  Object containing the input query data
+type: object
+properties:
+  url:
+    $ref: '../properties/url_query.yaml'

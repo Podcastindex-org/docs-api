@@ -1,0 +1,19 @@
+  # language=Markdown
+description: >
+  List of feeds matching request
+type: array
+items:
+  type: object
+  properties:
+    id:
+      $ref: '../properties/id_feed.yaml'
+    url:
+      $ref: '../properties/url_feed.yaml'
+    timeAdded:
+      $ref: '../properties/timeAdded.yaml'
+    status:
+      $ref: '../properties/status_feed.yaml'
+    contentHash:
+      $ref: '../properties/contentHash.yaml'
+    language:
+      $ref: '../properties/language.yaml'

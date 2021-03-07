@@ -1,0 +1,24 @@
+get:
+  tags:
+    - Podcasts
+  summary: By iTunes ID
+  # language=Markdown
+  description: >
+    This call returns everything we know about the feed from the iTunes ID
+
+
+    Example: https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632&pretty
+  operationId: podcasts/byitunesid
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/id_feed_podcast_itunes.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/podcasts_byitunesid.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

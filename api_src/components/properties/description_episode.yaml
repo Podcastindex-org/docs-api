@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  The item-level description of the episode
+type: string
+example: "Batman University is back in session! James Thomson and Nathan Alderman join Tony for a discussion of Fox\u2019s \u201cGotham.\u201d Tune in to hear our thoughts on how a half-baked comic book show was reborn into an unmissable train wreck."

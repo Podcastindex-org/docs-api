@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Recent
+  summary: Soundbites
+  # language=Markdown
+  description: >
+    This call returns the most recent `max` soundbites that the index has discovered.
+
+
+    A soundbite consists of an enclosure url, a start time and a duration.
+    It is documented in the [podcast namespace](https://podcastindex.org/namespace/1.0#soundbite).
+
+
+    Example: https://api.podcastindex.org/api/1.0/recent/soundbites?pretty
+  operationId: recent/soundbites
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/max_recent_soundbites.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/recent_soundbites.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

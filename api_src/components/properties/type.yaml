@@ -1,0 +1,11 @@
+  # language=Markdown
+description: >
+  Type of source feed where:
+
+    - 0: RSS
+    - 1: Atom
+type: integer
+enum:
+  - 0
+  - 1
+example: 0

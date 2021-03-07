@@ -1,0 +1,11 @@
+  # language=Markdown
+description: >
+  Description of the method for providing "Value for Value" payments
+type: object
+properties:
+  type:
+    $ref: '../properties/type_v4v.yaml'
+  method:
+    $ref: '../properties/method_v4v.yaml'
+  suggested:
+    $ref: '../properties/suggested_v4v.yaml'

@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Podcasts
+  summary: By Feed ID
+  # language=Markdown
+  description: >
+    This call returns everything we know about the feed from the PodcastIndex ID
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075&pretty
+      - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty
+  operationId: podcasts/byfeedid
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/id_feed_podcast_pi.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/podcasts_byfeedid.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

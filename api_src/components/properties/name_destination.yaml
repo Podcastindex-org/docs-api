@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Name for the destination
+type: string
+example: "podcaster"

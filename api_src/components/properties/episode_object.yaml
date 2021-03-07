@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  Episode data
+type: object
+properties:
+  $ref: '../schemas/item_podcast_byid.yaml'

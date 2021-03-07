@@ -1,0 +1,12 @@
+name: podcast-value
+in: query
+# language=Markdown
+description: >
+  Get feeds supporting the `value` tag.
+
+
+  Parameter shall not have a value
+schema:
+  type: boolean
+allowEmptyValue: true
+required: true

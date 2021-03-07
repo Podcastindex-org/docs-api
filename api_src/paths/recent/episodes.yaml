@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Recent
+  summary: Episodes
+  # language=Markdown
+  description: >
+    This call returns the most recent `max` number of episodes globally across the whole index,
+    in reverse chronological order.
+
+
+    Example: https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty
+  operationId: recent/episodes
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/max_recent_episodes.yaml'
+    - $ref: '../../components/parameters/excludeString.yaml'
+    - $ref: '../../components/parameters/before.yaml'
+    - $ref: '../../components/parameters/fulltext.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/recent_episodes.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

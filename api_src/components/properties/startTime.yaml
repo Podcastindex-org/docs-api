@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The time where the soundbite begins in the item specified by the `enclosureUrl`
+type: integer
+format: seconds
+example: 1123

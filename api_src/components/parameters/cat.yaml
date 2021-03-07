@@ -1,0 +1,39 @@
+name: cat
+in: query
+# language=Markdown
+description: >
+  Use this argument to specify that you **ONLY** want episodes with these categories in the results.
+
+
+  Separate multiple categories with commas.
+
+
+  You may specify either the Category ID and/or the Category Name.
+
+  
+  Values are not case sensitive.
+
+
+  The `cat` and `notcat` filters can be used together to fine tune a very specific result set.
+
+
+  Category numbers and names can be found in the
+  [Podcast Namespace documentation](https://github.com/Podcastindex-org/podcast-namespace/blob/main/categories.json)
+schema:
+  type: string
+examples:
+  single_name:
+    value: "News"
+    description: Single Category Name
+  single_id:
+    value: 65
+    description: Single Category ID
+  multiple_name:
+    value: "News,Religion"
+    description: Multiple Category Names
+  multiple_id_:
+    value: "55,65"
+    description: Multiple Category IDs
+  multiple_mixed:
+    value: "News,65"
+    description: Multiple Categories Mixed Format

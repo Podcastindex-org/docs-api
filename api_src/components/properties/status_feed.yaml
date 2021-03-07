@@ -1,0 +1,8 @@
+  # language=Markdown
+description: >
+  Status of feed after being added to index
+type: string
+enum:
+  - "unconfirmed"
+  - "confirmed"
+example: "confirmed"

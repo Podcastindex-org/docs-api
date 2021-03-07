@@ -1,0 +1,10 @@
+name: max
+in: query
+# language=Markdown
+description: >
+  Maximum number of results to return.
+schema:
+  type: integer
+  minimum: 1
+  maximum: 1000
+example: 10

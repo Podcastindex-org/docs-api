@@ -1,0 +1,12 @@
+  # language=Markdown
+description: >
+  The group the person's role is in.
+
+
+  Value should be an official group within the Podcast Taxonomy Project
+  [list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json).
+
+
+  See the [podcast namespace spec](https://podcastindex.org/namespace/1.0#person) for more information.
+type: string
+example: "Cast"

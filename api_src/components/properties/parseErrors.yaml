@@ -1,0 +1,10 @@
+  # language=Markdown
+description: >
+  The number of errors we’ve encountered trying to parse the feed content.
+  Errors here are things like not well-formed xml, bad character encoding, etc.
+
+
+  We fix many of these types of issues on the fly when parsing.
+  We only increment the errors count when we can’t fix it.
+type: integer
+example: 0

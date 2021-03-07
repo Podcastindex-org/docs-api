@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Value of `max` parameter passed to request.
+type: integer
+example: 2

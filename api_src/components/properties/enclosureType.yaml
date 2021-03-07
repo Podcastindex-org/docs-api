@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  The Content-Type for the item specified by the `enclosureUrl`
+type: string
+example: "audio/mp3"

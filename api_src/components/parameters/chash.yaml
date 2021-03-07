@@ -1,0 +1,23 @@
+name: chash
+in: query
+# language=Markdown
+description: >
+  The md5 hash of the following feed items in hex format.
+  If known, allows for easier duplicate checking.
+
+    - `title`
+    - `link`
+    - `feedLanguage`
+    - `generator`
+    - `author`
+    - `ownerName`
+    - `ownerEmail` (note: not exposed via the API)
+
+  Pseudo-code:
+
+        chash = md5(title+link+feedLanguage+generator+author+ownerName+ownerEmail)
+required: true
+allowReserved: true
+schema:
+  type: string
+example: "ad651c60eaaf3344595c0dd0bd787993"

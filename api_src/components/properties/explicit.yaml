@@ -1,0 +1,11 @@
+  # language=Markdown
+description: >
+  Is episode marked as explicit
+
+    - 0: not marked explicit
+    - 1: marked explicit
+type: integer
+enum:
+  - 0
+  - 1
+example: 0

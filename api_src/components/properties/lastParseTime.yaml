@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The last time we tried to parse the downloaded feed content.
+type: integer
+format: Unix Epoch
+example: 1613394045

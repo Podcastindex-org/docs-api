@@ -1,0 +1,31 @@
+get:
+  tags:
+    - Episodes
+  summary: By Feed URL
+  # language=Markdown
+  description: >
+    This call returns all the episodes we know about for this feed from the feed URL.
+    Episodes are in reverse chronological order.
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty
+      - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty
+  operationId: episodes/byfeedurl
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/url.yaml'
+    - $ref: '../../components/parameters/since.yaml'
+    - $ref: '../../components/parameters/max.yaml'
+    - $ref: '../../components/parameters/fulltext.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/episodes_byfeedurl.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

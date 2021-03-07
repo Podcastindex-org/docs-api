@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Episodes
+  summary: By iTunes ID
+  # language=Markdown
+  description: >
+    This call returns all the episodes we know about for this feed from the iTunes ID.
+    Episodes are in reverse chronological order.
+
+
+    Example: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty
+  operationId: episodes/byitunesid
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/id_feed_podcast_itunes.yaml'
+    - $ref: '../../components/parameters/since.yaml'
+    - $ref: '../../components/parameters/max.yaml'
+    - $ref: '../../components/parameters/fulltext.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/episodes_byitunesid.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

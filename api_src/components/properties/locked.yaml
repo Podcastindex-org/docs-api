@@ -1,0 +1,14 @@
+  # language=Markdown
+description: >
+  Tell other podcast platforms whether they are allowed to import this feed.
+  A value of 1 means that any attempt to import this feed into a new platform should be rejected.
+
+  Contains the value of the feed's channel-level `podcast:locked` tag where:
+
+    - 0: 'no'
+    - 1: 'yes'
+type: integer
+enum:
+  - 0
+  - 1
+example: 0

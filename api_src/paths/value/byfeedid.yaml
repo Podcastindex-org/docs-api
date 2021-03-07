@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Value
+  summary: By Feed ID
+  # language=Markdown
+  description: >
+    This call returns the information for supporting the podcast via one of the "Value for Value" methods from the
+    PodcastIndex ID.
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty
+      - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty
+  operationId: value/byfeedid
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/id_feed_episode_pi_single.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/value_byfeedid.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

@@ -1,0 +1,7 @@
+  # language=Markdown
+description: >
+  Type of destination
+type: string
+enum:
+  - "node"
+example: "node"
