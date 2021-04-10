@@ -193,24 +193,16 @@
         "allowEmptyValue": true,
         "required": true
       },
-      "id_feed_episode_pi": {
-        "name": "id",
+      "max": {
+        "name": "max",
         "in": "query",
-        "description": "The PodcastIndex Feed ID or IDs to search for.\n\nIf searching for multiple IDs, separate values with a comma. A maximum of 200 IDs can be provided.\n",
-        "required": true,
+        "description": "Maximum number of results to return.\n",
         "schema": {
-          "type": "string"
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
         },
-        "examples": {
-          "single": {
-            "value": 75075,
-            "description": "Single ID"
-          },
-          "multiple": {
-            "value": "41504,920666",
-            "description": "Multiple IDs"
-          }
-        }
+        "example": 10
       },
       "since": {
         "name": "since",
@@ -229,39 +221,6 @@
             "description": "Seconds from now"
           }
         }
-      },
-      "max": {
-        "name": "max",
-        "in": "query",
-        "description": "Maximum number of results to return.\n",
-        "schema": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 1000
-        },
-        "example": 10
-      },
-      "id_episode_pi": {
-        "name": "id",
-        "in": "query",
-        "description": "The PodcastIndex episode ID to search for.\n",
-        "required": true,
-        "schema": {
-          "type": "integer"
-        },
-        "example": 16795089
-      },
-      "max_random": {
-        "name": "max",
-        "in": "query",
-        "description": "Maximum number of results to return.\n",
-        "schema": {
-          "type": "integer",
-          "default": 1,
-          "minimum": 1,
-          "maximum": 1000
-        },
-        "example": 2
       },
       "lang": {
         "name": "lang",
@@ -340,6 +299,47 @@
             "description": "Multiple Categories Mixed Format"
           }
         }
+      },
+      "id_feed_episode_pi": {
+        "name": "id",
+        "in": "query",
+        "description": "The PodcastIndex Feed ID or IDs to search for.\n\nIf searching for multiple IDs, separate values with a comma. A maximum of 200 IDs can be provided.\n",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "examples": {
+          "single": {
+            "value": 75075,
+            "description": "Single ID"
+          },
+          "multiple": {
+            "value": "41504,920666",
+            "description": "Multiple IDs"
+          }
+        }
+      },
+      "id_episode_pi": {
+        "name": "id",
+        "in": "query",
+        "description": "The PodcastIndex episode ID to search for.\n",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "example": 16795089
+      },
+      "max_random": {
+        "name": "max",
+        "in": "query",
+        "description": "Maximum number of results to return.\n",
+        "schema": {
+          "type": "integer",
+          "default": 1,
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "example": 2
       },
       "max_recent_episodes": {
         "name": "max",
@@ -1320,6 +1320,70 @@
           "$ref": "#/components/schemas/feed_bytag"
         }
       },
+      "newestItemPublishedTime": {
+        "description": "The date and time the most recent episode in the feed was published\n",
+        "type": "integer",
+        "format": "Unix Epoch",
+        "example": 1546399813
+      },
+      "trendScore": {
+        "description": "The ranking for how the podcast is trending in the index\n",
+        "type": "integer",
+        "example": 1
+      },
+      "feed_trending": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/id_feed"
+          },
+          "url": {
+            "$ref": "#/components/schemas/url_feed"
+          },
+          "title": {
+            "$ref": "#/components/schemas/title_feed"
+          },
+          "author": {
+            "$ref": "#/components/schemas/author"
+          },
+          "image": {
+            "$ref": "#/components/schemas/image_feed"
+          },
+          "newestItemPublishedTime": {
+            "$ref": "#/components/schemas/newestItemPublishedTime"
+          },
+          "itunesId": {
+            "$ref": "#/components/schemas/itunesId_feed"
+          },
+          "trendScore": {
+            "$ref": "#/components/schemas/trendScore"
+          },
+          "language": {
+            "$ref": "#/components/schemas/language"
+          },
+          "categories": {
+            "$ref": "#/components/schemas/categories"
+          }
+        }
+      },
+      "feeds_trending": {
+        "description": "List of feeds matching request\n",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/feed_trending"
+        }
+      },
+      "max": {
+        "description": "Value of `max` parameter passed to request.\n",
+        "type": "integer",
+        "example": 2
+      },
+      "since": {
+        "description": "Value of `since` parameter passed to request.\n",
+        "type": "integer",
+        "format": "Unix Epoch",
+        "example": 1613805249
+      },
       "feed_dead": {
         "type": "object",
         "properties": {
@@ -1653,11 +1717,6 @@
           "$ref": "#/components/schemas/item_podcast_random"
         }
       },
-      "max": {
-        "description": "Value of `max` parameter passed to request.\n",
-        "type": "integer",
-        "example": 2
-      },
       "item_podcast_recent": {
         "type": "object",
         "properties": {
@@ -1733,12 +1792,6 @@
           "$ref": "#/components/schemas/item_podcast_recent"
         }
       },
-      "newestItemPublishedTime": {
-        "description": "The date and time the most recent episode in the feed was published\n",
-        "type": "integer",
-        "format": "Unix Epoch",
-        "example": 1546399813
-      },
       "feeds_recent": {
         "description": "List of feeds matching request\n",
         "type": "array",
@@ -1768,12 +1821,6 @@
             }
           }
         }
-      },
-      "since": {
-        "description": "Value of `since` parameter passed to request.\n",
-        "type": "integer",
-        "format": "Unix Epoch",
-        "example": 1613805249
       },
       "timeAdded": {
         "description": "The date and time the feed was added to the index\n",
@@ -2054,6 +2101,36 @@
                 },
                 "count": {
                   "$ref": "#/components/schemas/count"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "podcasts_trending": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "feeds": {
+                  "$ref": "#/components/schemas/feeds_trending"
+                },
+                "count": {
+                  "$ref": "#/components/schemas/count"
+                },
+                "max": {
+                  "$ref": "#/components/schemas/max"
+                },
+                "since": {
+                  "$ref": "#/components/schemas/since"
                 },
                 "description": {
                   "$ref": "#/components/schemas/description_response"
@@ -2671,6 +2748,52 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/podcasts_bytag"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/trending": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "Trending",
+        "description": "This call returns the podcasts/feeds that in the index that are trending.\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/trending?pretty\n",
+        "operationId": "podcasts/trending",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          },
+          {
+            "$ref": "#/components/parameters/cat"
+          },
+          {
+            "$ref": "#/components/parameters/notcat"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/podcasts_trending"
           },
           "401": {
             "$ref": "#/components/responses/401"

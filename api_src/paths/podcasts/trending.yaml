@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Podcasts
+  summary: Trending
+  # language=Markdown
+  description: >
+    This call returns the podcasts/feeds that in the index that are trending.
+
+
+    Example: https://api.podcastindex.org/api/1.0/podcasts/trending?pretty
+  operationId: podcasts/trending
+  security:
+    - API Key: []
+      User Agent: []
+      Date: []
+      Authorization: []
+  parameters:
+    - $ref: '../../components/parameters/max.yaml'
+    - $ref: '../../components/parameters/since.yaml'
+    - $ref: '../../components/parameters/lang.yaml'
+    - $ref: '../../components/parameters/cat.yaml'
+    - $ref: '../../components/parameters/notcat.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/podcasts_trending.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'
