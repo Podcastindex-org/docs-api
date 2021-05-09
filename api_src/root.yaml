@@ -52,6 +52,8 @@ info:
           - [podcastdx-client](https://www.npmjs.com/package/podcastdx-client)
       - Python/pip
           - [python-podcastindex](https://pypi.org/project/python-podcastindex/)
+      - .NET
+          - [PodcastIndexSharp](https://www.nuget.org/packages/PodcastIndexSharp)
 
     Are we missing a library? Did you create one for a different language? Create a
     [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to the new library!
