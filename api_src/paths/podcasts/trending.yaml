@@ -10,10 +10,7 @@ get:
     Example: https://api.podcastindex.org/api/1.0/podcasts/trending?pretty
   operationId: podcasts/trending
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/max.yaml'
     - $ref: '../../components/parameters/since.yaml'

@@ -13,10 +13,7 @@ get:
     Example: https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty
   operationId: add/byitunesid:get
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/id_itunes_add.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
@@ -42,10 +39,7 @@ post:
     Example: https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty
   operationId: add/byitunesid:post
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/id_itunes_add.yaml'
     - $ref: '../../components/parameters/pretty.yaml'

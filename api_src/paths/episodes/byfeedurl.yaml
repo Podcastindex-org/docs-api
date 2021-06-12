@@ -14,10 +14,7 @@ get:
       - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty
   operationId: episodes/byfeedurl
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/url.yaml'
     - $ref: '../../components/parameters/since.yaml'

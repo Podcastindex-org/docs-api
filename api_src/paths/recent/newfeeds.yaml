@@ -13,10 +13,7 @@ get:
       - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty&since=1613805000
   operationId: recent/newfeeds
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/max_recent_feeds.yaml'
     - $ref: '../../components/parameters/since.yaml'

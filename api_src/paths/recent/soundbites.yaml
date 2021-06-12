@@ -14,10 +14,7 @@ get:
     Example: https://api.podcastindex.org/api/1.0/recent/soundbites?pretty
   operationId: recent/soundbites
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/max_recent_soundbites.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
