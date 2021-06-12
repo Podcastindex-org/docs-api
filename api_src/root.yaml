@@ -112,6 +112,10 @@ tags:
     # language=Markdown
     description: >
       Statistics for items in the Podcast Index
+  - name: Categories
+    # language=Markdown
+    description: >
+      Categories used by the Podcast Index
   - name: Add
     # language=Markdown
     description: >
@@ -172,6 +176,8 @@ paths:
     $ref: 'paths/value/byfeedurl.yaml'
   '/stats/current':
     $ref: 'paths/stats/current.yaml'
+  '/categories/list':
+    $ref: 'paths/categories/list.yaml'
   '/add/byfeedurl':
     $ref: 'paths/add/byfeedurl.yaml'
   '/add/byitunesid':

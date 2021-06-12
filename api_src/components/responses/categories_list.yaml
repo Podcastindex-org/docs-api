@@ -1,0 +1,14 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        feeds:
+          $ref: '../properties/feeds_categories.yaml'
+        count:
+          $ref: '../properties/count.yaml'
+        description:
+          $ref: '../properties/description_response.yaml'

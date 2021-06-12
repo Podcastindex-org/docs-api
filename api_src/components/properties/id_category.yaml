@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  The internal PodcastIndex.org category ID.
+type: integer
+example: 2

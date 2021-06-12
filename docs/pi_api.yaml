@@ -113,6 +113,9 @@ tags:
   - name: Stats
     description: |
       Statistics for items in the Podcast Index
+  - name: Categories
+    description: |
+      Categories used by the Podcast Index
   - name: Add
     description: >
       Add new podcast feeds to the index.
@@ -745,8 +748,8 @@ components:
         is the Category Name.
 
 
-        Category numbers and names can be found in the [Podcast Namespace
-        documentation](https://github.com/Podcastindex-org/podcast-namespace/blob/main/categories.json)
+        All Category numbers and names are returned by the `categories/list`
+        endpoint.
       type: object
       example:
         '104': Tv
@@ -1849,6 +1852,29 @@ components:
           description: Podcast feeds with a new episode released in the last 90 days.
           type: integer
           example: 362248
+    id_category:
+      description: |
+        The internal PodcastIndex.org category ID.
+      type: integer
+      example: 2
+    name_category:
+      description: |
+        The category name.
+      type: string
+      example: Books
+    feed_categories:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id_category'
+        url:
+          $ref: '#/components/schemas/name_category'
+    feeds_categories:
+      description: |
+        List of categories
+      type: array
+      items:
+        $ref: '#/components/schemas/feed_categories'
     existed:
       description: |
         Indicates if feed already exists in the index
@@ -2182,6 +2208,21 @@ components:
                 $ref: '#/components/schemas/status'
               stats:
                 $ref: '#/components/schemas/stats'
+              description:
+                $ref: '#/components/schemas/description_response'
+    categories_list:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: '#/components/schemas/status'
+              feeds:
+                $ref: '#/components/schemas/feeds_categories'
+              count:
+                $ref: '#/components/schemas/count'
               description:
                 $ref: '#/components/schemas/description_response'
     add_byfeedurl:
@@ -2948,6 +2989,28 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/stats_current'
+        '401':
+          $ref: '#/components/responses/401'
+  /categories/list:
+    get:
+      tags:
+        - Categories
+      summary: List
+      description: |
+        Return all the possible categories supported by the index.
+
+        Example: https://api.podcastindex.org/api/1.0/categories/list?pretty
+      operationId: categories/list
+      security:
+        - API Key: []
+          User Agent: []
+          Date: []
+          Authorization: []
+      parameters:
+        - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          $ref: '#/components/responses/categories_list'
         '401':
           $ref: '#/components/responses/401'
   /add/byfeedurl:

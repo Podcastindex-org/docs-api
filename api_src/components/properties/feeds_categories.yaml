@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  List of categories
+type: array
+items:
+  $ref: '../schemas/feed_categories.yaml'

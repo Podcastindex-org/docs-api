@@ -1,0 +1,6 @@
+type: object
+properties:
+  id:
+    $ref: '../properties/id_category.yaml'
+  url:
+    $ref: '../properties/name_category.yaml'
