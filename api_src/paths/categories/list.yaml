@@ -1,0 +1,20 @@
+get:
+  tags:
+    - Categories
+  summary: List
+  # language=Markdown
+  description: >
+    Return all the possible categories supported by the index.
+
+
+    Example: https://api.podcastindex.org/api/1.0/categories/list?pretty
+  operationId: categories/list
+  security:
+    - $ref: '../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/categories_list.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

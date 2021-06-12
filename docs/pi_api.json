@@ -44,6 +44,10 @@
       "description": "Statistics for items in the Podcast Index\n"
     },
     {
+      "name": "Categories",
+      "description": "Categories used by the Podcast Index\n"
+    },
+    {
       "name": "Add",
       "description": "Add new podcast feeds to the index.\n\n**NOTE**: To add to the index, the API Key must have write or publisher permissions.\n"
     }
@@ -574,7 +578,7 @@
         "example": 0
       },
       "categories": {
-        "description": "An array of categories, where the index is the Category ID and the value is the Category Name.\n\nCategory numbers and names can be found in the [Podcast Namespace documentation](https://github.com/Podcastindex-org/podcast-namespace/blob/main/categories.json)\n",
+        "description": "An array of categories, where the index is the Category ID and the value is the Category Name.\n\nAll Category numbers and names are returned by the `categories/list` endpoint.\n",
         "type": "object",
         "example": {
           "104": "Tv",
@@ -1946,6 +1950,34 @@
           }
         }
       },
+      "id_category": {
+        "description": "The internal PodcastIndex.org category ID.\n",
+        "type": "integer",
+        "example": 2
+      },
+      "name_category": {
+        "description": "The category name.\n",
+        "type": "string",
+        "example": "Books"
+      },
+      "feed_categories": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/id_category"
+          },
+          "url": {
+            "$ref": "#/components/schemas/name_category"
+          }
+        }
+      },
+      "feeds_categories": {
+        "description": "List of categories\n",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/feed_categories"
+        }
+      },
       "existed": {
         "description": "Indicates if feed already exists in the index\n",
         "type": "string",
@@ -2471,6 +2503,30 @@
                 },
                 "stats": {
                   "$ref": "#/components/schemas/stats"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "categories_list": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "feeds": {
+                  "$ref": "#/components/schemas/feeds_categories"
+                },
+                "count": {
+                  "$ref": "#/components/schemas/count"
                 },
                 "description": {
                   "$ref": "#/components/schemas/description_response"
@@ -3296,6 +3352,37 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/stats_current"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/categories/list": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "List",
+        "description": "Return all the possible categories supported by the index.\n\nExample: https://api.podcastindex.org/api/1.0/categories/list?pretty\n",
+        "operationId": "categories/list",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/categories_list"
           },
           "401": {
             "$ref": "#/components/responses/401"
