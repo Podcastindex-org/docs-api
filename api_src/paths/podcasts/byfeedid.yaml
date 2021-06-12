@@ -13,10 +13,7 @@ get:
       - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty
   operationId: podcasts/byfeedid
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/id_feed_podcast_pi.yaml'
     - $ref: '../../components/parameters/pretty.yaml'

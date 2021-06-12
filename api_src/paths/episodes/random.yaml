@@ -13,10 +13,7 @@ get:
       - https://api.podcastindex.org/api/1.0/episodes/random?max=2&pretty
   operationId: episodes/random
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/max_random.yaml'
     - $ref: '../../components/parameters/lang.yaml'

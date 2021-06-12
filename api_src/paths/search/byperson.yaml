@@ -14,10 +14,7 @@ get:
       - https://api.podcastindex.org/api/1.0/search/byperson?q=Klaus+Schwab&pretty
   operationId: search/byperson
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/q_person.yaml'
     - $ref: '../../components/parameters/fulltext.yaml'

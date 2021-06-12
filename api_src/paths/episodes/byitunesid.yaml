@@ -11,10 +11,7 @@ get:
     Example: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty
   operationId: episodes/byitunesid
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/id_feed_podcast_itunes.yaml'
     - $ref: '../../components/parameters/since.yaml'

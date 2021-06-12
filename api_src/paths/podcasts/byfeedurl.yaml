@@ -13,10 +13,7 @@ get:
       - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty
   operationId: podcasts/byfeedurl
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/url.yaml'
     - $ref: '../../components/parameters/pretty.yaml'

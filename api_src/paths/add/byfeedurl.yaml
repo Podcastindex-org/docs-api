@@ -13,10 +13,7 @@ get:
     Example: https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty
   operationId: add/byfeedurl:get
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/url.yaml'
     - $ref: '../../components/parameters/chash.yaml'
@@ -44,10 +41,7 @@ post:
     Example: https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty
   operationId: add/byfeedurl:post
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/url.yaml'
     - $ref: '../../components/parameters/itunesid.yaml'

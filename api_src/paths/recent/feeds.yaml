@@ -13,10 +13,7 @@ get:
       - https://api.podcastindex.org/api/1.0/recent/feeds?max=20&cat=102,health&lang=de,ja&pretty
   operationId: recent/feeds
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/max_recent_feeds.yaml'
     - $ref: '../../components/parameters/since.yaml'

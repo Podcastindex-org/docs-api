@@ -11,10 +11,7 @@ get:
     Example: https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty
   operationId: recent/episodes
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/max_recent_episodes.yaml'
     - $ref: '../../components/parameters/excludeString.yaml'

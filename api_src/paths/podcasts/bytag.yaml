@@ -11,10 +11,7 @@ get:
     Example: https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&pretty
   operationId: podcasts/bytag
   security:
-    - API Key: []
-      User Agent: []
-      Date: []
-      Authorization: []
+    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/podcast-value.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
