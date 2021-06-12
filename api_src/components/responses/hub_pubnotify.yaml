@@ -1,0 +1,10 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        description:
+          $ref: '../properties/description_response.yaml'

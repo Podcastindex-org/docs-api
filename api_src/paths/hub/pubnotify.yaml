@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Hub
+  summary: Pub Notify
+  # language=Markdown
+  description: >
+    Notify the index that a feed has changed
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty
+      - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&update&pretty
+  operationId: hub/pubnotify
+  security:
+    - $ref: '../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../components/parameters/id_feed_podcast_pi.yaml'
+    - $ref: '../../components/parameters/update.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/hub_pubnotify.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

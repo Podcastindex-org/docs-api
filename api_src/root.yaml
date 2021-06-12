@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  version: 1.4.0
+  version: 1.5.0
   title: PodcastIndex.org API
   termsOfService: 'https://api.podcastindex.org/tos_v1.0.html'
   contact:
@@ -116,6 +116,10 @@ tags:
     # language=Markdown
     description: >
       Categories used by the Podcast Index
+  - name: Hub
+    # language=Markdown
+    description: >
+      Notify the index that a feed has changed
   - name: Add
     # language=Markdown
     description: >
@@ -178,6 +182,8 @@ paths:
     $ref: 'paths/stats/current.yaml'
   '/categories/list':
     $ref: 'paths/categories/list.yaml'
+  '/hub/pubnotify':
+    $ref: 'paths/hub/pubnotify.yaml'
   '/add/byfeedurl':
     $ref: 'paths/add/byfeedurl.yaml'
   '/add/byitunesid':

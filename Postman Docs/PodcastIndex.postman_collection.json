@@ -120,7 +120,7 @@
 								{
 									"key": "id",
 									"value": "75075",
-									"description": "(Required) The PodcastIndex Feed ID to search for\n"
+									"description": "(Required) The PodcastIndex Feed ID\n"
 								},
 								{
 									"key": "pretty",
@@ -820,6 +820,113 @@
 			]
 		},
 		{
+			"name": "stats",
+			"item": [
+				{
+					"name": "Current",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/stats/current",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"stats",
+								"current"
+							],
+							"query": [
+								{
+									"key": "pretty",
+									"value": "true",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Return the most recent index statistics.\n\nExample: https://api.podcastindex.org/api/1.0/stats/current?pretty\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categories/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"list"
+							],
+							"query": [
+								{
+									"key": "pretty",
+									"value": "true",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Return all the possible categories supported by the index.\n\nExample: https://api.podcastindex.org/api/1.0/categories/list?pretty\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hub",
+			"item": [
+				{
+					"name": "Pub Notify",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/hub/pubnotify",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hub",
+								"pubnotify"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "75075",
+									"description": "(Required) The PodcastIndex Feed ID\n"
+								},
+								{
+									"key": "update",
+									"value": "true",
+									"description": "If present, tells the index to re-parse the feed.\n\nParameter shall not have a value\n",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": "true",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Notify the index that a feed has changed\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&update&pretty\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "add",
 			"item": [
 				{
@@ -977,70 +1084,6 @@
 							"response": []
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "stats",
-			"item": [
-				{
-					"name": "Current",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/stats/current",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"stats",
-								"current"
-							],
-							"query": [
-								{
-									"key": "pretty",
-									"value": "true",
-									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Return the most recent index statistics.\n\nExample: https://api.podcastindex.org/api/1.0/stats/current?pretty\n"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "categories",
-			"item": [
-				{
-					"name": "List",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/categories/list",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"categories",
-								"list"
-							],
-							"query": [
-								{
-									"key": "pretty",
-									"value": "true",
-									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Return all the possible categories supported by the index.\n\nExample: https://api.podcastindex.org/api/1.0/categories/list?pretty\n"
-					},
-					"response": []
 				}
 			]
 		}

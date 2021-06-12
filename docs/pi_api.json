@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "version": "1.4.0",
+    "version": "1.5.0",
     "title": "PodcastIndex.org API",
     "termsOfService": "https://api.podcastindex.org/tos_v1.0.html",
     "contact": {
@@ -46,6 +46,10 @@
     {
       "name": "Categories",
       "description": "Categories used by the Podcast Index\n"
+    },
+    {
+      "name": "Hub",
+      "description": "Notify the index that a feed has changed\n"
     },
     {
       "name": "Add",
@@ -150,7 +154,7 @@
       "id_feed_podcast_pi": {
         "name": "id",
         "in": "query",
-        "description": "The PodcastIndex Feed ID to search for\n",
+        "description": "The PodcastIndex Feed ID\n",
         "required": true,
         "schema": {
           "type": "integer"
@@ -408,6 +412,15 @@
           "type": "integer"
         },
         "example": 75075
+      },
+      "update": {
+        "name": "update",
+        "in": "query",
+        "description": "If present, tells the index to re-parse the feed.\n\nParameter shall not have a value\n",
+        "schema": {
+          "type": "boolean"
+        },
+        "allowEmptyValue": true
       },
       "chash": {
         "name": "chash",
@@ -1990,7 +2003,15 @@
     },
     "responses": {
       "401": {
-        "description": "Not authenticated"
+        "description": "Not authenticated",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "string"
+            },
+            "example": "Authorization header value either not set or blank."
+          }
+        }
       },
       "search_byterm": {
         "description": "Success",
@@ -2527,6 +2548,24 @@
                 },
                 "count": {
                   "$ref": "#/components/schemas/count"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "hub_pubnotify": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
                 },
                 "description": {
                   "$ref": "#/components/schemas/description_response"
@@ -3383,6 +3422,43 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/categories_list"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/hub/pubnotify": {
+      "get": {
+        "tags": [
+          "Hub"
+        ],
+        "summary": "Pub Notify",
+        "description": "Notify the index that a feed has changed\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&update&pretty\n",
+        "operationId": "hub/pubnotify",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_feed_podcast_pi"
+          },
+          {
+            "$ref": "#/components/parameters/update"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/hub_pubnotify"
           },
           "401": {
             "$ref": "#/components/responses/401"
