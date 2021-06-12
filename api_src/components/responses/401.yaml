@@ -1,1 +1,6 @@
 description: Not authenticated
+content:
+  application/json:
+    schema:
+      type: string
+    example: "Authorization header value either not set or blank."
