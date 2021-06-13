@@ -1,0 +1,46 @@
+.home-logo {
+    display: block;
+}
+
+.pi-button {
+    cursor: pointer;
+}
+
+.theme-toggle {
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+
+    background-color: #bbb;
+    mask-position: center;
+    -webkit-mask-position: center;
+    background-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.theme-toggle[data-theme=light] {
+    mask-image: url("dark_mode.svg");
+    -webkit-mask-image: url("dark_mode.svg");
+}
+
+.theme-toggle[data-theme=dark] {
+    mask-image: url("light_mode.svg");
+    -webkit-mask-image: url("light_mode.svg");
+}
+
+.pi-footer {
+    border-top: 1px solid #424242;
+    text-align: center;
+    padding: 4px;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .home-logo {
+        display: none;
+    }
+}
