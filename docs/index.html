@@ -1,28 +1,24 @@
-<!doctype html> <!-- Important: must specify -->
+<!doctype html>
 <html>
     <head>
         <meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 characters -->
         <title>API Docs | PodcastIndex.org</title>
         <link rel="icon" type="image/png" href="favicon.svg">
-        <!-- can use CDN version: https://unpkg.com/rapidoc/dist/rapidoc-min.js-->
+        <!-- can use CDN version: https://unpkg.com/rapidoc/dist/rapidoc-min.js -->
         <script src="rapidoc-min.js"></script>
-        <style>
-            #custom-header {
-                display: block;
-            }
-            @media only screen and (min-width: 768px) {
-                #custom-header {
-                    display: none;
-                }
-            }
-        </style>
+        <script src="scripts.js"></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
     <!--Additional configuration options: https://mrin9.github.io/RapiDoc/api.html -->
+    <!--suppress HtmlUnknownTag -->
     <rapi-doc
         id="doc-root"
+
         spec-url="pi_api.json"
+
         render-style="read"
+
         schema-description-expanded="true"
         allow-spec-url-load="false"
         allow-spec-file-load="false"
@@ -31,13 +27,31 @@
         schema-expand-level="2"
         schema-description-expanded="true"
         info-description-headings-in-navbar="true"
-        primary-color = "#e90000"
+        nav-item-spacing="compact"
+
+        theme="light"
+        primary-color="#e90000"
+        header-color="#444444"
+        nav-bg-color="#4b4b4b"
     >
         <div slot="logo">
+            <!--suppress HtmlUnknownAnchorTarget -->
             <a href="#overview"><img src="logo.svg" alt="Logo"/></a>
         </div>
-        <div slot="header" id="custom-header">
-            <a href="#overview"><img src="logo.svg" alt="Logo"/></a>
+        <div slot="header" class="pi-header">
+            <!--suppress HtmlUnknownAnchorTarget -->
+            <a href="#overview" class="home-logo"><img src="logo.svg" alt="Logo"/></a>
+            <span
+                class="theme-toggle pi-button"
+                data-theme="light"
+                onclick="toggleTheme()"
+            ></span>
+        </div>
+        <div slot="footer" class="pi-footer">
+            <span
+                class="pi-button"
+                onclick="revertSettings()"
+            >Revert Settings</span>
         </div>
     </rapi-doc>
     <noscript>
