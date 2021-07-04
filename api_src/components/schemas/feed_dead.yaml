@@ -2,5 +2,7 @@ type: object
 properties:
   id:
     $ref: '../properties/id_feed.yaml'
+  title:
+    $ref: '../properties/title_feed.yaml'
   url:
     $ref: '../properties/url_feed.yaml'
