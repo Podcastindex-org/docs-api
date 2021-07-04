@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "version": "1.5.0",
+    "version": "1.6.0",
     "title": "PodcastIndex.org API",
     "termsOfService": "https://api.podcastindex.org/tos_v1.0.html",
     "contact": {
@@ -190,6 +190,16 @@
             "description": "iTunes ID with optional \"id\" prefix"
           }
         }
+      },
+      "guid_feed_podcast": {
+        "name": "guid",
+        "in": "query",
+        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
       },
       "podcast-value": {
         "name": "podcast-value",
@@ -916,6 +926,11 @@
           }
         }
       },
+      "podcastGuid": {
+        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+        "type": "string",
+        "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
+      },
       "chash": {
         "description": "The md5 hash of the following feed items in hex format.\n\n  - `title`\n  - `link`\n  - `feedLanguage`\n  - `generator`\n  - `author`\n  - `ownerName`\n  - `ownerEmail` (note: not exposed via the API)\n\nPseudo-code:\n\n      chash = md5(title+link+feedLanguage+generator+author+ownerName+ownerEmail)\n",
         "type": "string",
@@ -1058,6 +1073,9 @@
         "properties": {
           "id": {
             "$ref": "#/components/schemas/id_feed"
+          },
+          "podcastGuid": {
+            "$ref": "#/components/schemas/podcastGuid"
           },
           "title": {
             "$ref": "#/components/schemas/title_feed"
@@ -1238,6 +1256,31 @@
           },
           "locked": {
             "$ref": "#/components/schemas/locked"
+          },
+          "funding": {
+            "$ref": "#/components/schemas/funding"
+          }
+        }
+      },
+      "podcastGuid_query": {
+        "description": "Value passed to request in the `guid` field\n\nThe GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast. See the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+        "type": "string",
+        "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
+      },
+      "id_guid_query": {
+        "description": "The Podcast Index feed ID for the feed specified by the `guid` field passed to the request\n",
+        "type": "string",
+        "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
+      },
+      "query_guid": {
+        "description": "Object containing the input query data\n",
+        "type": "object",
+        "properties": {
+          "guid": {
+            "$ref": "#/components/schemas/podcastGuid_query"
+          },
+          "id": {
+            "$ref": "#/components/schemas/id_guid_query"
           }
         }
       },
@@ -1360,6 +1403,9 @@
           "title": {
             "$ref": "#/components/schemas/title_feed"
           },
+          "description": {
+            "$ref": "#/components/schemas/description_feed"
+          },
           "author": {
             "$ref": "#/components/schemas/author"
           },
@@ -1406,6 +1452,9 @@
         "properties": {
           "id": {
             "$ref": "#/components/schemas/id_feed"
+          },
+          "title": {
+            "$ref": "#/components/schemas/title_feed"
           },
           "url": {
             "$ref": "#/components/schemas/url_feed"
@@ -1809,6 +1858,12 @@
           "$ref": "#/components/schemas/item_podcast_recent"
         }
       },
+      "oldestItemPublishTime": {
+        "description": "The date and time the oldest episode in the feed/index\n",
+        "type": "integer",
+        "format": "Unix Epoch",
+        "example": 1546399813
+      },
       "feeds_recent": {
         "description": "List of feeds matching request\n",
         "type": "array",
@@ -1826,6 +1881,9 @@
             },
             "newestItemPublishedTime": {
               "$ref": "#/components/schemas/newestItemPublishedTime"
+            },
+            "oldestItemPublishTime": {
+              "$ref": "#/components/schemas/oldestItemPublishTime"
             },
             "itunesId": {
               "$ref": "#/components/schemas/itunesId_feed"
@@ -1870,6 +1928,9 @@
             },
             "url": {
               "$ref": "#/components/schemas/url_feed"
+            },
+            "image": {
+              "$ref": "#/components/schemas/image_feed"
             },
             "timeAdded": {
               "$ref": "#/components/schemas/timeAdded"
@@ -2002,6 +2063,28 @@
       }
     },
     "responses": {
+      "400": {
+        "description": "Invalid request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            },
+            "example": {
+              "status": false,
+              "description": "Invalid parameters"
+            }
+          }
+        }
+      },
       "401": {
         "description": "Not authenticated",
         "content": {
@@ -2130,6 +2213,30 @@
                 },
                 "feed": {
                   "$ref": "#/components/schemas/feed_itunes"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "podcasts_byguid": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "query": {
+                  "$ref": "#/components/schemas/query_guid"
+                },
+                "feed": {
+                  "$ref": "#/components/schemas/feed_podcast"
                 },
                 "description": {
                   "$ref": "#/components/schemas/description_response"
@@ -2657,6 +2764,9 @@
           "200": {
             "$ref": "#/components/responses/search_byterm"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -2708,6 +2818,9 @@
           "200": {
             "$ref": "#/components/responses/search_byperson"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -2741,6 +2854,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/podcasts_byfeedid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -2776,6 +2892,9 @@
           "200": {
             "$ref": "#/components/responses/podcasts_byfeedurl"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -2810,6 +2929,46 @@
           "200": {
             "$ref": "#/components/responses/podcasts_byitunesid"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/byguid": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "By GUID",
+        "description": "This call returns everything we know about the feed from the feed's GUID.\n\nThe GUID is a unique, global identifier for the podcast. See the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byguid?guid=9b024349-ccf0-5f69-a609-6b82873eab3c&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byguid?guid=9b024349-ccf0-5f69-a609-6b82873eab3c&pretty\n",
+        "operationId": "podcasts/byguid",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/guid_feed_podcast"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/podcasts_byguid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -2843,6 +3002,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/podcasts_bytag"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -2890,6 +3052,9 @@
           "200": {
             "$ref": "#/components/responses/podcasts_trending"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -2920,6 +3085,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/podcasts_dead"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -2964,6 +3132,9 @@
           "200": {
             "$ref": "#/components/responses/episodes_byfeedid"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3006,6 +3177,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/episodes_byfeedurl"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -3050,6 +3224,9 @@
           "200": {
             "$ref": "#/components/responses/episodes_byitunesid"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3086,6 +3263,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/episodes_byid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -3133,6 +3313,9 @@
           "200": {
             "$ref": "#/components/responses/episodes_random"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3175,6 +3358,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/recent_episodes"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -3222,6 +3408,9 @@
           "200": {
             "$ref": "#/components/responses/recent_feeds"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3259,6 +3448,9 @@
           "200": {
             "$ref": "#/components/responses/recent_newfeeds"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3292,6 +3484,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/recent_soundbites"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -3327,6 +3522,9 @@
           "200": {
             "$ref": "#/components/responses/value_byfeedid"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3361,6 +3559,9 @@
           "200": {
             "$ref": "#/components/responses/value_byfeedurl"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3392,6 +3593,9 @@
           "200": {
             "$ref": "#/components/responses/stats_current"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3422,6 +3626,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/categories_list"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -3459,6 +3666,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/hub_pubnotify"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -3503,6 +3713,9 @@
           "302": {
             "$ref": "#/components/responses/add_byfeedurl"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3541,6 +3754,9 @@
           "302": {
             "$ref": "#/components/responses/add_byfeedurl"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3578,6 +3794,9 @@
           "302": {
             "$ref": "#/components/responses/add_byitunesid"
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "401": {
             "$ref": "#/components/responses/401"
           }
@@ -3612,6 +3831,9 @@
           },
           "302": {
             "$ref": "#/components/responses/add_byitunesid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
