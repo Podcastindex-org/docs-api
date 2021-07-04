@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  The Podcast Index feed ID for the feed specified by the `guid` field passed to the request
+type: string
+example: "9b024349-ccf0-5f69-a609-6b82873eab3c"
