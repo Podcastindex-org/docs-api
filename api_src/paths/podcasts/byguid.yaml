@@ -1,0 +1,30 @@
+get:
+  tags:
+    - Podcasts
+  summary: By GUID
+  # language=Markdown
+  description: >
+    This call returns everything we know about the feed from the feed's GUID.
+
+
+    The GUID is a unique, global identifier for the podcast. See the namespace spec for
+    [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/podcasts/byguid?guid=9b024349-ccf0-5f69-a609-6b82873eab3c&pretty
+      - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byguid?guid=9b024349-ccf0-5f69-a609-6b82873eab3c&pretty
+  operationId: podcasts/byguid
+  security:
+    - $ref: '../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../components/parameters/guid_feed_podcast.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/podcasts_byguid.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

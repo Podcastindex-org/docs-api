@@ -150,6 +150,8 @@ paths:
     $ref: 'paths/podcasts/byfeedurl.yaml'
   '/podcasts/byitunesid':
     $ref: 'paths/podcasts/byitunesid.yaml'
+  '/podcasts/byguid':
+    $ref: 'paths/podcasts/byguid.yaml'
   '/podcasts/bytag':
     $ref: 'paths/podcasts/bytag.yaml'
   '/podcasts/trending':
