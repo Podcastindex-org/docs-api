@@ -1,0 +1,13 @@
+description: Invalid request
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        description:
+          $ref: '../properties/description_response.yaml'
+    example:
+      status: false
+      description: "Invalid parameters"

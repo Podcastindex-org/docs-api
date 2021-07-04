@@ -16,5 +16,7 @@ get:
   responses:
     '200':
       $ref: '../../components/responses/stats_current.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
     '401':
       $ref: '../../components/responses/401.yaml'
