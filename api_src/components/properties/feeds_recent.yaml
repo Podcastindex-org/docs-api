@@ -13,6 +13,8 @@ items:
       $ref: '../properties/title_feed.yaml'
     newestItemPublishedTime:
       $ref: '../properties/newestItemPublishedTime.yaml'
+    oldestItemPublishTime:
+      $ref: '../properties/oldestItemPublishTime.yaml'
     itunesId:
       $ref: '../properties/itunesId_feed.yaml'
     language:

@@ -9,6 +9,8 @@ items:
       $ref: '../properties/id_feed.yaml'
     url:
       $ref: '../properties/url_feed.yaml'
+    image:
+      $ref: '../properties/image_feed.yaml'
     timeAdded:
       $ref: '../properties/timeAdded.yaml'
     status:

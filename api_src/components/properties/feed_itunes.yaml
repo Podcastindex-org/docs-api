@@ -51,3 +51,5 @@ properties:
     $ref: '../properties/parseErrors.yaml'
   locked:
     $ref: '../properties/locked.yaml'
+  funding:
+    $ref: '../properties/funding.yaml'
