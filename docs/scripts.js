@@ -38,6 +38,11 @@ const toTitleCase = (value) => {
  * @param theme {"dark" | "light"} Theme name
  */
 const setTheme = (theme) => {
+    let textColor = "#444" // "#00FF00"
+    if (theme === "dark"){
+        textColor = "#F9F9F9" // "#0000FF"
+    }
+    rapiDocRoot.setAttribute("text-color", textColor)
     rapiDocRoot.setAttribute("theme", theme)
 
     const toggle = document.querySelector('.theme-toggle')
@@ -125,7 +130,7 @@ const loaded = () => {
         ::placeholder {
             color: #ccc !important
         }
-
+        
         /*noinspection CssUnusedSymbol*/
         .nav-bar-tag {
             background: #444 !important
