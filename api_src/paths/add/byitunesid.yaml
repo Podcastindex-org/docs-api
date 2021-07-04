@@ -22,6 +22,8 @@ get:
       $ref: '../../components/responses/add_byitunesid.yaml'
     '302':
       $ref: '../../components/responses/add_byitunesid.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
     '401':
       $ref: '../../components/responses/401.yaml'
 post:
@@ -48,5 +50,7 @@ post:
       $ref: '../../components/responses/add_byitunesid.yaml'
     '302':
       $ref: '../../components/responses/add_byitunesid.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
     '401':
       $ref: '../../components/responses/401.yaml'
