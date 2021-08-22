@@ -130,7 +130,7 @@
 								}
 							]
 						},
-						"description": "This call returns everything we know about the feed from the PodcastIndex ID\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n"
+						"description": "This call returns everything we know about the feed from the PodcastIndex ID\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=4058673&pretty\n"
 					},
 					"response": []
 				},
@@ -162,7 +162,7 @@
 								}
 							]
 						},
-						"description": "This call returns everything we know about the feed from the feed URL\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty\n"
+						"description": "This call returns everything we know about the feed from the feed URL\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://closing-the-loop.github.io/feed.xml&pretty\n"
 					},
 					"response": []
 				},
