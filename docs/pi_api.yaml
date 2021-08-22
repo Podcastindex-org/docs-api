@@ -1620,6 +1620,8 @@ components:
           $ref: '#/components/schemas/soundbite'
         soundbites:
           $ref: '#/components/schemas/soundbites'
+        value:
+          $ref: '#/components/schemas/value'
     items_podcast:
       description: |
         List of episodes matching request
@@ -2840,6 +2842,7 @@ paths:
           - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty
           - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&pretty
           - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=169991&pretty
+          - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=4058673&pretty
       operationId: episodes/byfeedid
       security:
         - API Key: []
@@ -2873,6 +2876,7 @@ paths:
 
           - https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty
           - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty
+          - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://closing-the-loop.github.io/feed.xml&pretty
       operationId: episodes/byfeedurl
       security:
         - API Key: []

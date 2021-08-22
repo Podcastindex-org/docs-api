@@ -50,3 +50,5 @@ properties:
     $ref: '../properties/soundbite.yaml'
   soundbites:
     $ref: '../properties/soundbites.yaml'
+  value:
+    $ref: '../properties/value.yaml'
