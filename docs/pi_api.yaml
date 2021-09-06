@@ -1952,7 +1952,7 @@ components:
       properties:
         id:
           $ref: '#/components/schemas/id_category'
-        url:
+        name:
           $ref: '#/components/schemas/name_category'
     feeds_categories:
       description: |

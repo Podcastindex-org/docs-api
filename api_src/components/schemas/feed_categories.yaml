@@ -2,5 +2,5 @@ type: object
 properties:
   id:
     $ref: '../properties/id_category.yaml'
-  url:
+  name:
     $ref: '../properties/name_category.yaml'
