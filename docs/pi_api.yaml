@@ -151,11 +151,15 @@ components:
       in: header
       name: X-Auth-Date
       description: >
-        The current unix epoch time as a string. 5 minute window.
+        The current UTC unix epoch time as a string. 5 minute window.
 
 
         This value is an integer; round down if needed. The value shall not
         include a decimal point.
+
+
+        Value generated should match the value shown on the website
+        https://www.epochconverter.com/.
 
 
         *Example*: `1613713388`
