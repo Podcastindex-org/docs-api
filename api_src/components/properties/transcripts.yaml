@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  List of transcripts for the episode.
+type: array
+items:
+  $ref: '../schemas/transcript.yaml'

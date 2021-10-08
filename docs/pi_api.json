@@ -819,11 +819,29 @@
         "format": "URL",
         "example": "https://studio.hypercatcher.com/chapters/podcast/http:feed.nashownotes.comrss.xml/episode/http:1322.noagendanotes.com"
       },
-      "transcriptUrl": {
-        "description": "Link to the file containing the episode transcript\n",
-        "type": "string",
-        "format": "URL",
-        "example": "https://mp3s.nashownotes.com/NA-1322-Captions.srt"
+      "transcript": {
+        "description": "A transcript object included in the `transcripts` array.\n",
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "required": true,
+            "format": "URL",
+            "example": "https://mp3s.nashownotes.com/NA-1385-Captions.srt"
+          },
+          "type": {
+            "type": "string",
+            "required": true,
+            "example": "application/srt"
+          }
+        }
+      },
+      "transcripts": {
+        "description": "List of transcripts for the episode.\n",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/transcript"
+        }
       },
       "item_search_byperson": {
         "type": "object",
@@ -900,8 +918,8 @@
           "chaptersUrl": {
             "$ref": "#/components/schemas/chaptersUrl"
           },
-          "transcriptUrl": {
-            "$ref": "#/components/schemas/transcriptUrl"
+          "transcripts": {
+            "$ref": "#/components/schemas/transcripts"
           }
         }
       },
@@ -1581,8 +1599,8 @@
           "chaptersUrl": {
             "$ref": "#/components/schemas/chaptersUrl"
           },
-          "transcriptUrl": {
-            "$ref": "#/components/schemas/transcriptUrl"
+          "transcripts": {
+            "$ref": "#/components/schemas/transcripts"
           },
           "soundbite": {
             "$ref": "#/components/schemas/soundbite"
@@ -1694,8 +1712,8 @@
           "chaptersUrl": {
             "$ref": "#/components/schemas/chaptersUrl"
           },
-          "transcriptUrl": {
-            "$ref": "#/components/schemas/transcriptUrl"
+          "transcripts": {
+            "$ref": "#/components/schemas/transcripts"
           },
           "soundbite": {
             "$ref": "#/components/schemas/soundbite"

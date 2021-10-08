@@ -994,12 +994,26 @@ components:
       format: URL
       example: >-
         https://studio.hypercatcher.com/chapters/podcast/http:feed.nashownotes.comrss.xml/episode/http:1322.noagendanotes.com
-    transcriptUrl:
+    transcript:
       description: |
-        Link to the file containing the episode transcript
-      type: string
-      format: URL
-      example: 'https://mp3s.nashownotes.com/NA-1322-Captions.srt'
+        A transcript object included in the `transcripts` array.
+      type: object
+      properties:
+        url:
+          type: string
+          required: true
+          format: URL
+          example: 'https://mp3s.nashownotes.com/NA-1385-Captions.srt'
+        type:
+          type: string
+          required: true
+          example: application/srt
+    transcripts:
+      description: |
+        List of transcripts for the episode.
+      type: array
+      items:
+        $ref: '#/components/schemas/transcript'
     item_search_byperson:
       type: object
       properties:
@@ -1051,8 +1065,8 @@ components:
           $ref: '#/components/schemas/language'
         chaptersUrl:
           $ref: '#/components/schemas/chaptersUrl'
-        transcriptUrl:
-          $ref: '#/components/schemas/transcriptUrl'
+        transcripts:
+          $ref: '#/components/schemas/transcripts'
     items_byperson:
       description: |
         List of episodes matching request
@@ -1618,8 +1632,8 @@ components:
           $ref: '#/components/schemas/language'
         chaptersUrl:
           $ref: '#/components/schemas/chaptersUrl'
-        transcriptUrl:
-          $ref: '#/components/schemas/transcriptUrl'
+        transcripts:
+          $ref: '#/components/schemas/transcripts'
         soundbite:
           $ref: '#/components/schemas/soundbite'
         soundbites:
@@ -1701,8 +1715,8 @@ components:
           $ref: '#/components/schemas/language'
         chaptersUrl:
           $ref: '#/components/schemas/chaptersUrl'
-        transcriptUrl:
-          $ref: '#/components/schemas/transcriptUrl'
+        transcripts:
+          $ref: '#/components/schemas/transcripts'
         soundbite:
           $ref: '#/components/schemas/soundbite'
         soundbites:
