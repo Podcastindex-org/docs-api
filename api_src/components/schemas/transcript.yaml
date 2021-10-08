@@ -1,0 +1,14 @@
+  # language=Markdown
+description: >
+  A transcript object included in the `transcripts` array.
+type: object
+properties:
+  url:
+    type: string
+    required: true
+    format: URL
+    example: "https://mp3s.nashownotes.com/NA-1385-Captions.srt"
+  type:
+    type: string
+    required: true
+    example: "application/srt"

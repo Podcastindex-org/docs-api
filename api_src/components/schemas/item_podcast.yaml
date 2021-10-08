@@ -44,8 +44,8 @@ properties:
     $ref: '../properties/language.yaml'
   chaptersUrl:
     $ref: '../properties/chaptersUrl.yaml'
-  transcriptUrl:
-    $ref: '../properties/transcriptUrl.yaml'
+  transcripts:
+    $ref: '../properties/transcripts.yaml'
   soundbite:
     $ref: '../properties/soundbite.yaml'
   soundbites:
