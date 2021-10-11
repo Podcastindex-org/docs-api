@@ -2012,7 +2012,7 @@ components:
               description:
                 $ref: '#/components/schemas/description_response'
           example:
-            status: false
+            status: 'false'
             description: Invalid parameters
     '401':
       description: Not authenticated

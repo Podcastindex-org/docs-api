@@ -9,5 +9,5 @@ content:
         description:
           $ref: '../properties/description_response.yaml'
     example:
-      status: false
+      status: "false"
       description: "Invalid parameters"
