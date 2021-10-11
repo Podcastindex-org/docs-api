@@ -1,12 +1,24 @@
   # language=Markdown
 description: >
-  A transcript object included in the `transcripts` array.
+  This tag is used to link to a transcript or closed captions file. Multiple tags can be present for multiple transcript formats.
+
+  Detailed file format information and example files are [here](https://github.com/Podcastindex-org/podcast-namespace/blob/main/transcripts/transcripts.md).
 type: object
 properties:
   url:
+    description: URL of the podcast transcript.
     type: string
     format: URL
     example: "https://mp3s.nashownotes.com/NA-1385-Captions.srt"
   type:
+    description: >
+      Mime type of the file such as `text/plain`, `text/html`, `application/srt`, `text/vtt`, `application/json`
     type: string
+    enum:
+      - "application/json"
+      - "application/srt"
+      - "text/html"
+      - "text/plain"
+      - "text/srt"
+      - "text/vtt"
     example: "application/srt"
