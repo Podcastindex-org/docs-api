@@ -1,6 +1,6 @@
   # language=Markdown
 description: >
-  The estimated length of the item specified by the `enclosureUrl` in minutes
+  The estimated length of the item specified by the `enclosureUrl` in seconds
 type: integer
-format: minutes
+format: seconds
 example: 54
