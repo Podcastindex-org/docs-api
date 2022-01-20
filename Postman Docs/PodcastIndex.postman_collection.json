@@ -60,6 +60,56 @@
 					"response": []
 				},
 				{
+					"name": "Search Podcasts by Title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/search/bytitle?q=everything+everywhere+daily",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"search",
+								"bytitle"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "batman university",
+									"description": "(Required) Terms to search for\n"
+								},
+								{
+									"key": "val",
+									"value": "",
+									"description": "Only returns feeds with a `value` block of the specified type. Use `any` to return feeds with any `value` block.\n",
+									"disabled": true
+								},
+								{
+									"key": "clean",
+									"value": "false",
+									"description": "If present, only non-explicit feeds will be returned. Meaning, feeds where the `itunes:explicit` flag is set to `false`.\n\nParameter shall not have a value\n",
+									"disabled": true
+								},
+								{
+									"key": "fulltext",
+									"value": "true",
+									"description": "If present, return the full text value of any text fields (ex: `description`). If not provided, field value is truncated to 100 words.\n\nParameter shall not have a value\n",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": "true",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This call returns all of the feeds where the `title` of the feed matches the search term (ignores case).\n\nExample \"everything everywhere daily\" will match the podcast [Everything Everywhere Daily](https://podcastindex.org/podcast/437685) by \"everything everywhere\" will not.\n\nExample: https://api.podcastindex.org/api/1.0/search/bytitle?q=everything+everywhere+daily&pretty\n"
+					},
+					"response": []
+				},
+				{
 					"name": "Search Episodes by Person",
 					"request": {
 						"method": "GET",

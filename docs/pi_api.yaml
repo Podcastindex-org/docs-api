@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  version: 1.6.0
+  version: 1.7.0
   title: PodcastIndex.org API
   termsOfService: 'https://api.podcastindex.org/tos_v1.0.html'
   contact:
@@ -2423,10 +2423,6 @@ paths:
         `title`, `author` or `owner` of the feed.
 
 
-        This is ordered by the last-released episode, with the latest at the top
-        of the results.
-
-
         Example:
         https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty
       operationId: search/byterm
@@ -2622,6 +2618,40 @@ paths:
             task.resume()
 
             semaphore.wait()
+  /search/bytitle:
+    get:
+      tags:
+        - Search
+      summary: Search Podcasts by Title
+      description: >
+        This call returns all of the feeds where the `title` of the feed matches
+        the search term (ignores case).
+
+        Example "everything everywhere daily" will match the podcast [Everything
+        Everywhere Daily](https://podcastindex.org/podcast/437685) by
+        "everything everywhere" will not.
+
+        Example:
+        https://api.podcastindex.org/api/1.0/search/bytitle?q=everything+everywhere+daily&pretty
+      operationId: search/bytitle
+      security:
+        - API Key: []
+          User Agent: []
+          Date: []
+          Authorization: []
+      parameters:
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/val'
+        - $ref: '#/components/parameters/clean'
+        - $ref: '#/components/parameters/fulltext'
+        - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          $ref: '#/components/responses/search_byterm'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
   /search/byperson:
     get:
       tags:
