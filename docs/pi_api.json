@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "version": "1.6.0",
+    "version": "1.7.0",
     "title": "PodcastIndex.org API",
     "termsOfService": "https://api.podcastindex.org/tos_v1.0.html",
     "contact": {
@@ -2762,7 +2762,7 @@
           "Search"
         ],
         "summary": "Search Podcasts",
-        "description": "This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the feed.\n\nThis is ordered by the last-released episode, with the latest at the top of the results.\n\nExample: https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty\n",
+        "description": "This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the feed.\n\nExample: https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty\n",
         "operationId": "search/byterm",
         "security": [
           {
@@ -2814,6 +2814,52 @@
             "source": "import Foundation\nimport CommonCrypto\n\nextension String {\n  func sha1() -> String {\n  let data = Data(self.utf8)\n  var digest = [UInt8](repeating: 0, count:Int(CC_SHA1_DIGEST_LENGTH))\n      data.withUnsafeBytes {\n      _ = CC_SHA1($0.baseAddress, CC_LONG(data.count), &digest)\n  }\n  let hexBytes = digest.map { String(format: \"%02hhx\", $0) }\n      return hexBytes.joined()\n  }\n}\n\nlet apiKey = \"UXKCGDSYGUUEVQJSYDZH\"\nlet apiSecret = \"yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|\"\nlet apiHeaderTime = String(Int(Date().timeIntervalSince1970))\nlet hash = (apiKey + apiSecret + apiHeaderTime).sha1()\n\nvar semaphore = DispatchSemaphore (value: 0)\nvar request = URLRequest(url: URL(string: \"https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat\")!,timeoutInterval: Double.infinity)\nrequest.addValue(\"SuperPodcastPlayer/1.3\", forHTTPHeaderField: \"User-Agent\")\nrequest.addValue(apiKey, forHTTPHeaderField: \"X-Auth-Key\")\nrequest.addValue(apiHeaderTime, forHTTPHeaderField: \"X-Auth-Date\")\nrequest.addValue(hash, forHTTPHeaderField: \"Authorization\")\n\nrequest.httpMethod = \"GET\"\n\nlet task = URLSession.shared.dataTask(with: request) { data, response, error in\n    guard let data = data else {\n        print(String(describing: error))\n        return\n    }\n    print(String(data: data, encoding: .utf8)!)\n    semaphore.signal()\n}\n\ntask.resume()\nsemaphore.wait()\n"
           }
         ]
+      }
+    },
+    "/search/bytitle": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "summary": "Search Podcasts by Title",
+        "description": "This call returns all of the feeds where the `title` of the feed matches the search term (ignores case).\nExample \"everything everywhere daily\" will match the podcast [Everything Everywhere Daily](https://podcastindex.org/podcast/437685) by \"everything everywhere\" will not.\nExample: https://api.podcastindex.org/api/1.0/search/bytitle?q=everything+everywhere+daily&pretty\n",
+        "operationId": "search/bytitle",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/q"
+          },
+          {
+            "$ref": "#/components/parameters/val"
+          },
+          {
+            "$ref": "#/components/parameters/clean"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/search_byterm"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
       }
     },
     "/search/byperson": {

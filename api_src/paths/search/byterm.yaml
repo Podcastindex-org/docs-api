@@ -5,10 +5,7 @@ get:
   # language=Markdown
   description: >
     This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the feed.
-
-
-    This is ordered by the last-released episode, with the latest at the top of the results.
-
+    
 
     Example: https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty
   operationId: search/byterm

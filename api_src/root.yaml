@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  version: 1.6.0
+  version: 1.7.0
   title: PodcastIndex.org API
   termsOfService: 'https://api.podcastindex.org/tos_v1.0.html'
   contact:
@@ -142,6 +142,8 @@ components:
 paths:
   '/search/byterm':
     $ref: 'paths/search/byterm.yaml'
+  '/search/bytitle':
+    $ref: 'paths/search/bytitle.yaml'
   '/search/byperson':
     $ref: 'paths/search/byperson.yaml'
   '/podcasts/byfeedid':
