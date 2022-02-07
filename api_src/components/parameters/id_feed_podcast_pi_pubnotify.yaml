@@ -1,0 +1,12 @@
+name: id
+in: query
+# language=Markdown
+description: >
+  The PodcastIndex Feed ID
+
+
+  The `id` or the `url` is required.
+required: false
+schema:
+  type: integer
+example: 75075

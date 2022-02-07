@@ -1,0 +1,13 @@
+name: url
+in: query
+# language=Markdown
+description: >
+  Podcast feed URL
+
+
+  The `id` or the `url` is required.
+required: false
+allowReserved: true
+schema:
+  type: string
+example: "https://feeds.theincomparable.com/batmanuniversity"
