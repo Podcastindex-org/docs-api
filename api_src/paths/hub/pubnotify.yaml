@@ -10,13 +10,13 @@ get:
     Examples:
 
       - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty
-      - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&update&pretty
+      - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty
   operationId: hub/pubnotify
   security:
     - $ref: '../../components/security/security.yaml'
   parameters:
-    - $ref: '../../components/parameters/id_feed_podcast_pi.yaml'
-    - $ref: '../../components/parameters/update.yaml'
+    - $ref: '../../components/parameters/id_feed_podcast_pi_pubnotify.yaml'
+    - $ref: '../../components/parameters/url_pubnotify.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
   responses:
     '200':

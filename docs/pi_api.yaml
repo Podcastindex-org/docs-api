@@ -1,14 +1,14 @@
 openapi: 3.0.2
 info:
-  version: 1.7.0
+  version: 1.7.1
   title: PodcastIndex.org API
-  termsOfService: 'https://api.podcastindex.org/tos_v1.0.html'
+  termsOfService: https://api.podcastindex.org/tos_v1.0.html
   contact:
     email: info@podcastindex.org
-    url: 'https://podcastindex.org/'
+    url: https://podcastindex.org/
   license:
     name: MIT
-    url: 'https://github.com/Podcastindex-org/docs-api/blob/master/LICENSE'
+    url: https://github.com/Podcastindex-org/docs-api/blob/master/LICENSE
   x-logo:
     url: logo.svg
     href: /
@@ -127,7 +127,7 @@ tags:
       **NOTE**: To add to the index, the API Key must have write or publisher
       permissions.
 servers:
-  - url: 'https://api.podcastindex.org/api/1.0'
+  - url: https://api.podcastindex.org/api/1.0
 components:
   securitySchemes:
     User Agent:
@@ -269,7 +269,7 @@ components:
       allowReserved: true
       schema:
         type: string
-      example: 'https://feeds.theincomparable.com/batmanuniversity'
+      example: https://feeds.theincomparable.com/batmanuniversity
     id_feed_podcast_itunes:
       name: id
       in: query
@@ -360,7 +360,7 @@ components:
           value: en
           description: Single ID
         multiple:
-          value: 'en,es'
+          value: en,es
           description: Multiple IDs
     cat:
       name: cat
@@ -395,13 +395,13 @@ components:
           value: 65
           description: Single Category ID
         multiple_name:
-          value: 'News,Religion'
+          value: News,Religion
           description: Multiple Category Names
         multiple_id_:
-          value: '55,65'
+          value: 55,65
           description: Multiple Category IDs
         multiple_mixed:
-          value: 'News,65'
+          value: News,65
           description: Multiple Categories Mixed Format
     notcat:
       name: notcat
@@ -436,13 +436,13 @@ components:
           value: 65
           description: Single Category ID
         multiple_name:
-          value: 'News,Religion'
+          value: News,Religion
           description: Multiple Category Names
         multiple_id_:
-          value: '55,65'
+          value: 55,65
           description: Multiple Category IDs
         multiple_mixed:
-          value: 'News,65'
+          value: News,65
           description: Multiple Categories Mixed Format
     id_feed_episode_pi:
       name: id
@@ -461,7 +461,7 @@ components:
           value: 75075
           description: Single ID
         multiple:
-          value: '41504,920666'
+          value: 41504,920666
           description: Multiple IDs
     id_episode_pi:
       name: id
@@ -547,16 +547,29 @@ components:
       schema:
         type: integer
       example: 75075
-    update:
-      name: update
+    id_feed_podcast_pi_pubnotify:
+      name: id
       in: query
       description: |
-        If present, tells the index to re-parse the feed.
+        The PodcastIndex Feed ID
 
-        Parameter shall not have a value
+        The `id` or the `url` is required.
+      required: false
       schema:
-        type: boolean
-      allowEmptyValue: true
+        type: integer
+      example: 75075
+    url_pubnotify:
+      name: url
+      in: query
+      description: |
+        Podcast feed URL
+
+        The `id` or the `url` is required.
+      required: false
+      allowReserved: true
+      schema:
+        type: string
+      example: https://feeds.theincomparable.com/batmanuniversity
     chash:
       name: chash
       in: query
@@ -622,19 +635,19 @@ components:
         Current feed URL
       type: string
       format: URL
-      example: 'https://feeds.theincomparable.com/batmanuniversity'
+      example: https://feeds.theincomparable.com/batmanuniversity
     originalUrl:
       description: |
         The URL of the feed, before it changed to the current `url` value.
       type: string
       format: URL
-      example: 'https://feeds.theincomparable.com/batmanuniversity'
+      example: https://feeds.theincomparable.com/batmanuniversity
     link_feed:
       description: |
         The channel-level link in the feed
       type: string
       format: URL
-      example: 'https://www.theincomparable.com/batmanuniversity/'
+      example: https://www.theincomparable.com/batmanuniversity/
     description_feed:
       description: |
         The channel-level description
@@ -931,7 +944,7 @@ components:
         URL/link to the episode file
       type: string
       format: URL
-      example: 'https://www.theincomparable.com/podcast/batmanuniversity302.mp3'
+      example: https://www.theincomparable.com/podcast/batmanuniversity302.mp3
     enclosureType:
       description: |
         The Content-Type for the item specified by the `enclosureUrl`
@@ -1007,7 +1020,7 @@ components:
           description: URL of the podcast transcript.
           type: string
           format: URL
-          example: 'https://mp3s.nashownotes.com/NA-1385-Captions.srt'
+          example: https://mp3s.nashownotes.com/NA-1385-Captions.srt
         type:
           description: >
             Mime type of the file such as `text/plain`, `text/html`,
@@ -1235,7 +1248,7 @@ components:
         information.
       type: string
       format: URL
-      example: 'https://patreon.com/johnchidgey'
+      example: https://patreon.com/johnchidgey
     message:
       description: >
         Description of `url`
@@ -1332,7 +1345,7 @@ components:
         Value passed to request in the `url` field
       type: string
       format: URL
-      example: 'https://feeds.theincomparable.com/batmanuniversity'
+      example: https://feeds.theincomparable.com/batmanuniversity
     query_url:
       description: |
         Object containing the input query data
@@ -1562,7 +1575,7 @@ components:
 
         Note: uses the PodcastIndex server local time to do conversion.
       type: string
-      example: 'January 01, 2019 9:30pm'
+      example: January 01, 2019 9:30pm
     startTime:
       description: >
         The time where the soundbite begins in the item specified by the
@@ -3295,7 +3308,7 @@ paths:
         Examples:
 
           - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty
-          - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&update&pretty
+          - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty
       operationId: hub/pubnotify
       security:
         - API Key: []
@@ -3303,8 +3316,8 @@ paths:
           Date: []
           Authorization: []
       parameters:
-        - $ref: '#/components/parameters/id_feed_podcast_pi'
-        - $ref: '#/components/parameters/update'
+        - $ref: '#/components/parameters/id_feed_podcast_pi_pubnotify'
+        - $ref: '#/components/parameters/url_pubnotify'
         - $ref: '#/components/parameters/pretty'
       responses:
         '200':
@@ -3329,7 +3342,7 @@ paths:
 
         Example:
         https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty
-      operationId: 'add/byfeedurl:get'
+      operationId: add/byfeedurl:get
       security:
         - API Key: []
           User Agent: []
@@ -3364,7 +3377,7 @@ paths:
 
         Example:
         https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty
-      operationId: 'add/byfeedurl:post'
+      operationId: add/byfeedurl:post
       security:
         - API Key: []
           User Agent: []
@@ -3399,7 +3412,7 @@ paths:
 
         Example:
         https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty
-      operationId: 'add/byitunesid:get'
+      operationId: add/byitunesid:get
       security:
         - API Key: []
           User Agent: []
@@ -3432,7 +3445,7 @@ paths:
 
         Example:
         https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty
-      operationId: 'add/byitunesid:post'
+      operationId: add/byitunesid:post
       security:
         - API Key: []
           User Agent: []

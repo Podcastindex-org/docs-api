@@ -2,22 +2,22 @@
 # yarn lockfile v1
 
 
-"@redocly/ajv@^8.6.2":
-  version "8.6.2"
-  resolved "https://registry.yarnpkg.com/@redocly/ajv/-/ajv-8.6.2.tgz#8c4e485e72f7864f91fae40093bed548ec2619b2"
-  integrity sha512-tU8fQs0D76ZKhJ2cWtnfQthWqiZgGBx0gH0+5D8JvaBEBaqA8foPPBt3Nonwr3ygyv5xrw2IzKWgIY86BlGs+w==
+"@redocly/ajv@^8.6.4":
+  version "8.6.4"
+  resolved "https://registry.yarnpkg.com/@redocly/ajv/-/ajv-8.6.4.tgz#94053e7a9d4146d1a4feacd3813892873f229a85"
+  integrity sha512-y9qNj0//tZtWB2jfXNK3BX18BSBp9zNR7KE7lMysVHwbZtY392OJCjm6Rb/h4UHH2r1AqjNEHFD6bRn+DqU9Mw==
   dependencies:
     fast-deep-equal "^3.1.1"
     json-schema-traverse "^1.0.0"
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-"@redocly/openapi-cli@^1.0.0-beta.62":
-  version "1.0.0-beta.62"
-  resolved "https://registry.yarnpkg.com/@redocly/openapi-cli/-/openapi-cli-1.0.0-beta.62.tgz#22892c22054af8f611f8538aa58d5ce2fd097fce"
-  integrity sha512-LnP8CnLXy8Xz1uJD2vm3mptMkzFOVGQTBJw2tsLi6KB3H+MpAn2R9PKYk6c2r/oilfnMtGrHnflYg52CP2K7ZA==
+"@redocly/openapi-cli@^1.0.0-beta.80":
+  version "1.0.0-beta.80"
+  resolved "https://registry.yarnpkg.com/@redocly/openapi-cli/-/openapi-cli-1.0.0-beta.80.tgz#c4eec363d018f1d17c0da4e06e24c0aeb0ae8dbf"
+  integrity sha512-PZLustQdB0ZsKjM5vgGxEg6eFf8okaky/LmXiicnNeJhXmlv7CmvytSvm6zixCwDts4DpuFUNO1CcDf7+iJyDA==
   dependencies:
-    "@redocly/openapi-core" "^1.0.0-beta.62"
+    "@redocly/openapi-core" "1.0.0-beta.80"
     "@types/node" "^14.11.8"
     assert-node-version "^1.0.3"
     chokidar "^3.5.1"
@@ -25,24 +25,24 @@
     glob "^7.1.6"
     glob-promise "^3.4.0"
     handlebars "^4.7.6"
-    js-yaml "^3.14.1"
     portfinder "^1.0.26"
     simple-websocket "^9.0.0"
     yargs "17.0.1"
 
-"@redocly/openapi-core@^1.0.0-beta.62":
-  version "1.0.0-beta.62"
-  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.62.tgz#8cf8a343c94d35783e2b15c163c1cdd6f58e2be6"
-  integrity sha512-g4iPB7qpSNFCOpf/FgKiic+QCaCn4mdNQOWVEPuwpN7l72hlQ7J3YUa9cssJomkJXXxZ1zdP4h208s12LkhwVA==
+"@redocly/openapi-core@1.0.0-beta.80":
+  version "1.0.0-beta.80"
+  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.80.tgz#099bd036c0c90acf8bd0d7f75529e7f1ee904003"
+  integrity sha512-IAQECLt/fDxjlfNdLGnJszt40BaiA6b78+zB6+7Rk8ums0HHLfwWFJPMTzh1bzJ5f+sZ4zDBi4gaIJ1n4XGCHg==
   dependencies:
-    "@redocly/ajv" "^8.6.2"
+    "@redocly/ajv" "^8.6.4"
     "@types/node" "^14.11.8"
     colorette "^1.2.0"
     js-levenshtein "^1.1.6"
-    js-yaml "^3.14.1"
+    js-yaml "^4.1.0"
     lodash.isequal "^4.5.0"
     minimatch "^3.0.4"
     node-fetch "^2.6.1"
+    pluralize "^8.0.0"
     yaml-ast-parser "0.0.43"
 
 "@types/glob@*":
@@ -91,12 +91,10 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-argparse@^1.0.7:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
-  integrity sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
-  dependencies:
-    sprintf-js "~1.0.2"
+argparse@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
+  integrity sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
 
 assert-node-version@^1.0.3:
   version "1.0.3"
@@ -241,11 +239,6 @@ escalade@^3.1.1:
   resolved "https://registry.yarnpkg.com/escalade/-/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
   integrity sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==
 
-esprima@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
-  integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
-
 expected-node-version@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/expected-node-version/-/expected-node-version-1.0.2.tgz#b8d225b9bf676a9e87e06dbd615b52fc9d1e386b"
@@ -380,13 +373,12 @@ js-levenshtein@^1.1.6:
   resolved "https://registry.yarnpkg.com/js-levenshtein/-/js-levenshtein-1.1.6.tgz#c6cee58eb3550372df8deb85fad5ce66ce01d59d"
   integrity sha512-X2BB11YZtrRqY4EnQcLX5Rh373zbK4alC1FW7D7MBhL2gtcC17cTnr6DmfHZeS0s2rTHjUTMMHfG7gO8SSdw+g==
 
-js-yaml@^3.14.1:
-  version "3.14.1"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.1.tgz#dae812fdb3825fa306609a8717383c50c36a0537"
-  integrity sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==
+js-yaml@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-4.1.0.tgz#c1fb65f8f5017901cdd2c951864ba18458a10602"
+  integrity sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==
   dependencies:
-    argparse "^1.0.7"
-    esprima "^4.0.0"
+    argparse "^2.0.1"
 
 json-schema-traverse@^1.0.0:
   version "1.0.0"
@@ -496,6 +488,11 @@ picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"
   integrity sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==
+
+pluralize@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
+  integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
 portfinder@^1.0.26:
   version "1.0.28"
@@ -614,11 +611,6 @@ source-map@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
-
-sprintf-js@~1.0.2:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
-  integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
 string-width@^4.1.0, string-width@^4.2.0:
   version "4.2.2"

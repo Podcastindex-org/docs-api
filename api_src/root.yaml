@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  version: 1.7.0
+  version: 1.7.1
   title: PodcastIndex.org API
   termsOfService: 'https://api.podcastindex.org/tos_v1.0.html'
   contact:
