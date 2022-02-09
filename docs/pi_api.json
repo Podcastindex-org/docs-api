@@ -79,7 +79,7 @@
         "type": "apiKey",
         "in": "header",
         "name": "X-Auth-Date",
-        "description": "The current UTC unix epoch time as a string. 5 minute window.\n\nThis value is an integer; round down if needed. The value shall not include a decimal point.\n\nValue generated should match the value shown on the website https://www.epochconverter.com/.\n\n*Example*: `1613713388`\n"
+        "description": "The current UTC unix epoch time as a string. 3 minute window.\n\nThis value is an integer; round down if needed. The value shall not include a decimal point.\n\nValue generated should match the value shown on the website https://www.epochconverter.com/.\n\n*Example*: `1613713388`\n"
       },
       "Authorization": {
         "type": "apiKey",
