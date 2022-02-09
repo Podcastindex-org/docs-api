@@ -3,7 +3,7 @@ in: header
 name: X-Auth-Date
 # language=Markdown
 description: >
-  The current UTC unix epoch time as a string. 5 minute window.
+  The current UTC unix epoch time as a string. 3 minute window.
 
 
   This value is an integer; round down if needed. The value shall not include a decimal point.
