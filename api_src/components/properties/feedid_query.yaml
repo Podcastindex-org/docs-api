@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Value passed to request in the `feedid` parameter
+type: string
+example: "920666"

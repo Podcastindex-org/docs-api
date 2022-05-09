@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Value passed to request in the `guid` parameter.
+type: string
+example: "PC2084"

@@ -6,8 +6,10 @@ get:
   description: >
     This call returns all of the feeds where the `title` of the feed matches the search term (ignores case).
 
+
     Example "everything everywhere daily" will match the podcast
     [Everything Everywhere Daily](https://podcastindex.org/podcast/437685) by "everything everywhere" will not.
+
 
     Example: https://api.podcastindex.org/api/1.0/search/bytitle?q=everything+everywhere+daily&pretty
   operationId: search/bytitle

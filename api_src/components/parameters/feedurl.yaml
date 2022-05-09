@@ -1,0 +1,9 @@
+name: feedurl
+in: query
+# language=Markdown
+description: >
+  The Feed URL
+required: false
+schema:
+  type: string
+example: "http://mp3s.nashownotes.com/pc20rss.xml"

@@ -13,3 +13,7 @@ properties:
     $ref: '../properties/split_destination.yaml'
   fee:
     $ref: '../properties/fee_destination.yaml'
+  customKey:
+    $ref: '../properties/customKey.yaml'
+  customValue:
+    $ref: '../properties/customValue.yaml'

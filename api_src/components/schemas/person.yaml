@@ -1,5 +1,7 @@
 type: object
 properties:
+  id:
+    $ref: '../properties/id_person.yaml'
   name:
     $ref: '../properties/name_person.yaml'
   role:

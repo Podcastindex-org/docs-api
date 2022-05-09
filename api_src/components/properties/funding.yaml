@@ -3,7 +3,7 @@ description: >
   Information for donation/funding the podcast.
 
 
-  See the [podcast namespace spec](https://podcastindex.org/namespace/1.0#funding) for more information.
+  See the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.
 type: object
 properties:
   url:
