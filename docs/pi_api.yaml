@@ -1,8 +1,8 @@
 openapi: 3.0.2
 info:
-  version: 1.7.1
+  version: 1.7.2
   title: PodcastIndex.org API
-  termsOfService: https://api.podcastindex.org/tos_v1.0.html
+  termsOfService: https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md
   contact:
     email: info@podcastindex.org
     url: https://podcastindex.org/
@@ -94,6 +94,14 @@ info:
 
 
     See [Authentication](#auth) for description of parameters.
+
+    # Legal
+
+    Legal
+
+      - [Privacy Policy](https://github.com/Podcastindex-org/legal/blob/main/PrivacyPolicy.md)
+      - [Terms of Service](https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md)
+      - [License](https://github.com/Podcastindex-org/docs-api/blob/master/LICENSE)
 tags:
   - name: Search
     description: |
@@ -472,6 +480,36 @@ components:
       schema:
         type: integer
       example: 16795089
+    guid_episode:
+      name: guid
+      in: query
+      description: |
+        The guid value for the episode to retrieve.
+
+
+          This value is the value specified in the feed's `<guid>` field.
+      required: true
+      schema:
+        type: string
+      example: PC2084
+    feedurl:
+      name: feedurl
+      in: query
+      description: |
+        The Feed URL
+      required: false
+      schema:
+        type: string
+      example: http://mp3s.nashownotes.com/pc20rss.xml
+    feedid:
+      name: feedid
+      in: query
+      description: |
+        The PodcastIndex Feed ID
+      required: false
+      schema:
+        type: string
+      example: '920666'
     max_random:
       name: max
       in: query
@@ -1202,6 +1240,31 @@ components:
         Indicates if destination is included due to a fee being charged
       type: boolean
       example: true
+    customKey:
+      description: >
+        The name of a custom record key to send along with the payment.
+
+
+        See the [podcast namespace
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+        and [value
+        specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md)
+        for more information.
+      type: string
+      example: '112111100'
+    customValue:
+      description: >
+        A custom value to pass along with the payment. This is considered the
+        value that belongs to the customKey.
+
+
+        See the [podcast namespace
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+        and [value
+        specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md)
+        for more information.
+      type: string
+      example: wal_ZmqFg13NB31oek
     destination_v4v:
       description: |
         Destination for "Value for Value" payment.
@@ -1217,6 +1280,10 @@ components:
           $ref: '#/components/schemas/split_destination'
         fee:
           $ref: '#/components/schemas/fee_destination'
+        customKey:
+          $ref: '#/components/schemas/customKey'
+        customValue:
+          $ref: '#/components/schemas/customValue'
     destinations_v4v:
       description: |
         List of destinations where "Value for Value" payments should be sent.
@@ -1244,8 +1311,8 @@ components:
 
 
         See the [podcast namespace
-        spec](https://podcastindex.org/namespace/1.0#funding) for more
-        information.
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding)
+        for more information.
       type: string
       format: URL
       example: https://patreon.com/johnchidgey
@@ -1255,8 +1322,8 @@ components:
 
 
         See the [podcast namespace
-        spec](https://podcastindex.org/namespace/1.0#funding) for more
-        information.
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding)
+        for more information.
       type: string
       example: Pragmatic on Patreon
     funding:
@@ -1265,8 +1332,8 @@ components:
 
 
         See the [podcast namespace
-        spec](https://podcastindex.org/namespace/1.0#funding) for more
-        information.
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding)
+        for more information.
       type: object
       properties:
         url:
@@ -1611,6 +1678,98 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/soundbite'
+    id_person:
+      description: |
+        The internal PodcastIndex.org person ID.
+      type: integer
+      example: 411960
+    name_person:
+      description: >
+        The name of the person.
+
+
+        See the [podcast namespace
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person)
+        for more information.
+      type: string
+      example: Dave Jones
+    role:
+      description: >
+        Used to identify what role the person serves on the show or episode.
+
+
+        Value should be an official role within the Podcast Taxonomy Project
+        [list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json).
+
+
+        See the [podcast namespace
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person)
+        for more information.
+      type: string
+      example: Host
+    group:
+      description: >
+        The group the person's role is in.
+
+
+        Value should be an official group within the Podcast Taxonomy Project
+        [list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json).
+
+
+        See the [podcast namespace
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person)
+        for more information.
+      type: string
+      example: Cast
+    href:
+      description: >
+        The url to a relevant resource of information about the person, such as
+        a homepage or third-party profile platform.
+
+
+        See the [podcast namespace
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person)
+        for more information.
+      type: string
+      format: URL
+      example: https://engineered.network/img/people/dave-jones.jp
+    img:
+      description: >
+        URL to a picture or avatar of the person.
+
+
+        See the [podcast namespace
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person)
+        for more information.
+      type: string
+      format: URL
+      example: https://engineered.network/img/people/dave-jones.jp
+    person:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id_person'
+        name:
+          $ref: '#/components/schemas/name_person'
+        role:
+          $ref: '#/components/schemas/role'
+        group:
+          $ref: '#/components/schemas/group'
+        href:
+          $ref: '#/components/schemas/href'
+        img:
+          $ref: '#/components/schemas/img'
+    persons:
+      description: >
+        List of people with an interest in this episode.
+
+
+        See the [podcast namespace
+        spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person)
+        for more information.
+      type: array
+      items:
+        $ref: '#/components/schemas/person'
     item_podcast:
       type: object
       properties:
@@ -1664,6 +1823,8 @@ components:
           $ref: '#/components/schemas/soundbite'
         soundbites:
           $ref: '#/components/schemas/soundbites'
+        persons:
+          $ref: '#/components/schemas/persons'
         value:
           $ref: '#/components/schemas/value'
     items_podcast:
@@ -1743,10 +1904,30 @@ components:
           $ref: '#/components/schemas/chaptersUrl'
         transcripts:
           $ref: '#/components/schemas/transcripts'
+        persons:
+          $ref: '#/components/schemas/persons'
+        value:
+          $ref: '#/components/schemas/value'
         soundbite:
           $ref: '#/components/schemas/soundbite'
         soundbites:
           $ref: '#/components/schemas/soundbites'
+    feedid_query:
+      description: |
+        Value passed to request in the `feedid` parameter
+      type: string
+      example: '920666'
+    feedurl_query:
+      description: >
+        Value passed to request in the `feedurl` parameter. If no `feedurl`
+        passed, value will be null.
+      type: string
+      example: http://mp3s.nashownotes.com/pc20rss.xml
+    guid_query:
+      description: |
+        Value passed to request in the `guid` parameter.
+      type: string
+      example: PC2084
     item_podcast_random:
       type: object
       properties:
@@ -2245,6 +2426,25 @@ components:
                 $ref: '#/components/schemas/episode_object'
               description:
                 $ref: '#/components/schemas/description_response'
+    episodes_byguid:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: '#/components/schemas/status'
+              id:
+                $ref: '#/components/schemas/feedid_query'
+              url:
+                $ref: '#/components/schemas/feedurl_query'
+              guid:
+                $ref: '#/components/schemas/guid_query'
+              episode:
+                $ref: '#/components/schemas/episode_object'
+              description:
+                $ref: '#/components/schemas/description_response'
     episodes_random:
       description: Success
       content:
@@ -2640,9 +2840,11 @@ paths:
         This call returns all of the feeds where the `title` of the feed matches
         the search term (ignores case).
 
+
         Example "everything everywhere daily" will match the podcast [Everything
         Everywhere Daily](https://podcastindex.org/podcast/437685) by
         "everything everywhere" will not.
+
 
         Example:
         https://api.podcastindex.org/api/1.0/search/bytitle?q=everything+everywhere+daily&pretty
@@ -2825,7 +3027,8 @@ paths:
       summary: By Tag
       description: >
         This call returns all feeds that support the specified [podcast
-        namespace](https://podcastindex.org/namespace/1.0) tag.
+        namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md)
+        tag.
 
 
         Example:
@@ -3029,6 +3232,42 @@ paths:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
+  /episodes/byguid:
+    get:
+      tags:
+        - Episodes
+      summary: By GUID
+      description: >
+        Get all the metadata for a single episode by passing its guid and the
+        feed id or URL.
+
+
+        The `feedid` or the `feedurl` is required.
+
+
+        Examples: 
+
+          - Search using Podcast Index feed ID: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedid=920666&pretty
+          - Search using feed URL: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedurl=http://mp3s.nashownotes.com/pc20rss.xml&pretty
+      operationId: episodes/byguid
+      security:
+        - API Key: []
+          User Agent: []
+          Date: []
+          Authorization: []
+      parameters:
+        - $ref: '#/components/parameters/guid_episode'
+        - $ref: '#/components/parameters/feedurl'
+        - $ref: '#/components/parameters/feedid'
+        - $ref: '#/components/parameters/fulltext'
+        - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          $ref: '#/components/responses/episodes_byguid'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
   /episodes/random:
     get:
       tags:
@@ -3169,7 +3408,7 @@ paths:
 
         A soundbite consists of an enclosure url, a start time and a duration.
         It is documented in the [podcast
-        namespace](https://podcastindex.org/namespace/1.0#soundbite).
+        namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#soundbite).
 
 
         Example: https://api.podcastindex.org/api/1.0/recent/soundbites?pretty

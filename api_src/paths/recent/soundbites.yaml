@@ -8,7 +8,7 @@ get:
 
 
     A soundbite consists of an enclosure url, a start time and a duration.
-    It is documented in the [podcast namespace](https://podcastindex.org/namespace/1.0#soundbite).
+    It is documented in the [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#soundbite).
 
 
     Example: https://api.podcastindex.org/api/1.0/recent/soundbites?pretty

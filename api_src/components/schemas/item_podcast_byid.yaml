@@ -46,6 +46,10 @@ chaptersUrl:
   $ref: '../properties/chaptersUrl.yaml'
 transcripts:
   $ref: '../properties/transcripts.yaml'
+persons:
+  $ref: '../properties/persons.yaml'
+value:
+  $ref: '../properties/value.yaml'
 soundbite:
   $ref: '../properties/soundbite.yaml'
 soundbites:

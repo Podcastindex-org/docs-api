@@ -1,0 +1,12 @@
+name: guid
+in: query
+# language=Markdown
+description: >
+  The guid value for the episode to retrieve.
+
+
+    This value is the value specified in the feed's `<guid>` field.
+required: true
+schema:
+  type: string
+example: "PC2084"

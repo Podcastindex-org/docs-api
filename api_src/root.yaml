@@ -1,8 +1,8 @@
 openapi: 3.0.2
 info:
-  version: 1.7.1
+  version: 1.7.2
   title: PodcastIndex.org API
-  termsOfService: 'https://api.podcastindex.org/tos_v1.0.html'
+  termsOfService: 'https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md'
   contact:
     email: info@podcastindex.org
     url: 'https://podcastindex.org/'
@@ -87,6 +87,15 @@ info:
 
 
     See [Authentication](#auth) for description of parameters.
+
+    # Legal
+    
+    Legal
+
+      - [Privacy Policy](https://github.com/Podcastindex-org/legal/blob/main/PrivacyPolicy.md)
+      - [Terms of Service](https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md)
+      - [License](https://github.com/Podcastindex-org/docs-api/blob/master/LICENSE)
+
 tags:
   - name: Search
     # language=Markdown
@@ -168,6 +177,8 @@ paths:
     $ref: 'paths/episodes/byitunesid.yaml'
   '/episodes/byid':
     $ref: 'paths/episodes/byid.yaml'
+  '/episodes/byguid':
+    $ref: 'paths/episodes/byguid.yaml'
   '/episodes/random':
     $ref: 'paths/episodes/random.yaml'
   '/recent/episodes':

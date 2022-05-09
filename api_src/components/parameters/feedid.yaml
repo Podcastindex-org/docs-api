@@ -1,0 +1,9 @@
+name: feedid
+in: query
+# language=Markdown
+description: >
+  The PodcastIndex Feed ID
+required: false
+schema:
+  type: string
+example: "920666"

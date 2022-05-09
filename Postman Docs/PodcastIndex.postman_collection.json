@@ -308,7 +308,7 @@
 								}
 							]
 						},
-						"description": "This call returns all feeds that support the specified [podcast namespace](https://podcastindex.org/namespace/1.0) tag.\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&pretty\n"
+						"description": "This call returns all feeds that support the specified [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&pretty\n"
 					},
 					"response": []
 				},
@@ -590,6 +590,54 @@
 					"response": []
 				},
 				{
+					"name": "By GUID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/episodes/byguid?guid=PC2084&feedid=920666",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"episodes",
+								"byguid"
+							],
+							"query": [
+								{
+									"key": "guid",
+									"value": "PC2084",
+									"description": "(Required) The guid value for the episode to retrieve.\n\n\n  This value is the value specified in the feed's `<guid>` field.\n"
+								},
+								{
+									"key": "feedid",
+									"value": "920666",
+									"description": "The PodcastIndex Feed ID\n"
+								},
+								{
+									"key": "feedurl",
+									"value": "http://mp3s.nashownotes.com/pc20rss.xml",
+									"description": "The Feed URL\n"
+								},
+								{
+									"key": "fulltext",
+									"value": "true",
+									"description": "If present, return the full text value of any text fields (ex: `description`). If not provided, field value is truncated to 100 words.\n\nParameter shall not have a value\n",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": "true",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get all the metadata for a single episode by passing its guid and the feed id or URL.\n\nThe `feedid` or the `feedurl` is required.\n\nExamples: \n\n  - Search using Podcast Index feed ID: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedid=920666&pretty\n  - Search using feed URL: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedurl=http://mp3s.nashownotes.com/pc20rss.xml&pretty\n"
+					},
+					"response": []
+				},
+				{
 					"name": "Random",
 					"request": {
 						"method": "GET",
@@ -827,7 +875,7 @@
 								}
 							]
 						},
-						"description": "This call returns the most recent `max` soundbites that the index has discovered.\n\nA soundbite consists of an enclosure url, a start time and a duration. It is documented in the [podcast namespace](https://podcastindex.org/namespace/1.0#soundbite).\n\nExample: https://api.podcastindex.org/api/1.0/recent/soundbites?pretty\n"
+						"description": "This call returns the most recent `max` soundbites that the index has discovered.\n\nA soundbite consists of an enclosure url, a start time and a duration. It is documented in the [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#soundbite).\n\nExample: https://api.podcastindex.org/api/1.0/recent/soundbites?pretty\n"
 					},
 					"response": []
 				}

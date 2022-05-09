@@ -3,7 +3,7 @@ description: >
   List of people with an interest in this episode.
 
 
-  See the [podcast namespace spec](https://podcastindex.org/namespace/1.0#person) for more information.
+  See the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.
 type: array
 items:
   $ref: '../schemas/person.yaml'

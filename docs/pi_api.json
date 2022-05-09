@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "version": "1.7.1",
+    "version": "1.7.2",
     "title": "PodcastIndex.org API",
-    "termsOfService": "https://api.podcastindex.org/tos_v1.0.html",
+    "termsOfService": "https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md",
     "contact": {
       "email": "info@podcastindex.org",
       "url": "https://podcastindex.org/"
@@ -16,7 +16,7 @@
       "url": "logo.svg",
       "href": "/"
     },
-    "description": "Download the openapi spec in [json](pi_api.json) or [yaml](pi_api.yaml) format.\n# Overview\nThe Podcast Index (Podcast Index LLC) is a software developer focused partnership that provides tools and data to anyone who aspires to create new and exciting Podcast experiences without the heavy lifting of indexing, aggregation and data management.\n# Example Code\nUsers have provided example code for working the API in the following languages:\n\n  - [AWS Lambda - python](https://github.com/tbowers/python-podcastindex-org-lambda)\n  - [C#](https://github.com/ComicStrip/csharp-podcastindex-org-example)\n  - [Elisp](https://github.com/sabexx/elisp-example)\n  - [Flutter/Dart](https://github.com/crediblecreative/flutter-dart-podcastindex-org-example)\n  - [Go](https://github.com/ComicStrip/Go-podcastindex-org-example)\n  - [Go](https://github.com/kilobit/podcast-index-client)\n  - [Java](https://github.com/ComicStrip/Java-podcastindex-org-example)\n  - [Java](https://github.com/stucoates/PodcastIndexJavaClient)\n  - [Node.js](https://github.com/ComicStrip/node.js-podcastindex-org-example)\n  - [PHP](https://github.com/Podcastindex-org/example-code)\n  - [Python](https://github.com/tbowers/python-podcastindex-org-example)\n  - [Swift](https://github.com/ComicStrip/Swift-podcastindex-org-example)\n  - ... [More](https://github.com/Podcastindex-org-Examples)\n\nDon't see your desired language, create an example repo and create a [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to your example code project!\n# Libraries\nUser created libraries for working with the API:\n\n  - Node.js/npm/yarn\n      - [podcast-index-api](https://www.npmjs.com/package/podcast-index-api)\n      - [podcastdx-client](https://www.npmjs.com/package/podcastdx-client)\n  - Python/pip\n      - [python-podcastindex](https://pypi.org/project/python-podcastindex/)\n  - .NET\n      - [PodcastIndexSharp](https://www.nuget.org/packages/PodcastIndexSharp)\n\nAre we missing a library? Did you create one for a different language? Create a [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to the new library!\n# Postman\nA collection file for use in the [Postman](https://www.postman.com/) application is available for this API.\n\n  1. Download the contents of the [Postman Docs](https://github.com/Podcastindex-org/docs-api/tree/master/Postman%20Docs) folder.\n  2. Import the `PodcastIndex.postman_collection.json` collection to Postman\n  3. Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman\n  4. Set the `AuthKey` environment variable\n  5. Set the `SecretKey` environment variable\n  6. Hit the Send button (⌘ + return)\n\n# Contributing\nThe source for this API documentation is available at [https://github.com/Podcastindex-org/docs-api](https://github.com/Podcastindex-org/docs-api). Submit an Issue or create a Pull Request.\n# Authentication Details\nSending an API request is easy. We use an Amazon-style request authorization token to secure each request.\n\nRegister for a free API key at https://api.podcastindex.org/\n\nThese headers parameters are required for each request: `User-Agent`, `X-Auth-Date`, `X-Auth-Key`, `Authorization`\n\nSee [Authentication](#auth) for description of parameters.\n"
+    "description": "Download the openapi spec in [json](pi_api.json) or [yaml](pi_api.yaml) format.\n# Overview\nThe Podcast Index (Podcast Index LLC) is a software developer focused partnership that provides tools and data to anyone who aspires to create new and exciting Podcast experiences without the heavy lifting of indexing, aggregation and data management.\n# Example Code\nUsers have provided example code for working the API in the following languages:\n\n  - [AWS Lambda - python](https://github.com/tbowers/python-podcastindex-org-lambda)\n  - [C#](https://github.com/ComicStrip/csharp-podcastindex-org-example)\n  - [Elisp](https://github.com/sabexx/elisp-example)\n  - [Flutter/Dart](https://github.com/crediblecreative/flutter-dart-podcastindex-org-example)\n  - [Go](https://github.com/ComicStrip/Go-podcastindex-org-example)\n  - [Go](https://github.com/kilobit/podcast-index-client)\n  - [Java](https://github.com/ComicStrip/Java-podcastindex-org-example)\n  - [Java](https://github.com/stucoates/PodcastIndexJavaClient)\n  - [Node.js](https://github.com/ComicStrip/node.js-podcastindex-org-example)\n  - [PHP](https://github.com/Podcastindex-org/example-code)\n  - [Python](https://github.com/tbowers/python-podcastindex-org-example)\n  - [Swift](https://github.com/ComicStrip/Swift-podcastindex-org-example)\n  - ... [More](https://github.com/Podcastindex-org-Examples)\n\nDon't see your desired language, create an example repo and create a [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to your example code project!\n# Libraries\nUser created libraries for working with the API:\n\n  - Node.js/npm/yarn\n      - [podcast-index-api](https://www.npmjs.com/package/podcast-index-api)\n      - [podcastdx-client](https://www.npmjs.com/package/podcastdx-client)\n  - Python/pip\n      - [python-podcastindex](https://pypi.org/project/python-podcastindex/)\n  - .NET\n      - [PodcastIndexSharp](https://www.nuget.org/packages/PodcastIndexSharp)\n\nAre we missing a library? Did you create one for a different language? Create a [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to the new library!\n# Postman\nA collection file for use in the [Postman](https://www.postman.com/) application is available for this API.\n\n  1. Download the contents of the [Postman Docs](https://github.com/Podcastindex-org/docs-api/tree/master/Postman%20Docs) folder.\n  2. Import the `PodcastIndex.postman_collection.json` collection to Postman\n  3. Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman\n  4. Set the `AuthKey` environment variable\n  5. Set the `SecretKey` environment variable\n  6. Hit the Send button (⌘ + return)\n\n# Contributing\nThe source for this API documentation is available at [https://github.com/Podcastindex-org/docs-api](https://github.com/Podcastindex-org/docs-api). Submit an Issue or create a Pull Request.\n# Authentication Details\nSending an API request is easy. We use an Amazon-style request authorization token to secure each request.\n\nRegister for a free API key at https://api.podcastindex.org/\n\nThese headers parameters are required for each request: `User-Agent`, `X-Auth-Date`, `X-Auth-Key`, `Authorization`\n\nSee [Authentication](#auth) for description of parameters.\n# Legal\nLegal\n\n  - [Privacy Policy](https://github.com/Podcastindex-org/legal/blob/main/PrivacyPolicy.md)\n  - [Terms of Service](https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md)\n  - [License](https://github.com/Podcastindex-org/docs-api/blob/master/LICENSE)\n"
   },
   "tags": [
     {
@@ -346,6 +346,36 @@
           "type": "integer"
         },
         "example": 16795089
+      },
+      "guid_episode": {
+        "name": "guid",
+        "in": "query",
+        "description": "The guid value for the episode to retrieve.\n\n\n  This value is the value specified in the feed's `<guid>` field.\n",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "PC2084"
+      },
+      "feedurl": {
+        "name": "feedurl",
+        "in": "query",
+        "description": "The Feed URL\n",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "example": "http://mp3s.nashownotes.com/pc20rss.xml"
+      },
+      "feedid": {
+        "name": "feedid",
+        "in": "query",
+        "description": "The PodcastIndex Feed ID\n",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "example": "920666"
       },
       "max_random": {
         "name": "max",
@@ -1042,6 +1072,16 @@
         "type": "boolean",
         "example": true
       },
+      "customKey": {
+        "description": "The name of a custom record key to send along with the payment.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value) and [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for more information.\n",
+        "type": "string",
+        "example": "112111100"
+      },
+      "customValue": {
+        "description": "A custom value to pass along with the payment. This is considered the value that belongs to the customKey.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value) and [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for more information.\n",
+        "type": "string",
+        "example": "wal_ZmqFg13NB31oek"
+      },
       "destination_v4v": {
         "description": "Destination for \"Value for Value\" payment.\n",
         "type": "object",
@@ -1060,6 +1100,12 @@
           },
           "fee": {
             "$ref": "#/components/schemas/fee_destination"
+          },
+          "customKey": {
+            "$ref": "#/components/schemas/customKey"
+          },
+          "customValue": {
+            "$ref": "#/components/schemas/customValue"
           }
         }
       },
@@ -1083,18 +1129,18 @@
         }
       },
       "url_funding": {
-        "description": "URL to site to fund the podcast\n\nSee the [podcast namespace spec](https://podcastindex.org/namespace/1.0#funding) for more information.\n",
+        "description": "URL to site to fund the podcast\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
         "type": "string",
         "format": "URL",
         "example": "https://patreon.com/johnchidgey"
       },
       "message": {
-        "description": "Description of `url`\n\nSee the [podcast namespace spec](https://podcastindex.org/namespace/1.0#funding) for more information.\n",
+        "description": "Description of `url`\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
         "type": "string",
         "example": "Pragmatic on Patreon"
       },
       "funding": {
-        "description": "Information for donation/funding the podcast.\n\nSee the [podcast namespace spec](https://podcastindex.org/namespace/1.0#funding) for more information.\n",
+        "description": "Information for donation/funding the podcast.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
         "type": "object",
         "properties": {
           "url": {
@@ -1550,6 +1596,68 @@
           "$ref": "#/components/schemas/soundbite"
         }
       },
+      "id_person": {
+        "description": "The internal PodcastIndex.org person ID.\n",
+        "type": "integer",
+        "example": 411960
+      },
+      "name_person": {
+        "description": "The name of the person.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "type": "string",
+        "example": "Dave Jones"
+      },
+      "role": {
+        "description": "Used to identify what role the person serves on the show or episode.\n\nValue should be an official role within the Podcast Taxonomy Project [list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json).\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "type": "string",
+        "example": "Host"
+      },
+      "group": {
+        "description": "The group the person's role is in.\n\nValue should be an official group within the Podcast Taxonomy Project [list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json).\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "type": "string",
+        "example": "Cast"
+      },
+      "href": {
+        "description": "The url to a relevant resource of information about the person, such as a homepage or third-party profile platform.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "type": "string",
+        "format": "URL",
+        "example": "https://engineered.network/img/people/dave-jones.jp"
+      },
+      "img": {
+        "description": "URL to a picture or avatar of the person.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "type": "string",
+        "format": "URL",
+        "example": "https://engineered.network/img/people/dave-jones.jp"
+      },
+      "person": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/id_person"
+          },
+          "name": {
+            "$ref": "#/components/schemas/name_person"
+          },
+          "role": {
+            "$ref": "#/components/schemas/role"
+          },
+          "group": {
+            "$ref": "#/components/schemas/group"
+          },
+          "href": {
+            "$ref": "#/components/schemas/href"
+          },
+          "img": {
+            "$ref": "#/components/schemas/img"
+          }
+        }
+      },
+      "persons": {
+        "description": "List of people with an interest in this episode.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/person"
+        }
+      },
       "item_podcast": {
         "type": "object",
         "properties": {
@@ -1627,6 +1735,9 @@
           },
           "soundbites": {
             "$ref": "#/components/schemas/soundbites"
+          },
+          "persons": {
+            "$ref": "#/components/schemas/persons"
           },
           "value": {
             "$ref": "#/components/schemas/value"
@@ -1735,6 +1846,12 @@
           "transcripts": {
             "$ref": "#/components/schemas/transcripts"
           },
+          "persons": {
+            "$ref": "#/components/schemas/persons"
+          },
+          "value": {
+            "$ref": "#/components/schemas/value"
+          },
           "soundbite": {
             "$ref": "#/components/schemas/soundbite"
           },
@@ -1742,6 +1859,21 @@
             "$ref": "#/components/schemas/soundbites"
           }
         }
+      },
+      "feedid_query": {
+        "description": "Value passed to request in the `feedid` parameter\n",
+        "type": "string",
+        "example": "920666"
+      },
+      "feedurl_query": {
+        "description": "Value passed to request in the `feedurl` parameter. If no `feedurl` passed, value will be null.\n",
+        "type": "string",
+        "example": "http://mp3s.nashownotes.com/pc20rss.xml"
+      },
+      "guid_query": {
+        "description": "Value passed to request in the `guid` parameter.\n",
+        "type": "string",
+        "example": "PC2084"
       },
       "item_podcast_random": {
         "type": "object",
@@ -2477,6 +2609,36 @@
           }
         }
       },
+      "episodes_byguid": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "id": {
+                  "$ref": "#/components/schemas/feedid_query"
+                },
+                "url": {
+                  "$ref": "#/components/schemas/feedurl_query"
+                },
+                "guid": {
+                  "$ref": "#/components/schemas/guid_query"
+                },
+                "episode": {
+                  "$ref": "#/components/schemas/episode_object"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
       "episodes_random": {
         "description": "Success",
         "content": {
@@ -2834,7 +2996,7 @@
           "Search"
         ],
         "summary": "Search Podcasts by Title",
-        "description": "This call returns all of the feeds where the `title` of the feed matches the search term (ignores case).\nExample \"everything everywhere daily\" will match the podcast [Everything Everywhere Daily](https://podcastindex.org/podcast/437685) by \"everything everywhere\" will not.\nExample: https://api.podcastindex.org/api/1.0/search/bytitle?q=everything+everywhere+daily&pretty\n",
+        "description": "This call returns all of the feeds where the `title` of the feed matches the search term (ignores case).\n\nExample \"everything everywhere daily\" will match the podcast [Everything Everywhere Daily](https://podcastindex.org/podcast/437685) by \"everything everywhere\" will not.\n\nExample: https://api.podcastindex.org/api/1.0/search/bytitle?q=everything+everywhere+daily&pretty\n",
         "operationId": "search/bytitle",
         "security": [
           {
@@ -3068,7 +3230,7 @@
           "Podcasts"
         ],
         "summary": "By Tag",
-        "description": "This call returns all feeds that support the specified [podcast namespace](https://podcastindex.org/namespace/1.0) tag.\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&pretty\n",
+        "description": "This call returns all feeds that support the specified [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&pretty\n",
         "operationId": "podcasts/bytag",
         "security": [
           {
@@ -3360,6 +3522,52 @@
         }
       }
     },
+    "/episodes/byguid": {
+      "get": {
+        "tags": [
+          "Episodes"
+        ],
+        "summary": "By GUID",
+        "description": "Get all the metadata for a single episode by passing its guid and the feed id or URL.\n\nThe `feedid` or the `feedurl` is required.\n\nExamples: \n\n  - Search using Podcast Index feed ID: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedid=920666&pretty\n  - Search using feed URL: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedurl=http://mp3s.nashownotes.com/pc20rss.xml&pretty\n",
+        "operationId": "episodes/byguid",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/guid_episode"
+          },
+          {
+            "$ref": "#/components/parameters/feedurl"
+          },
+          {
+            "$ref": "#/components/parameters/feedid"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/episodes_byguid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
     "/episodes/random": {
       "get": {
         "tags": [
@@ -3550,7 +3758,7 @@
           "Recent"
         ],
         "summary": "Soundbites",
-        "description": "This call returns the most recent `max` soundbites that the index has discovered.\n\nA soundbite consists of an enclosure url, a start time and a duration. It is documented in the [podcast namespace](https://podcastindex.org/namespace/1.0#soundbite).\n\nExample: https://api.podcastindex.org/api/1.0/recent/soundbites?pretty\n",
+        "description": "This call returns the most recent `max` soundbites that the index has discovered.\n\nA soundbite consists of an enclosure url, a start time and a duration. It is documented in the [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#soundbite).\n\nExample: https://api.podcastindex.org/api/1.0/recent/soundbites?pretty\n",
         "operationId": "recent/soundbites",
         "security": [
           {

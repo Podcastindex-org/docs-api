@@ -1,0 +1,18 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        id:
+          $ref: '../properties/feedid_query.yaml'
+        url:
+          $ref: '../properties/feedurl_query.yaml'
+        guid:
+          $ref: '../properties/guid_query.yaml'
+        episode:
+          $ref: '../properties/episode_object.yaml'
+        description:
+          $ref: '../properties/description_response.yaml'

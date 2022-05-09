@@ -5,7 +5,7 @@ get:
   # language=Markdown
   description: >
     This call returns all feeds that support the specified
-    [podcast namespace](https://podcastindex.org/namespace/1.0) tag.
+    [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.
 
 
     Example: https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&pretty

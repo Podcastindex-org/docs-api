@@ -1,0 +1,32 @@
+get:
+  tags:
+    - Episodes
+  summary: By GUID
+  # language=Markdown
+  description: >
+    Get all the metadata for a single episode by passing its guid and the feed id or URL.
+
+
+    The `feedid` or the `feedurl` is required.
+
+
+    Examples: 
+    
+      - Search using Podcast Index feed ID: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedid=920666&pretty
+      - Search using feed URL: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedurl=http://mp3s.nashownotes.com/pc20rss.xml&pretty
+  operationId: episodes/byguid
+  security:
+    - $ref: '../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../components/parameters/guid_episode.yaml'
+    - $ref: '../../components/parameters/feedurl.yaml'
+    - $ref: '../../components/parameters/feedid.yaml'
+    - $ref: '../../components/parameters/fulltext.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/episodes_byguid.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

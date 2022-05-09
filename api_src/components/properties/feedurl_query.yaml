@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Value passed to request in the `feedurl` parameter. If no `feedurl` passed, value will be null.
+type: string
+example: "http://mp3s.nashownotes.com/pc20rss.xml"
