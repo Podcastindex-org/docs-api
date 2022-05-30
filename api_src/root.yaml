@@ -27,6 +27,7 @@ info:
     Users have provided example code for working the API in the following languages:
 
       - [AWS Lambda - python](https://github.com/tbowers/python-podcastindex-org-lambda)
+      - [Bash](https://github.com/suorcd/Bash-podcastindex-org-example)
       - [C#](https://github.com/ComicStrip/csharp-podcastindex-org-example)
       - [Elisp](https://github.com/sabexx/elisp-example)
       - [Flutter/Dart](https://github.com/crediblecreative/flutter-dart-podcastindex-org-example)
