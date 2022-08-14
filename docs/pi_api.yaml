@@ -1945,6 +1945,49 @@ components:
         Value passed to request in the `guid` parameter.
       type: string
       example: PC2084
+    item_podcast_live:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id_episode'
+        title:
+          $ref: '#/components/schemas/title_feed'
+        link:
+          $ref: '#/components/schemas/link_feed'
+        guid:
+          $ref: '#/components/schemas/guid'
+        datePublished:
+          $ref: '#/components/schemas/datePublished'
+        datePublishedPretty:
+          $ref: '#/components/schemas/datePublishedPretty'
+        dateCrawled:
+          $ref: '#/components/schemas/dateCrawled'
+        enclosureUrl:
+          $ref: '#/components/schemas/enclosureUrl'
+        enclosureType:
+          $ref: '#/components/schemas/enclosureType'
+        enclosureLength:
+          $ref: '#/components/schemas/enclosureLength'
+        explicit:
+          $ref: '#/components/schemas/explicit'
+        image:
+          $ref: '#/components/schemas/image_episode'
+        feedItunesId:
+          $ref: '#/components/schemas/itunesId_feed'
+        feedImage:
+          $ref: '#/components/schemas/image_feed'
+        feedId:
+          $ref: '#/components/schemas/id_feed'
+        feedLanguage:
+          $ref: '#/components/schemas/language'
+        categories:
+          $ref: '#/components/schemas/categories'
+    items_live:
+      description: |
+        List of episodes matching request
+      type: array
+      items:
+        $ref: '#/components/schemas/item_podcast_live'
     item_podcast_random:
       type: object
       properties:
@@ -2460,6 +2503,23 @@ components:
                 $ref: '#/components/schemas/guid_query'
               episode:
                 $ref: '#/components/schemas/episode_object'
+              description:
+                $ref: '#/components/schemas/description_response'
+    episodes_live:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: '#/components/schemas/status'
+              items:
+                $ref: '#/components/schemas/items_live'
+              count:
+                $ref: '#/components/schemas/count'
+              max:
+                $ref: '#/components/schemas/max'
               description:
                 $ref: '#/components/schemas/description_response'
     episodes_random:
@@ -3282,6 +3342,36 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/episodes_byguid'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+  /episodes/live:
+    get:
+      tags:
+        - Episodes
+      summary: Live
+      description: >
+        Get all episodes that have been found in the
+        [podcast:liveitem](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#live-item)
+        from the feeds.
+
+
+        Examples: 
+
+          - https://api.podcastindex.org/api/1.0/episodes/live?pretty
+      operationId: episodes/live
+      security:
+        - API Key: []
+          User Agent: []
+          Date: []
+          Authorization: []
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          $ref: '#/components/responses/episodes_live'
         '400':
           $ref: '#/components/responses/400'
         '401':

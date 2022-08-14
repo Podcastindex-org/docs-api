@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Episodes
+  summary: Live
+  # language=Markdown
+  description: >
+    Get all episodes that have been found in the [podcast:liveitem](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#live-item) from the feeds.
+
+
+    Examples: 
+    
+      - https://api.podcastindex.org/api/1.0/episodes/live?pretty
+  operationId: episodes/live
+  security:
+    - $ref: '../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../components/parameters/max.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/episodes_live.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'
