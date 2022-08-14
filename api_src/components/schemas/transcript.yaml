@@ -11,6 +11,7 @@ properties:
     format: URL
     example: "https://mp3s.nashownotes.com/NA-1385-Captions.srt"
   type:
+    # language=Markdown
     description: >
       Mime type of the file such as `text/plain`, `text/html`, `application/srt`, `text/vtt`, `application/json`
     type: string
