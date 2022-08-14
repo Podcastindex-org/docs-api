@@ -141,6 +141,15 @@
         },
         "allowEmptyValue": true
       },
+      "similar": {
+        "name": "similar",
+        "in": "query",
+        "description": "If present, include similar matches in search response\n",
+        "schema": {
+          "type": "boolean"
+        },
+        "allowEmptyValue": true
+      },
       "q_person": {
         "name": "q",
         "in": "query",
@@ -3021,6 +3030,9 @@
           },
           {
             "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/similar"
           }
         ],
         "responses": {
@@ -3937,9 +3949,8 @@
           "Hub"
         ],
         "summary": "Pub Notify",
-        "description": "Notify the index that a feed has changed\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n",
+        "description": "Notify the index that a feed has changed\n\nNote: No API key needed for this endpoint.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n",
         "operationId": "hub/pubnotify",
-        "security": null,
         "parameters": [
           {
             "$ref": "#/components/parameters/id_feed_podcast_pi_pubnotify"
