@@ -552,7 +552,7 @@
         "example": "https://www.theincomparable.com/batmanuniversity/"
       },
       "description_feed": {
-        "description": "The channel-level description\n",
+        "description": "The channel-level description\n\nUses the longer of the possible fields in the feed: `<description>`, `<itunes:summary>` and `<content:encoded>`\n",
         "type": "string",
         "example": "Batman University is a seasonal podcast about you know who. It began with an analysis of episodes of “Batman: The Animated Series” but has now expanded to cover other series, movies, and media. Your professor is Tony Sindelar."
       },
@@ -785,7 +785,7 @@
         "example": 16795088
       },
       "description_episode": {
-        "description": "The item-level description of the episode\n",
+        "description": "The item-level description of the episode.\n\nUses the longer of the possible fields in the feed: `<description>`, `<itunes:summary>` and `<content:encoded>`\n",
         "type": "string",
         "example": "Batman University is back in session! James Thomson and Nathan Alderman join Tony for a discussion of Fox’s “Gotham.” Tune in to hear our thoughts on how a half-baked comic book show was reborn into an unmissable train wreck."
       },

@@ -1,5 +1,8 @@
   # language=Markdown
 description: >
   The channel-level description
+
+
+  Uses the longer of the possible fields in the feed: `<description>`, `<itunes:summary>` and `<content:encoded>`
 type: string
 example: "Batman University is a seasonal podcast about you know who. It began with an analysis of episodes of \u201cBatman: The Animated Series\u201d but has now expanded to cover other series, movies, and media. Your professor is Tony Sindelar."

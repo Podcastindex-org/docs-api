@@ -696,8 +696,12 @@ components:
       format: URL
       example: https://www.theincomparable.com/batmanuniversity/
     description_feed:
-      description: |
+      description: >
         The channel-level description
+
+
+        Uses the longer of the possible fields in the feed: `<description>`,
+        `<itunes:summary>` and `<content:encoded>`
       type: string
       example: >-
         Batman University is a seasonal podcast about you know who. It began
@@ -961,8 +965,12 @@ components:
       type: integer
       example: 16795088
     description_episode:
-      description: |
-        The item-level description of the episode
+      description: >
+        The item-level description of the episode.
+
+
+        Uses the longer of the possible fields in the feed: `<description>`,
+        `<itunes:summary>` and `<content:encoded>`
       type: string
       example: >-
         Batman University is back in session! James Thomson and Nathan Alderman
