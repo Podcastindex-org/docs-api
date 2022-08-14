@@ -180,6 +180,8 @@ paths:
     $ref: 'paths/episodes/byid.yaml'
   '/episodes/byguid':
     $ref: 'paths/episodes/byguid.yaml'
+  '/episodes/live':
+    $ref: 'paths/episodes/live.yaml'
   '/episodes/random':
     $ref: 'paths/episodes/random.yaml'
   '/recent/episodes':

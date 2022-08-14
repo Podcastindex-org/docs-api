@@ -1,0 +1,16 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        items:
+          $ref: '../properties/items_live.yaml'
+        count:
+          $ref: '../properties/count.yaml'
+        max:
+          $ref: '../properties/max.yaml'
+        description:
+          $ref: '../properties/description_response.yaml'
