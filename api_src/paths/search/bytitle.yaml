@@ -21,6 +21,7 @@ get:
     - $ref: '../../components/parameters/clean.yaml'
     - $ref: '../../components/parameters/fulltext.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
+    - $ref: '../../components/parameters/similar.yaml'
   responses:
     '200':
       $ref: '../../components/responses/search_byterm.yaml'

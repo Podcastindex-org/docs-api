@@ -1,0 +1,8 @@
+name: similar
+in: query
+# language=Markdown
+description: >
+  If present, include similar matches in search response
+schema:
+  type: boolean
+allowEmptyValue: true

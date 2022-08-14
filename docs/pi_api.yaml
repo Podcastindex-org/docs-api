@@ -251,6 +251,14 @@ components:
       schema:
         type: boolean
       allowEmptyValue: true
+    similar:
+      name: similar
+      in: query
+      description: |
+        If present, include similar matches in search response
+      schema:
+        type: boolean
+      allowEmptyValue: true
     q_person:
       name: q
       in: query
@@ -2861,6 +2869,7 @@ paths:
         - $ref: '#/components/parameters/clean'
         - $ref: '#/components/parameters/fulltext'
         - $ref: '#/components/parameters/pretty'
+        - $ref: '#/components/parameters/similar'
       responses:
         '200':
           $ref: '#/components/responses/search_byterm'
@@ -3545,12 +3554,13 @@ paths:
       description: |
         Notify the index that a feed has changed
 
+        Note: No API key needed for this endpoint.
+
         Examples:
 
           - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty
           - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty
       operationId: hub/pubnotify
-      security: null
       parameters:
         - $ref: '#/components/parameters/id_feed_podcast_pi_pubnotify'
         - $ref: '#/components/parameters/url_pubnotify'
