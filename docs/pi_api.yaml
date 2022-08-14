@@ -3550,11 +3550,7 @@ paths:
           - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty
           - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty
       operationId: hub/pubnotify
-      security:
-        - API Key: []
-          User Agent: []
-          Date: []
-          Authorization: []
+      security: null
       parameters:
         - $ref: '#/components/parameters/id_feed_podcast_pi_pubnotify'
         - $ref: '#/components/parameters/url_pubnotify'
