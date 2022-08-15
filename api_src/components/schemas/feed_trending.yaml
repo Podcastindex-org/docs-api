@@ -12,6 +12,8 @@ properties:
     $ref: '../properties/author.yaml'
   image:
     $ref: '../properties/image_feed.yaml'
+  artwork:
+    $ref: '../properties/artwork.yaml'
   newestItemPublishedTime:
     $ref: '../properties/newestItemPublishedTime.yaml'
   itunesId:

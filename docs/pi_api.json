@@ -1505,6 +1505,9 @@
           "image": {
             "$ref": "#/components/schemas/image_feed"
           },
+          "artwork": {
+            "$ref": "#/components/schemas/artwork"
+          },
           "newestItemPublishedTime": {
             "$ref": "#/components/schemas/newestItemPublishedTime"
           },
