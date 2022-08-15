@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  The internal PodcastIndex.org Feed ID this feed duplicates
+type: integer
+example: 75075
