@@ -1648,6 +1648,11 @@ components:
       type: integer
       format: Unix Epoch
       example: 1613805249
+    duplicateOf:
+      description: |
+        The internal PodcastIndex.org Feed ID this feed duplicates
+      type: integer
+      example: 75075
     feed_dead:
       type: object
       properties:
@@ -1657,6 +1662,8 @@ components:
           $ref: '#/components/schemas/title_feed'
         url:
           $ref: '#/components/schemas/url_feed'
+        duplicateOf:
+          $ref: '#/components/schemas/duplicateOf'
     feeds_dead:
       description: |
         List of feeds matching request

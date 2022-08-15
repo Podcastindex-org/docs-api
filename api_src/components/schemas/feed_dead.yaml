@@ -6,3 +6,5 @@ properties:
     $ref: '../properties/title_feed.yaml'
   url:
     $ref: '../properties/url_feed.yaml'
+  duplicateOf:
+    $ref: '../properties/duplicateOf.yaml'

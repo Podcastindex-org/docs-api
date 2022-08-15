@@ -1555,6 +1555,11 @@
         "format": "Unix Epoch",
         "example": 1613805249
       },
+      "duplicateOf": {
+        "description": "The internal PodcastIndex.org Feed ID this feed duplicates\n",
+        "type": "integer",
+        "example": 75075
+      },
       "feed_dead": {
         "type": "object",
         "properties": {
@@ -1566,6 +1571,9 @@
           },
           "url": {
             "$ref": "#/components/schemas/url_feed"
+          },
+          "duplicateOf": {
+            "$ref": "#/components/schemas/duplicateOf"
           }
         }
       },
