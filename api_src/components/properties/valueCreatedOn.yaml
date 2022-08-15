@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The time this feed's `value` data added
+type: integer
+format: Unix Epoch
+example: 1598369047

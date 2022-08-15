@@ -1377,6 +1377,12 @@
           }
         }
       },
+      "valueCreatedOn": {
+        "description": "The time this feed's `value` data added\n",
+        "type": "integer",
+        "format": "Unix Epoch",
+        "example": 1598369047
+      },
       "feed_bytag": {
         "type": "object",
         "properties": {
@@ -1463,6 +1469,12 @@
           },
           "funding": {
             "$ref": "#/components/schemas/funding"
+          },
+          "podcastGuid": {
+            "$ref": "#/components/schemas/podcastGuid"
+          },
+          "valueCreatedOn": {
+            "$ref": "#/components/schemas/valueCreatedOn"
           }
         }
       },

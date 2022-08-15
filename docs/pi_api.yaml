@@ -1518,6 +1518,12 @@ components:
           $ref: '#/components/schemas/podcastGuid_query'
         id:
           $ref: '#/components/schemas/id_guid_query'
+    valueCreatedOn:
+      description: |
+        The time this feed's `value` data added
+      type: integer
+      format: Unix Epoch
+      example: 1598369047
     feed_bytag:
       type: object
       properties:
@@ -1577,6 +1583,10 @@ components:
           $ref: '#/components/schemas/value'
         funding:
           $ref: '#/components/schemas/funding'
+        podcastGuid:
+          $ref: '#/components/schemas/podcastGuid'
+        valueCreatedOn:
+          $ref: '#/components/schemas/valueCreatedOn'
     feeds_bytag:
       description: |
         List of feeds matching request

@@ -56,3 +56,7 @@ properties:
     $ref: '../properties/value.yaml'
   funding:
     $ref: '../properties/funding.yaml'
+  podcastGuid:
+    $ref: '../properties/podcastGuid.yaml'
+  valueCreatedOn:
+    $ref: '../properties/valueCreatedOn.yaml'
