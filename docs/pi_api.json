@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "version": "1.7.2",
+    "version": "1.8.0",
     "title": "PodcastIndex.org API",
     "termsOfService": "https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md",
     "contact": {
