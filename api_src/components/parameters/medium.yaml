@@ -1,0 +1,20 @@
+name: medium
+in: query
+# language=Markdown
+description: >
+  The medium value to search for.
+  
+  
+  Full list of possible values documented in
+  [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) tag spec.
+schema:
+  type: string
+  enum:
+    - "audiobook"
+    - "blog"
+    - "film"
+    - "music"
+    - "newsletter"
+    - "podcast"
+    - "video"
+example: "film"

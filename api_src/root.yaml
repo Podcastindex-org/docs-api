@@ -166,6 +166,8 @@ paths:
     $ref: 'paths/podcasts/byguid.yaml'
   '/podcasts/bytag':
     $ref: 'paths/podcasts/bytag.yaml'
+  '/podcasts/bymedium':
+    $ref: 'paths/podcasts/bymedium.yaml'
   '/podcasts/trending':
     $ref: 'paths/podcasts/trending.yaml'
   '/podcasts/dead':

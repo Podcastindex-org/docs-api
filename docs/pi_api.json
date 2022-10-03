@@ -220,6 +220,24 @@
         "allowEmptyValue": true,
         "required": true
       },
+      "medium": {
+        "name": "medium",
+        "in": "query",
+        "description": "The medium value to search for.\n\nFull list of possible values documented in [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) tag spec.\n",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "audiobook",
+            "blog",
+            "film",
+            "music",
+            "newsletter",
+            "podcast",
+            "video"
+          ]
+        },
+        "example": "film"
+      },
       "max": {
         "name": "max",
         "in": "query",
@@ -1493,6 +1511,11 @@
           "$ref": "#/components/schemas/feed_bytag"
         }
       },
+      "medium": {
+        "description": "Value of `medium` parameter used in request\n",
+        "type": "string",
+        "example": "film"
+      },
       "newestItemPublishedTime": {
         "description": "The date and time the most recent episode in the feed was published\n",
         "type": "integer",
@@ -2557,6 +2580,33 @@
           }
         }
       },
+      "bymedium": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "feeds": {
+                  "$ref": "#/components/schemas/feeds"
+                },
+                "count": {
+                  "$ref": "#/components/schemas/count"
+                },
+                "medium": {
+                  "$ref": "#/components/schemas/medium"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
       "podcasts_trending": {
         "description": "Success",
         "content": {
@@ -3395,6 +3445,43 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/podcasts_bytag"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/bymedium": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "By Medium",
+        "description": "This call returns all feeds marked with the specified [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) tag value.\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/bymedium?medium=music&pretty\n",
+        "operationId": "podcasts/bymedium",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/medium"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/bymedium"
           },
           "400": {
             "$ref": "#/components/responses/400"

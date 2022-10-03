@@ -1,0 +1,24 @@
+get:
+  tags:
+    - Podcasts
+  summary: By Medium
+  # language=Markdown
+  description: >
+    This call returns all feeds marked with the specified
+    [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) tag value.
+
+
+    Example: https://api.podcastindex.org/api/1.0/podcasts/bymedium?medium=music&pretty
+  operationId: podcasts/bymedium
+  security:
+    - $ref: '../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../components/parameters/medium.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/bymedium.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'
