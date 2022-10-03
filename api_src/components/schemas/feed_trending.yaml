@@ -14,8 +14,8 @@ properties:
     $ref: '../properties/image_feed.yaml'
   artwork:
     $ref: '../properties/artwork.yaml'
-  newestItemPublishedTime:
-    $ref: '../properties/newestItemPublishedTime.yaml'
+  newestItemPublishTime:
+    $ref: '../properties/newestItemPublishTime.yaml'
   itunesId:
     $ref: '../properties/itunesId_feed.yaml'
   trendScore:
