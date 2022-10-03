@@ -15,6 +15,9 @@ get:
       - Apple: https://itunes.apple.com/search?media=podcast&entity=podcast&term=batman
       - PodcastIndex: https://api.podcastindex.org/search?term=batman
   operationId: search
+  servers:
+    - url: https://api.podcastindex.org
+      description: "URL for Apple Replacement endpoints"
   parameters:
     - $ref: '../../components/parameters/term_itunes.yaml'
     - $ref: '../../components/parameters/pretty.yaml'

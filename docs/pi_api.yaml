@@ -3037,6 +3037,9 @@ paths:
           - Apple: https://itunes.apple.com/search?media=podcast&entity=podcast&term=batman
           - PodcastIndex: https://api.podcastindex.org/search?term=batman
       operationId: search
+      servers:
+        - url: https://api.podcastindex.org
+          description: URL for Apple Replacement endpoints
       parameters:
         - $ref: '#/components/parameters/term_itunes'
         - $ref: '#/components/parameters/pretty'
@@ -3065,6 +3068,9 @@ paths:
           - Apple: https://itunes.apple.com/lookup?media=podcast&entity=podcast&id=1636765656
           - PodcastIndex: https://api.podcastindex.org/lookup?entity=podcast&id=1636765656
       operationId: lookup
+      servers:
+        - url: https://api.podcastindex.org
+          description: URL for Apple Replacement endpoints
       parameters:
         - $ref: '#/components/parameters/id_feed_podcast_itunes'
         - $ref: '#/components/parameters/entity'
