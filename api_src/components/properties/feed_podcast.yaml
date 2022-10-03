@@ -43,6 +43,8 @@ properties:
     $ref: '../properties/generator.yaml'
   language:
     $ref: '../properties/language.yaml'
+  explicit:
+    $ref: '../properties/explicit_feed.yaml'
   type:
     $ref: '../properties/type.yaml'
   dead:

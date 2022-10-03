@@ -829,8 +829,8 @@
         "format": "seconds",
         "example": 54
       },
-      "explicit": {
-        "description": "Is episode marked as explicit\n\n  - 0: not marked explicit\n  - 1: marked explicit\n",
+      "explicit_episode": {
+        "description": "Is feed or episode marked as explicit\n\n  - 0: not marked explicit\n  - 1: marked explicit\n",
         "type": "integer",
         "enum": [
           0,
@@ -939,7 +939,7 @@
             "$ref": "#/components/schemas/duration"
           },
           "explicit": {
-            "$ref": "#/components/schemas/explicit"
+            "$ref": "#/components/schemas/explicit_episode"
           },
           "episode": {
             "$ref": "#/components/schemas/episode_number"
@@ -1007,6 +1007,11 @@
         "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
         "type": "string",
         "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
+      },
+      "explicit_feed": {
+        "description": "Is feed marked as explicit\n",
+        "type": "boolean",
+        "example": false
       },
       "chash": {
         "description": "The md5 hash of the following feed items in hex format.\n\n  - `title`\n  - `link`\n  - `feedLanguage`\n  - `generator`\n  - `author`\n  - `ownerName`\n  - `ownerEmail` (note: not exposed via the API)\n\nPseudo-code:\n\n      chash = md5(title+link+feedLanguage+generator+author+ownerName+ownerEmail)\n",
@@ -1223,6 +1228,9 @@
           },
           "language": {
             "$ref": "#/components/schemas/language"
+          },
+          "explicit": {
+            "$ref": "#/components/schemas/explicit_feed"
           },
           "type": {
             "$ref": "#/components/schemas/type"
@@ -1730,7 +1738,7 @@
             "$ref": "#/components/schemas/duration"
           },
           "explicit": {
-            "$ref": "#/components/schemas/explicit"
+            "$ref": "#/components/schemas/explicit_episode"
           },
           "episode": {
             "$ref": "#/components/schemas/episode_number"
@@ -1843,7 +1851,7 @@
             "$ref": "#/components/schemas/duration"
           },
           "explicit": {
-            "$ref": "#/components/schemas/explicit"
+            "$ref": "#/components/schemas/explicit_episode"
           },
           "episode": {
             "$ref": "#/components/schemas/episode_number"
@@ -1941,7 +1949,7 @@
             "$ref": "#/components/schemas/enclosureLength"
           },
           "explicit": {
-            "$ref": "#/components/schemas/explicit"
+            "$ref": "#/components/schemas/explicit_episode"
           },
           "image": {
             "$ref": "#/components/schemas/image_episode"
@@ -2007,7 +2015,7 @@
             "$ref": "#/components/schemas/enclosureLength"
           },
           "explicit": {
-            "$ref": "#/components/schemas/explicit"
+            "$ref": "#/components/schemas/explicit_episode"
           },
           "episode": {
             "$ref": "#/components/schemas/episode_number"
@@ -2088,7 +2096,7 @@
             "$ref": "#/components/schemas/enclosureLength"
           },
           "explicit": {
-            "$ref": "#/components/schemas/explicit"
+            "$ref": "#/components/schemas/explicit_episode"
           },
           "episode": {
             "$ref": "#/components/schemas/episode_number"

@@ -21,7 +21,7 @@ properties:
   enclosureLength:
     $ref: '../properties/enclosureLength.yaml'
   explicit:
-    $ref: '../properties/explicit.yaml'
+    $ref: '../properties/explicit_episode.yaml'
   image:
     $ref: '../properties/image_episode.yaml'
   feedItunesId:
