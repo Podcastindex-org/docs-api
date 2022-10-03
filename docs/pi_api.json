@@ -1764,6 +1764,12 @@
           "feedLanguage": {
             "$ref": "#/components/schemas/language"
           },
+          "feedDead": {
+            "$ref": "#/components/schemas/dead"
+          },
+          "feedDuplicateOf": {
+            "$ref": "#/components/schemas/duplicateOf"
+          },
           "chaptersUrl": {
             "$ref": "#/components/schemas/chaptersUrl"
           },
