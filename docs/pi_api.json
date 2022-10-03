@@ -2277,32 +2277,37 @@
           "feedCountTotal": {
             "description": "Total podcast feeds in the index.",
             "type": "integer",
-            "example": 1383751
+            "example": 4048514
           },
           "episodeCountTotal": {
             "description": "Total individual podcast episodes in the index.",
             "type": "integer",
-            "example": 16987920
+            "example": 112890355
           },
           "feedsWithNewEpisodes3days": {
             "description": "Podcast feeds with a new episode released in the last 3 days.",
             "type": "integer",
-            "example": 63942
+            "example": 87369
           },
           "feedsWithNewEpisodes10days": {
             "description": "Podcast feeds with a new episode released in the last 10 days.",
             "type": "integer",
-            "example": 176435
+            "example": 242922
           },
           "feedsWithNewEpisodes30days": {
             "description": "Podcast feeds with a new episode released in the last 30 days.",
             "type": "integer",
-            "example": 264845
+            "example": 352744
           },
           "feedsWithNewEpisodes90days": {
             "description": "Podcast feeds with a new episode released in the last 90 days.",
             "type": "integer",
-            "example": 362248
+            "example": 478568
+          },
+          "feedsWithValueBlocks": {
+            "description": "Podcast feeds with a value block",
+            "type": "integer",
+            "example": 9772
           }
         }
       },
