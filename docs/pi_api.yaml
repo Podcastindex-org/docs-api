@@ -598,6 +598,29 @@ components:
         minimum: 1
         maximum: 1000
       example: 20
+    feedid_newfeeds:
+      name: feedid
+      in: query
+      description: |
+        The PodcastIndex Feed ID to start from (or go to if `desc` specified).
+
+        If `since` parameter also specified, value of `since` is ignored.
+      required: false
+      schema:
+        type: string
+      example: '2653471'
+    desc:
+      name: desc
+      in: query
+      description: |
+        If present, display feeds in descending order.
+
+        Only applicable when using `feedid` parameter.
+
+        Parameter shall not have a value
+      schema:
+        type: boolean
+      allowEmptyValue: true
     max_recent_soundbites:
       name: max
       in: query
@@ -3596,6 +3619,8 @@ paths:
 
           - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty
           - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty&since=1613805000
+          - https://api.podcastindex.org/api/1.0/recent/newfeeds?feedid=2653471&pretty
+          - https://api.podcastindex.org/api/1.0/recent/newfeeds?feedid=2653471&desc&pretty
       operationId: recent/newfeeds
       security:
         - API Key: []
@@ -3605,6 +3630,8 @@ paths:
       parameters:
         - $ref: '#/components/parameters/max_recent_feeds'
         - $ref: '#/components/parameters/since'
+        - $ref: '#/components/parameters/feedid_newfeeds'
+        - $ref: '#/components/parameters/desc'
         - $ref: '#/components/parameters/pretty'
       responses:
         '200':

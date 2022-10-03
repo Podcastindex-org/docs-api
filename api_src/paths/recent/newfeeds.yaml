@@ -11,12 +11,16 @@ get:
 
       - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty
       - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty&since=1613805000
+      - https://api.podcastindex.org/api/1.0/recent/newfeeds?feedid=2653471&pretty
+      - https://api.podcastindex.org/api/1.0/recent/newfeeds?feedid=2653471&desc&pretty
   operationId: recent/newfeeds
   security:
     - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/max_recent_feeds.yaml'
     - $ref: '../../components/parameters/since.yaml'
+    - $ref: '../../components/parameters/feedid_newfeeds.yaml'
+    - $ref: '../../components/parameters/desc.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
   responses:
     '200':
