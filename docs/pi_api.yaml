@@ -51,13 +51,15 @@ info:
 
     User created libraries for working with the API:
 
+      - .NET
+          - [PodcastIndexSharp](https://www.nuget.org/packages/PodcastIndexSharp)
       - Node.js/npm/yarn
           - [podcast-index-api](https://www.npmjs.com/package/podcast-index-api)
           - [podcastdx-client](https://www.npmjs.com/package/podcastdx-client)
+      - PHP
+          - [podcastindex-php](https://github.com/LowSociety/podcastindex-php)
       - Python/pip
           - [python-podcastindex](https://pypi.org/project/python-podcastindex/)
-      - .NET
-          - [PodcastIndexSharp](https://www.nuget.org/packages/PodcastIndexSharp)
 
     Are we missing a library? Did you create one for a different language?
     Create a [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls)
