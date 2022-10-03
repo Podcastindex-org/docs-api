@@ -23,7 +23,7 @@ enclosureLength:
 duration:
   $ref: '../properties/duration.yaml'
 explicit:
-  $ref: '../properties/explicit.yaml'
+  $ref: '../properties/explicit_episode.yaml'
 episode:
   $ref: '../properties/episode_number.yaml'
 episodeType:

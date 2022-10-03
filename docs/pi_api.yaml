@@ -1018,9 +1018,9 @@ components:
       type: integer
       format: seconds
       example: 54
-    explicit:
+    explicit_episode:
       description: |
-        Is episode marked as explicit
+        Is feed or episode marked as explicit
 
           - 0: not marked explicit
           - 1: marked explicit
@@ -1121,7 +1121,7 @@ components:
         duration:
           $ref: '#/components/schemas/duration'
         explicit:
-          $ref: '#/components/schemas/explicit'
+          $ref: '#/components/schemas/explicit_episode'
         episode:
           $ref: '#/components/schemas/episode_number'
         episodeType:
@@ -1177,6 +1177,11 @@ components:
         for details.
       type: string
       example: 9b024349-ccf0-5f69-a609-6b82873eab3c
+    explicit_feed:
+      description: |
+        Is feed marked as explicit
+      type: boolean
+      example: false
     chash:
       description: |
         The md5 hash of the following feed items in hex format.
@@ -1402,6 +1407,8 @@ components:
           $ref: '#/components/schemas/generator'
         language:
           $ref: '#/components/schemas/language'
+        explicit:
+          $ref: '#/components/schemas/explicit_feed'
         type:
           $ref: '#/components/schemas/type'
         dead:
@@ -1834,7 +1841,7 @@ components:
         duration:
           $ref: '#/components/schemas/duration'
         explicit:
-          $ref: '#/components/schemas/explicit'
+          $ref: '#/components/schemas/explicit_episode'
         episode:
           $ref: '#/components/schemas/episode_number'
         episodeType:
@@ -1917,7 +1924,7 @@ components:
         duration:
           $ref: '#/components/schemas/duration'
         explicit:
-          $ref: '#/components/schemas/explicit'
+          $ref: '#/components/schemas/explicit_episode'
         episode:
           $ref: '#/components/schemas/episode_number'
         episodeType:
@@ -1988,7 +1995,7 @@ components:
         enclosureLength:
           $ref: '#/components/schemas/enclosureLength'
         explicit:
-          $ref: '#/components/schemas/explicit'
+          $ref: '#/components/schemas/explicit_episode'
         image:
           $ref: '#/components/schemas/image_episode'
         feedItunesId:
@@ -2033,7 +2040,7 @@ components:
         enclosureLength:
           $ref: '#/components/schemas/enclosureLength'
         explicit:
-          $ref: '#/components/schemas/explicit'
+          $ref: '#/components/schemas/explicit_episode'
         episode:
           $ref: '#/components/schemas/episode_number'
         episodeType:
@@ -2088,7 +2095,7 @@ components:
         enclosureLength:
           $ref: '#/components/schemas/enclosureLength'
         explicit:
-          $ref: '#/components/schemas/explicit'
+          $ref: '#/components/schemas/explicit_episode'
         episode:
           $ref: '#/components/schemas/episode_number'
         episodeType:

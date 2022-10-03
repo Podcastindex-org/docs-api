@@ -1,6 +1,6 @@
   # language=Markdown
 description: >
-  Is episode marked as explicit
+  Is feed or episode marked as explicit
 
     - 0: not marked explicit
     - 1: marked explicit
