@@ -30,6 +30,8 @@ properties:
     $ref: '../properties/image_feed.yaml'
   feedId:
     $ref: '../properties/id_feed.yaml'
+  feedTitle:
+    $ref: '../properties/title_feed.yaml'
   feedLanguage:
     $ref: '../properties/language.yaml'
   categories:

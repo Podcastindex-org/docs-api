@@ -2011,6 +2011,9 @@
           "feedId": {
             "$ref": "#/components/schemas/id_feed"
           },
+          "feedTitle": {
+            "$ref": "#/components/schemas/title_feed"
+          },
           "feedLanguage": {
             "$ref": "#/components/schemas/language"
           },
