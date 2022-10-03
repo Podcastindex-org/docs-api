@@ -42,6 +42,10 @@ properties:
     $ref: '../properties/id_feed.yaml'
   feedLanguage:
     $ref: '../properties/language.yaml'
+  feedDead:
+    $ref: '../properties/dead.yaml'
+  feedDuplicateOf:
+    $ref: '../properties/duplicateOf.yaml'
   chaptersUrl:
     $ref: '../properties/chaptersUrl.yaml'
   transcripts:
