@@ -1,0 +1,9 @@
+name: term
+in: query
+# language=Markdown
+description: >
+  The term to search for
+required: true
+schema:
+  type: string
+example: "batman"

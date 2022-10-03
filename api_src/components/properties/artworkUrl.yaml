@@ -1,0 +1,9 @@
+# language=Markdown
+description: >
+  A URL for the artwork associated with the returned media type.
+  
+  
+  Note: Apple returns the image sized to value in the field name but the PodcastIndex returns the original image
+  specified in the feed.
+type: string
+example: "https://www.theincomparable.com/imgs/logos/logo-batmanuniversity-3x.jpg"

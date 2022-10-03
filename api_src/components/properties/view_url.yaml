@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  The URL for viewing the feed on the Apple website.
+type: string
+example: "https://podcasts.apple.com/us/podcast/*/id1441923632?uo=4"

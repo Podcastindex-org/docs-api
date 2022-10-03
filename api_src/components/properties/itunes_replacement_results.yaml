@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  List of feeds matching request
+type: array
+items:
+  $ref: '../schemas/itunes_results.yaml'

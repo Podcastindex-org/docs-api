@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Apple Replacement
+  summary: Search
+  # language=Markdown
+  description: >
+    Replaces the Apple search API but returns data from the Podcast Index database.
+    
+    
+    Note: No API key needed for this endpoint.
+    
+    
+    Example:
+    
+      - Apple: https://itunes.apple.com/search?media=podcast&entity=podcast&term=batman
+      - PodcastIndex: https://api.podcastindex.org/search?term=batman
+  operationId: search
+  parameters:
+    - $ref: '../../components/parameters/term_itunes.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/itunes_replacement.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

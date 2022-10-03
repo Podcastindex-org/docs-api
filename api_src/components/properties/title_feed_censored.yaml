@@ -1,0 +1,8 @@
+  # language=Markdown
+description: >
+  The name of the feed.
+  
+  
+  Note: Apple censors the name but PodcastIndex does not.
+type: string
+example: "Batman University"
