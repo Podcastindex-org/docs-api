@@ -1,0 +1,12 @@
+name: feedid
+in: query
+# language=Markdown
+description: >
+  The PodcastIndex Feed ID to start from (or go to if `desc` specified).
+  
+  
+  If `since` parameter also specified, value of `since` is ignored.
+required: false
+schema:
+  type: string
+example: "2653471"

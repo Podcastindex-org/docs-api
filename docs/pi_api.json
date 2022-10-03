@@ -458,6 +458,25 @@
         },
         "example": 20
       },
+      "feedid_newfeeds": {
+        "name": "feedid",
+        "in": "query",
+        "description": "The PodcastIndex Feed ID to start from (or go to if `desc` specified).\n\nIf `since` parameter also specified, value of `since` is ignored.\n",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "example": "2653471"
+      },
+      "desc": {
+        "name": "desc",
+        "in": "query",
+        "description": "If present, display feeds in descending order.\n\nOnly applicable when using `feedid` parameter.\n\nParameter shall not have a value\n",
+        "schema": {
+          "type": "boolean"
+        },
+        "allowEmptyValue": true
+      },
       "max_recent_soundbites": {
         "name": "max",
         "in": "query",
@@ -3986,7 +4005,7 @@
           "Recent"
         ],
         "summary": "New Feeds",
-        "description": "This call returns every new feed added to the index over the past 24 hours in reverse chronological order.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty&since=1613805000\n",
+        "description": "This call returns every new feed added to the index over the past 24 hours in reverse chronological order.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty&since=1613805000\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?feedid=2653471&pretty\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?feedid=2653471&desc&pretty\n",
         "operationId": "recent/newfeeds",
         "security": [
           {
@@ -4002,6 +4021,12 @@
           },
           {
             "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/feedid_newfeeds"
+          },
+          {
+            "$ref": "#/components/parameters/desc"
           },
           {
             "$ref": "#/components/parameters/pretty"
