@@ -1516,7 +1516,7 @@
         "type": "string",
         "example": "film"
       },
-      "newestItemPublishedTime": {
+      "newestItemPublishTime": {
         "description": "The date and time the most recent episode in the feed was published\n",
         "type": "integer",
         "format": "Unix Epoch",
@@ -1551,8 +1551,8 @@
           "artwork": {
             "$ref": "#/components/schemas/artwork"
           },
-          "newestItemPublishedTime": {
-            "$ref": "#/components/schemas/newestItemPublishedTime"
+          "newestItemPublishTime": {
+            "$ref": "#/components/schemas/newestItemPublishTime"
           },
           "itunesId": {
             "$ref": "#/components/schemas/itunesId_feed"
@@ -2184,8 +2184,8 @@
             "title": {
               "$ref": "#/components/schemas/title_feed"
             },
-            "newestItemPublishedTime": {
-              "$ref": "#/components/schemas/newestItemPublishedTime"
+            "newestItemPublishTime": {
+              "$ref": "#/components/schemas/newestItemPublishTime"
             },
             "oldestItemPublishTime": {
               "$ref": "#/components/schemas/oldestItemPublishTime"
