@@ -71,9 +71,12 @@ info:
       1. Download the contents of the [Postman Docs](https://github.com/Podcastindex-org/docs-api/tree/master/Postman%20Docs) folder.
       2. Import the `PodcastIndex.postman_collection.json` collection to Postman
       3. Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman
-      4. Set the `AuthKey` environment variable
-      5. Set the `SecretKey` environment variable
-      6. Hit the Send button (⌘ + return)
+      4. Click "Environments" on the left sidebar
+      5. Select the checkbox next to the PodcastIndexOrgEnvironment entry
+      6. Set `AuthKey` and `SeceretKey` values under the "Current Value" column using your API information 
+      7. Click "Collections" from the sidebar
+      8. Select PodcastIndex
+      9. Select and run the endpoint to test
 
     # Contributing
 
