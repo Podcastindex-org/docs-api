@@ -15,6 +15,9 @@ get:
       - Apple: https://itunes.apple.com/lookup?media=podcast&entity=podcast&id=1636765656
       - PodcastIndex: https://api.podcastindex.org/lookup?entity=podcast&id=1636765656
   operationId: lookup
+  servers:
+    - url: 'https://api.podcastindex.org'
+      description: "URL for Apple Replacement endpoints"
   parameters:
     - $ref: '../../components/parameters/id_feed_podcast_itunes.yaml'
     - $ref: '../../components/parameters/entity.yaml'

@@ -3380,6 +3380,12 @@
         "summary": "Search",
         "description": "Replaces the Apple search API but returns data from the Podcast Index database.\n\nNote: No API key needed for this endpoint.\n\nExample:\n\n  - Apple: https://itunes.apple.com/search?media=podcast&entity=podcast&term=batman\n  - PodcastIndex: https://api.podcastindex.org/search?term=batman\n",
         "operationId": "search",
+        "servers": [
+          {
+            "url": "https://api.podcastindex.org",
+            "description": "URL for Apple Replacement endpoints"
+          }
+        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/term_itunes"
@@ -3409,6 +3415,12 @@
         "summary": "Lookup",
         "description": "Replaces the Apple podcast lookup API but returns data from the Podcast Index database.\n\nNote: No API key needed for this endpoint.\n\nExample:\n\n  - Apple: https://itunes.apple.com/lookup?media=podcast&entity=podcast&id=1636765656\n  - PodcastIndex: https://api.podcastindex.org/lookup?entity=podcast&id=1636765656\n",
         "operationId": "lookup",
+        "servers": [
+          {
+            "url": "https://api.podcastindex.org",
+            "description": "URL for Apple Replacement endpoints"
+          }
+        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/id_feed_podcast_itunes"
