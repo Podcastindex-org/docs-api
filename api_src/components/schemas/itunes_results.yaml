@@ -1,0 +1,151 @@
+type: object
+properties:
+  artistName:
+    $ref: '../properties/author.yaml'
+  artworkUrl100:
+    $ref: '../properties/artworkUrl.yaml'
+  artworkUrl30:
+    $ref: '../properties/artworkUrl.yaml'
+  artworkUrl60:
+    $ref: '../properties/artworkUrl.yaml'
+  artworkUrl600:
+    $ref: '../properties/artworkUrl.yaml'
+  collectionCensoredName:
+    $ref: '../properties/title_feed_censored.yaml'
+  collectionExplicitness:
+      # language=Markdown
+    description: >
+      Indicates if the feed is marked explicit.
+    type: string
+    enum:
+      - "explicit"
+      - "notExplicit"
+      - "cleaned"
+    example: "notExplicit"
+  collectionHdPrice:
+    $ref: '../properties/price.yaml'
+  collectionId:
+    $ref: '../properties/collectionId.yaml'
+  collectionName:
+    $ref: '../properties/title_feed.yaml'
+  collectionPrice:
+    $ref: '../properties/price.yaml'
+  collectionViewUrl:
+    $ref: '../properties/view_url.yaml'
+  contentAdvisoryRating:
+      # language=Markdown
+    description: >
+      Indicates if the feed is explicit or clean.
+    type: string
+    enum:
+      - "Clean"
+      - "Explicit"
+    example: "Clean"
+  country:
+      # language=Markdown
+    description: >
+      The country the feed is from.
+      
+      
+      Note: Right now, always returns "USA"
+    type: string
+    example: "USA"
+  currency:
+      # language=Markdown
+    description: >
+      Currency `*Price` value is in.
+      
+      
+      Note: will always return "USD"
+    type: string
+    example: "USD"
+  feedUrl:
+    $ref: "../properties/url_feed.yaml"
+  genreIds:
+      # language=Markdown
+    description: >
+      List of ids representing the names in the `genres`.
+      
+      
+      Values are determined by the IDs used in the url of genres on https://podcasts.apple.com/us/genre/podcasts/id26
+    type: array
+    items:
+      type: integer
+    example:
+      - 1309
+      - 26
+  genres:
+      # language=Markdown
+    description: >
+      List of genre names.
+    type: array
+    items:
+      type: string
+    example:
+      - "TV & Film"
+      - "Podcats"
+  kind:
+      # language=Markdown
+    description: >
+      The kind of content returned by the search request.
+      
+      
+      Note: will always return "podcast"
+    type: string
+    example: "podcast"
+  primaryGenreName:
+      # language=Markdown
+    description: >
+      The primary genre name.
+      
+      
+      Note: right now, always returns empty string.
+    type: string
+    example: ""
+  releaseDate:
+      # language=Markdown
+    description: >
+      Date and time of request
+    type: string
+    example: "2022-10-03T02:17:03-0500"
+  trackCensoredName:
+    $ref: '../properties/title_feed_censored.yaml'
+  trackCount:
+      # language=Markdown
+    description: >
+      Number of episodes in feed
+    type: integer
+    example: 12
+  trackExplicitness:
+      # language=Markdown
+    description: >
+      Indicates if the episode is marked explicit.
+    type: string
+    enum:
+      - "explicit"
+      - "notExplicit"
+      - "cleaned"
+    example: "notExplicit"
+  trackHdPrice:
+    $ref: '../properties/price.yaml'
+  trackHdRentalPrice:
+    $ref: '../properties/price.yaml'
+  trackId:
+    $ref: '../properties/collectionId.yaml'
+  trackName:
+    $ref: '../properties/title_feed.yaml'
+  trackPrice:
+    $ref: '../properties/price.yaml'
+  trackRentalPrice:
+    $ref: '../properties/price.yaml'
+  trackViewUrl:
+    $ref: '../properties/view_url.yaml'
+  wrapperType:
+      # language=Markdown
+    description: >
+      The name of the object returned by the search request.
+      
+      
+      Note: will always return "track"
+    type: string
+    example: "track"

@@ -1,0 +1,11 @@
+name: entity
+in: query
+# language=Markdown
+description: >
+  The iTunes entity type to look in
+required: true
+schema:
+  type: string
+  enum:
+    - "podcast"
+example: "podcast"

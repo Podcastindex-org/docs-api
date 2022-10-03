@@ -1,0 +1,10 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        resultCount:
+          $ref: '../properties/resultCount.yaml'
+        results:
+          $ref: '../properties/itunes_replacement_results.yaml'

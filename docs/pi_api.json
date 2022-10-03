@@ -89,6 +89,57 @@
       }
     },
     "parameters": {
+      "term_itunes": {
+        "name": "term",
+        "in": "query",
+        "description": "The term to search for\n",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "batman"
+      },
+      "pretty": {
+        "name": "pretty",
+        "in": "query",
+        "description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+        "schema": {
+          "type": "boolean"
+        },
+        "allowEmptyValue": true
+      },
+      "id_feed_podcast_itunes": {
+        "name": "id",
+        "in": "query",
+        "description": "The iTunes Feed ID to search for\n",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "examples": {
+          "id_only": {
+            "value": 1441923632,
+            "description": "iTunes ID without any prefix"
+          },
+          "prefix": {
+            "value": "id1441923632",
+            "description": "iTunes ID with optional \"id\" prefix"
+          }
+        }
+      },
+      "entity": {
+        "name": "entity",
+        "in": "query",
+        "description": "The iTunes entity type to look in\n",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "podcast"
+          ]
+        },
+        "example": "podcast"
+      },
       "q": {
         "name": "q",
         "in": "query",
@@ -127,15 +178,6 @@
         "name": "fulltext",
         "in": "query",
         "description": "If present, return the full text value of any text fields (ex: `description`). If not provided, field value is truncated to 100 words.\n\nParameter shall not have a value\n",
-        "schema": {
-          "type": "boolean"
-        },
-        "allowEmptyValue": true
-      },
-      "pretty": {
-        "name": "pretty",
-        "in": "query",
-        "description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
         "schema": {
           "type": "boolean"
         },
@@ -180,25 +222,6 @@
           "type": "string"
         },
         "example": "https://feeds.theincomparable.com/batmanuniversity"
-      },
-      "id_feed_podcast_itunes": {
-        "name": "id",
-        "in": "query",
-        "description": "The iTunes Feed ID to search for\n",
-        "required": true,
-        "schema": {
-          "type": "integer"
-        },
-        "examples": {
-          "id_only": {
-            "value": 1441923632,
-            "description": "iTunes ID without any prefix"
-          },
-          "prefix": {
-            "value": "id1441923632",
-            "description": "iTunes ID with optional \"id\" prefix"
-          }
-        }
       },
       "guid_feed_podcast": {
         "name": "guid",
@@ -551,6 +574,210 @@
       }
     },
     "schemas": {
+      "resultCount": {
+        "description": "Number of items returned in request\n",
+        "type": "integer",
+        "example": 1
+      },
+      "author": {
+        "description": "The channel-level author element.\n\nUsually iTunes specific, but could be from another namespace if not present.\n",
+        "type": "string",
+        "example": "Tony Sindelar"
+      },
+      "artworkUrl": {
+        "description": "A URL for the artwork associated with the returned media type.\n\nNote: Apple returns the image sized to value in the field name but the PodcastIndex returns the original image specified in the feed.\n",
+        "type": "string",
+        "example": "https://www.theincomparable.com/imgs/logos/logo-batmanuniversity-3x.jpg"
+      },
+      "title_feed_censored": {
+        "description": "The name of the feed.\n\nNote: Apple censors the name but PodcastIndex does not.\n",
+        "type": "string",
+        "example": "Batman University"
+      },
+      "price": {
+        "description": "Price of content. Will always return 0.\n",
+        "type": "integer",
+        "example": 0
+      },
+      "collectionId": {
+        "description": "The iTunes Feed ID\n",
+        "type": "integer",
+        "example": 1441923632
+      },
+      "title_feed": {
+        "description": "Name of the feed\n",
+        "type": "string",
+        "example": "Batman University"
+      },
+      "view_url": {
+        "description": "The URL for viewing the feed on the Apple website.\n",
+        "type": "string",
+        "example": "https://podcasts.apple.com/us/podcast/*/id1441923632?uo=4"
+      },
+      "url_feed": {
+        "description": "Current feed URL\n",
+        "type": "string",
+        "format": "URL",
+        "example": "https://feeds.theincomparable.com/batmanuniversity"
+      },
+      "itunes_results": {
+        "type": "object",
+        "properties": {
+          "artistName": {
+            "$ref": "#/components/schemas/author"
+          },
+          "artworkUrl100": {
+            "$ref": "#/components/schemas/artworkUrl"
+          },
+          "artworkUrl30": {
+            "$ref": "#/components/schemas/artworkUrl"
+          },
+          "artworkUrl60": {
+            "$ref": "#/components/schemas/artworkUrl"
+          },
+          "artworkUrl600": {
+            "$ref": "#/components/schemas/artworkUrl"
+          },
+          "collectionCensoredName": {
+            "$ref": "#/components/schemas/title_feed_censored"
+          },
+          "collectionExplicitness": {
+            "description": "Indicates if the feed is marked explicit.\n",
+            "type": "string",
+            "enum": [
+              "explicit",
+              "notExplicit",
+              "cleaned"
+            ],
+            "example": "notExplicit"
+          },
+          "collectionHdPrice": {
+            "$ref": "#/components/schemas/price"
+          },
+          "collectionId": {
+            "$ref": "#/components/schemas/collectionId"
+          },
+          "collectionName": {
+            "$ref": "#/components/schemas/title_feed"
+          },
+          "collectionPrice": {
+            "$ref": "#/components/schemas/price"
+          },
+          "collectionViewUrl": {
+            "$ref": "#/components/schemas/view_url"
+          },
+          "contentAdvisoryRating": {
+            "description": "Indicates if the feed is explicit or clean.\n",
+            "type": "string",
+            "enum": [
+              "Clean",
+              "Explicit"
+            ],
+            "example": "Clean"
+          },
+          "country": {
+            "description": "The country the feed is from.\n\nNote: Right now, always returns \"USA\"\n",
+            "type": "string",
+            "example": "USA"
+          },
+          "currency": {
+            "description": "Currency `*Price` value is in.\n\nNote: will always return \"USD\"\n",
+            "type": "string",
+            "example": "USD"
+          },
+          "feedUrl": {
+            "$ref": "#/components/schemas/url_feed"
+          },
+          "genreIds": {
+            "description": "List of ids representing the names in the `genres`.\n\nValues are determined by the IDs used in the url of genres on https://podcasts.apple.com/us/genre/podcasts/id26\n",
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "example": [
+              1309,
+              26
+            ]
+          },
+          "genres": {
+            "description": "List of genre names.\n",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "TV & Film",
+              "Podcats"
+            ]
+          },
+          "kind": {
+            "description": "The kind of content returned by the search request.\n\nNote: will always return \"podcast\"\n",
+            "type": "string",
+            "example": "podcast"
+          },
+          "primaryGenreName": {
+            "description": "The primary genre name.\n\nNote: right now, always returns empty string.\n",
+            "type": "string",
+            "example": ""
+          },
+          "releaseDate": {
+            "description": "Date and time of request\n",
+            "type": "string",
+            "example": "2022-10-03T02:17:03-0500"
+          },
+          "trackCensoredName": {
+            "$ref": "#/components/schemas/title_feed_censored"
+          },
+          "trackCount": {
+            "description": "Number of episodes in feed\n",
+            "type": "integer",
+            "example": 12
+          },
+          "trackExplicitness": {
+            "description": "Indicates if the episode is marked explicit.\n",
+            "type": "string",
+            "enum": [
+              "explicit",
+              "notExplicit",
+              "cleaned"
+            ],
+            "example": "notExplicit"
+          },
+          "trackHdPrice": {
+            "$ref": "#/components/schemas/price"
+          },
+          "trackHdRentalPrice": {
+            "$ref": "#/components/schemas/price"
+          },
+          "trackId": {
+            "$ref": "#/components/schemas/collectionId"
+          },
+          "trackName": {
+            "$ref": "#/components/schemas/title_feed"
+          },
+          "trackPrice": {
+            "$ref": "#/components/schemas/price"
+          },
+          "trackRentalPrice": {
+            "$ref": "#/components/schemas/price"
+          },
+          "trackViewUrl": {
+            "$ref": "#/components/schemas/view_url"
+          },
+          "wrapperType": {
+            "description": "The name of the object returned by the search request.\n\nNote: will always return \"track\"\n",
+            "type": "string",
+            "example": "track"
+          }
+        }
+      },
+      "itunes_replacement_results": {
+        "description": "List of feeds matching request\n",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/itunes_results"
+        }
+      },
       "status": {
         "description": "Indicates API request status\n",
         "type": "string",
@@ -560,21 +787,15 @@
         ],
         "example": "true"
       },
+      "description_response": {
+        "description": "Description of the response\n",
+        "type": "string",
+        "example": "Found matching feed"
+      },
       "id_feed": {
         "description": "The internal PodcastIndex.org Feed ID.\n",
         "type": "integer",
         "example": 75075
-      },
-      "title_feed": {
-        "description": "Name of the feed\n",
-        "type": "string",
-        "example": "Batman University"
-      },
-      "url_feed": {
-        "description": "Current feed URL\n",
-        "type": "string",
-        "format": "URL",
-        "example": "https://feeds.theincomparable.com/batmanuniversity"
       },
       "originalUrl": {
         "description": "The URL of the feed, before it changed to the current `url` value.\n",
@@ -592,11 +813,6 @@
         "description": "The channel-level description\n\nUses the longer of the possible fields in the feed: `<description>`, `<itunes:summary>` and `<content:encoded>`\n",
         "type": "string",
         "example": "Batman University is a seasonal podcast about you know who. It began with an analysis of episodes of “Batman: The Animated Series” but has now expanded to cover other series, movies, and media. Your professor is Tony Sindelar."
-      },
-      "author": {
-        "description": "The channel-level author element.\n\nUsually iTunes specific, but could be from another namespace if not present.\n",
-        "type": "string",
-        "example": "Tony Sindelar"
       },
       "ownerName": {
         "description": "The channel-level owner:name element.\n\nUsually iTunes specific, but could be from another namespace if not present.\n",
@@ -810,11 +1026,6 @@
         "description": "Search terms passed to request\n",
         "type": "string",
         "example": "batman university"
-      },
-      "description_response": {
-        "description": "Description of the response\n",
-        "type": "string",
-        "example": "Found matching feed"
       },
       "id_episode": {
         "description": "The internal PodcastIndex.org episode ID.\n",
@@ -2428,6 +2639,24 @@
           }
         }
       },
+      "itunes_replacement": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resultCount": {
+                  "$ref": "#/components/schemas/resultCount"
+                },
+                "results": {
+                  "$ref": "#/components/schemas/itunes_replacement_results"
+                }
+              }
+            }
+          }
+        }
+      },
       "search_byterm": {
         "description": "Success",
         "content": {
@@ -3143,6 +3372,67 @@
     }
   },
   "paths": {
+    "/search": {
+      "get": {
+        "tags": [
+          "Apple Replacement"
+        ],
+        "summary": "Search",
+        "description": "Replaces the Apple search API but returns data from the Podcast Index database.\n\nNote: No API key needed for this endpoint.\n\nExample:\n\n  - Apple: https://itunes.apple.com/search?media=podcast&entity=podcast&term=batman\n  - PodcastIndex: https://api.podcastindex.org/search?term=batman\n",
+        "operationId": "search",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/term_itunes"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/itunes_replacement"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/lookup": {
+      "get": {
+        "tags": [
+          "Apple Replacement"
+        ],
+        "summary": "Lookup",
+        "description": "Replaces the Apple podcast lookup API but returns data from the Podcast Index database.\n\nNote: No API key needed for this endpoint.\n\nExample:\n\n  - Apple: https://itunes.apple.com/lookup?media=podcast&entity=podcast&id=1636765656\n  - PodcastIndex: https://api.podcastindex.org/lookup?entity=podcast&id=1636765656\n",
+        "operationId": "lookup",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_feed_podcast_itunes"
+          },
+          {
+            "$ref": "#/components/parameters/entity"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/itunes_replacement"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
     "/search/byterm": {
       "get": {
         "tags": [
