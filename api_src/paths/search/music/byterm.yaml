@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Search
+  summary: Search Music Podcasts
+  # language=Markdown
+  description: >
+    This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the <feed></feed>
+    where the [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) is `music`.
+
+
+    Example: https://api.podcastindex.org/api/1.0/search/music/byterm?q=able+kirby&pretty
+  operationId: search/music/byterm
+  security:
+    - $ref: '../../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../../components/parameters/q.yaml'
+    - $ref: '../../../components/parameters/val.yaml'
+    - $ref: '../../../components/parameters/aponly.yaml'
+    - $ref: '../../../components/parameters/clean.yaml'
+    - $ref: '../../../components/parameters/fulltext.yaml'
+    - $ref: '../../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../../components/responses/search_byterm.yaml'
+    '400':
+      $ref: '../../../components/responses/400.yaml'
+    '401':
+      $ref: '../../../components/responses/401.yaml'

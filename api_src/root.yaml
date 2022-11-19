@@ -165,6 +165,8 @@ paths:
     $ref: 'paths/search/bytitle.yaml'
   '/search/byperson':
     $ref: 'paths/search/byperson.yaml'
+  '/search/music/byterm':
+    $ref: 'paths/search/music/byterm.yaml'
   '/podcasts/byfeedid':
     $ref: 'paths/podcasts/byfeedid.yaml'
   '/podcasts/byfeedurl':

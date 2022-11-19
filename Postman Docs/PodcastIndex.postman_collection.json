@@ -158,6 +158,63 @@
 						"description": "This call returns all of the episodes where the specified person is mentioned.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=adam%20curry&pretty\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=Martin+Mouritzen&pretty\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=Klaus+Schwab&pretty\n"
 					},
 					"response": []
+				},
+				{
+					"name": "Search Music Podcasts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/search/music/byterm?q=able kirby",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"search",
+								"music",
+								"byterm"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "able kirby",
+									"description": "(Required) Terms to search for\n"
+								},
+								{
+									"key": "val",
+									"value": "",
+									"description": "Only returns feeds with a `value` block of the specified type. Use `any` to return feeds with any `value` block.\n",
+									"disabled": true
+								},
+								{
+									"key": "aponly",
+									"value": "true",
+									"description": "Only returns feeds with an `itunesId`.\n",
+									"disabled": true
+								},
+								{
+									"key": "clean",
+									"value": "",
+									"description": "If present, only non-explicit feeds will be returned. Meaning, feeds where the `itunes:explicit` flag is set to `false`.\n\nParameter shall not have a value\n",
+									"disabled": true
+								},
+								{
+									"key": "fulltext",
+									"value": "",
+									"description": "If present, return the full text value of any text fields (ex: `description`). If not provided, field value is truncated to 100 words.\n\nParameter shall not have a value\n",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": "",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the <feed></feed> where the [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) is `music`.\n\nExample: https://api.podcastindex.org/api/1.0/search/music/byterm?q=able+kirby&pretty\n"
+					},
+					"response": []
 				}
 			]
 		},
