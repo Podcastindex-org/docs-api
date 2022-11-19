@@ -165,6 +165,15 @@
         },
         "example": ""
       },
+      "aponly": {
+        "name": "aponly",
+        "in": "query",
+        "description": "Only returns feeds with an `itunesId`.\n",
+        "schema": {
+          "type": "boolean"
+        },
+        "example": "true"
+      },
       "clean": {
         "name": "clean",
         "in": "query",
@@ -3488,6 +3497,9 @@
           },
           {
             "$ref": "#/components/parameters/val"
+          },
+          {
+            "$ref": "#/components/parameters/aponly"
           },
           {
             "$ref": "#/components/parameters/clean"
