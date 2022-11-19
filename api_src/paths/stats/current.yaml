@@ -7,6 +7,9 @@ get:
     Return the most recent index statistics.
 
 
+    Hourly statistics can also be access at https://stats.podcastindex.org/daily_counts.json
+
+
     Example: https://api.podcastindex.org/api/1.0/stats/current?pretty
   operationId: stats/current
   security:

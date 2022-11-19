@@ -1161,7 +1161,7 @@
 								}
 							]
 						},
-						"description": "Return the most recent index statistics.\n\nExample: https://api.podcastindex.org/api/1.0/stats/current?pretty\n"
+						"description": "Return the most recent index statistics.\n\nHourly statistics can also be access at https://stats.podcastindex.org/daily_counts.json\n\nExample: https://api.podcastindex.org/api/1.0/stats/current?pretty\n"
 					},
 					"response": []
 				}
