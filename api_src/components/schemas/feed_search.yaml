@@ -2,6 +2,8 @@ type: object
 properties:
   id:
     $ref: '../properties/id_feed.yaml'
+  podcastGuid:
+    $ref: '../properties/podcastGuid.yaml'
   title:
     $ref: '../properties/title_feed.yaml'
   url:
@@ -38,10 +40,14 @@ properties:
     $ref: '../properties/generator.yaml'
   language:
     $ref: '../properties/language.yaml'
+  explicit:
+    $ref: '../properties/explicit_feed.yaml'
   type:
     $ref: '../properties/type.yaml'
   dead:
     $ref: '../properties/dead.yaml'
+  episodeCount:
+    $ref: '../properties/episodeCount.yaml'
   crawlErrors:
     $ref: '../properties/crawlErrors.yaml'
   parseErrors:

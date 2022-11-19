@@ -940,6 +940,17 @@ components:
         The internal PodcastIndex.org Feed ID.
       type: integer
       example: 75075
+    podcastGuid:
+      description: >
+        The GUID from the `podcast:guid` tag in the feed. This value is a
+        unique, global identifier for the podcast.
+
+
+        See the namespace spec for
+        [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid)
+        for details.
+      type: string
+      example: 9b024349-ccf0-5f69-a609-6b82873eab3c
     originalUrl:
       description: |
         The URL of the feed, before it changed to the current `url` value.
@@ -1050,6 +1061,11 @@ components:
         Spec](https://www.rssboard.org/rss-language-codes).
       type: string
       example: en-us
+    explicit_feed:
+      description: |
+        Is feed marked as explicit
+      type: boolean
+      example: false
     type:
       description: |
         Type of source feed where:
@@ -1068,6 +1084,11 @@ components:
         Once the feed is marked dead, we only check it once per month.
       type: integer
       example: 0
+    episodeCount:
+      description: |
+        Number of episodes for this feed known to the index.
+      type: integer
+      example: 19
     crawlErrors:
       description: >
         The number of errors we’ve encountered trying to pull a copy of the
@@ -1136,6 +1157,8 @@ components:
       properties:
         id:
           $ref: '#/components/schemas/id_feed'
+        podcastGuid:
+          $ref: '#/components/schemas/podcastGuid'
         title:
           $ref: '#/components/schemas/title_feed'
         url:
@@ -1172,10 +1195,14 @@ components:
           $ref: '#/components/schemas/generator'
         language:
           $ref: '#/components/schemas/language'
+        explicit:
+          $ref: '#/components/schemas/explicit_feed'
         type:
           $ref: '#/components/schemas/type'
         dead:
           $ref: '#/components/schemas/dead'
+        episodeCount:
+          $ref: '#/components/schemas/episodeCount'
         crawlErrors:
           $ref: '#/components/schemas/crawlErrors'
         parseErrors:
@@ -1409,22 +1436,11 @@ components:
       properties:
         id:
           $ref: '#/components/schemas/id_query'
-    podcastGuid:
-      description: >
-        The GUID from the `podcast:guid` tag in the feed. This value is a
-        unique, global identifier for the podcast.
-
-
-        See the namespace spec for
-        [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid)
-        for details.
-      type: string
-      example: 9b024349-ccf0-5f69-a609-6b82873eab3c
-    explicit_feed:
+    itunesType:
       description: |
-        Is feed marked as explicit
-      type: boolean
-      example: false
+        The type as specified by the `itunes:type` in the feed XML.
+      type: string
+      example: episodic
     chash:
       description: |
         The md5 hash of the following feed items in hex format.
@@ -1442,11 +1458,6 @@ components:
               chash = md5(title+link+feedLanguage+generator+author+ownerName+ownerEmail)
       type: string
       example: ad651c60eaaf3344595c0dd0bd787993
-    episodeCount:
-      description: |
-        Number of episodes for this feed known to the index.
-      type: integer
-      example: 19
     type_v4v:
       description: |
         Payment type
@@ -1646,6 +1657,8 @@ components:
           $ref: '#/components/schemas/contentType'
         itunesId:
           $ref: '#/components/schemas/itunesId_feed'
+        itunesType:
+          $ref: '#/components/schemas/itunesType'
         generator:
           $ref: '#/components/schemas/generator'
         language:
@@ -1694,6 +1707,8 @@ components:
       properties:
         id:
           $ref: '#/components/schemas/id_feed'
+        podcastGuid:
+          $ref: '#/components/schemas/podcastGuid'
         title:
           $ref: '#/components/schemas/title_feed'
         url:
@@ -1734,6 +1749,8 @@ components:
           $ref: '#/components/schemas/type'
         dead:
           $ref: '#/components/schemas/dead'
+        episodeCount:
+          $ref: '#/components/schemas/episodeCount'
         crawlErrors:
           $ref: '#/components/schemas/crawlErrors'
         parseErrors:

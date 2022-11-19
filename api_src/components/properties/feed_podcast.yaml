@@ -39,6 +39,8 @@ properties:
     $ref: '../properties/contentType.yaml'
   itunesId:
     $ref: '../properties/itunesId_feed.yaml'
+  itunesType:
+    $ref: '../properties/itunesType.yaml'
   generator:
     $ref: '../properties/generator.yaml'
   language:
