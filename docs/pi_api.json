@@ -3627,6 +3627,55 @@
         }
       }
     },
+    "/search/music/byterm": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "summary": "Search Music Podcasts",
+        "description": "This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the <feed></feed> where the [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) is `music`.\n\nExample: https://api.podcastindex.org/api/1.0/search/music/byterm?q=able+kirby&pretty\n",
+        "operationId": "search/music/byterm",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/q"
+          },
+          {
+            "$ref": "#/components/parameters/val"
+          },
+          {
+            "$ref": "#/components/parameters/aponly"
+          },
+          {
+            "$ref": "#/components/parameters/clean"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/search_byterm"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
     "/podcasts/byfeedid": {
       "get": {
         "tags": [
