@@ -795,6 +795,11 @@
         "type": "integer",
         "example": 75075
       },
+      "podcastGuid": {
+        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+        "type": "string",
+        "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
+      },
       "originalUrl": {
         "description": "The URL of the feed, before it changed to the current `url` value.\n",
         "type": "string",
@@ -878,6 +883,11 @@
         "type": "string",
         "example": "en-us"
       },
+      "explicit_feed": {
+        "description": "Is feed marked as explicit\n",
+        "type": "boolean",
+        "example": false
+      },
       "type": {
         "description": "Type of source feed where:\n\n  - 0: RSS\n  - 1: Atom\n",
         "type": "integer",
@@ -891,6 +901,11 @@
         "description": "At some point, we give up trying to process a feed and mark it as dead. This is usually after 1000 errors without a successful pull/parse cycle. Once the feed is marked dead, we only check it once per month.\n",
         "type": "integer",
         "example": 0
+      },
+      "episodeCount": {
+        "description": "Number of episodes for this feed known to the index.\n",
+        "type": "integer",
+        "example": 19
       },
       "crawlErrors": {
         "description": "The number of errors we’ve encountered trying to pull a copy of the feed. Errors are things like a 500 or 404 response, a server timeout, bad encoding, etc.\n",
@@ -930,6 +945,9 @@
         "properties": {
           "id": {
             "$ref": "#/components/schemas/id_feed"
+          },
+          "podcastGuid": {
+            "$ref": "#/components/schemas/podcastGuid"
           },
           "title": {
             "$ref": "#/components/schemas/title_feed"
@@ -985,11 +1003,17 @@
           "language": {
             "$ref": "#/components/schemas/language"
           },
+          "explicit": {
+            "$ref": "#/components/schemas/explicit_feed"
+          },
           "type": {
             "$ref": "#/components/schemas/type"
           },
           "dead": {
             "$ref": "#/components/schemas/dead"
+          },
+          "episodeCount": {
+            "$ref": "#/components/schemas/episodeCount"
           },
           "crawlErrors": {
             "$ref": "#/components/schemas/crawlErrors"
@@ -1249,25 +1273,15 @@
           }
         }
       },
-      "podcastGuid": {
-        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+      "itunesType": {
+        "description": "The type as specified by the `itunes:type` in the feed XML.\n",
         "type": "string",
-        "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
-      },
-      "explicit_feed": {
-        "description": "Is feed marked as explicit\n",
-        "type": "boolean",
-        "example": false
+        "example": "episodic"
       },
       "chash": {
         "description": "The md5 hash of the following feed items in hex format.\n\n  - `title`\n  - `link`\n  - `feedLanguage`\n  - `generator`\n  - `author`\n  - `ownerName`\n  - `ownerEmail` (note: not exposed via the API)\n\nPseudo-code:\n\n      chash = md5(title+link+feedLanguage+generator+author+ownerName+ownerEmail)\n",
         "type": "string",
         "example": "ad651c60eaaf3344595c0dd0bd787993"
-      },
-      "episodeCount": {
-        "description": "Number of episodes for this feed known to the index.\n",
-        "type": "integer",
-        "example": 19
       },
       "type_v4v": {
         "description": "Payment type\n",
@@ -1469,6 +1483,9 @@
           "itunesId": {
             "$ref": "#/components/schemas/itunesId_feed"
           },
+          "itunesType": {
+            "$ref": "#/components/schemas/itunesType"
+          },
           "generator": {
             "$ref": "#/components/schemas/generator"
           },
@@ -1535,6 +1552,9 @@
           "id": {
             "$ref": "#/components/schemas/id_feed"
           },
+          "podcastGuid": {
+            "$ref": "#/components/schemas/podcastGuid"
+          },
           "title": {
             "$ref": "#/components/schemas/title_feed"
           },
@@ -1594,6 +1614,9 @@
           },
           "dead": {
             "$ref": "#/components/schemas/dead"
+          },
+          "episodeCount": {
+            "$ref": "#/components/schemas/episodeCount"
           },
           "crawlErrors": {
             "$ref": "#/components/schemas/crawlErrors"
