@@ -19,9 +19,8 @@ properties:
     type: string
     enum:
       - "explicit"
-      - "notExplicit"
       - "cleaned"
-    example: "notExplicit"
+    example: "cleaned"
   collectionHdPrice:
     $ref: '../properties/price.yaml'
   collectionId:
@@ -97,9 +96,6 @@ properties:
       # language=Markdown
     description: >
       The primary genre name.
-      
-      
-      Note: right now, always returns empty string.
     type: string
     example: ""
   releaseDate:
@@ -123,9 +119,8 @@ properties:
     type: string
     enum:
       - "explicit"
-      - "notExplicit"
       - "cleaned"
-    example: "notExplicit"
+    example: "cleaned"
   trackHdPrice:
     $ref: '../properties/price.yaml'
   trackHdRentalPrice:
