@@ -646,10 +646,9 @@
             "type": "string",
             "enum": [
               "explicit",
-              "notExplicit",
               "cleaned"
             ],
-            "example": "notExplicit"
+            "example": "cleaned"
           },
           "collectionHdPrice": {
             "$ref": "#/components/schemas/price"
@@ -716,7 +715,7 @@
             "example": "podcast"
           },
           "primaryGenreName": {
-            "description": "The primary genre name.\n\nNote: right now, always returns empty string.\n",
+            "description": "The primary genre name.\n",
             "type": "string",
             "example": ""
           },
@@ -738,10 +737,9 @@
             "type": "string",
             "enum": [
               "explicit",
-              "notExplicit",
               "cleaned"
             ],
-            "example": "notExplicit"
+            "example": "cleaned"
           },
           "trackHdPrice": {
             "$ref": "#/components/schemas/price"

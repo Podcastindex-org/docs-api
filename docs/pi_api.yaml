@@ -805,9 +805,8 @@ components:
           type: string
           enum:
             - explicit
-            - notExplicit
             - cleaned
-          example: notExplicit
+          example: cleaned
         collectionHdPrice:
           $ref: '#/components/schemas/price'
         collectionId:
@@ -874,8 +873,6 @@ components:
         primaryGenreName:
           description: |
             The primary genre name.
-
-            Note: right now, always returns empty string.
           type: string
           example: ''
         releaseDate:
@@ -896,9 +893,8 @@ components:
           type: string
           enum:
             - explicit
-            - notExplicit
             - cleaned
-          example: notExplicit
+          example: cleaned
         trackHdPrice:
           $ref: '#/components/schemas/price'
         trackHdRentalPrice:
