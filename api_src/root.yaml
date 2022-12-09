@@ -57,6 +57,8 @@ info:
           - [podcastindex-php](https://github.com/LowSociety/podcastindex-php)
       - Python/pip
           - [python-podcastindex](https://pypi.org/project/python-podcastindex/)
+      - R
+          - [podindexr](https://github.com/rpodcast/podindexr)
 
     Are we missing a library? Did you create one for a different language? Create a
     [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to the new library!
