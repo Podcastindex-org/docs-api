@@ -48,6 +48,8 @@ info:
 
     User created libraries for working with the API:
 
+      - Java
+          - [podcast4j](https://github.com/yusufyilmazfr/podcast4j)
       - .NET
           - [PodcastIndexSharp](https://www.nuget.org/packages/PodcastIndexSharp)
       - Node.js/npm/yarn
