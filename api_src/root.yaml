@@ -61,6 +61,8 @@ info:
           - [python-podcastindex](https://pypi.org/project/python-podcastindex/)
       - R
           - [podindexr](https://github.com/rpodcast/podindexr)
+      - Ruby
+          - [podcast-index](https://github.com/jasonyork/podcast-index)
 
     Are we missing a library? Did you create one for a different language? Create a
     [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to the new library!
