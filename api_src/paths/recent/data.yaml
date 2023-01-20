@@ -1,0 +1,35 @@
+get:
+  tags:
+    - Recent
+  summary: Feed Data
+  # language=Markdown
+  description: >
+    This call returns every new feed added to the index over the past 24 hours in reverse chronological order.
+    
+    
+    This is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's
+    internal timestamp.
+    
+    
+    Similar data can also be accessed using object storage root url https://tracking.podcastindex.org/current
+    
+    
+    Examples:
+    
+      - https://api.podcastindex.org/api/1.0/recent/data?pretty
+      - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10
+      - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10&since=1671164867
+  operationId: recent/data
+  security:
+    - $ref: '../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../components/parameters/max_recent_data.yaml'
+    - $ref: '../../components/parameters/since.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/recent_data.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The time the episode was added to the index
+type: integer
+format: Unix Epoch
+example: 1613786624

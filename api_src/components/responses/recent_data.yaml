@@ -1,0 +1,22 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        feedCount:
+          $ref: '../properties/feedCount.yaml'
+        itemCount:
+          $ref: '../properties/itemCount.yaml'
+        max:
+          $ref: '../properties/max.yaml'
+        since:
+          $ref: '../properties/since.yaml'
+        description:
+          $ref: '../properties/description_response.yaml'
+        nextSince:
+          $ref: '../properties/nextSince.yaml'
+        data:
+          $ref: '../properties/data.yaml'

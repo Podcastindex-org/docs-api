@@ -1,0 +1,11 @@
+  # language=Markdown
+description: >
+  Object containing the recent data
+type: object
+properties:
+  position:
+    $ref: '../properties/position.yaml'
+  feeds:
+    $ref: '../properties/feeds_data.yaml'
+  items:
+    $ref: '../properties/items_data.yaml'

@@ -401,19 +401,11 @@ components:
     since:
       name: since
       in: query
-      description: >
-        Return items since the specified time. The value can be a unix epoch
-        timestamp or a negative integer that represents a number of seconds
-        prior to right now.
+      description: |
+        Return items since the specified epoch timestamp.
       schema:
         type: integer
-      examples:
-        timestamp:
-          value: 1612125785
-          description: Unix timestamp
-        seconds:
-          value: -100000
-          description: Seconds from now
+      example: 1612125785
     lang:
       name: lang
       in: query
@@ -657,6 +649,16 @@ components:
       schema:
         type: boolean
       allowEmptyValue: true
+    max_recent_data:
+      name: max
+      in: query
+      description: |
+        Maximum number of results to return.
+      schema:
+        type: integer
+        default: 1000
+        minimum: 1
+      example: 200
     max_recent_soundbites:
       name: max
       in: query
@@ -2474,6 +2476,100 @@ components:
             $ref: '#/components/schemas/contentHash'
           language:
             $ref: '#/components/schemas/language'
+    feedCount:
+      description: |
+        Number of items in the `feeds` returned in request
+      type: integer
+      example: 1
+    itemCount:
+      description: |
+        Number of items in the `items` returned in request
+      type: integer
+      example: 1
+    nextSince:
+      description: |
+        Value to pass as `since` parameter to get next batch of data
+      type: integer
+      format: Unix Epoch
+      example: 1613805249
+    position:
+      description: |
+        Position in data
+      type: integer
+      example: 12843054496
+    feeds_data_obj:
+      type: object
+      properties:
+        feedId:
+          $ref: '#/components/schemas/id_feed'
+        feedUrl:
+          $ref: '#/components/schemas/url_feed'
+        feedTitle:
+          $ref: '#/components/schemas/title_feed'
+        feedDescription:
+          $ref: '#/components/schemas/description_feed'
+        feedImage:
+          $ref: '#/components/schemas/image_feed'
+        feedLanguage:
+          $ref: '#/components/schemas/language'
+        feedItunesId:
+          $ref: '#/components/schemas/itunesId_feed'
+    feeds_data:
+      description: |
+        List of recent feed data
+      type: array
+      items:
+        $ref: '#/components/schemas/feeds_data_obj'
+    episodeAdded:
+      description: |
+        The time the episode was added to the index
+      type: integer
+      format: Unix Epoch
+      example: 1613786624
+    items_data_obj:
+      type: object
+      properties:
+        episodeId:
+          $ref: '#/components/schemas/id_episode'
+        episodeTitle:
+          $ref: '#/components/schemas/title_feed'
+        episodeDescription:
+          $ref: '#/components/schemas/description_episode'
+        episodeImage:
+          $ref: '#/components/schemas/image_episode'
+        episodeTimestamp:
+          $ref: '#/components/schemas/datePublished'
+        episodeAdded:
+          $ref: '#/components/schemas/episodeAdded'
+        episodeEnclosureUrl:
+          $ref: '#/components/schemas/enclosureUrl'
+        episodeEnclosureLength:
+          $ref: '#/components/schemas/enclosureLength'
+        episodeEnclosureType:
+          $ref: '#/components/schemas/enclosureType'
+        episodeDuration:
+          $ref: '#/components/schemas/duration'
+        episodeType:
+          $ref: '#/components/schemas/episodeType'
+        feedId:
+          $ref: '#/components/schemas/id_feed'
+    items_data:
+      description: |
+        List of recent episode item data
+      type: array
+      items:
+        $ref: '#/components/schemas/items_data_obj'
+    data:
+      description: |
+        Object containing the recent data
+      type: object
+      properties:
+        position:
+          $ref: '#/components/schemas/position'
+        feeds:
+          $ref: '#/components/schemas/feeds_data'
+        items:
+          $ref: '#/components/schemas/items_data'
     title_episode:
       description: |
         Name of the episode
@@ -2935,6 +3031,29 @@ components:
                 $ref: '#/components/schemas/max'
               description:
                 $ref: '#/components/schemas/description_response'
+    recent_data:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: '#/components/schemas/status'
+              feedCount:
+                $ref: '#/components/schemas/feedCount'
+              itemCount:
+                $ref: '#/components/schemas/itemCount'
+              max:
+                $ref: '#/components/schemas/max'
+              since:
+                $ref: '#/components/schemas/since'
+              description:
+                $ref: '#/components/schemas/description_response'
+              nextSince:
+                $ref: '#/components/schemas/nextSince'
+              data:
+                $ref: '#/components/schemas/data'
     recent_soundbites:
       description: Success
       content:
@@ -3974,6 +4093,46 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/recent_newfeeds'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+  /recent/data:
+    get:
+      tags:
+        - Recent
+      summary: Feed Data
+      description: >
+        This call returns every new feed added to the index over the past 24
+        hours in reverse chronological order.
+
+
+        This is similar to `/recent/feeds` but uses the date the feed was found
+        by the index rather than the feed's internal timestamp.
+
+
+        Similar data can also be accessed using object storage root url
+        https://tracking.podcastindex.org/current
+
+
+        Examples:
+
+          - https://api.podcastindex.org/api/1.0/recent/data?pretty
+          - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10
+          - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10&since=1671164867
+      operationId: recent/data
+      security:
+        - API Key: []
+          User Agent: []
+          Date: []
+          Authorization: []
+      parameters:
+        - $ref: '#/components/parameters/max_recent_data'
+        - $ref: '#/components/parameters/since'
+        - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          $ref: '#/components/responses/recent_data'
         '400':
           $ref: '#/components/responses/400'
         '401':

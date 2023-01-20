@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  List of recent feed data
+type: array
+items:
+  $ref: '../schemas/feeds_data_obj.yaml'
