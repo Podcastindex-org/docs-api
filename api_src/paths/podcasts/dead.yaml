@@ -5,6 +5,9 @@ get:
   # language=Markdown
   description: >
     This call returns all feeds that have been marked dead (`dead` == 1)
+    
+    
+    Dead feeds can also be accessed from object storage at https://public.podcastindex.org/podcastindex_dead_feeds.csv
 
 
     Example: https://api.podcastindex.org/api/1.0/podcasts/dead?pretty

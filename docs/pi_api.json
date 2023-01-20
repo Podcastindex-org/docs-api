@@ -4254,7 +4254,7 @@
           "Podcasts"
         ],
         "summary": "Dead",
-        "description": "This call returns all feeds that have been marked dead (`dead` == 1)\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/dead?pretty\n",
+        "description": "This call returns all feeds that have been marked dead (`dead` == 1)\n\nDead feeds can also be accessed from object storage at https://public.podcastindex.org/podcastindex_dead_feeds.csv\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/dead?pretty\n",
         "operationId": "podcasts/dead",
         "security": [
           {
