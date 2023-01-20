@@ -653,7 +653,7 @@ components:
       name: max
       in: query
       description: |
-        Maximum number of results to return.
+        Maximum number of results to return (includes both `feeds` and `items`).
       schema:
         type: integer
         default: 1000
@@ -1168,6 +1168,18 @@ components:
         working.
       type: integer
       example: 1639321931
+    newestItemPublishTime:
+      description: >
+        The time the most recent episode in the feed was published.
+
+
+        Note: some endpoints use `newestItemPubdate` while others use
+        `newestItemPublishTime`.  They return the same information. See
+        https://github.com/Podcastindex-org/api/issues/3 to track when the
+        property name is updated.
+      type: integer
+      format: Unix Epoch
+      example: 1546399813
     feed_search:
       type: object
       properties:
@@ -1229,6 +1241,8 @@ components:
           $ref: '#/components/schemas/locked'
         imageUrlHash:
           $ref: '#/components/schemas/imageUrlHash'
+        newestItemPubdate:
+          $ref: '#/components/schemas/newestItemPublishTime'
     feeds:
       description: |
         List of feeds matching request
@@ -1881,12 +1895,6 @@ components:
         Value of `medium` parameter used in request
       type: string
       example: film
-    newestItemPublishTime:
-      description: |
-        The date and time the most recent episode in the feed was published
-      type: integer
-      format: Unix Epoch
-      example: 1546399813
     trendScore:
       description: |
         The ranking for how the podcast is trending in the index
