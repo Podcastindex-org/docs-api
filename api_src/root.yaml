@@ -209,6 +209,8 @@ paths:
     $ref: 'paths/recent/feeds.yaml'
   '/recent/newfeeds':
     $ref: 'paths/recent/newfeeds.yaml'
+  '/recent/data':
+    $ref: 'paths/recent/data.yaml'
   '/recent/soundbites':
     $ref: 'paths/recent/soundbites.yaml'
   '/value/byfeedid':

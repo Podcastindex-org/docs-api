@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  List of recent episode item data
+type: array
+items:
+  $ref: '../schemas/items_data_obj.yaml'

@@ -993,6 +993,45 @@
 					"response": []
 				},
 				{
+					"name": "Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recent/data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recent",
+								"data"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "1000",
+									"description": "Maximum number of results to return (includes both `feeds` and `items`).\n",
+									"disabled": true
+								},
+								{
+									"key": "since",
+									"value": "1612125785",
+									"description": "Return items since the specified epoch timestamp.\n",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": "",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This call returns every new feed added to the index over the past 24 hours in reverse chronological order.\n\nThis is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's\ninternal timestamp.\n\nSimilar data can also be accessed using object storage root url https://tracking.podcastindex.org/current\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10&since=1671164867\n"
+					},
+					"response": []
+				},
+				{
 					"name": "Soundbites",
 					"request": {
 						"method": "GET",

@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Number of items in the `feeds` returned in request
+type: integer
+example: 1

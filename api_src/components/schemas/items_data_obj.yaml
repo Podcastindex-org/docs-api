@@ -1,0 +1,26 @@
+type: object
+properties:
+  episodeId:
+    $ref: '../properties/id_episode.yaml'
+  episodeTitle:
+    $ref: '../properties/title_feed.yaml'
+  episodeDescription:
+    $ref: '../properties/description_episode.yaml'
+  episodeImage:
+    $ref: '../properties/image_episode.yaml'
+  episodeTimestamp:
+    $ref: '../properties/datePublished.yaml'
+  episodeAdded:
+    $ref: '../properties/episodeAdded.yaml'
+  episodeEnclosureUrl:
+    $ref: '../properties/enclosureUrl.yaml'
+  episodeEnclosureLength:
+    $ref: '../properties/enclosureLength.yaml'
+  episodeEnclosureType:
+    $ref: '../properties/enclosureType.yaml'
+  episodeDuration:
+    $ref: '../properties/duration.yaml'
+  episodeType:
+    $ref: '../properties/episodeType.yaml'
+  feedId:
+    $ref: '../properties/id_feed.yaml'

@@ -1,0 +1,16 @@
+type: object
+properties:
+  feedId:
+    $ref: '../properties/id_feed.yaml'
+  feedUrl:
+    $ref: '../properties/url_feed.yaml'
+  feedTitle:
+    $ref: '../properties/title_feed.yaml'
+  feedDescription:
+    $ref: '../properties/description_feed.yaml'
+  feedImage:
+    $ref: '../properties/image_feed.yaml'
+  feedLanguage:
+    $ref: '../properties/language.yaml'
+  feedItunesId:
+    $ref: '../properties/itunesId_feed.yaml'

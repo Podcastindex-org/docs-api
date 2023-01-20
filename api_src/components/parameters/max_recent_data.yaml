@@ -1,0 +1,10 @@
+name: max
+in: query
+# language=Markdown
+description: >
+  Maximum number of results to return (includes both `feeds` and `items`).
+schema:
+  type: integer
+  default: 1000
+  minimum: 1
+example: 200
