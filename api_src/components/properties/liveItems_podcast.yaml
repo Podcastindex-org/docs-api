@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  List of live episodes for feed
+type: array
+items:
+  $ref: '../schemas/liveitem_podcast.yaml'

@@ -22,6 +22,14 @@ properties:
     $ref: '../properties/enclosureType.yaml'
   enclosureLength:
     $ref: '../properties/enclosureLength.yaml'
+  startTime:
+    $ref: '../properties/startTime_live.yaml'
+  endTime:
+    $ref: '../properties/endTime_live.yaml'
+  status:
+    $ref: '../properties/status_live.yaml'
+  contentLink:
+    $ref: '../properties/contentLink.yaml'
   duration:
     $ref: '../properties/duration.yaml'
   explicit:
@@ -50,13 +58,3 @@ properties:
     $ref: '../properties/chaptersUrl.yaml'
   transcriptUrl:
     $ref: '../properties/transcriptUrl.yaml'
-  transcripts:
-    $ref: '../properties/transcripts.yaml'
-  soundbite:
-    $ref: '../properties/soundbite.yaml'
-  soundbites:
-    $ref: '../properties/soundbites.yaml'
-  persons:
-    $ref: '../properties/persons.yaml'
-  value:
-    $ref: '../properties/value.yaml'

@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The time the livestream starts
+type: integer
+format: Unix Epoch
+example: 1674154800
