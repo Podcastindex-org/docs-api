@@ -1975,6 +1975,104 @@ components:
         Note: uses the PodcastIndex server local time to do conversion.
       type: string
       example: January 01, 2019 9:30pm
+    startTime_live:
+      description: |
+        The time the livestream starts
+      type: integer
+      format: Unix Epoch
+      example: 1674154800
+    endTime_live:
+      description: |
+        The time the livestream ends
+      type: integer
+      format: Unix Epoch
+      example: 1674167400
+    status_live:
+      description: |
+        Status of the livestream
+      type: string
+      enum:
+        - ended
+        - live
+      example: live
+    contentLink:
+      description: |
+        Link TODO
+      type: string
+      example: ''
+    transcriptUrl:
+      description: |
+        Link to the file containing the episode transcript
+      type: string
+      format: URL
+      example: https://mp3s.nashownotes.com/NA-1322-Captions.srt
+    liveitem_podcast:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id_episode'
+        title:
+          $ref: '#/components/schemas/title_feed'
+        link:
+          $ref: '#/components/schemas/link_feed'
+        description:
+          $ref: '#/components/schemas/description_episode'
+        guid:
+          $ref: '#/components/schemas/guid'
+        datePublished:
+          $ref: '#/components/schemas/datePublished'
+        datePublishedPretty:
+          $ref: '#/components/schemas/datePublishedPretty'
+        dateCrawled:
+          $ref: '#/components/schemas/dateCrawled'
+        enclosureUrl:
+          $ref: '#/components/schemas/enclosureUrl'
+        enclosureType:
+          $ref: '#/components/schemas/enclosureType'
+        enclosureLength:
+          $ref: '#/components/schemas/enclosureLength'
+        startTime:
+          $ref: '#/components/schemas/startTime_live'
+        endTime:
+          $ref: '#/components/schemas/endTime_live'
+        status:
+          $ref: '#/components/schemas/status_live'
+        contentLink:
+          $ref: '#/components/schemas/contentLink'
+        duration:
+          $ref: '#/components/schemas/duration'
+        explicit:
+          $ref: '#/components/schemas/explicit_episode'
+        episode:
+          $ref: '#/components/schemas/episode_number'
+        episodeType:
+          $ref: '#/components/schemas/episodeType'
+        season:
+          $ref: '#/components/schemas/season'
+        image:
+          $ref: '#/components/schemas/image_episode'
+        feedItunesId:
+          $ref: '#/components/schemas/itunesId_feed'
+        feedImage:
+          $ref: '#/components/schemas/image_feed'
+        feedId:
+          $ref: '#/components/schemas/id_feed'
+        feedLanguage:
+          $ref: '#/components/schemas/language'
+        feedDead:
+          $ref: '#/components/schemas/dead'
+        feedDuplicateOf:
+          $ref: '#/components/schemas/duplicateOf'
+        chaptersUrl:
+          $ref: '#/components/schemas/chaptersUrl'
+        transcriptUrl:
+          $ref: '#/components/schemas/transcriptUrl'
+    liveItems_podcast:
+      description: |
+        List of live episodes for feed
+      type: array
+      items:
+        $ref: '#/components/schemas/liveitem_podcast'
     startTime:
       description: >
         The time where the soundbite begins in the item specified by the
@@ -2153,6 +2251,8 @@ components:
           $ref: '#/components/schemas/duplicateOf'
         chaptersUrl:
           $ref: '#/components/schemas/chaptersUrl'
+        transcriptUrl:
+          $ref: '#/components/schemas/transcriptUrl'
         transcripts:
           $ref: '#/components/schemas/transcripts'
         soundbite:
@@ -2874,6 +2974,8 @@ components:
             properties:
               status:
                 $ref: '#/components/schemas/status'
+              liveItems:
+                $ref: '#/components/schemas/liveItems_podcast'
               items:
                 $ref: '#/components/schemas/items_podcast'
               count:

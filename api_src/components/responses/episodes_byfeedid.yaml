@@ -6,6 +6,8 @@ content:
       properties:
         status:
           $ref: '../properties/status.yaml'
+        liveItems:
+          $ref: '../properties/liveItems_podcast.yaml'
         items:
           $ref: '../properties/items_podcast.yaml'
         count:

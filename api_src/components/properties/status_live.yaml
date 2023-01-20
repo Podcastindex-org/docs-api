@@ -1,0 +1,8 @@
+  # language=Markdown
+description: >
+  Status of the livestream
+type: string
+enum:
+  - "ended"
+  - "live"
+example: "live"
