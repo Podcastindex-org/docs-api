@@ -58,3 +58,5 @@ properties:
     $ref: '../properties/locked.yaml'
   imageUrlHash:
     $ref: '../properties/imageUrlHash.yaml'
+  newestItemPubdate:
+    $ref: '../properties/newestItemPublishTime.yaml'

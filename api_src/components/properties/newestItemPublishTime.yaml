@@ -1,6 +1,10 @@
   # language=Markdown
 description: >
-  The date and time the most recent episode in the feed was published
+  The time the most recent episode in the feed was published.
+  
+  
+  Note: some endpoints use `newestItemPubdate` while others use `newestItemPublishTime`. 
+  They return the same information. See https://github.com/Podcastindex-org/api/issues/3 to track when the property name is updated.
 type: integer
 format: Unix Epoch
 example: 1546399813

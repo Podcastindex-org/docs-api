@@ -503,7 +503,7 @@
       "max_recent_data": {
         "name": "max",
         "in": "query",
-        "description": "Maximum number of results to return.\n",
+        "description": "Maximum number of results to return (includes both `feeds` and `items`).\n",
         "schema": {
           "type": "integer",
           "default": 1000,
@@ -951,6 +951,12 @@
         "type": "integer",
         "example": 1639321931
       },
+      "newestItemPublishTime": {
+        "description": "The time the most recent episode in the feed was published.\n\nNote: some endpoints use `newestItemPubdate` while others use `newestItemPublishTime`.  They return the same information. See https://github.com/Podcastindex-org/api/issues/3 to track when the property name is updated.\n",
+        "type": "integer",
+        "format": "Unix Epoch",
+        "example": 1546399813
+      },
       "feed_search": {
         "type": "object",
         "properties": {
@@ -1040,6 +1046,9 @@
           },
           "imageUrlHash": {
             "$ref": "#/components/schemas/imageUrlHash"
+          },
+          "newestItemPubdate": {
+            "$ref": "#/components/schemas/newestItemPublishTime"
           }
         }
       },
@@ -1777,12 +1786,6 @@
         "description": "Value of `medium` parameter used in request\n",
         "type": "string",
         "example": "film"
-      },
-      "newestItemPublishTime": {
-        "description": "The date and time the most recent episode in the feed was published\n",
-        "type": "integer",
-        "format": "Unix Epoch",
-        "example": 1546399813
       },
       "trendScore": {
         "description": "The ranking for how the podcast is trending in the index\n",
