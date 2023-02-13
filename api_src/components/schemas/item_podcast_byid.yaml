@@ -48,6 +48,8 @@ transcripts:
   $ref: '../properties/transcripts.yaml'
 persons:
   $ref: '../properties/persons.yaml'
+socialInteract:
+  $ref: '../properties/socialInteract.yaml'
 value:
   $ref: '../properties/value.yaml'
 soundbite:

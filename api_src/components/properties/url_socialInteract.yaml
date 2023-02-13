@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  The uri/url of the root post comment
+type: string
+format: URL
+example: "https://podcastindex.social/@dave/109762601417741559"

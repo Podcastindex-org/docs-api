@@ -1,0 +1,13 @@
+  # language=Markdown
+description: >
+  The protocol in use for interacting with the comment root post. 
+
+
+  For the most up-to-date list of options, see https://github.com/Podcastindex-org/podcast-namespace/blob/main/socialprotocols.txt
+type: string
+enum:
+  - "disabled"
+  - "activitypub"
+  - "twitter"
+  - "lightning"
+example: "activitypub"

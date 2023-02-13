@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+   The public url (on the commenting platform) of the account that created this root post.
+type: string
+format: URL
+example: "https://podcastindex.social/users/dave"

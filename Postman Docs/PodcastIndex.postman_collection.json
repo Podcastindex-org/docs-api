@@ -603,6 +603,56 @@
 					"response": []
 				},
 				{
+					"name": "By Podcast GUID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/episodes/bypodcastguid?guid=856cd618-7f34-57ea-9b84-3600f1f65e7f&pretty",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"episodes",
+								"bypodcastguid"
+							],
+							"query": [
+								{
+									"key": "guid",
+									"value": "9b024349-ccf0-5f69-a609-6b82873eab3c",
+									"description": "(Required) The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n"
+								},
+								{
+									"key": "since",
+									"value": "1612125785",
+									"description": "Return items since the specified time. The value can be a unix epoch timestamp or a negative integer that represents a number of seconds prior to right now.\n",
+									"disabled": true
+								},
+								{
+									"key": "max",
+									"value": "10",
+									"description": "Maximum number of results to return.\n",
+									"disabled": true
+								},
+								{
+									"key": "fulltext",
+									"value": "",
+									"description": "If present, return the full text value of any text fields (ex: `description`). If not provided, field value is truncated to 100 words.\n\nParameter shall not have a value\n",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": "",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This call returns all the episodes we know about for this feed from the [Podcast GUID](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid).\nEpisodes are in reverse chronological order.\n\nExample: https://api.podcastindex.org/api/1.0/episodes/bypodcastguid?guid=856cd618-7f34-57ea-9b84-3600f1f65e7f&pretty\n"
+					},
+					"response": []
+				},
+				{
 					"name": "By iTunes ID",
 					"request": {
 						"method": "GET",

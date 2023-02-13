@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  When multiple socialInteract tags are present, this integer gives order of priority. A lower number means higher priority.
+type: integer
+example: 0
