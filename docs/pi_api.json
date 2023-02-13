@@ -4816,7 +4816,7 @@
           "Value"
         ],
         "summary": "By Feed ID",
-        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from the PodcastIndex ID.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty\n",
+        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from the PodcastIndex ID.\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty\n",
         "operationId": "value/byfeedid",
         "security": [
           {
@@ -4853,7 +4853,7 @@
           "Value"
         ],
         "summary": "By Feed URL",
-        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from feed URL.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty\n",
+        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from feed URL.\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty\n",
         "operationId": "value/byfeedurl",
         "security": [
           {

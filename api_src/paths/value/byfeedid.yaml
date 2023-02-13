@@ -8,6 +8,12 @@ get:
     PodcastIndex ID.
 
 
+    Additionally, the value block data can be accessed using static JSON files (updated every 15 minutes).
+    
+      - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json
+      - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json
+
+
     Examples:
 
       - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty
