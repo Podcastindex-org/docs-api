@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "version": "1.8.0",
+    "version": "1.9.0",
     "title": "PodcastIndex.org API",
     "termsOfService": "https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md",
     "contact": {
@@ -2117,6 +2117,66 @@
           "$ref": "#/components/schemas/person"
         }
       },
+      "url_socialInteract": {
+        "description": "The uri/url of the root post comment\n",
+        "type": "string",
+        "format": "URL",
+        "example": "https://podcastindex.social/@dave/109762601417741559"
+      },
+      "protocol_socialInteract": {
+        "description": "The protocol in use for interacting with the comment root post. \n\nFor the most up-to-date list of options, see https://github.com/Podcastindex-org/podcast-namespace/blob/main/socialprotocols.txt\n",
+        "type": "string",
+        "enum": [
+          "disabled",
+          "activitypub",
+          "twitter",
+          "lightning"
+        ],
+        "example": "activitypub"
+      },
+      "accountId_socialInteract": {
+        "description": "The account id (on the commenting platform) of the account that created this root post.\n",
+        "type": "string",
+        "example": "@dave"
+      },
+      "accountUrl_socialInteract": {
+        "description": "The public url (on the commenting platform) of the account that created this root post.\n",
+        "type": "string",
+        "format": "URL",
+        "example": "https://podcastindex.social/users/dave"
+      },
+      "priority_socialInteract": {
+        "description": "When multiple socialInteract tags are present, this integer gives order of priority. A lower number means higher priority.\n",
+        "type": "integer",
+        "example": 0
+      },
+      "socialInteract_item": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "$ref": "#/components/schemas/url_socialInteract"
+          },
+          "protocol": {
+            "$ref": "#/components/schemas/protocol_socialInteract"
+          },
+          "accountId": {
+            "$ref": "#/components/schemas/accountId_socialInteract"
+          },
+          "accountUrl": {
+            "$ref": "#/components/schemas/accountUrl_socialInteract"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/priority_socialInteract"
+          }
+        }
+      },
+      "socialInteract": {
+        "description": "List the social interact data found in the podcast feed.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#social-interact) for more information.\n",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/socialInteract_item"
+        }
+      },
       "item_podcast": {
         "type": "object",
         "properties": {
@@ -2206,6 +2266,9 @@
           },
           "persons": {
             "$ref": "#/components/schemas/persons"
+          },
+          "socialInteract": {
+            "$ref": "#/components/schemas/socialInteract"
           },
           "value": {
             "$ref": "#/components/schemas/value"
@@ -2316,6 +2379,9 @@
           },
           "persons": {
             "$ref": "#/components/schemas/persons"
+          },
+          "socialInteract": {
+            "$ref": "#/components/schemas/socialInteract"
           },
           "value": {
             "$ref": "#/components/schemas/value"
@@ -4347,6 +4413,52 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/url"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/episodes_byfeedurl"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/episodes/bypodcastguid": {
+      "get": {
+        "tags": [
+          "Episodes"
+        ],
+        "summary": "By Podcast GUID",
+        "description": "This call returns all the episodes we know about for this feed from the [Podcast GUID](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid). Episodes are in reverse chronological order.\n\nExample: https://api.podcastindex.org/api/1.0/episodes/bypodcastguid?guid=856cd618-7f34-57ea-9b84-3600f1f65e7f&pretty\n",
+        "operationId": "episodes/bypodcastguid",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/guid_feed_podcast"
           },
           {
             "$ref": "#/components/parameters/since"

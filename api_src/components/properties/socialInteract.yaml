@@ -1,0 +1,9 @@
+  # language=Markdown
+description: >
+  List the social interact data found in the podcast feed.
+
+
+  See the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#social-interact) for more information.
+type: array
+items:
+  $ref: '../schemas/socialInteract_item.yaml'

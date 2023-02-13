@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  version: 1.8.0
+  version: 1.9.0
   title: PodcastIndex.org API
   termsOfService: 'https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md'
   contact:
@@ -193,6 +193,8 @@ paths:
     $ref: 'paths/episodes/byfeedid.yaml'
   '/episodes/byfeedurl':
     $ref: 'paths/episodes/byfeedurl.yaml'
+  '/episodes/bypodcastguid':
+    $ref: 'paths/episodes/bypodcastguid.yaml'
   '/episodes/byitunesid':
     $ref: 'paths/episodes/byitunesid.yaml'
   '/episodes/byid':

@@ -1,0 +1,12 @@
+type: object
+properties:
+  url:
+    $ref: '../properties/url_socialInteract.yaml'
+  protocol:
+    $ref: '../properties/protocol_socialInteract.yaml'
+  accountId:
+    $ref: '../properties/accountId_socialInteract.yaml'
+  accountUrl:
+    $ref: '../properties/accountUrl_socialInteract.yaml'
+  priority:
+    $ref: '../properties/priority_socialInteract.yaml'
