@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  List of episodes matching request
+type: array
+items:
+  $ref: '../schemas/item_itunesId.yaml'

@@ -7,7 +7,7 @@ content:
         status:
           $ref: '../properties/status.yaml'
         items:
-          $ref: '../properties/items_podcast.yaml'
+          $ref: '../properties/items_itunesId.yaml'
         count:
           $ref: '../properties/count.yaml'
         query:

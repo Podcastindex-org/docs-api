@@ -2352,6 +2352,65 @@ components:
       example:
         - '75075'
         - '920666'
+    item_itunesId:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id_episode'
+        title:
+          $ref: '#/components/schemas/title_feed'
+        link:
+          $ref: '#/components/schemas/link_feed'
+        description:
+          $ref: '#/components/schemas/description_episode'
+        guid:
+          $ref: '#/components/schemas/guid'
+        datePublished:
+          $ref: '#/components/schemas/datePublished'
+        datePublishedPretty:
+          $ref: '#/components/schemas/datePublishedPretty'
+        dateCrawled:
+          $ref: '#/components/schemas/dateCrawled'
+        enclosureUrl:
+          $ref: '#/components/schemas/enclosureUrl'
+        enclosureType:
+          $ref: '#/components/schemas/enclosureType'
+        enclosureLength:
+          $ref: '#/components/schemas/enclosureLength'
+        duration:
+          $ref: '#/components/schemas/duration'
+        explicit:
+          $ref: '#/components/schemas/explicit_episode'
+        episode:
+          $ref: '#/components/schemas/episode_number'
+        episodeType:
+          $ref: '#/components/schemas/episodeType'
+        season:
+          $ref: '#/components/schemas/season'
+        image:
+          $ref: '#/components/schemas/image_episode'
+        feedItunesId:
+          $ref: '#/components/schemas/itunesId_feed'
+        feedImage:
+          $ref: '#/components/schemas/image_feed'
+        feedId:
+          $ref: '#/components/schemas/id_feed'
+        feedLanguage:
+          $ref: '#/components/schemas/language'
+        chaptersUrl:
+          $ref: '#/components/schemas/chaptersUrl'
+        transcriptUrl:
+          $ref: '#/components/schemas/transcriptUrl'
+        soundbite:
+          $ref: '#/components/schemas/soundbite'
+        soundbites:
+          $ref: '#/components/schemas/soundbites'
+    items_itunesId:
+      description: |
+        List of episodes matching request
+      type: array
+      items:
+        $ref: '#/components/schemas/item_itunesId'
     episode_object:
       description: |
         Episode data
@@ -3080,7 +3139,7 @@ components:
               status:
                 $ref: '#/components/schemas/status'
               items:
-                $ref: '#/components/schemas/items_podcast'
+                $ref: '#/components/schemas/items_itunesId'
               count:
                 $ref: '#/components/schemas/count'
               query:
