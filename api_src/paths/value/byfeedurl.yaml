@@ -7,6 +7,12 @@ get:
     This call returns the information for supporting the podcast via one of the "Value for Value" methods from feed URL.
 
 
+    Additionally, the value block data can be accessed using static JSON files (updated every 15 minutes).
+    
+      - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json
+      - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json
+
+
     Examples:
 
       - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty
