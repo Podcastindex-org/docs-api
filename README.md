@@ -16,6 +16,8 @@ The [RapiDoc](https://mrin9.github.io/RapiDoc/) software is used to generate the
 
 No items are installed globally. Run `yarn` to install the Node required packages.
 
+NOTE: required yarn 2.x or newer. See https://yarnpkg.com/getting-started/install for install instructions.
+
 # Available Scripts
 
 In the project directory, you can run:
