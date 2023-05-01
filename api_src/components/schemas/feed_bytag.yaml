@@ -50,6 +50,8 @@ properties:
     $ref: '../properties/categories.yaml'
   locked:
     $ref: '../properties/locked.yaml'
+  popularity:
+    $ref: '../properties/trendScore.yaml'
   imageUrlHash:
     $ref: '../properties/imageUrlHash.yaml'
   value:

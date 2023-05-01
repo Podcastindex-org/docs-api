@@ -8,12 +8,24 @@ get:
     [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.
 
 
-    Example: https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&pretty
+    When called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.
+
+
+    When called with a `start_at` value, the feeds are returned sorted by the `feedId` starting with the specified value
+    up to the max number of feeds to return. The `nextStartAt` specifies the value to pass to the next `start_at`.
+    Repeat this sequence until no items are returned.
+
+
+    Examples:
+      - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty
+      - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty
   operationId: podcasts/bytag
   security:
     - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/podcast-value.yaml'
+    - $ref: '../../components/parameters/max_5000.yaml'
+    - $ref: '../../components/parameters/start_at.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
   responses:
     '200':
