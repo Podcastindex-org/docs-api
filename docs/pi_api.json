@@ -1644,6 +1644,9 @@
           "parseErrors": {
             "$ref": "#/components/schemas/parseErrors"
           },
+          "categories": {
+            "$ref": "#/components/schemas/categories"
+          },
           "locked": {
             "$ref": "#/components/schemas/locked"
           },
