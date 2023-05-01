@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  version: 1.9.0
+  version: 1.10.0
   title: PodcastIndex.org API
   termsOfService: https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md
   contact:
@@ -367,6 +367,25 @@ components:
         type: boolean
       allowEmptyValue: true
       required: true
+    max_5000:
+      name: max
+      in: query
+      description: |
+        Maximum number of results to return.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 5000
+      example: 200
+    start_at:
+      name: start_at
+      in: query
+      description: |
+        Feed ID to start at for request
+      schema:
+        type: integer
+        minimum: 1
+      example: 1
     medium:
       name: medium
       in: query
@@ -1807,6 +1826,11 @@ components:
           $ref: '#/components/schemas/podcastGuid_query'
         id:
           $ref: '#/components/schemas/id_guid_query'
+    trendScore:
+      description: |
+        The ranking for how the podcast is trending in the index
+      type: integer
+      example: 1
     valueCreatedOn:
       description: |
         The time this feed's `value` data added
@@ -1866,6 +1890,8 @@ components:
           $ref: '#/components/schemas/categories'
         locked:
           $ref: '#/components/schemas/locked'
+        popularity:
+          $ref: '#/components/schemas/trendScore'
         imageUrlHash:
           $ref: '#/components/schemas/imageUrlHash'
         value:
@@ -1882,16 +1908,23 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/feed_bytag'
+    total:
+      description: |
+        Total number of feeds returnable by endpoint
+      type: integer
+      example: 13143
+    nextStartAt:
+      description: |
+        Feed ID to pass to next `start_at` to get next batch of feeds
+
+        Only returned when `start_at` passed to request
+      type: integer
+      example: 322043
     medium:
       description: |
         Value of `medium` parameter used in request
       type: string
       example: film
-    trendScore:
-      description: |
-        The ranking for how the podcast is trending in the index
-      type: integer
-      example: 1
     feed_trending:
       type: object
       properties:
@@ -3054,6 +3087,10 @@ components:
                 $ref: '#/components/schemas/feeds_bytag'
               count:
                 $ref: '#/components/schemas/count'
+              total:
+                $ref: '#/components/schemas/total'
+              nextStartAt:
+                $ref: '#/components/schemas/nextStartAt'
               description:
                 $ref: '#/components/schemas/description_response'
     bymedium:
@@ -3921,8 +3958,19 @@ paths:
         tag.
 
 
-        Example:
-        https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&pretty
+        When called without a `start_at` value, the top 500 feeds sorted by
+        popularity are returned in descending order.
+
+
+        When called with a `start_at` value, the feeds are returned sorted by
+        the `feedId` starting with the specified value up to the max number of
+        feeds to return. The `nextStartAt` specifies the value to pass to the
+        next `start_at`. Repeat this sequence until no items are returned.
+
+
+        Examples:
+          - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty
+          - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty
       operationId: podcasts/bytag
       security:
         - API Key: []
@@ -3931,6 +3979,8 @@ paths:
           Authorization: []
       parameters:
         - $ref: '#/components/parameters/podcast-value'
+        - $ref: '#/components/parameters/max_5000'
+        - $ref: '#/components/parameters/start_at'
         - $ref: '#/components/parameters/pretty'
       responses:
         '200':

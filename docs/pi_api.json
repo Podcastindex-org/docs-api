@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "version": "1.9.0",
+    "version": "1.10.0",
     "title": "PodcastIndex.org API",
     "termsOfService": "https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md",
     "contact": {
@@ -251,6 +251,27 @@
         },
         "allowEmptyValue": true,
         "required": true
+      },
+      "max_5000": {
+        "name": "max",
+        "in": "query",
+        "description": "Maximum number of results to return.\n",
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5000
+        },
+        "example": 200
+      },
+      "start_at": {
+        "name": "start_at",
+        "in": "query",
+        "description": "Feed ID to start at for request\n",
+        "schema": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "example": 1
       },
       "medium": {
         "name": "medium",
@@ -1677,6 +1698,11 @@
           }
         }
       },
+      "trendScore": {
+        "description": "The ranking for how the podcast is trending in the index\n",
+        "type": "integer",
+        "example": 1
+      },
       "valueCreatedOn": {
         "description": "The time this feed's `value` data added\n",
         "type": "integer",
@@ -1761,6 +1787,9 @@
           "locked": {
             "$ref": "#/components/schemas/locked"
           },
+          "popularity": {
+            "$ref": "#/components/schemas/trendScore"
+          },
           "imageUrlHash": {
             "$ref": "#/components/schemas/imageUrlHash"
           },
@@ -1785,15 +1814,20 @@
           "$ref": "#/components/schemas/feed_bytag"
         }
       },
+      "total": {
+        "description": "Total number of feeds returnable by endpoint\n",
+        "type": "integer",
+        "example": 13143
+      },
+      "nextStartAt": {
+        "description": "Feed ID to pass to next `start_at` to get next batch of feeds\n\nOnly returned when `start_at` passed to request\n",
+        "type": "integer",
+        "example": 322043
+      },
       "medium": {
         "description": "Value of `medium` parameter used in request\n",
         "type": "string",
         "example": "film"
-      },
-      "trendScore": {
-        "description": "The ranking for how the podcast is trending in the index\n",
-        "type": "integer",
-        "example": 1
       },
       "feed_trending": {
         "type": "object",
@@ -3300,6 +3334,12 @@
                 "count": {
                   "$ref": "#/components/schemas/count"
                 },
+                "total": {
+                  "$ref": "#/components/schemas/total"
+                },
+                "nextStartAt": {
+                  "$ref": "#/components/schemas/nextStartAt"
+                },
                 "description": {
                   "$ref": "#/components/schemas/description_response"
                 }
@@ -4316,7 +4356,7 @@
           "Podcasts"
         ],
         "summary": "By Tag",
-        "description": "This call returns all feeds that support the specified [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&pretty\n",
+        "description": "This call returns all feeds that support the specified [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\nWhen called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.\n\nWhen called with a `start_at` value, the feeds are returned sorted by the `feedId` starting with the specified value up to the max number of feeds to return. The `nextStartAt` specifies the value to pass to the next `start_at`. Repeat this sequence until no items are returned.\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty\n",
         "operationId": "podcasts/bytag",
         "security": [
           {
@@ -4329,6 +4369,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/podcast-value"
+          },
+          {
+            "$ref": "#/components/parameters/max_5000"
+          },
+          {
+            "$ref": "#/components/parameters/start_at"
           },
           {
             "$ref": "#/components/parameters/pretty"
