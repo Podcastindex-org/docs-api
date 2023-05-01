@@ -2005,6 +2005,8 @@ components:
     transcriptUrl:
       description: |
         Link to the file containing the episode transcript
+
+        Note: in most use cases, the `transcripts` value should be used instead
       type: string
       format: URL
       example: https://mp3s.nashownotes.com/NA-1322-Captions.srt
@@ -2399,14 +2401,26 @@ components:
           $ref: '#/components/schemas/id_feed'
         feedLanguage:
           $ref: '#/components/schemas/language'
+        feedDead:
+          $ref: '#/components/schemas/dead'
+        feedDuplicateOf:
+          $ref: '#/components/schemas/duplicateOf'
         chaptersUrl:
           $ref: '#/components/schemas/chaptersUrl'
         transcriptUrl:
           $ref: '#/components/schemas/transcriptUrl'
+        transcripts:
+          $ref: '#/components/schemas/transcripts'
         soundbite:
           $ref: '#/components/schemas/soundbite'
         soundbites:
           $ref: '#/components/schemas/soundbites'
+        persons:
+          $ref: '#/components/schemas/persons'
+        socialInteract:
+          $ref: '#/components/schemas/socialInteract'
+        value:
+          $ref: '#/components/schemas/value'
     items_itunesId:
       description: |
         List of episodes matching request
