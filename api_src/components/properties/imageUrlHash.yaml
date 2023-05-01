@@ -1,14 +1,5 @@
   # language=Markdown
 description: >
   A CRC32 hash of the `image` URL with the protocol (`http://`, `https://`) removed.
-  Can be used to retrieve a resized/converted version of the image specified by `image` from https://podcastimages.com/.
-
-
-  Using the format: `https://podcastimages.com/<hash>_<size>.jpg`
-  Replace `<hash>` with the value in this field. The `<size>` is the desired image width/height.
-  Ex: `https://podcastimages.com/1011338142_600.jpg`
-
-
-  **Work in Progress**: the `podcastimages.com` system is currently not working.
 type: integer
 example: 1639321931
