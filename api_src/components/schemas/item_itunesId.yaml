@@ -42,11 +42,23 @@ properties:
     $ref: '../properties/id_feed.yaml'
   feedLanguage:
     $ref: '../properties/language.yaml'
+  feedDead:
+    $ref: '../properties/dead.yaml'
+  feedDuplicateOf:
+    $ref: '../properties/duplicateOf.yaml'
   chaptersUrl:
     $ref: '../properties/chaptersUrl.yaml'
   transcriptUrl:
     $ref: '../properties/transcriptUrl.yaml'
+  transcripts:
+    $ref: '../properties/transcripts.yaml'
   soundbite:
     $ref: '../properties/soundbite.yaml'
   soundbites:
     $ref: '../properties/soundbites.yaml'
+  persons:
+    $ref: '../properties/persons.yaml'
+  socialInteract:
+    $ref: '../properties/socialInteract.yaml'
+  value:
+    $ref: '../properties/value.yaml'

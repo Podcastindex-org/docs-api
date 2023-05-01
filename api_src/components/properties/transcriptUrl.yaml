@@ -1,6 +1,9 @@
   # language=Markdown
 description: >
   Link to the file containing the episode transcript
+
+
+  Note: in most use cases, the `transcripts` value should be used instead
 type: string
 format: URL
 example: "https://mp3s.nashownotes.com/NA-1322-Captions.srt"
