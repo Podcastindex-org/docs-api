@@ -1155,17 +1155,7 @@ components:
     imageUrlHash:
       description: >
         A CRC32 hash of the `image` URL with the protocol (`http://`,
-        `https://`) removed. Can be used to retrieve a resized/converted version
-        of the image specified by `image` from https://podcastimages.com/.
-
-
-        Using the format: `https://podcastimages.com/<hash>_<size>.jpg` Replace
-        `<hash>` with the value in this field. The `<size>` is the desired image
-        width/height. Ex: `https://podcastimages.com/1011338142_600.jpg`
-
-
-        **Work in Progress**: the `podcastimages.com` system is currently not
-        working.
+        `https://`) removed.
       type: integer
       example: 1639321931
     newestItemPublishTime:
@@ -2427,6 +2417,12 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/item_itunesId'
+    feedImageUrlHash:
+      description: >
+        A CRC32 hash of the `feedImage` URL with the protocol (`http://`,
+        `https://`) removed.
+      type: integer
+      example: 1639321931
     episode_object:
       description: |
         Episode data
@@ -2466,10 +2462,14 @@ components:
           $ref: '#/components/schemas/season'
         image:
           $ref: '#/components/schemas/image_episode'
+        imageUrlHash:
+          $ref: '#/components/schemas/imageUrlHash'
         feedItunesId:
           $ref: '#/components/schemas/itunesId_feed'
         feedImage:
           $ref: '#/components/schemas/image_feed'
+        feedImageUrlHash:
+          $ref: '#/components/schemas/feedImageUrlHash'
         feedId:
           $ref: '#/components/schemas/id_feed'
         feedTitle:

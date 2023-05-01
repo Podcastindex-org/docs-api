@@ -32,10 +32,14 @@ season:
   $ref: '../properties/season.yaml'
 image:
   $ref: '../properties/image_episode.yaml'
+imageUrlHash:
+  $ref: '../properties/imageUrlHash.yaml'
 feedItunesId:
   $ref: '../properties/itunesId_feed.yaml'
 feedImage:
   $ref: '../properties/image_feed.yaml'
+feedImageUrlHash:
+  $ref: '../properties/feedImageUrlHash.yaml'
 feedId:
   $ref: '../properties/id_feed.yaml'
 feedTitle:
