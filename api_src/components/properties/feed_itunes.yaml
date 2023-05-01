@@ -53,6 +53,8 @@ properties:
     $ref: '../properties/crawlErrors.yaml'
   parseErrors:
     $ref: '../properties/parseErrors.yaml'
+  categories:
+    $ref: '../properties/categories.yaml'
   locked:
     $ref: '../properties/locked.yaml'
   funding:
