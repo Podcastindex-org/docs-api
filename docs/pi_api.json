@@ -1191,6 +1191,12 @@
         "format": "URL",
         "example": "https://studio.hypercatcher.com/chapters/podcast/http:feed.nashownotes.comrss.xml/episode/http:1322.noagendanotes.com"
       },
+      "transcriptUrl": {
+        "description": "Link to the file containing the episode transcript\n\nNote: in most use cases, the `transcripts` value should be used instead\n",
+        "type": "string",
+        "format": "URL",
+        "example": "https://mp3s.nashownotes.com/NA-1322-Captions.srt"
+      },
       "transcript": {
         "description": "This tag is used to link to a transcript or closed captions file. Multiple tags can be present for multiple transcript formats.\nDetailed file format information and example files are [here](https://github.com/Podcastindex-org/podcast-namespace/blob/main/transcripts/transcripts.md).\n",
         "type": "object",
@@ -1297,6 +1303,9 @@
           },
           "chaptersUrl": {
             "$ref": "#/components/schemas/chaptersUrl"
+          },
+          "transcriptUrl": {
+            "$ref": "#/components/schemas/transcriptUrl"
           },
           "transcripts": {
             "$ref": "#/components/schemas/transcripts"
@@ -1957,12 +1966,6 @@
         "description": "Link TODO\n",
         "type": "string",
         "example": ""
-      },
-      "transcriptUrl": {
-        "description": "Link to the file containing the episode transcript\n\nNote: in most use cases, the `transcripts` value should be used instead\n",
-        "type": "string",
-        "format": "URL",
-        "example": "https://mp3s.nashownotes.com/NA-1322-Captions.srt"
       },
       "liveitem_podcast": {
         "type": "object",
