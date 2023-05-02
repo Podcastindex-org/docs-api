@@ -26,6 +26,7 @@ get:
     - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/q_person.yaml'
+    - $ref: '../../components/parameters/max.yaml'
     - $ref: '../../components/parameters/fulltext.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
   responses:

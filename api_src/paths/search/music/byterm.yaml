@@ -16,6 +16,7 @@ get:
     - $ref: '../../../components/parameters/q.yaml'
     - $ref: '../../../components/parameters/val.yaml'
     - $ref: '../../../components/parameters/aponly.yaml'
+    - $ref: '../../../components/parameters/max.yaml'
     - $ref: '../../../components/parameters/clean.yaml'
     - $ref: '../../../components/parameters/fulltext.yaml'
     - $ref: '../../../components/parameters/pretty.yaml'
