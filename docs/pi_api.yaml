@@ -273,6 +273,16 @@ components:
           - hive
           - webmonetization
       example: ''
+    max:
+      name: max
+      in: query
+      description: |
+        Maximum number of results to return.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 1000
+      example: 10
     aponly:
       name: aponly
       in: query
@@ -407,16 +417,6 @@ components:
           - podcast
           - video
       example: film
-    max:
-      name: max
-      in: query
-      description: |
-        Maximum number of results to return.
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 1000
-      example: 10
     since:
       name: since
       in: query
@@ -3547,6 +3547,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/q'
         - $ref: '#/components/parameters/val'
+        - $ref: '#/components/parameters/max'
         - $ref: '#/components/parameters/aponly'
         - $ref: '#/components/parameters/clean'
         - $ref: '#/components/parameters/fulltext'
@@ -3758,6 +3759,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/q'
         - $ref: '#/components/parameters/val'
+        - $ref: '#/components/parameters/max'
         - $ref: '#/components/parameters/clean'
         - $ref: '#/components/parameters/fulltext'
         - $ref: '#/components/parameters/pretty'
@@ -3801,6 +3803,7 @@ paths:
           Authorization: []
       parameters:
         - $ref: '#/components/parameters/q_person'
+        - $ref: '#/components/parameters/max'
         - $ref: '#/components/parameters/fulltext'
         - $ref: '#/components/parameters/pretty'
       responses:
@@ -3834,6 +3837,7 @@ paths:
         - $ref: '#/components/parameters/q'
         - $ref: '#/components/parameters/val'
         - $ref: '#/components/parameters/aponly'
+        - $ref: '#/components/parameters/max'
         - $ref: '#/components/parameters/clean'
         - $ref: '#/components/parameters/fulltext'
         - $ref: '#/components/parameters/pretty'
@@ -4028,6 +4032,7 @@ paths:
           Authorization: []
       parameters:
         - $ref: '#/components/parameters/medium'
+        - $ref: '#/components/parameters/max'
         - $ref: '#/components/parameters/pretty'
       responses:
         '200':
