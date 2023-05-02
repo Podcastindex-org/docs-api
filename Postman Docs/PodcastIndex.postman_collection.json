@@ -1558,7 +1558,7 @@
 					"const apiHeaderTime = new Date().getTime() / 1000;",
 					"const hash = CryptoJS.SHA1(authKey + secretKey + apiHeaderTime).toString(CryptoJS.enc.Hex);",
 					"",
-					"pm.request.headers.add({ key: 'User-Agent', value: 'SuperPodcastPlayer/1.3' });",
+					"pm.request.headers.add({ key: 'User-Agent', value: 'PostmanAPITester/1.3' });",
 					"pm.request.headers.add({ key: 'X-Auth-Key', value: authKey });",
 					"pm.request.headers.add({ key: 'X-Auth-Date', value: apiHeaderTime.toString() });",
 					"pm.request.headers.add({ key: 'Authorization', value: hash });",
