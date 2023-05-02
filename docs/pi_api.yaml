@@ -551,6 +551,15 @@ components:
         multiple:
           value: 41504,920666
           description: Multiple IDs
+    enclosure:
+      name: enclosure
+      in: query
+      description: |
+        The URL for the episode enclosure to get the information for.
+      required: false
+      schema:
+        type: string
+      example: https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3
     id_episode_pi:
       name: id
       in: query
@@ -4097,12 +4106,17 @@ paths:
         PodcastIndex ID. Episodes are in reverse chronological order.
 
 
+        When using the `enclosure` parameter, only the episode matching the URL
+        is returned.
+
+
         Examples:
 
           - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty
           - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&pretty
           - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=169991&pretty
           - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=4058673&pretty
+          - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty
       operationId: episodes/byfeedid
       security:
         - API Key: []
@@ -4113,6 +4127,7 @@ paths:
         - $ref: '#/components/parameters/id_feed_episode_pi'
         - $ref: '#/components/parameters/since'
         - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/enclosure'
         - $ref: '#/components/parameters/fulltext'
         - $ref: '#/components/parameters/pretty'
       responses:
@@ -4199,8 +4214,14 @@ paths:
         iTunes ID. Episodes are in reverse chronological order.
 
 
-        Example:
-        https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty
+        When using the `enclosure` parameter, only the episode matching the URL
+        is returned.
+
+
+        Examples:
+
+          - https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty
+          - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=269169796&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty
       operationId: episodes/byitunesid
       security:
         - API Key: []
@@ -4211,6 +4232,7 @@ paths:
         - $ref: '#/components/parameters/id_feed_podcast_itunes'
         - $ref: '#/components/parameters/since'
         - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/enclosure'
         - $ref: '#/components/parameters/fulltext'
         - $ref: '#/components/parameters/pretty'
       responses:

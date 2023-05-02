@@ -408,6 +408,16 @@
           }
         }
       },
+      "enclosure": {
+        "name": "enclosure",
+        "in": "query",
+        "description": "The URL for the episode enclosure to get the information for.\n",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "example": "https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3"
+      },
       "id_episode_pi": {
         "name": "id",
         "in": "query",
@@ -4519,7 +4529,7 @@
           "Episodes"
         ],
         "summary": "By Feed ID",
-        "description": "This call returns all the episodes we know about for this feed from the PodcastIndex ID. Episodes are in reverse chronological order.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&pretty\n  - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=169991&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=4058673&pretty\n",
+        "description": "This call returns all the episodes we know about for this feed from the PodcastIndex ID. Episodes are in reverse chronological order.\n\nWhen using the `enclosure` parameter, only the episode matching the URL is returned.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&pretty\n  - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=169991&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=4058673&pretty\n  - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty\n",
         "operationId": "episodes/byfeedid",
         "security": [
           {
@@ -4538,6 +4548,9 @@
           },
           {
             "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/enclosure"
           },
           {
             "$ref": "#/components/parameters/fulltext"
@@ -4657,7 +4670,7 @@
           "Episodes"
         ],
         "summary": "By iTunes ID",
-        "description": "This call returns all the episodes we know about for this feed from the iTunes ID. Episodes are in reverse chronological order.\n\nExample: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty\n",
+        "description": "This call returns all the episodes we know about for this feed from the iTunes ID. Episodes are in reverse chronological order.\n\nWhen using the `enclosure` parameter, only the episode matching the URL is returned.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty\n  - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=269169796&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty\n",
         "operationId": "episodes/byitunesid",
         "security": [
           {
@@ -4676,6 +4689,9 @@
           },
           {
             "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/enclosure"
           },
           {
             "$ref": "#/components/parameters/fulltext"

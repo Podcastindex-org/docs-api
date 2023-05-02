@@ -8,7 +8,13 @@ get:
     Episodes are in reverse chronological order.
 
 
-    Example: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty
+    When using the `enclosure` parameter, only the episode matching the URL is returned.
+
+
+    Examples:
+
+      - https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty
+      - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=269169796&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty
   operationId: episodes/byitunesid
   security:
     - $ref: '../../components/security/security.yaml'
@@ -16,6 +22,7 @@ get:
     - $ref: '../../components/parameters/id_feed_podcast_itunes.yaml'
     - $ref: '../../components/parameters/since.yaml'
     - $ref: '../../components/parameters/max.yaml'
+    - $ref: '../../components/parameters/enclosure.yaml'
     - $ref: '../../components/parameters/fulltext.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
   responses:
