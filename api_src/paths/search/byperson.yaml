@@ -6,6 +6,15 @@ get:
   description: >
     This call returns all of the episodes where the specified person is mentioned.
 
+    
+    It searches the following fields:
+
+      - Person tags
+      - Episode title
+      - Episode description
+      - Feed owner
+      - Feed author
+
 
     Examples:
 

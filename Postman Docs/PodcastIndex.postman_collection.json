@@ -155,7 +155,7 @@
 								}
 							]
 						},
-						"description": "This call returns all of the episodes where the specified person is mentioned.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=adam%20curry&pretty\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=Martin+Mouritzen&pretty\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=Klaus+Schwab&pretty\n"
+						"description": "This call returns all of the episodes where the specified person is mentioned.\n\nIt searches the following fields:\n\n  - Person tags\n  - Episode title\n  - Episode description\n  - Feed owner\n  - Feed author\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=adam%20curry&pretty\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=Martin+Mouritzen&pretty\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=Klaus+Schwab&pretty\n"
 					},
 					"response": []
 				},

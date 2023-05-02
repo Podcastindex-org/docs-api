@@ -3770,6 +3770,15 @@ paths:
         mentioned.
 
 
+        It searches the following fields:
+
+          - Person tags
+          - Episode title
+          - Episode description
+          - Feed owner
+          - Feed author
+
+
         Examples:
 
           - https://api.podcastindex.org/api/1.0/search/byperson?q=adam%20curry&pretty
