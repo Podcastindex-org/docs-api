@@ -1,0 +1,9 @@
+name: enclosure
+in: query
+# language=Markdown
+description: >
+  The URL for the episode enclosure to get the information for.
+required: false
+schema:
+  type: string
+example: "https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3"

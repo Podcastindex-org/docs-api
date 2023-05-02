@@ -519,7 +519,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/episodes/byfeedid?id=75075",
+							"raw": "{{baseUrl}}/episodes/byfeedid?id=41504",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -530,7 +530,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "75075",
+									"value": "41504",
 									"description": "(Required) The PodcastIndex Feed ID or IDs to search for.\n\nIf searching for multiple IDs, separate values with a comma. A maximum of 200 IDs can be provided.\n"
 								},
 								{
@@ -543,6 +543,12 @@
 									"key": "max",
 									"value": "10",
 									"description": "Maximum number of results to return.\n",
+									"disabled": true
+								},
+								{
+									"key": "enclosure",
+									"value": "https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3",
+									"description": "The URL for the episode enclosure to get the information for.\n",
 									"disabled": true
 								},
 								{
@@ -559,7 +565,7 @@
 								}
 							]
 						},
-						"description": "This call returns all the episodes we know about for this feed from the PodcastIndex ID. Episodes are in reverse chronological order.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&pretty\n  - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=169991&pretty\n"
+						"description": "This call returns all the episodes we know about for this feed from the PodcastIndex ID.\nEpisodes are in reverse chronological order.\n\nWhen using the `enclosure` parameter, only the episode matching the URL is returned.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&pretty\n  - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=169991&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=4058673&pretty\n  - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty\n"
 					},
 					"response": []
 				},
@@ -669,7 +675,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/episodes/byitunesid?id=1441923632",
+							"raw": "{{baseUrl}}/episodes/byitunesid?id=269169796",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -680,7 +686,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "1441923632",
+									"value": "269169796",
 									"description": "(Required) The iTunes Feed ID to search for\n"
 								},
 								{
@@ -693,6 +699,12 @@
 									"key": "max",
 									"value": "10",
 									"description": "Maximum number of results to return.\n",
+									"disabled": true
+								},
+								{
+									"key": "enclosure",
+									"value": "https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3",
+									"description": "The URL for the episode enclosure to get the information for.\n",
 									"disabled": true
 								},
 								{
@@ -709,7 +721,7 @@
 								}
 							]
 						},
-						"description": "This call returns all the episodes we know about for this feed from the iTunes ID. Episodes are in reverse chronological order.\n\nExample: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty\n"
+						"description": "This call returns all the episodes we know about for this feed from the iTunes ID.\nEpisodes are in reverse chronological order.\n\nWhen using the `enclosure` parameter, only the episode matching the URL is returned.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty\n  - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=269169796&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty\n"
 					},
 					"response": []
 				},
