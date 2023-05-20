@@ -66,6 +66,8 @@ info:
           - [podindexr](https://github.com/rpodcast/podindexr)
       - Ruby
           - [podcast-index](https://github.com/jasonyork/podcast-index)
+      - Swift
+          - [PodcastIndexKit](https://github.com/SparrowTek/PodcastIndexKit)
 
     Are we missing a library? Did you create one for a different language?
     Create a [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls)
