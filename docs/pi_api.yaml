@@ -1123,6 +1123,16 @@ components:
         - 0
         - 1
       example: 0
+    medium_feed:
+      description: >
+        The value of the `podcast:medium` attribute for the feed.
+
+
+        See the
+        [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium)
+        description in the Podcast Namespace for more information.
+      type: string
+      example: music
     dead:
       description: >
         At some point, we give up trying to process a feed and mark it as dead.
@@ -1247,6 +1257,8 @@ components:
           $ref: '#/components/schemas/explicit_feed'
         type:
           $ref: '#/components/schemas/type'
+        medium:
+          $ref: '#/components/schemas/medium_feed'
         dead:
           $ref: '#/components/schemas/dead'
         episodeCount:
@@ -1727,6 +1739,8 @@ components:
           $ref: '#/components/schemas/explicit_feed'
         type:
           $ref: '#/components/schemas/type'
+        medium:
+          $ref: '#/components/schemas/medium_feed'
         dead:
           $ref: '#/components/schemas/dead'
         chash:
