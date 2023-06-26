@@ -939,6 +939,11 @@
         ],
         "example": 0
       },
+      "medium_feed": {
+        "description": "The value of the `podcast:medium` attribute for the feed.\n\nSee the [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) description in the Podcast Namespace for more information.\n",
+        "type": "string",
+        "example": "music"
+      },
       "dead": {
         "description": "At some point, we give up trying to process a feed and mark it as dead. This is usually after 1000 errors without a successful pull/parse cycle. Once the feed is marked dead, we only check it once per month.\n",
         "type": "integer",
@@ -1056,6 +1061,9 @@
           },
           "type": {
             "$ref": "#/components/schemas/type"
+          },
+          "medium": {
+            "$ref": "#/components/schemas/medium_feed"
           },
           "dead": {
             "$ref": "#/components/schemas/dead"
@@ -1557,6 +1565,9 @@
           },
           "type": {
             "$ref": "#/components/schemas/type"
+          },
+          "medium": {
+            "$ref": "#/components/schemas/medium_feed"
           },
           "dead": {
             "$ref": "#/components/schemas/dead"

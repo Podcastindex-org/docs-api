@@ -44,6 +44,8 @@ properties:
     $ref: '../properties/explicit_feed.yaml'
   type:
     $ref: '../properties/type.yaml'
+  medium:
+    $ref: '../properties/medium_feed.yaml'
   dead:
     $ref: '../properties/dead.yaml'
   episodeCount:
