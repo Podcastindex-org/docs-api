@@ -2,7 +2,7 @@ name: similar
 in: query
 # language=Markdown
 description: >
-  If present, include similar matches in search response
+  If present, include similar matches in search response. For `search/byterm`, prioritizes title matches.
 schema:
   type: boolean
 allowEmptyValue: true

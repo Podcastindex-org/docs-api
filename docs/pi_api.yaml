@@ -305,6 +305,15 @@ components:
       schema:
         type: boolean
       allowEmptyValue: true
+    similar:
+      name: similar
+      in: query
+      description: >
+        If present, include similar matches in search response. For
+        `search/byterm`, prioritizes title matches.
+      schema:
+        type: boolean
+      allowEmptyValue: true
     fulltext:
       name: fulltext
       in: query
@@ -314,14 +323,6 @@ components:
 
 
         Parameter shall not have a value
-      schema:
-        type: boolean
-      allowEmptyValue: true
-    similar:
-      name: similar
-      in: query
-      description: |
-        If present, include similar matches in search response
       schema:
         type: boolean
       allowEmptyValue: true
@@ -3568,6 +3569,7 @@ paths:
         - $ref: '#/components/parameters/max'
         - $ref: '#/components/parameters/aponly'
         - $ref: '#/components/parameters/clean'
+        - $ref: '#/components/parameters/similar'
         - $ref: '#/components/parameters/fulltext'
         - $ref: '#/components/parameters/pretty'
       responses:
