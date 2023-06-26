@@ -194,19 +194,19 @@
         },
         "allowEmptyValue": true
       },
-      "fulltext": {
-        "name": "fulltext",
+      "similar": {
+        "name": "similar",
         "in": "query",
-        "description": "If present, return the full text value of any text fields (ex: `description`). If not provided, field value is truncated to 100 words.\n\nParameter shall not have a value\n",
+        "description": "If present, include similar matches in search response. For `search/byterm`, prioritizes title matches.\n",
         "schema": {
           "type": "boolean"
         },
         "allowEmptyValue": true
       },
-      "similar": {
-        "name": "similar",
+      "fulltext": {
+        "name": "fulltext",
         "in": "query",
-        "description": "If present, include similar matches in search response\n",
+        "description": "If present, return the full text value of any text fields (ex: `description`). If not provided, field value is truncated to 100 words.\n\nParameter shall not have a value\n",
         "schema": {
           "type": "boolean"
         },
@@ -4056,6 +4056,9 @@
           },
           {
             "$ref": "#/components/parameters/clean"
+          },
+          {
+            "$ref": "#/components/parameters/similar"
           },
           {
             "$ref": "#/components/parameters/fulltext"
