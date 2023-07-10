@@ -1,10 +1,10 @@
 get:
   tags:
     - Recent
-  summary: Feed Data
+  summary: Recent Data
   # language=Markdown
   description: >
-    This call returns every new feed added to the index over the past 24 hours in reverse chronological order.
+    This call returns every new feed and episode added to the index over the past 24 hours in reverse chronological order.
     
     
     This is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's

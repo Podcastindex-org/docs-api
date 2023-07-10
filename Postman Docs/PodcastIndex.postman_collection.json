@@ -1103,7 +1103,7 @@
 					"response": []
 				},
 				{
-					"name": "Data",
+					"name": "Recent Data",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1137,7 +1137,7 @@
 								}
 							]
 						},
-						"description": "This call returns every new feed added to the index over the past 24 hours in reverse chronological order.\n\nThis is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's\ninternal timestamp.\n\nSimilar data can also be accessed using object storage root url https://tracking.podcastindex.org/current\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10&since=1671164867\n"
+						"description": "This call returns every new feed and episode added to the index over the past 24 hours in reverse chronological order.\n\nThis is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's\ninternal timestamp.\n\nSimilar data can also be accessed using object storage root url https://tracking.podcastindex.org/current\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10&since=1671164867\n"
 					},
 					"response": []
 				},
