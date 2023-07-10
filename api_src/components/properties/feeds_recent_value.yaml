@@ -1,0 +1,27 @@
+  # language=Markdown
+description: >
+  List of feeds matching request
+type: array
+items:
+  type: object
+  properties:
+    id:
+      $ref: '../properties/id_feed.yaml'
+    url:
+      $ref: '../properties/url_feed.yaml'
+    title:
+      $ref: '../properties/title_feed.yaml'
+    author:
+      $ref: '../properties/author.yaml'
+    image:
+      $ref: '../properties/image_feed.yaml'
+    newestItemPublishTime:
+      $ref: '../properties/newestItemPublishTime.yaml'
+    itunesId:
+      $ref: '../properties/itunesId_feed.yaml'
+    trendScore:
+      $ref: '../properties/trendScore.yaml'
+    language:
+      $ref: '../properties/language.yaml'
+    categories:
+      $ref: '../properties/categories.yaml'
