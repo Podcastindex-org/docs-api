@@ -1,6 +1,7 @@
   # language=Markdown
 description: >
-  List of transcripts for the episode.
+  List of transcripts for the episode. May not be reported.
 type: array
+nullable: true
 items:
   $ref: '../schemas/transcript.yaml'

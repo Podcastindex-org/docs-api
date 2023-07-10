@@ -1,7 +1,8 @@
   # language=Markdown
 description: >
-  Soundbite for episode
+  Soundbite for episode. May not be reported.
 type: object
+nullable: true
 properties:
   startTime:
     $ref: '../properties/startTime.yaml'

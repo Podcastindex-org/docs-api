@@ -1,10 +1,11 @@
   # language=Markdown
 description: >
-  Information for donation/funding the podcast.
+  Information for donation/funding the podcast. May not be reported.
 
 
   See the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.
 type: object
+nullable: true
 properties:
   url:
     $ref: '../properties/url_funding.yaml'

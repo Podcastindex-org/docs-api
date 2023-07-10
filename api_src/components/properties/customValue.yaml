@@ -1,10 +1,11 @@
   # language=Markdown
 description: >
-  A custom value to pass along with the payment. This is considered the value that belongs to the customKey.
+  A custom value to pass along with the payment. This is considered the value that belongs to the customKey. May not be reported.
 
 
   See the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
   and [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md)
   for more information.
 type: string
+nullable: true
 example: "wal_ZmqFg13NB31oek"

@@ -2,4 +2,5 @@
 description: >
   Episode number
 type: integer
+nullable: true
 example: 19

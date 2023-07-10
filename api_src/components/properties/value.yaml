@@ -1,12 +1,13 @@
   # language=Markdown
 description: >
-  Information for supporting the podcast via one of the "Value for Value" methods.
+  Information for supporting the podcast via one of the "Value for Value" methods. May not be reported.
 
 
   Examples:
     - `lightning` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty
     - `webmonetization` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=779873&pretty
 type: object
+nullable: true
 properties:
   model:
     $ref: '../properties/model_v4v.yaml'

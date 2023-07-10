@@ -1094,6 +1094,7 @@ components:
       description: |
         The iTunes ID of this feed if there is one, and we know what it is.
       type: integer
+      nullable: true
       example: 1441923632
     generator:
       description: |
@@ -1347,8 +1348,9 @@ components:
     duration:
       description: >
         The estimated length of the item specified by the `enclosureUrl` in
-        seconds
+        seconds. Will be null for `liveItem`.
       type: integer
+      nullable: true
       format: seconds
       example: 54
     explicit_episode:
@@ -1366,11 +1368,13 @@ components:
       description: |
         Episode number
       type: integer
+      nullable: true
       example: 19
     episodeType:
       description: |
-        The type of episode
+        The type of episode. May be null for `liveItem`.
       type: string
+      nullable: true
       enum:
         - full
         - trailer
@@ -1378,8 +1382,9 @@ components:
       example: full
     season:
       description: |
-        Season number
+        Season number. May be null for `liveItem`.
       type: integer
+      nullable: true
       example: 3
     image_episode:
       description: |
@@ -1392,6 +1397,7 @@ components:
       description: |
         Link to the JSON file containing the episode chapters
       type: string
+      nullable: true
       format: URL
       example: >-
         https://studio.hypercatcher.com/chapters/podcast/http:feed.nashownotes.comrss.xml/episode/http:1322.noagendanotes.com
@@ -1401,6 +1407,7 @@ components:
 
         Note: in most use cases, the `transcripts` value should be used instead
       type: string
+      nullable: true
       format: URL
       example: https://mp3s.nashownotes.com/NA-1322-Captions.srt
     transcript:
@@ -1432,8 +1439,9 @@ components:
           example: application/srt
     transcripts:
       description: |
-        List of transcripts for the episode.
+        List of transcripts for the episode. May not be reported.
       type: array
+      nullable: true
       items:
         $ref: '#/components/schemas/transcript'
     item_search_byperson:
@@ -1585,13 +1593,16 @@ components:
       type: integer
       example: 99
     fee_destination:
-      description: |
-        Indicates if destination is included due to a fee being charged
+      description: >
+        Indicates if destination is included due to a fee being charged. May not
+        be reported.
       type: boolean
+      nullable: true
       example: true
     customKey:
       description: >
-        The name of a custom record key to send along with the payment.
+        The name of a custom record key to send along with the payment. May not
+        be reported.
 
 
         See the [podcast namespace
@@ -1600,11 +1611,12 @@ components:
         specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md)
         for more information.
       type: string
+      nullable: true
       example: '112111100'
     customValue:
       description: >
         A custom value to pass along with the payment. This is considered the
-        value that belongs to the customKey.
+        value that belongs to the customKey. May not be reported.
 
 
         See the [podcast namespace
@@ -1613,6 +1625,7 @@ components:
         specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md)
         for more information.
       type: string
+      nullable: true
       example: wal_ZmqFg13NB31oek
     destination_v4v:
       description: |
@@ -1642,13 +1655,14 @@ components:
     value:
       description: >
         Information for supporting the podcast via one of the "Value for Value"
-        methods.
+        methods. May not be reported.
 
 
         Examples:
           - `lightning` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty
           - `webmonetization` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=779873&pretty
       type: object
+      nullable: true
       properties:
         model:
           $ref: '#/components/schemas/model_v4v'
@@ -1663,6 +1677,7 @@ components:
         spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding)
         for more information.
       type: string
+      nullable: true
       format: URL
       example: https://patreon.com/johnchidgey
     message:
@@ -1677,13 +1692,14 @@ components:
       example: Pragmatic on Patreon
     funding:
       description: >
-        Information for donation/funding the podcast.
+        Information for donation/funding the podcast. May not be reported.
 
 
         See the [podcast namespace
         spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding)
         for more information.
       type: object
+      nullable: true
       properties:
         url:
           $ref: '#/components/schemas/url_funding'
@@ -1869,7 +1885,7 @@ components:
       example: 1
     valueCreatedOn:
       description: |
-        The time this feed's `value` data added
+        The time this feed's `value` data added. Will be 0 if no `value` data.
       type: integer
       format: Unix Epoch
       example: 1598369047
@@ -1998,17 +2014,21 @@ components:
       description: |
         Value of `max` parameter passed to request.
       type: integer
+      nullable: true
       example: 2
     since:
       description: |
         Value of `since` parameter passed to request.
       type: integer
+      nullable: true
       format: Unix Epoch
       example: 1613805249
     duplicateOf:
-      description: |
-        The internal PodcastIndex.org Feed ID this feed duplicates
+      description: >
+        The internal PodcastIndex.org Feed ID this feed duplicates. May be null
+        except in `podcasts/dead`.
       type: integer
+      nullable: true
       example: 75075
     feed_dead:
       type: object
@@ -2148,8 +2168,9 @@ components:
       example: Why the Podcast Namespace Matters
     soundbite:
       description: |
-        Soundbite for episode
+        Soundbite for episode. May not be reported.
       type: object
+      nullable: true
       properties:
         startTime:
           $ref: '#/components/schemas/startTime'
@@ -2159,8 +2180,9 @@ components:
           $ref: '#/components/schemas/title_soundbite'
     soundbites:
       description: |
-        Soundbites for episode
+        Soundbites for episode. May not be reported.
       type: array
+      nullable: true
       items:
         $ref: '#/components/schemas/soundbite'
     id_person:
@@ -2246,13 +2268,14 @@ components:
           $ref: '#/components/schemas/img'
     persons:
       description: >
-        List of people with an interest in this episode.
+        List of people with an interest in this episode. May not be reported.
 
 
         See the [podcast namespace
         spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person)
         for more information.
       type: array
+      nullable: true
       items:
         $ref: '#/components/schemas/person'
     url_socialInteract:
@@ -2309,13 +2332,15 @@ components:
           $ref: '#/components/schemas/priority_socialInteract'
     socialInteract:
       description: >
-        List the social interact data found in the podcast feed.
+        List the social interact data found in the podcast feed. May not be
+        reported.
 
 
         See the [podcast namespace
         spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#social-interact)
         for more information.
       type: array
+      nullable: true
       items:
         $ref: '#/components/schemas/socialInteract_item'
     item_podcast:
@@ -2992,6 +3017,7 @@ components:
       description: |
         List of categories
       type: array
+      nullable: true
       items:
         $ref: '#/components/schemas/feed_categories'
     existed:

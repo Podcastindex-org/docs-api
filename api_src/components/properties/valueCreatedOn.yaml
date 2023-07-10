@@ -1,6 +1,6 @@
   # language=Markdown
 description: >
-  The time this feed's `value` data added
+  The time this feed's `value` data added. Will be 0 if no `value` data.
 type: integer
 format: Unix Epoch
 example: 1598369047
