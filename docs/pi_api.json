@@ -913,6 +913,7 @@
       "itunesId_feed": {
         "description": "The iTunes ID of this feed if there is one, and we know what it is.\n",
         "type": "integer",
+        "nullable": true,
         "example": 1441923632
       },
       "generator": {
@@ -1153,8 +1154,9 @@
         "example": 26385472
       },
       "duration": {
-        "description": "The estimated length of the item specified by the `enclosureUrl` in seconds\n",
+        "description": "The estimated length of the item specified by the `enclosureUrl` in seconds. Will be null for `liveItem`.\n",
         "type": "integer",
+        "nullable": true,
         "format": "seconds",
         "example": 54
       },
@@ -1170,11 +1172,13 @@
       "episode_number": {
         "description": "Episode number\n",
         "type": "integer",
+        "nullable": true,
         "example": 19
       },
       "episodeType": {
-        "description": "The type of episode\n",
+        "description": "The type of episode. May be null for `liveItem`.\n",
         "type": "string",
+        "nullable": true,
         "enum": [
           "full",
           "trailer",
@@ -1183,8 +1187,9 @@
         "example": "full"
       },
       "season": {
-        "description": "Season number\n",
+        "description": "Season number. May be null for `liveItem`.\n",
         "type": "integer",
+        "nullable": true,
         "example": 3
       },
       "image_episode": {
@@ -1196,12 +1201,14 @@
       "chaptersUrl": {
         "description": "Link to the JSON file containing the episode chapters\n",
         "type": "string",
+        "nullable": true,
         "format": "URL",
         "example": "https://studio.hypercatcher.com/chapters/podcast/http:feed.nashownotes.comrss.xml/episode/http:1322.noagendanotes.com"
       },
       "transcriptUrl": {
         "description": "Link to the file containing the episode transcript\n\nNote: in most use cases, the `transcripts` value should be used instead\n",
         "type": "string",
+        "nullable": true,
         "format": "URL",
         "example": "https://mp3s.nashownotes.com/NA-1322-Captions.srt"
       },
@@ -1231,8 +1238,9 @@
         }
       },
       "transcripts": {
-        "description": "List of transcripts for the episode.\n",
+        "description": "List of transcripts for the episode. May not be reported.\n",
         "type": "array",
+        "nullable": true,
         "items": {
           "$ref": "#/components/schemas/transcript"
         }
@@ -1410,18 +1418,21 @@
         "example": 99
       },
       "fee_destination": {
-        "description": "Indicates if destination is included due to a fee being charged\n",
+        "description": "Indicates if destination is included due to a fee being charged. May not be reported.\n",
         "type": "boolean",
+        "nullable": true,
         "example": true
       },
       "customKey": {
-        "description": "The name of a custom record key to send along with the payment.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value) and [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for more information.\n",
+        "description": "The name of a custom record key to send along with the payment. May not be reported.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value) and [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for more information.\n",
         "type": "string",
+        "nullable": true,
         "example": "112111100"
       },
       "customValue": {
-        "description": "A custom value to pass along with the payment. This is considered the value that belongs to the customKey.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value) and [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for more information.\n",
+        "description": "A custom value to pass along with the payment. This is considered the value that belongs to the customKey. May not be reported.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value) and [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for more information.\n",
         "type": "string",
+        "nullable": true,
         "example": "wal_ZmqFg13NB31oek"
       },
       "destination_v4v": {
@@ -1459,8 +1470,9 @@
         }
       },
       "value": {
-        "description": "Information for supporting the podcast via one of the \"Value for Value\" methods.\n\nExamples:\n  - `lightning` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n  - `webmonetization` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=779873&pretty\n",
+        "description": "Information for supporting the podcast via one of the \"Value for Value\" methods. May not be reported.\n\nExamples:\n  - `lightning` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n  - `webmonetization` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=779873&pretty\n",
         "type": "object",
+        "nullable": true,
         "properties": {
           "model": {
             "$ref": "#/components/schemas/model_v4v"
@@ -1473,6 +1485,7 @@
       "url_funding": {
         "description": "URL to site to fund the podcast\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
         "type": "string",
+        "nullable": true,
         "format": "URL",
         "example": "https://patreon.com/johnchidgey"
       },
@@ -1482,8 +1495,9 @@
         "example": "Pragmatic on Patreon"
       },
       "funding": {
-        "description": "Information for donation/funding the podcast.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
+        "description": "Information for donation/funding the podcast. May not be reported.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
         "type": "object",
+        "nullable": true,
         "properties": {
           "url": {
             "$ref": "#/components/schemas/url_funding"
@@ -1734,7 +1748,7 @@
         "example": 1
       },
       "valueCreatedOn": {
-        "description": "The time this feed's `value` data added\n",
+        "description": "The time this feed's `value` data added. Will be 0 if no `value` data.\n",
         "type": "integer",
         "format": "Unix Epoch",
         "example": 1598369047
@@ -1910,17 +1924,20 @@
       "max": {
         "description": "Value of `max` parameter passed to request.\n",
         "type": "integer",
+        "nullable": true,
         "example": 2
       },
       "since": {
         "description": "Value of `since` parameter passed to request.\n",
         "type": "integer",
+        "nullable": true,
         "format": "Unix Epoch",
         "example": 1613805249
       },
       "duplicateOf": {
-        "description": "The internal PodcastIndex.org Feed ID this feed duplicates\n",
+        "description": "The internal PodcastIndex.org Feed ID this feed duplicates. May be null except in `podcasts/dead`.\n",
         "type": "integer",
+        "nullable": true,
         "example": 75075
       },
       "feed_dead": {
@@ -2095,8 +2112,9 @@
         "example": "Why the Podcast Namespace Matters"
       },
       "soundbite": {
-        "description": "Soundbite for episode\n",
+        "description": "Soundbite for episode. May not be reported.\n",
         "type": "object",
+        "nullable": true,
         "properties": {
           "startTime": {
             "$ref": "#/components/schemas/startTime"
@@ -2110,8 +2128,9 @@
         }
       },
       "soundbites": {
-        "description": "Soundbites for episode\n",
+        "description": "Soundbites for episode. May not be reported.\n",
         "type": "array",
+        "nullable": true,
         "items": {
           "$ref": "#/components/schemas/soundbite"
         }
@@ -2172,8 +2191,9 @@
         }
       },
       "persons": {
-        "description": "List of people with an interest in this episode.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "description": "List of people with an interest in this episode. May not be reported.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
         "type": "array",
+        "nullable": true,
         "items": {
           "$ref": "#/components/schemas/person"
         }
@@ -2232,8 +2252,9 @@
         }
       },
       "socialInteract": {
-        "description": "List the social interact data found in the podcast feed.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#social-interact) for more information.\n",
+        "description": "List the social interact data found in the podcast feed. May not be reported.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#social-interact) for more information.\n",
         "type": "array",
+        "nullable": true,
         "items": {
           "$ref": "#/components/schemas/socialInteract_item"
         }
@@ -3165,6 +3186,7 @@
       "feeds_categories": {
         "description": "List of categories\n",
         "type": "array",
+        "nullable": true,
         "items": {
           "$ref": "#/components/schemas/feed_categories"
         }

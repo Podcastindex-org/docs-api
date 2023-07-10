@@ -2,5 +2,6 @@
 description: >
   List of categories
 type: array
+nullable: true
 items:
   $ref: '../schemas/feed_categories.yaml'

@@ -2,4 +2,5 @@
 description: >
   Value of `max` parameter passed to request.
 type: integer
+nullable: true
 example: 2

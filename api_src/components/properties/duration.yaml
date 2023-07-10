@@ -1,6 +1,7 @@
   # language=Markdown
 description: >
-  The estimated length of the item specified by the `enclosureUrl` in seconds
+  The estimated length of the item specified by the `enclosureUrl` in seconds. Will be null for `liveItem`.
 type: integer
+nullable: true
 format: seconds
 example: 54

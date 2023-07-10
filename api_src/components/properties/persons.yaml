@@ -1,9 +1,10 @@
   # language=Markdown
 description: >
-  List of people with an interest in this episode.
-
+  List of people with an interest in this episode. May not be reported.
+  
 
   See the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.
 type: array
+nullable: true
 items:
   $ref: '../schemas/person.yaml'

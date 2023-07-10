@@ -1,5 +1,6 @@
   # language=Markdown
 description: >
-  The internal PodcastIndex.org Feed ID this feed duplicates
+  The internal PodcastIndex.org Feed ID this feed duplicates. May be null except in `podcasts/dead`.
 type: integer
+nullable: true
 example: 75075

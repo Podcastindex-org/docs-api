@@ -1,6 +1,7 @@
   # language=Markdown
 description: >
-  Soundbites for episode
+  Soundbites for episode. May not be reported.
 type: array
+nullable: true
 items:
   $ref: '../properties/soundbite.yaml'

@@ -5,5 +5,6 @@ description: >
 
   Note: in most use cases, the `transcripts` value should be used instead
 type: string
+nullable: true
 format: URL
 example: "https://mp3s.nashownotes.com/NA-1322-Captions.srt"

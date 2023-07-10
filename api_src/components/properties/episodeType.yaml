@@ -1,7 +1,8 @@
   # language=Markdown
 description: >
-  The type of episode
+  The type of episode. May be null for `liveItem`.
 type: string
+nullable: true
 enum:
   - full
   - trailer

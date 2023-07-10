@@ -1,10 +1,11 @@
   # language=Markdown
 description: >
-  The name of a custom record key to send along with the payment.
+  The name of a custom record key to send along with the payment. May not be reported.
 
 
   See the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
   and [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md)
   for more information.
 type: string
+nullable: true
 example: "112111100"
