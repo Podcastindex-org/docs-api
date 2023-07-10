@@ -213,6 +213,8 @@ paths:
     $ref: 'paths/recent/feeds.yaml'
   '/recent/newfeeds':
     $ref: 'paths/recent/newfeeds.yaml'
+  '/recent/newvaluefeeds':
+    $ref: 'paths/recent/newvaluefeeds.yaml'
   '/recent/data':
     $ref: 'paths/recent/data.yaml'
   '/recent/soundbites':

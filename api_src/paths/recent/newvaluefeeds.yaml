@@ -1,0 +1,24 @@
+get:
+  tags:
+    - Recent
+  summary: New Value Feeds
+  # language=Markdown
+  description: >
+    This call returns feeds that have added a `value` tag in reverse chronological order.
+
+
+    Example: https://api.podcastindex.org/api/1.0/recent/newvaluefeeds?pretty
+  operationId: recent/newvaluefeeds
+  security:
+    - $ref: '../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../components/parameters/max_recent_feeds.yaml'
+    - $ref: '../../components/parameters/since.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/recent_newvaluefeeds.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

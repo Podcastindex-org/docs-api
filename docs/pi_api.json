@@ -2897,6 +2897,45 @@
           }
         }
       },
+      "feeds_recent_value": {
+        "description": "List of feeds matching request\n",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/components/schemas/id_feed"
+            },
+            "url": {
+              "$ref": "#/components/schemas/url_feed"
+            },
+            "title": {
+              "$ref": "#/components/schemas/title_feed"
+            },
+            "author": {
+              "$ref": "#/components/schemas/author"
+            },
+            "image": {
+              "$ref": "#/components/schemas/image_feed"
+            },
+            "newestItemPublishTime": {
+              "$ref": "#/components/schemas/newestItemPublishTime"
+            },
+            "itunesId": {
+              "$ref": "#/components/schemas/itunesId_feed"
+            },
+            "trendScore": {
+              "$ref": "#/components/schemas/trendScore"
+            },
+            "language": {
+              "$ref": "#/components/schemas/language"
+            },
+            "categories": {
+              "$ref": "#/components/schemas/categories"
+            }
+          }
+        }
+      },
       "feedCount": {
         "description": "Number of items in the `feeds` returned in request\n",
         "type": "integer",
@@ -3727,6 +3766,36 @@
                 },
                 "max": {
                   "$ref": "#/components/schemas/max"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "recent_newvaluefeeds": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "feeds": {
+                  "$ref": "#/components/schemas/feeds_recent_value"
+                },
+                "count": {
+                  "$ref": "#/components/schemas/count"
+                },
+                "max": {
+                  "$ref": "#/components/schemas/max"
+                },
+                "since": {
+                  "$ref": "#/components/schemas/since"
                 },
                 "description": {
                   "$ref": "#/components/schemas/description_response"
@@ -5048,6 +5117,46 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/recent_newfeeds"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/recent/newvaluefeeds": {
+      "get": {
+        "tags": [
+          "Recent"
+        ],
+        "summary": "New Value Feeds",
+        "description": "This call returns feeds that have added a `value` tag in reverse chronological order.\n\nExample: https://api.podcastindex.org/api/1.0/recent/newvaluefeeds?pretty\n",
+        "operationId": "recent/newvaluefeeds",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max_recent_feeds"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/recent_newvaluefeeds"
           },
           "400": {
             "$ref": "#/components/responses/400"
