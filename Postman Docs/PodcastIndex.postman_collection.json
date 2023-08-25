@@ -418,7 +418,7 @@
 								}
 							]
 						},
-						"description": "This call returns all feeds that support the specified\n[podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\n\nWhen called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.\n\n\nWhen called with a `start_at` value, the feeds are returned sorted by the `feedId` starting with the specified value\nup to the max number of feeds to return. The `nextStartAt` specifies the value to pass to the next `start_at`.\nRepeat this sequence until no items are returned.\n\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty"
+						"description": "This call returns all feeds that support the specified\n[podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\nThe only supported tag is `podcast:value` using the `podcast-value` parameter.\n\nWhen called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.\n\n\nWhen called with a `start_at` value, the feeds are returned sorted by the `feedId` starting with the specified value\nup to the max number of feeds to return. The `nextStartAt` specifies the value to pass to the next `start_at`.\nRepeat this sequence until no items are returned.\n\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty"
 					},
 					"response": []
 				},

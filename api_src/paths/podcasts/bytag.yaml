@@ -8,6 +8,9 @@ get:
     [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.
 
 
+    The only supported tag is `podcast:value` using the `podcast-value` parameter.
+
+
     When called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.
 
 
