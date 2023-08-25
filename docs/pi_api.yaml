@@ -2963,6 +2963,19 @@ components:
             $ref: '#/components/schemas/url_feed'
           feedId:
             $ref: '#/components/schemas/id_feed'
+    id_query_guid:
+      description: >
+        The Podcast Index Id of the podcast GUID passed as an argument to the
+        request
+      type: integer
+      example: 920666
+    query_guid_id:
+      description: |
+        Object containing the input query data
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id_query_guid'
     stats:
       description: |
         An array statistic properties
@@ -3484,6 +3497,21 @@ components:
                 $ref: '#/components/schemas/status'
               query:
                 $ref: '#/components/schemas/query_url'
+              value:
+                $ref: '#/components/schemas/value'
+              description:
+                $ref: '#/components/schemas/description_response'
+    value_bypodcastguid:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: '#/components/schemas/status'
+              query:
+                $ref: '#/components/schemas/query_guid_id'
               value:
                 $ref: '#/components/schemas/value'
               description:
@@ -4740,6 +4768,34 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/value_byfeedurl'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+  /value/bypodcastguid:
+    get:
+      tags:
+        - Value
+      summary: By GUID
+      description: >
+        This call returns the information for supporting the podcast via one of
+        the "Value for Value" methods from podcast GUID.
+
+
+        Example:
+        https://api.podcastindex.org/api/1.0/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810&pretty
+      operationId: value/bypodcastguid
+      security:
+        - API Key: []
+          User Agent: []
+          Date: []
+          Authorization: []
+      parameters:
+        - $ref: '#/components/parameters/guid_feed_podcast'
+        - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          $ref: '#/components/responses/value_bypodcastguid'
         '400':
           $ref: '#/components/responses/400'
         '401':
