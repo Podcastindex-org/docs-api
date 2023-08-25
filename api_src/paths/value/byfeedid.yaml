@@ -14,13 +14,14 @@ get:
       - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json
 
 
+    Note: No API key needed for this endpoint.
+
+
     Examples:
 
       - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty
       - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty
   operationId: value/byfeedid
-  security:
-    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/id_feed_episode_pi_single.yaml'
     - $ref: '../../components/parameters/pretty.yaml'

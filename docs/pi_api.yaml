@@ -4794,16 +4794,14 @@ paths:
           - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json
 
 
+        Note: No API key needed for this endpoint.
+
+
         Examples:
 
           - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty
           - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty
       operationId: value/byfeedid
-      security:
-        - API Key: []
-          User Agent: []
-          Date: []
-          Authorization: []
       parameters:
         - $ref: '#/components/parameters/id_feed_episode_pi_single'
         - $ref: '#/components/parameters/pretty'
@@ -4831,16 +4829,14 @@ paths:
           - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json
 
 
+        Note: No API key needed for this endpoint.
+
+
         Examples:
 
           - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty
           - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty
       operationId: value/byfeedurl
-      security:
-        - API Key: []
-          User Agent: []
-          Date: []
-          Authorization: []
       parameters:
         - $ref: '#/components/parameters/url'
         - $ref: '#/components/parameters/pretty'
@@ -4861,14 +4857,12 @@ paths:
         the "Value for Value" methods from podcast GUID.
 
 
+        Note: No API key needed for this endpoint.
+
+
         Example:
         https://api.podcastindex.org/api/1.0/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810&pretty
       operationId: value/bypodcastguid
-      security:
-        - API Key: []
-          User Agent: []
-          Date: []
-          Authorization: []
       parameters:
         - $ref: '#/components/parameters/guid_feed_podcast'
         - $ref: '#/components/parameters/pretty'
@@ -4901,16 +4895,14 @@ paths:
         feed but may not be globally unique.
 
 
+        Note: No API key needed for this endpoint.
+
+
         Examples:
 
           - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143&pretty
           - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=c73b1a23-1c28-5edb-94c3-10d1745d0877&episodeguid=bdea6759-a7b6-4c0d-9d1e-acca3133f4a9&pretty
       operationId: value/byepisodeguid
-      security:
-        - API Key: []
-          User Agent: []
-          Date: []
-          Authorization: []
       parameters:
         - $ref: '#/components/parameters/podcastguid'
         - $ref: '#/components/parameters/episodeguid'

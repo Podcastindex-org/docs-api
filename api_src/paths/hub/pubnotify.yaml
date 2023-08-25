@@ -5,8 +5,8 @@ get:
   # language=Markdown
   description: >
     Notify the index that a feed has changed
-    
-    
+
+
     Note: No API key needed for this endpoint.
 
 

@@ -5396,16 +5396,8 @@
           "Value"
         ],
         "summary": "By Feed ID",
-        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from the PodcastIndex ID.\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty\n",
+        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from the PodcastIndex ID.\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\n\nNote: No API key needed for this endpoint.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty\n",
         "operationId": "value/byfeedid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/id_feed_episode_pi_single"
@@ -5433,16 +5425,8 @@
           "Value"
         ],
         "summary": "By Feed URL",
-        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from feed URL.\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty\n",
+        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from feed URL.\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\n\nNote: No API key needed for this endpoint.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty\n",
         "operationId": "value/byfeedurl",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/url"
@@ -5470,16 +5454,8 @@
           "Value"
         ],
         "summary": "By Feed GUID",
-        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from podcast GUID.\n\nExample: https://api.podcastindex.org/api/1.0/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810&pretty\n",
+        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from podcast GUID.\n\nNote: No API key needed for this endpoint.\n\nExample: https://api.podcastindex.org/api/1.0/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810&pretty\n",
         "operationId": "value/bypodcastguid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/guid_feed_podcast"
@@ -5507,16 +5483,8 @@
           "Value"
         ],
         "summary": "By Episode GUID",
-        "description": "This call returns the information for supporting the podcast episode via one of the \"Value for Value\" methods from podcast GUID and the episode GUID.\n\nThe `podcastguid` is the GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast. See the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\nThe `episodeguid` is the unique guid specified for the `<item>` in the feed but may not be globally unique.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143&pretty\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=c73b1a23-1c28-5edb-94c3-10d1745d0877&episodeguid=bdea6759-a7b6-4c0d-9d1e-acca3133f4a9&pretty\n",
+        "description": "This call returns the information for supporting the podcast episode via one of the \"Value for Value\" methods from podcast GUID and the episode GUID.\n\nThe `podcastguid` is the GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast. See the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\nThe `episodeguid` is the unique guid specified for the `<item>` in the feed but may not be globally unique.\n\nNote: No API key needed for this endpoint.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143&pretty\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=c73b1a23-1c28-5edb-94c3-10d1745d0877&episodeguid=bdea6759-a7b6-4c0d-9d1e-acca3133f4a9&pretty\n",
         "operationId": "value/byepisodeguid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/podcastguid"

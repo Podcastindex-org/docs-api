@@ -7,10 +7,11 @@ get:
     This call returns the information for supporting the podcast via one of the "Value for Value" methods from podcast GUID.
 
 
+    Note: No API key needed for this endpoint.
+
+
     Example: https://api.podcastindex.org/api/1.0/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810&pretty
   operationId: value/bypodcastguid
-  security:
-    - $ref: '../../components/security/security.yaml'
   parameters:
     - $ref: '../../components/parameters/guid_feed_podcast.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
