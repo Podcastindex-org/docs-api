@@ -1,7 +1,7 @@
 get:
   tags:
     - Value
-  summary: By GUID
+  summary: By Feed GUID
   # language=Markdown
   description: >
     This call returns the information for supporting the podcast via one of the "Value for Value" methods from podcast GUID.

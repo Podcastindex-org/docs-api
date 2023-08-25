@@ -564,6 +564,26 @@
         },
         "example": 75075
       },
+      "podcastguid": {
+        "name": "podcastguid",
+        "in": "query",
+        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "917393e3-1b1e-5cef-ace4-edaa54e1f810"
+      },
+      "episodeguid": {
+        "name": "episodeguid",
+        "in": "query",
+        "description": "The guid specified by the `<guid>` in the episode `<item>`.\n",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "PC20143"
+      },
       "id_feed_podcast_pi_pubnotify": {
         "name": "id",
         "in": "query",
@@ -1377,6 +1397,7 @@
       "suggested_v4v": {
         "description": "Suggested amount per second of playback to send. Unit is specific to the `type`.\n",
         "type": "string",
+        "nullable": true,
         "example": "0.00000020000"
       },
       "model_v4v": {
@@ -3135,6 +3156,47 @@
           }
         }
       },
+      "query_podcastguid": {
+        "description": "The value of the `podcastguid` argument passed to the request.\n",
+        "type": "string",
+        "example": "917393e3-1b1e-5cef-ace4-edaa54e1f810"
+      },
+      "query_episodeguid": {
+        "description": "The value of the `episodeguid` argument passed to the request.\n",
+        "type": "string",
+        "example": "PC20143"
+      },
+      "query_byepisodeguid": {
+        "description": "Object containing the input query data\n",
+        "type": "object",
+        "properties": {
+          "podcastguid": {
+            "$ref": "#/components/schemas/query_podcastguid"
+          },
+          "episodeguid": {
+            "$ref": "#/components/schemas/query_episodeguid"
+          }
+        }
+      },
+      "value_byepisodeguid": {
+        "description": "Information for supporting the podcast via one of the \"Value for Value\" methods. May not be reported.\n\nExamples:\n  - `lightning` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n  - `webmonetization` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=779873&pretty\n",
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "model": {
+            "$ref": "#/components/schemas/model_v4v"
+          },
+          "destinations": {
+            "$ref": "#/components/schemas/destinations_v4v"
+          },
+          "title": {
+            "$ref": "#/components/schemas/title_episode"
+          },
+          "feedTitle": {
+            "$ref": "#/components/schemas/title_feed"
+          }
+        }
+      },
       "stats": {
         "description": "An array statistic properties\n",
         "type": "object",
@@ -3964,6 +4026,30 @@
                 },
                 "value": {
                   "$ref": "#/components/schemas/value"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "value_byepisodeguid": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "query": {
+                  "$ref": "#/components/schemas/query_byepisodeguid"
+                },
+                "value": {
+                  "$ref": "#/components/schemas/value_byepisodeguid"
                 },
                 "description": {
                   "$ref": "#/components/schemas/description_response"
@@ -5383,7 +5469,7 @@
         "tags": [
           "Value"
         ],
-        "summary": "By GUID",
+        "summary": "By Feed GUID",
         "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from podcast GUID.\n\nExample: https://api.podcastindex.org/api/1.0/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810&pretty\n",
         "operationId": "value/bypodcastguid",
         "security": [
@@ -5405,6 +5491,46 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/value_bypodcastguid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/value/byepisodeguid": {
+      "get": {
+        "tags": [
+          "Value"
+        ],
+        "summary": "By Episode GUID",
+        "description": "This call returns the information for supporting the podcast episode via one of the \"Value for Value\" methods from podcast GUID and the episode GUID.\n\nThe `podcastguid` is the GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast. See the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\nThe `episodeguid` is the unique guid specified for the `<item>` in the feed but may not be globally unique.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143&pretty\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=c73b1a23-1c28-5edb-94c3-10d1745d0877&episodeguid=bdea6759-a7b6-4c0d-9d1e-acca3133f4a9&pretty\n",
+        "operationId": "value/byepisodeguid",
+        "security": [
+          {
+            "API Key": [],
+            "User Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/podcastguid"
+          },
+          {
+            "$ref": "#/components/parameters/episodeguid"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/value_byepisodeguid"
           },
           "400": {
             "$ref": "#/components/responses/400"

@@ -1,0 +1,13 @@
+name: podcastguid
+in: query
+# language=Markdown
+description: >
+  The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.
+
+
+  See the namespace spec for
+  [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.
+required: true
+schema:
+  type: string
+example: "917393e3-1b1e-5cef-ace4-edaa54e1f810"

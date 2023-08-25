@@ -1,0 +1,9 @@
+  # language=Markdown
+description: >
+  Object containing the input query data
+type: object
+properties:
+  podcastguid:
+    $ref: '../properties/query_podcastguid.yaml'
+  episodeguid:
+    $ref: '../properties/query_episodeguid.yaml'

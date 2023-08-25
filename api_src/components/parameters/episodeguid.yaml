@@ -1,0 +1,9 @@
+name: episodeguid
+in: query
+# language=Markdown
+description: >
+    The guid specified by the `<guid>` in the episode `<item>`.
+required: true
+schema:
+  type: string
+example: "PC20143"

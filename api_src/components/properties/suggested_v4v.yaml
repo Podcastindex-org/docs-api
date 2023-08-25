@@ -2,4 +2,5 @@
 description: >
   Suggested amount per second of playback to send. Unit is specific to the `type`.
 type: string
+nullable: true
 example: "0.00000020000"

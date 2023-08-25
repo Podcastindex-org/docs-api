@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  The value of the `episodeguid` argument passed to the request.
+type: string
+example: "PC20143"

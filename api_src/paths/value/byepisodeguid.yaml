@@ -1,0 +1,36 @@
+get:
+  tags:
+    - Value
+  summary: By Episode GUID
+  # language=Markdown
+  description: >
+    This call returns the information for supporting the podcast episode via one of the "Value for Value" methods from
+    podcast GUID and the episode GUID.
+
+
+    The `podcastguid` is the GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier
+    for the podcast. See the namespace spec for
+    [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.
+
+
+    The `episodeguid` is the unique guid specified for the `<item>` in the feed but may not be globally unique.
+
+
+    Examples:
+    
+      - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143&pretty
+      - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=c73b1a23-1c28-5edb-94c3-10d1745d0877&episodeguid=bdea6759-a7b6-4c0d-9d1e-acca3133f4a9&pretty
+  operationId: value/byepisodeguid
+  security:
+    - $ref: '../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../components/parameters/podcastguid.yaml'
+    - $ref: '../../components/parameters/episodeguid.yaml'
+    - $ref: '../../components/parameters/pretty.yaml'
+  responses:
+    '200':
+      $ref: '../../components/responses/value_byepisodeguid.yaml'
+    '400':
+      $ref: '../../components/responses/400.yaml'
+    '401':
+      $ref: '../../components/responses/401.yaml'

@@ -1283,7 +1283,7 @@
 					"response": []
 				},
 				{
-					"name": "By GUID",
+					"name": "By Feed GUID",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1311,6 +1311,43 @@
 							]
 						},
 						"description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from podcast GUID.\n\nExample: https://api.podcastindex.org/api/1.0/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810&pretty\n"
+					},
+					"response": []
+				},
+				{
+					"name": "By Episode GUID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"value",
+								"byepisodeguid"
+							],
+							"query": [
+								{
+									"key": "podcastguid",
+									"value": "917393e3-1b1e-5cef-ace4-edaa54e1f810",
+									"description": "(Required) The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details."
+								},
+								{
+									"key": "episodeguid",
+									"value": "PC20143",
+									"description": "(Required) The guid specified by the `<guid>` in the episode `<item>`."
+								},
+								{
+									"key": "pretty",
+									"value": "",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This call returns the information for supporting the podcast episode via one of the \"Value for Value\" methods from\npodcast GUID and the episode GUID.\n\nThe `podcastguid` is the GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier\nfor the podcast. See the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\nThe `episodeguid` is the unique guid specified for the `<item>` in the feed but may not be globally unique.\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143&pretty\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=c73b1a23-1c28-5edb-94c3-10d1745d0877&episodeguid=bdea6759-a7b6-4c0d-9d1e-acca3133f4a9&pretty\n"
 					},
 					"response": []
 				}
