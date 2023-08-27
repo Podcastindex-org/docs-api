@@ -227,6 +227,8 @@ paths:
     $ref: 'paths/value/bypodcastguid.yaml'
   '/value/byepisodeguid':
     $ref: 'paths/value/byepisodeguid.yaml'
+  '/value/batch/byepisodeguid':
+    $ref: 'paths/value/batch/byepisodeguid.yaml'
   '/stats/current':
     $ref: 'paths/stats/current.yaml'
   '/categories/list':

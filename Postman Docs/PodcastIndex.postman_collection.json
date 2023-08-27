@@ -1320,7 +1320,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143",
+							"raw": "{{baseUrl}}/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1348,6 +1348,43 @@
 							]
 						},
 						"description": "This call returns the information for supporting the podcast episode via one of the \"Value for Value\" methods from\npodcast GUID and the episode GUID.\n\nThe `podcastguid` is the GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier\nfor the podcast. See the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\nThe `episodeguid` is the unique guid specified for the `<item>` in the feed but may not be globally unique.\n\nNote: No API key needed for this endpoint.\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143&pretty\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=c73b1a23-1c28-5edb-94c3-10d1745d0877&episodeguid=bdea6759-a7b6-4c0d-9d1e-acca3133f4a9&pretty\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Batch By Episode GUID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"917393e3-1b1e-5cef-ace4-edaa54e1f810\": [\r\n        \"PC20141\",\r\n        \"PC20142\",\r\n        \"PC20143\"\r\n    ],\r\n    \"c73b1a23-1c28-5edb-94c3-10d1745d0877\": [\r\n        \"bdea6759-a7b6-4c0d-9d1e-acca3133f4a9\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/value/batch/byepisodeguid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"value",
+								"batch",
+								"byepisodeguid"
+							],
+							"query": [
+								{
+									"key": "pretty",
+									"value": "",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This call returns the information for supporting the podcast episode via one of the \"Value for Value\" methods from\na JSON object containing one or more podcast GUID and one or more episode GUID for the podcast.\n\nThe JSON object key shall be the `podcastguid` from the `podcast:guid` tag in the feed.\nThis value is a unique, global identifier for the podcast. See the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\nThe value of the `podcastguid` shall be an array of `episodeguid` values.\nThis is the unique guid specified for the `<item>` in the feed but may not be globally unique.\n\nNote: No API key needed for this endpoint."
 					},
 					"response": []
 				}

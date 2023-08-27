@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Value
+  summary: Batch By Episode GUID
+  # language=Markdown
+  description: >
+    This call returns the information for supporting the podcast episode via one of the "Value for Value" methods from
+    a JSON object containing one or more podcast GUID and one or more episode GUID for the podcast.
+
+
+    The JSON object key shall be the `podcastguid` from the `podcast:guid` tag in the feed.
+    This value is a unique, global identifier for the podcast. See the namespace spec for
+    [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.
+
+
+    The value of the `podcastguid` shall be an array of `episodeguid` values.
+    This is the unique guid specified for the `<item>` in the feed but may not be globally unique.
+
+
+    Note: No API key needed for this endpoint.
+  operationId: value/batch/byepisodeguid
+  parameters:
+    - $ref: '../../../components/parameters/pretty.yaml'
+  requestBody:
+    description: Get episode value data
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/schemas/value_batch_byepisodeguid.yaml'
+  responses:
+    '200':
+      $ref: '../../../components/responses/value_batch_byepisodeguid.yaml'
+    '400':
+      $ref: '../../../components/responses/400.yaml'
+    '401':
+      $ref: '../../../components/responses/401.yaml'

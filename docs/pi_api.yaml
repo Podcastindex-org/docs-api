@@ -3040,6 +3040,90 @@ components:
           $ref: '#/components/schemas/title_episode'
         feedTitle:
           $ref: '#/components/schemas/title_feed'
+    value_batch_byepisodeguid:
+      description: >
+        JSON data where key is the `podcastguid` and value is a list of
+        `episodeguid` values.
+      type: object
+      additionalProperties:
+        type: array
+        items:
+          type: string
+      example:
+        917393e3-1b1e-5cef-ace4-edaa54e1f810:
+          - PC20141
+          - PC20142
+          - PC20143
+        c73b1a23-1c28-5edb-94c3-10d1745d0877:
+          - bdea6759-a7b6-4c0d-9d1e-acca3133f4a9
+    guids:
+      description: |
+        The `podcastguid` and `episodeguid` values passed to the request.
+      type: object
+      additionalProperties:
+        type: array
+        items:
+          type: string
+      example:
+        917393e3-1b1e-5cef-ace4-edaa54e1f810:
+          - PC20141
+          - PC20142
+          - PC20143
+        c73b1a23-1c28-5edb-94c3-10d1745d0877:
+          - bdea6759-a7b6-4c0d-9d1e-acca3133f4a9
+    query_guids:
+      description: |
+        Object containing the input query data
+      type: object
+      properties:
+        guids:
+          $ref: '#/components/schemas/guids'
+    podcastGUID:
+      description: >
+        The GUID from the `podcast:guid` tag in the feed. This value is a
+        unique, global identifier for the podcast.
+
+
+        See the namespace spec for
+        [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid)
+        for details.
+      type: string
+      example: 9b024349-ccf0-5f69-a609-6b82873eab3c
+    value_byepisodeguid_batch:
+      description: >
+        Information for supporting the podcast via one of the "Value for Value"
+        methods.
+      type: object
+      properties:
+        podcastGUID:
+          $ref: '#/components/schemas/podcastGUID'
+        guid:
+          $ref: '#/components/schemas/guid'
+        title:
+          $ref: '#/components/schemas/title_episode'
+        feedTitle:
+          $ref: '#/components/schemas/title_feed'
+        model:
+          $ref: '#/components/schemas/model_v4v'
+        destinations:
+          $ref: '#/components/schemas/destinations_v4v'
+    value_guid_list:
+      description: |
+        List of value blocks
+      type: array
+      items:
+        $ref: '#/components/schemas/value_byepisodeguid_batch'
+    allfound:
+      description: >
+        Indicates if data was found for all `podcastguid` and `episodeguid`
+        values.
+      type: boolean
+      example: true
+    found:
+      description: |
+        Number of value data returned.
+      type: integer
+      example: 4
     stats:
       description: |
         An array statistic properties
@@ -3595,6 +3679,25 @@ components:
                 $ref: '#/components/schemas/value_byepisodeguid'
               description:
                 $ref: '#/components/schemas/description_response'
+    value_batch_byepisodeguid:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: '#/components/schemas/status'
+              query:
+                $ref: '#/components/schemas/query_guids'
+              value:
+                $ref: '#/components/schemas/value_guid_list'
+              description:
+                $ref: '#/components/schemas/description_response'
+              allFound:
+                $ref: '#/components/schemas/allfound'
+              found:
+                $ref: '#/components/schemas/found'
     stats_current:
       description: Success
       content:
@@ -4910,6 +5013,47 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/value_byepisodeguid'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+  /value/batch/byepisodeguid:
+    post:
+      tags:
+        - Value
+      summary: Batch By Episode GUID
+      description: >
+        This call returns the information for supporting the podcast episode via
+        one of the "Value for Value" methods from a JSON object containing one
+        or more podcast GUID and one or more episode GUID for the podcast.
+
+
+        The JSON object key shall be the `podcastguid` from the `podcast:guid`
+        tag in the feed. This value is a unique, global identifier for the
+        podcast. See the namespace spec for
+        [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid)
+        for details.
+
+
+        The value of the `podcastguid` shall be an array of `episodeguid`
+        values. This is the unique guid specified for the `<item>` in the feed
+        but may not be globally unique.
+
+
+        Note: No API key needed for this endpoint.
+      operationId: value/batch/byepisodeguid
+      parameters:
+        - $ref: '#/components/parameters/pretty'
+      requestBody:
+        description: Get episode value data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/value_batch_byepisodeguid'
+      responses:
+        '200':
+          $ref: '#/components/responses/value_batch_byepisodeguid'
         '400':
           $ref: '#/components/responses/400'
         '401':

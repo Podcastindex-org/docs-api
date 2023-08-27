@@ -1,0 +1,17 @@
+  # language=Markdown
+description: >
+  Information for supporting the podcast via one of the "Value for Value" methods.
+type: object
+properties:
+  podcastGUID:
+    $ref: 'podcastGUID.yaml'
+  guid:
+    $ref: 'guid.yaml'
+  title:
+    $ref: 'title_episode.yaml'
+  feedTitle:
+    $ref: 'title_feed.yaml'
+  model:
+    $ref: 'model_v4v.yaml'
+  destinations:
+    $ref: 'destinations_v4v.yaml'

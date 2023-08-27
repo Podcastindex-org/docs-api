@@ -1,0 +1,5 @@
+  # language=Markdown
+description: >
+  Indicates if data was found for all `podcastguid` and `episodeguid` values.
+type: boolean
+example: true

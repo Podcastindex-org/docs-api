@@ -1,0 +1,18 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        query:
+          $ref: '../properties/query_guids.yaml'
+        value:
+          $ref: '../properties/value_guid_list.yaml'
+        description:
+          $ref: '../properties/description_response.yaml'
+        allFound:
+          $ref: '../properties/allfound.yaml'
+        found:
+          $ref: '../properties/found.yaml'

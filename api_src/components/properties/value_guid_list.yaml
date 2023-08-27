@@ -1,0 +1,6 @@
+  # language=Markdown
+description: >
+  List of value blocks
+type: array
+items:
+    $ref: 'value_byepisodeguid_batch.yaml'
