@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Is feed marked as explicit
 type: boolean
 example: false

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The last time we tried to parse the downloaded feed content.
 type: integer
 format: Unix Epoch

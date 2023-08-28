@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Name for the destination
 type: string
 example: "podcaster"

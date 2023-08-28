@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The category name.
 type: string
 example: "Books"

@@ -1,7 +1,7 @@
 name: fulltext
 in: query
 # language=Markdown
-description: >
+description: |
   If present, return the full text value of any text fields (ex: `description`).
   If not provided, field value is truncated to 100 words.
 

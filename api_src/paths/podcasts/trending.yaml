@@ -3,7 +3,7 @@ get:
     - Podcasts
   summary: Trending
   # language=Markdown
-  description: >
+  description: |
     This call returns the podcasts/feeds that in the index that are trending.
 
 

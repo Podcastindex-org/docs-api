@@ -3,7 +3,7 @@ post:
     - Add
   summary: By Feed URL Batch
   # language=Markdown
-  description: >
+  description: |
     This call adds multiple feed urls at once.
 
 
@@ -26,7 +26,7 @@ post:
     - $ref: '../../../components/parameters/pretty.yaml'
   requestBody:
     # language=Markdown
-    description: >
+    description: |
       List of Feed URLs to add
     required: true
     content:

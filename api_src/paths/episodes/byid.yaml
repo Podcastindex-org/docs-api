@@ -3,7 +3,7 @@ get:
     - Episodes
   summary: By ID
   # language=Markdown
-  description: >
+  description: |
     Get all the metadata for a single episode by passing its id.
 
 

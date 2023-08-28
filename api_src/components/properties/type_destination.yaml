@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Type of destination
 type: string
 enum:

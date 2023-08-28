@@ -1,7 +1,7 @@
 name: podcast-value
 in: query
 # language=Markdown
-description: >
+description: |
   Get feeds supporting the `value` tag.
 
 

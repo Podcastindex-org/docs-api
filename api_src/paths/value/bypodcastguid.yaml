@@ -3,7 +3,7 @@ get:
     - Value
   summary: By Feed GUID
   # language=Markdown
-  description: >
+  description: |
     This call returns the information for supporting the podcast via one of the "Value for Value" methods from podcast GUID.
 
 
@@ -12,6 +12,7 @@ get:
 
     Example: https://api.podcastindex.org/api/1.0/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810&pretty
   operationId: value/bypodcastguid
+  security: [] # no security required
   parameters:
     - $ref: '../../components/parameters/guid_feed_podcast.yaml'
     - $ref: '../../components/parameters/pretty.yaml'

@@ -1,7 +1,7 @@
 name: chash
 in: query
 # language=Markdown
-description: >
+description: |
   The md5 hash of the following feed items in hex format.
   If known, allows for easier duplicate checking.
 

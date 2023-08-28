@@ -3,7 +3,7 @@ get:
     - Stats
   summary: Current
   # language=Markdown
-  description: >
+  description: |
     Return the most recent index statistics.
 
 

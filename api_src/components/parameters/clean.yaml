@@ -1,7 +1,7 @@
 name: clean
 in: query
 # language=Markdown
-description: >
+description: |
   If present, only non-explicit feeds will be returned.
   Meaning, feeds where the `itunes:explicit` flag is set to `false`.
 

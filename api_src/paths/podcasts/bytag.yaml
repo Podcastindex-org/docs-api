@@ -3,7 +3,7 @@ get:
     - Podcasts
   summary: By Tag
   # language=Markdown
-  description: >
+  description: |
     This call returns all feeds that support the specified
     [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.
 

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Name of the soundbite
 type: string
 example: "Why the Podcast Namespace Matters"

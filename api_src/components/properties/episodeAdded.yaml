@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The time the episode was added to the index
 type: integer
 format: Unix Epoch

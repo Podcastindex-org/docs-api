@@ -1,7 +1,7 @@
 name: episodeguid
 in: query
 # language=Markdown
-description: >
+description: |
     The guid specified by the `<guid>` in the episode `<item>`.
 required: true
 schema:

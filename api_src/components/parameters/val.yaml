@@ -1,7 +1,7 @@
 name: val
 in: query
 # language=Markdown
-description: >
+description: |
   Only returns feeds with a `value` block of the specified type. Use `any` to return feeds with any `value` block.
 schema:
   type: string

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The `podcastguid` and `episodeguid` values passed to the request.
 type: object
 additionalProperties:

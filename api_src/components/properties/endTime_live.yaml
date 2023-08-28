@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The time the livestream ends
 type: integer
 format: Unix Epoch

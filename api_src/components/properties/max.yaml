@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Value of `max` parameter passed to request.
 type: integer
 nullable: true

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Share of payment the destination should receive
 type: integer
 example: 99

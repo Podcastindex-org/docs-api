@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Number of value data returned.
 type: integer
 example: 4

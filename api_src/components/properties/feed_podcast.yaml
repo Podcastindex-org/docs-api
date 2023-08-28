@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Known details of podcast feed
 type: object
 properties:

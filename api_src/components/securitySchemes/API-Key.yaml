@@ -2,7 +2,7 @@ type: apiKey
 in: header
 name: X-Auth-Key
 # language=Markdown
-description: >
+description: |
   Your API key string
 
 

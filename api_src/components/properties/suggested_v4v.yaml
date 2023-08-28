@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Suggested amount per second of playback to send. Unit is specific to the `type`.
 type: string
 nullable: true

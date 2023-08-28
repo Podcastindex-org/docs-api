@@ -3,7 +3,7 @@ get:
     - Episodes
   summary: By Feed URL
   # language=Markdown
-  description: >
+  description: |
     This call returns all the episodes we know about for this feed from the feed URL.
     Episodes are in reverse chronological order.
 

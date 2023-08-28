@@ -3,16 +3,16 @@
   "version": "1.11.0",
   "private": true,
   "devDependencies": {
-    "@redocly/openapi-cli": "^1.0.0-beta.80",
+    "@redocly/cli": "^1.0.2",
     "copyfiles": "^2.4.1",
     "livereload": "^0.9.3"
   },
   "scripts": {
-    "preview": "openapi preview-docs",
+    "preview": "redocly preview-docs",
     "build": "yarn bundle_json && yarn bundle_yaml",
-    "bundle_json": "openapi bundle -o docs/pi_api --ext json",
-    "bundle_yaml": "openapi bundle -o docs/pi_api --ext yaml",
-    "lint": "openapi lint",
+    "bundle_json": "redocly bundle -o docs/pi_api --ext json",
+    "bundle_yaml": "redocly bundle -o docs/pi_api --ext yaml",
+    "lint": "redocly lint",
     "reload": "livereload . -w 2000 -d -e html,css,js,png,gif,jpg,php,php5,py,rb,erb,coffee,yaml,json",
     "server": "python -m http.server --directory docs"
   }

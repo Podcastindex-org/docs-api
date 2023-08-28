@@ -1,11 +1,11 @@
 title: Multiple IDs
 # language=Markdown
-description: >
+description: |
   IDs passed to request
 type: array
 items:
   # language=Markdown
-  description: >
+  description: |
     Podcast ID passed to request
   type: string
 example:

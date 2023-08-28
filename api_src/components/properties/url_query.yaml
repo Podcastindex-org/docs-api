@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Value passed to request in the `url` field
 type: string
 format: URL

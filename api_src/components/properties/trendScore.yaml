@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The ranking for how the podcast is trending in the index
 type: integer
 example: 1

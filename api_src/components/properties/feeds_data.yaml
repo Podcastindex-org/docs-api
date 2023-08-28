@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   List of recent feed data
 type: array
 items:

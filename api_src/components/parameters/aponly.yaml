@@ -1,7 +1,7 @@
 name: aponly
 in: query
 # language=Markdown
-description: >
+description: |
   Only returns feeds with an `itunesId`.
 schema:
   type: boolean

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Price of content. Will always return 0.
 type: integer
 example: 0

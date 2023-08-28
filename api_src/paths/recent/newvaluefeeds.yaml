@@ -3,7 +3,7 @@ get:
     - Recent
   summary: New Value Feeds
   # language=Markdown
-  description: >
+  description: |
     This call returns feeds that have added a `value` tag in reverse chronological order.
 
 

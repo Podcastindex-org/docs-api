@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.
 
 

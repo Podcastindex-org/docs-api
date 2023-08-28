@@ -3,7 +3,7 @@ get:
     - Recent
   summary: Episodes
   # language=Markdown
-  description: >
+  description: |
     This call returns the most recent `max` number of episodes globally across the whole index,
     in reverse chronological order.
 

@@ -1,7 +1,7 @@
 name: feedurl
 in: query
 # language=Markdown
-description: >
+description: |
   The Feed URL
 required: false
 schema:

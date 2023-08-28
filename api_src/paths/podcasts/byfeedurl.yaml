@@ -3,7 +3,7 @@ get:
     - Podcasts
   summary: By Feed URL
   # language=Markdown
-  description: >
+  description: |
     This call returns everything we know about the feed from the feed URL
 
 

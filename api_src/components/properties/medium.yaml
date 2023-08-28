@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Value of `medium` parameter used in request
 type: string
 example: "film"

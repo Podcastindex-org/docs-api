@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The time this episode was found in the feed
 type: integer
 format: Unix Epoch

@@ -3,7 +3,7 @@ get:
     - Episodes
   summary: Random
   # language=Markdown
-  description: >
+  description: |
     This call returns a random batch of episodes, in no specific order.
 
 

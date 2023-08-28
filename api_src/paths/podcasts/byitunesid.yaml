@@ -3,7 +3,7 @@ get:
     - Podcasts
   summary: By iTunes ID
   # language=Markdown
-  description: >
+  description: |
     This call returns everything we know about the feed from the iTunes ID
 
 

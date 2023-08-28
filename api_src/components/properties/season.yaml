@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Season number. May be null for `liveItem`.
 type: integer
 nullable: true

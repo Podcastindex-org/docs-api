@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Value to pass as `since` parameter to get next batch of data
 type: integer
 format: Unix Epoch

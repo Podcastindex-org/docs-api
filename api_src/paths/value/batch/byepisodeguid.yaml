@@ -3,7 +3,7 @@ post:
     - Value
   summary: Batch By Episode GUID
   # language=Markdown
-  description: >
+  description: |
     This call returns the information for supporting the podcast episode via one of the "Value for Value" methods from
     a JSON object containing one or more podcast GUID and one or more episode GUID for the podcast.
 
@@ -19,6 +19,7 @@ post:
 
     Note: No API key needed for this endpoint.
   operationId: value/batch/byepisodeguid
+  security: [] # no security required
   parameters:
     - $ref: '../../../components/parameters/pretty.yaml'
   requestBody:

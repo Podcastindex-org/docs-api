@@ -1,7 +1,7 @@
 name: since
 in: query
 # language=Markdown
-description: >
+description: |
   Return items since the specified epoch timestamp.
 schema:
   type: integer

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The type as specified by the `itunes:type` in the feed XML.
 type: string
 example: episodic

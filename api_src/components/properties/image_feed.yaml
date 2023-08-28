@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The channel-level image element.
 type: string
 format: URL

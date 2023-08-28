@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The date and time the episode was published
 type: integer
 format: Unix Epoch

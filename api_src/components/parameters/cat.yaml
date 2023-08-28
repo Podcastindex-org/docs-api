@@ -1,7 +1,7 @@
 name: cat
 in: query
 # language=Markdown
-description: >
+description: |
   Use this argument to specify that you **ONLY** want episodes with these categories in the results.
 
 

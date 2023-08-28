@@ -1,7 +1,7 @@
 name: desc
 in: query
 # language=Markdown
-description: >
+description: |
   If present, display feeds in descending order.
   
   

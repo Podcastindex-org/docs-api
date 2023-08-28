@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The uri/url of the root post comment
 type: string
 format: URL

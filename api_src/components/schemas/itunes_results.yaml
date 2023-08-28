@@ -14,7 +14,7 @@ properties:
     $ref: '../properties/title_feed_censored.yaml'
   collectionExplicitness:
       # language=Markdown
-    description: >
+    description: |
       Indicates if the feed is marked explicit.
     type: string
     enum:
@@ -33,7 +33,7 @@ properties:
     $ref: '../properties/view_url.yaml'
   contentAdvisoryRating:
       # language=Markdown
-    description: >
+    description: |
       Indicates if the feed is explicit or clean.
     type: string
     enum:
@@ -42,7 +42,7 @@ properties:
     example: "Clean"
   country:
       # language=Markdown
-    description: >
+    description: |
       The country the feed is from.
       
       
@@ -51,7 +51,7 @@ properties:
     example: "USA"
   currency:
       # language=Markdown
-    description: >
+    description: |
       Currency `*Price` value is in.
       
       
@@ -62,7 +62,7 @@ properties:
     $ref: "../properties/url_feed.yaml"
   genreIds:
       # language=Markdown
-    description: >
+    description: |
       List of ids representing the names in the `genres`.
       
       
@@ -75,7 +75,7 @@ properties:
       - 26
   genres:
       # language=Markdown
-    description: >
+    description: |
       List of genre names.
     type: array
     items:
@@ -85,7 +85,7 @@ properties:
       - "Podcats"
   kind:
       # language=Markdown
-    description: >
+    description: |
       The kind of content returned by the search request.
       
       
@@ -94,13 +94,13 @@ properties:
     example: "podcast"
   primaryGenreName:
       # language=Markdown
-    description: >
+    description: |
       The primary genre name.
     type: string
     example: ""
   releaseDate:
       # language=Markdown
-    description: >
+    description: |
       Date and time of request
     type: string
     example: "2022-10-03T02:17:03-0500"
@@ -108,13 +108,13 @@ properties:
     $ref: '../properties/title_feed_censored.yaml'
   trackCount:
       # language=Markdown
-    description: >
+    description: |
       Number of episodes in feed
     type: integer
     example: 12
   trackExplicitness:
       # language=Markdown
-    description: >
+    description: |
       Indicates if the episode is marked explicit.
     type: string
     enum:
@@ -137,7 +137,7 @@ properties:
     $ref: '../properties/view_url.yaml'
   wrapperType:
       # language=Markdown
-    description: >
+    description: |
       The name of the object returned by the search request.
       
       

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   An array of categories, where the index is the Category ID and the value is the Category Name.
 
 

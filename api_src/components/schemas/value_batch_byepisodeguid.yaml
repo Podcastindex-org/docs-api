@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   JSON data where key is the `podcastguid` and value is a list of `episodeguid` values.
 type: object
 additionalProperties:

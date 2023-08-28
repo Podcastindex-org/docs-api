@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Tell other podcast platforms whether they are allowed to import this feed.
   A value of 1 means that any attempt to import this feed into a new platform should be rejected.
 

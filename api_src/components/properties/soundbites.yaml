@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Soundbites for episode. May not be reported.
 type: array
 nullable: true

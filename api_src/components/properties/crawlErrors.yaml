@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The number of errors we’ve encountered trying to pull a copy of the feed.
   Errors are things like a 500 or 404 response, a server timeout, bad encoding, etc.
 type: integer

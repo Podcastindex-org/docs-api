@@ -13,7 +13,7 @@ info:
     url: 'logo.svg'
     href: '/'
   # language=Markdown
-  description: >
+  description: |
     Download the openapi spec in [json](pi_api.json) or [yaml](pi_api.yaml) format.
 
     # Overview
@@ -113,39 +113,39 @@ info:
 tags:
   - name: Search
     # language=Markdown
-    description: >
+    description: |
       Search the index
   - name: Podcasts
     # language=Markdown
-    description: >
+    description: |
       Find details about a Podcast and its feed.
   - name: Episodes
     # language=Markdown
-    description: >
+    description: |
       Find details about one or more episodes of a podcast or podcasts.
   - name: Recent
     # language=Markdown
-    description: >
+    description: |
       Find recent additions to the index
   - name: Value
     # language=Markdown
-    description: >
+    description: |
       The podcast's "Value for Value" information
   - name: Stats
     # language=Markdown
-    description: >
+    description: |
       Statistics for items in the Podcast Index
   - name: Categories
     # language=Markdown
-    description: >
+    description: |
       Categories used by the Podcast Index
   - name: Hub
     # language=Markdown
-    description: >
+    description: |
       Notify the index that a feed has changed
   - name: Add
     # language=Markdown
-    description: >
+    description: |
       Add new podcast feeds to the index.
 
 
@@ -154,9 +154,9 @@ servers:
   - url: 'https://api.podcastindex.org/api/1.0'
 components:
   securitySchemes:
-    User Agent:
+    User-Agent:
       $ref: 'components/securitySchemes/User-Agent.yaml'
-    API Key:
+    API-Key:
       $ref: 'components/securitySchemes/API-Key.yaml'
     Date:
       $ref: 'components/securitySchemes/Date.yaml'

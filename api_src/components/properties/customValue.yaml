@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   A custom value to pass along with the payment. This is considered the value that belongs to the customKey. May not be reported.
 
 

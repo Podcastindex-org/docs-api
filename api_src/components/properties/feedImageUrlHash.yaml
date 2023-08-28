@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   A CRC32 hash of the `feedImage` URL with the protocol (`http://`, `https://`) removed.
 type: integer
 example: 1639321931

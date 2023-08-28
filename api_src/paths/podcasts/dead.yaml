@@ -3,7 +3,7 @@ get:
     - Podcasts
   summary: Dead
   # language=Markdown
-  description: >
+  description: |
     This call returns all feeds that have been marked dead (`dead` == 1)
     
     

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Name of the feed
 type: string
 example: "Batman University"

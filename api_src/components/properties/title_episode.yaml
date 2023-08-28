@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Name of the episode
 type: string
 example: "Gotham"

@@ -1,7 +1,7 @@
 name: itunesid
 in: query
 # language=Markdown
-description: >
+description: |
   If this parameter is given, and the existing feed has no associated iTunes ID, it will be associated with this ID.
   If an existing iTunes ID is already associated with this feed it will **NOT** be changed.
 schema:

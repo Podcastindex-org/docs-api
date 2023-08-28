@@ -2,7 +2,7 @@ type: apiKey
 in: header
 name: X-Auth-Date
 # language=Markdown
-description: >
+description: |
   The current UTC unix epoch time as a string. 3 minute window.
 
 

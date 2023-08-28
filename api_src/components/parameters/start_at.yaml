@@ -1,7 +1,7 @@
 name: start_at
 in: query
 # language=Markdown
-description: >
+description: |
   Feed ID to start at for request
 schema:
   type: integer

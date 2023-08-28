@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The Content-Type header from the last time we pulled this feed from its url.
 type: string
 example: "application/rss+xml"

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The last time we attempted to pull this feed from its url.
 type: integer
 format: Unix Epoch

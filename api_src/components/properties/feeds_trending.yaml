@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   List of feeds matching request
 type: array
 items:

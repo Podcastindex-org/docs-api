@@ -1,7 +1,7 @@
 name: excludeString
 in: query
 # language=Markdown
-description: >
+description: |
   Any item containing this string will be discarded from the result set.
 
 

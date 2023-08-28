@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Status of the livestream
 type: string
 enum:

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Indicates if destination is included due to a fee being charged. May not be reported.
 type: boolean
 nullable: true

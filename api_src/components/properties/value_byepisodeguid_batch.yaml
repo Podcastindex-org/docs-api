@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Information for supporting the podcast via one of the "Value for Value" methods.
 type: object
 properties:

@@ -1,7 +1,7 @@
 name: url
 in: query
 # language=Markdown
-description: >
+description: |
   Podcast feed URL
 
 
