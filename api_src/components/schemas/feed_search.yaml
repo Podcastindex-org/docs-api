@@ -3,7 +3,7 @@ properties:
   id:
     $ref: '../properties/id_feed.yaml'
   podcastGuid:
-    $ref: '../properties/podcastGuid.yaml'
+    $ref: '../properties/podcastguid.yaml'
   title:
     $ref: '../properties/title_feed.yaml'
   url:

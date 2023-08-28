@@ -4,7 +4,7 @@ description: |
 type: object
 properties:
   podcastGUID:
-    $ref: 'podcastGUID.yaml'
+    $ref: 'podcastguid.yaml'
   guid:
     $ref: 'guid.yaml'
   title:

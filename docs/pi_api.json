@@ -2511,7 +2511,7 @@
         "type": "integer",
         "example": 75075
       },
-      "podcastGuid": {
+      "podcastguid": {
         "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\n\nSee the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
         "type": "string",
         "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
@@ -2675,7 +2675,7 @@
             "$ref": "#/components/schemas/id_feed"
           },
           "podcastGuid": {
-            "$ref": "#/components/schemas/podcastGuid"
+            "$ref": "#/components/schemas/podcastguid"
           },
           "title": {
             "$ref": "#/components/schemas/title_feed"
@@ -3190,7 +3190,7 @@
             "$ref": "#/components/schemas/id_feed"
           },
           "podcastGuid": {
-            "$ref": "#/components/schemas/podcastGuid"
+            "$ref": "#/components/schemas/podcastguid"
           },
           "title": {
             "$ref": "#/components/schemas/title_feed"
@@ -3313,7 +3313,7 @@
             "$ref": "#/components/schemas/id_feed"
           },
           "podcastGuid": {
-            "$ref": "#/components/schemas/podcastGuid"
+            "$ref": "#/components/schemas/podcastguid"
           },
           "title": {
             "$ref": "#/components/schemas/title_feed"
@@ -3519,7 +3519,7 @@
             "$ref": "#/components/schemas/funding"
           },
           "podcastGuid": {
-            "$ref": "#/components/schemas/podcastGuid"
+            "$ref": "#/components/schemas/podcastguid"
           },
           "valueCreatedOn": {
             "$ref": "#/components/schemas/valueCreatedOn"
@@ -4900,17 +4900,12 @@
           }
         }
       },
-      "podcastGUID": {
-        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\n\nSee the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
-        "type": "string",
-        "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
-      },
       "value_byepisodeguid_batch": {
         "description": "Information for supporting the podcast via one of the \"Value for Value\" methods.\n",
         "type": "object",
         "properties": {
           "podcastGUID": {
-            "$ref": "#/components/schemas/podcastGUID"
+            "$ref": "#/components/schemas/podcastguid"
           },
           "guid": {
             "$ref": "#/components/schemas/guid"
