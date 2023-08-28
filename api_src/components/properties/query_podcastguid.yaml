@@ -1,0 +1,5 @@
+  # language=Markdown
+description: |
+  The value of the `podcastguid` argument passed to the request.
+type: string
+example: "917393e3-1b1e-5cef-ace4-edaa54e1f810"

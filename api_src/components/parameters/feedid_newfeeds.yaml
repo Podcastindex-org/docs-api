@@ -1,7 +1,7 @@
 name: feedid
 in: query
 # language=Markdown
-description: >
+description: |
   The PodcastIndex Feed ID to start from (or go to if `desc` specified).
   
   

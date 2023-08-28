@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The channel-level language specification of the feed.
 
   Languages accord with the [RSS Language Spec](https://www.rssboard.org/rss-language-codes).

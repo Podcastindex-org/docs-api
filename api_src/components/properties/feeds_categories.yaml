@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   List of categories
 type: array
 nullable: true

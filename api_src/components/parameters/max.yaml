@@ -1,7 +1,7 @@
 name: max
 in: query
 # language=Markdown
-description: >
+description: |
   Maximum number of results to return.
 schema:
   type: integer

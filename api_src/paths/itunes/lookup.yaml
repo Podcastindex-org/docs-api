@@ -3,7 +3,7 @@ get:
     - Apple Replacement
   summary: Lookup
   # language=Markdown
-  description: >
+  description: |
     Replaces the Apple podcast lookup API but returns data from the Podcast Index database.
     
     
@@ -15,6 +15,7 @@ get:
       - Apple: https://itunes.apple.com/lookup?media=podcast&entity=podcast&id=1636765656
       - PodcastIndex: https://api.podcastindex.org/lookup?entity=podcast&id=1636765656
   operationId: lookup
+  security: [] # no security required
   servers:
     - url: 'https://api.podcastindex.org'
       description: "URL for Apple Replacement endpoints"

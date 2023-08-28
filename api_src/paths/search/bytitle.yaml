@@ -3,7 +3,7 @@ get:
     - Search
   summary: Search Podcasts by Title
   # language=Markdown
-  description: >
+  description: |
     This call returns all of the feeds where the `title` of the feed matches the search term (ignores case).
 
 

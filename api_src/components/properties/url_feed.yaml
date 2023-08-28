@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Current feed URL
 type: string
 format: URL

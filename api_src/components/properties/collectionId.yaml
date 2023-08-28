@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The iTunes Feed ID
 type: integer
 example: 1441923632

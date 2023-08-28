@@ -1,7 +1,7 @@
 name: before
 in: query
 # language=Markdown
-description: >
+description: |
   If you pass a PodcastIndex Episode ID, you will get recent episodes before that ID, allowing you to walk back
   through the episode history sequentially.
 schema:

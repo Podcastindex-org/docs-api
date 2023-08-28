@@ -3,7 +3,7 @@ get:
     - Value
   summary: By Feed URL
   # language=Markdown
-  description: >
+  description: |
     This call returns the information for supporting the podcast via one of the "Value for Value" methods from feed URL.
 
 
@@ -13,13 +13,15 @@ get:
       - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json
 
 
+    Note: No API key needed for this endpoint.
+
+
     Examples:
 
       - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty
       - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty
   operationId: value/byfeedurl
-  security:
-    - $ref: '../../components/security/security.yaml'
+  security: [] # no security required
   parameters:
     - $ref: '../../components/parameters/url.yaml'
     - $ref: '../../components/parameters/pretty.yaml'

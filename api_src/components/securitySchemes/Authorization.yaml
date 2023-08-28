@@ -2,7 +2,7 @@ type: apiKey
 in: header
 name: Authorization
 # language=Markdown
-description: >
+description: |
   A SHA-1 hash of the `X-Auth-Key`, the corresponding secret and the `X-Auth-Date` value concatenated as a string.
   The resulting hash should be encoded as a hexadecimal value, two digits per byte, using lower case letters for
   the hex digits "a" through "f".

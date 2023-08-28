@@ -3,7 +3,7 @@ get:
     - Podcasts
   summary: By Feed ID
   # language=Markdown
-  description: >
+  description: |
     This call returns everything we know about the feed from the PodcastIndex ID
 
 

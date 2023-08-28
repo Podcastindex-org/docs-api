@@ -1,0 +1,7 @@
+  # language=Markdown
+description: |
+  Object containing the input query data
+type: object
+properties:
+  guids:
+    $ref: 'guids.yaml'

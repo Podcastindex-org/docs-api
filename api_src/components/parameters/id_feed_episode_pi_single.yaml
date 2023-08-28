@@ -1,7 +1,7 @@
 name: id
 in: query
 # language=Markdown
-description: >
+description: |
   The PodcastIndex Feed ID to search for.
 required: true
 schema:

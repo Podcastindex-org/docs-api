@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The type of episode. May be null for `liveItem`.
 type: string
 nullable: true

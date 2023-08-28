@@ -3,7 +3,7 @@ get:
     - Add
   summary: By iTunes ID
   # language=Markdown
-  description: >
+  description: |
     This call adds a podcast to the index using its iTunes ID. If a feed already exists, it will be noted in the response.
 
 
@@ -31,7 +31,7 @@ post:
     - Add
   summary: By iTunes ID
   # language=Markdown
-  description: >
+  description: |
     This call adds a podcast to the index using its iTunes ID. If a feed already exists, it will be noted in the response.
 
 

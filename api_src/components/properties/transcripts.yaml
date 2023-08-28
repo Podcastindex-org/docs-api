@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   List of transcripts for the episode. May not be reported.
 type: array
 nullable: true

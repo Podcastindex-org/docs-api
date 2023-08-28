@@ -3,7 +3,7 @@ get:
     - Podcasts
   summary: By Medium
   # language=Markdown
-  description: >
+  description: |
     This call returns all feeds marked with the specified
     [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) tag value.
 

@@ -3,7 +3,7 @@ get:
     - Episodes
   summary: By iTunes ID
   # language=Markdown
-  description: >
+  description: |
     This call returns all the episodes we know about for this feed from the iTunes ID.
     Episodes are in reverse chronological order.
 

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Number of items in the `items` returned in request
 type: integer
 example: 1

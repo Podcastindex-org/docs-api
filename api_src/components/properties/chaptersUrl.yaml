@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Link to the JSON file containing the episode chapters
 type: string
 nullable: true

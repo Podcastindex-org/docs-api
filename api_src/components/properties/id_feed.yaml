@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The internal PodcastIndex.org Feed ID.
 type: integer
 example: 75075

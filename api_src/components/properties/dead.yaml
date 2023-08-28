@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   At some point, we give up trying to process a feed and mark it as dead.
   This is usually after 1000 errors without a successful pull/parse cycle.
   Once the feed is marked dead, we only check it once per month.

@@ -1,0 +1,16 @@
+  # language=Markdown
+description: |
+  The `podcastguid` and `episodeguid` values passed to the request.
+type: object
+additionalProperties:
+  type: array
+  items:
+    type: string
+example:
+  917393e3-1b1e-5cef-ace4-edaa54e1f810:
+    - PC20141
+    - PC20142
+    - PC20143
+  c73b1a23-1c28-5edb-94c3-10d1745d0877:
+    - bdea6759-a7b6-4c0d-9d1e-acca3133f4a9
+

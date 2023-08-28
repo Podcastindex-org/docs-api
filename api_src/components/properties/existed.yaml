@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Indicates if feed already exists in the index
 type: string
 enum:

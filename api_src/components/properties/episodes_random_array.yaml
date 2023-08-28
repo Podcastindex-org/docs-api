@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   List of episodes matching request
 type: array
 items:

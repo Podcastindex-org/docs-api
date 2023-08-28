@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
    The account id (on the commenting platform) of the account that created this root post.
 type: string
 example: "@dave"

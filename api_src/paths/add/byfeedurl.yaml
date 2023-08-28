@@ -3,7 +3,7 @@ get:
     - Add
   summary: By Feed URL
   # language=Markdown
-  description: >
+  description: |
     This call adds a podcast to the index using its feed url. If a feed already exists, you will get its existing Feed ID returned.
 
 
@@ -33,7 +33,7 @@ post:
     - Add
   summary: By Feed URL
   # language=Markdown
-  description: >
+  description: |
     This call adds a podcast to the index using its feed url. If a feed already exists, you will get its existing Feed ID returned.
 
 

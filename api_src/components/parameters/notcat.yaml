@@ -1,7 +1,7 @@
 name: notcat
 in: query
 # language=Markdown
-description: >
+description: |
   Use this argument to specify categories of episodes to **NOT** show in the results.
 
 

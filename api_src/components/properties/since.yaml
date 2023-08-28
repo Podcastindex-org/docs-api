@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Value of `since` parameter passed to request.
 type: integer
 nullable: true

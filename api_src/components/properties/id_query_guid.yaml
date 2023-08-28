@@ -1,0 +1,5 @@
+  # language=Markdown
+description: |
+  The Podcast Index Id of the podcast GUID passed as an argument to the request
+type: integer
+example: 920666

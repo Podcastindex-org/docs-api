@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The time this feed's `value` data added. Will be 0 if no `value` data.
 type: integer
 format: Unix Epoch

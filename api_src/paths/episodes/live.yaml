@@ -3,7 +3,7 @@ get:
     - Episodes
   summary: Live
   # language=Markdown
-  description: >
+  description: |
     Get all episodes that have been found in the [podcast:liveitem](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#live-item) from the feeds.
 
 

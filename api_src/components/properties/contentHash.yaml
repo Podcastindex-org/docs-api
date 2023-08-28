@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Hash of the entire feed body
 type: string
 example: "a652d25b56f3e2f0e069c0cc72145a85"

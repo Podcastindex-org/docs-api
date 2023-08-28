@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The internal PodcastIndex.org person ID.
 type: integer
 example: 411960

@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Timestamp of the last time we got a "good", meaning non-4xx/non-5xx, status code when pulling this feed from its url.
 type: integer
 format: Unix Epoch

@@ -418,7 +418,7 @@
 								}
 							]
 						},
-						"description": "This call returns all feeds that support the specified\n[podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\n\nWhen called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.\n\n\nWhen called with a `start_at` value, the feeds are returned sorted by the `feedId` starting with the specified value\nup to the max number of feeds to return. The `nextStartAt` specifies the value to pass to the next `start_at`.\nRepeat this sequence until no items are returned.\n\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty"
+						"description": "This call returns all feeds that support the specified\n[podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\nThe only supported tag is `podcast:value` using the `podcast-value` parameter.\n\nWhen called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.\n\n\nWhen called with a `start_at` value, the feeds are returned sorted by the `feedId` starting with the specified value\nup to the max number of feeds to return. The `nextStartAt` specifies the value to pass to the next `start_at`.\nRepeat this sequence until no items are returned.\n\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty"
 					},
 					"response": []
 				},
@@ -1246,7 +1246,7 @@
 								}
 							]
 						},
-						"description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from the PodcastIndex ID.\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty\n"
+						"description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from the PodcastIndex ID.\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\nNote: No API key needed for this endpoint.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty\n"
 					},
 					"response": []
 				},
@@ -1278,7 +1278,113 @@
 								}
 							]
 						},
-						"description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from feed URL.\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty\n"
+						"description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from feed URL.\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\nNote: No API key needed for this endpoint.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty\n"
+					},
+					"response": []
+				},
+				{
+					"name": "By Feed GUID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"value",
+								"bypodcastguid"
+							],
+							"query": [
+								{
+									"key": "guid",
+									"value": "917393e3-1b1e-5cef-ace4-edaa54e1f810",
+									"description": "(Required) The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n"
+								},
+								{
+									"key": "pretty",
+									"value": "",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from podcast GUID.\n\nNote: No API key needed for this endpoint.\n\nExample: https://api.podcastindex.org/api/1.0/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810&pretty\n"
+					},
+					"response": []
+				},
+				{
+					"name": "By Episode GUID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"value",
+								"byepisodeguid"
+							],
+							"query": [
+								{
+									"key": "podcastguid",
+									"value": "917393e3-1b1e-5cef-ace4-edaa54e1f810",
+									"description": "(Required) The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details."
+								},
+								{
+									"key": "episodeguid",
+									"value": "PC20143",
+									"description": "(Required) The guid specified by the `<guid>` in the episode `<item>`."
+								},
+								{
+									"key": "pretty",
+									"value": "",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This call returns the information for supporting the podcast episode via one of the \"Value for Value\" methods from\npodcast GUID and the episode GUID.\n\nThe `podcastguid` is the GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier\nfor the podcast. See the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\nThe `episodeguid` is the unique guid specified for the `<item>` in the feed but may not be globally unique.\n\nNote: No API key needed for this endpoint.\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143&pretty\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=c73b1a23-1c28-5edb-94c3-10d1745d0877&episodeguid=bdea6759-a7b6-4c0d-9d1e-acca3133f4a9&pretty\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Batch By Episode GUID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"917393e3-1b1e-5cef-ace4-edaa54e1f810\": [\r\n        \"PC20141\",\r\n        \"PC20142\",\r\n        \"PC20143\"\r\n    ],\r\n    \"c73b1a23-1c28-5edb-94c3-10d1745d0877\": [\r\n        \"bdea6759-a7b6-4c0d-9d1e-acca3133f4a9\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/value/batch/byepisodeguid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"value",
+								"batch",
+								"byepisodeguid"
+							],
+							"query": [
+								{
+									"key": "pretty",
+									"value": "",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This call returns the information for supporting the podcast episode via one of the \"Value for Value\" methods from\na JSON object containing one or more podcast GUID and one or more episode GUID for the podcast.\n\nThe JSON object key shall be the `podcastguid` from the `podcast:guid` tag in the feed.\nThis value is a unique, global identifier for the podcast. See the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\nThe value of the `podcastguid` shall be an array of `episodeguid` values.\nThis is the unique guid specified for the `<item>` in the feed but may not be globally unique.\n\nNote: No API key needed for this endpoint."
 					},
 					"response": []
 				}
@@ -1386,7 +1492,7 @@
 								}
 							]
 						},
-						"description": "Notify the index that a feed has changed\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&update&pretty\n"
+						"description": "Notify the index that a feed has changed\n\nNote: No API key needed for this endpoint.\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n"
 					},
 					"response": []
 				}

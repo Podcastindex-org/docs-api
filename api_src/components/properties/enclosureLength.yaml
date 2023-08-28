@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The length of the item specified by the `enclosureUrl` in bytes
 type: integer
 format: bytes

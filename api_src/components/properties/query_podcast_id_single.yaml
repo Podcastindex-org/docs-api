@@ -1,6 +1,6 @@
 title: Single ID
 # language=Markdown
-description: >
+description: |
   Single ID passed to request
 type: string
 example: "75075"

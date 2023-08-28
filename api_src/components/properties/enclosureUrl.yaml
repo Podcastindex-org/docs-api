@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   URL/link to the episode file
 type: string
 format: URL

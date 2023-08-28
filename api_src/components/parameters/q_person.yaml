@@ -1,7 +1,7 @@
 name: q
 in: query
 # language=Markdown
-description: >
+description: |
   Person search for
 required: true
 schema:

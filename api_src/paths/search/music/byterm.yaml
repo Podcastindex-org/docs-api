@@ -3,7 +3,7 @@ get:
     - Search
   summary: Search Music Podcasts
   # language=Markdown
-  description: >
+  description: |
     This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the <feed></feed>
     where the [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) is `music`.
 

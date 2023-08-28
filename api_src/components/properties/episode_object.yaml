@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Episode data
 type: object
 properties:

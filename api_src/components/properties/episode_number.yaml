@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Episode number
 type: integer
 nullable: true

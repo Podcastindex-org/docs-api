@@ -3,7 +3,7 @@ get:
     - Categories
   summary: List
   # language=Markdown
-  description: >
+  description: |
     Return all the possible categories supported by the index.
 
 

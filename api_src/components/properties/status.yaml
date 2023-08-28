@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Indicates API request status
 type: string
 enum:

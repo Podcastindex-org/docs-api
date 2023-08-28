@@ -3,7 +3,7 @@ get:
     - Recent
   summary: Soundbites
   # language=Markdown
-  description: >
+  description: |
     This call returns the most recent `max` soundbites that the index has discovered.
 
 

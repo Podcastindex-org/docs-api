@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "version": "1.10.0",
+    "version": "1.11.0",
     "title": "PodcastIndex.org API",
     "termsOfService": "https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md",
     "contact": {
@@ -16,8 +16,13 @@
       "url": "logo.svg",
       "href": "/"
     },
-    "description": "Download the openapi spec in [json](pi_api.json) or [yaml](pi_api.yaml) format.\n# Overview\nThe Podcast Index (Podcast Index LLC) is a software developer focused partnership that provides tools and data to anyone who aspires to create new and exciting Podcast experiences without the heavy lifting of indexing, aggregation and data management.\n# Example Code\nUsers have provided example code for working the API in the following languages:\n\n  - [AWS Lambda - python](https://github.com/tbowers/python-podcastindex-org-lambda)\n  - [Bash](https://github.com/suorcd/Bash-podcastindex-org-example)\n  - [C#](https://github.com/ComicStrip/csharp-podcastindex-org-example)\n  - [Elisp](https://github.com/sabexx/elisp-example)\n  - [Flutter/Dart](https://github.com/crediblecreative/flutter-dart-podcastindex-org-example)\n  - [Go](https://github.com/ComicStrip/Go-podcastindex-org-example)\n  - [Go](https://github.com/kilobit/podcast-index-client)\n  - [Java](https://github.com/ComicStrip/Java-podcastindex-org-example)\n  - [Java](https://github.com/stucoates/PodcastIndexJavaClient)\n  - [Node.js](https://github.com/ComicStrip/node.js-podcastindex-org-example)\n  - [PHP](https://github.com/Podcastindex-org/example-code)\n  - [Python](https://github.com/tbowers/python-podcastindex-org-example)\n  - [Swift](https://github.com/ComicStrip/Swift-podcastindex-org-example)\n  - ... [More](https://github.com/Podcastindex-org-Examples)\n\nDon't see your desired language, create an example repo and create a [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to your example code project!\n# Libraries\nUser created libraries for working with the API:\n\n  - Java\n      - [podcast4j](https://github.com/yusufyilmazfr/podcast4j)\n  - .NET\n      - [PodcastIndexSharp](https://www.nuget.org/packages/PodcastIndexSharp)\n  - Node.js/npm/yarn\n      - [podcast-index-api](https://www.npmjs.com/package/podcast-index-api)\n      - [podcastdx-client](https://www.npmjs.com/package/podcastdx-client)\n  - PHP\n      - [podcastindex-php](https://github.com/LowSociety/podcastindex-php)\n  - Python/pip\n      - [python-podcastindex](https://pypi.org/project/python-podcastindex/)\n  - R\n      - [podindexr](https://github.com/rpodcast/podindexr)\n  - Ruby\n      - [podcast-index](https://github.com/jasonyork/podcast-index)\n  - Swift\n      - [PodcastIndexKit](https://github.com/SparrowTek/PodcastIndexKit)\n\nAre we missing a library? Did you create one for a different language? Create a [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to the new library!\n# Postman\nA collection file for use in the [Postman](https://www.postman.com/) application is available for this API.\n\n  1. Download the contents of the [Postman Docs](https://github.com/Podcastindex-org/docs-api/tree/master/Postman%20Docs) folder.\n  2. Import the `PodcastIndex.postman_collection.json` collection to Postman\n  3. Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman\n  4. Click \"Environments\" on the left sidebar\n  5. Select the checkbox next to the PodcastIndexOrgEnvironment entry\n  6. Set `AuthKey` and `SeceretKey` values under the \"Current Value\" column using your API information \n  7. Click \"Collections\" from the sidebar\n  8. Select PodcastIndex\n  9. Select and run the endpoint to test\n\n# Contributing\nThe source for this API documentation is available at [https://github.com/Podcastindex-org/docs-api](https://github.com/Podcastindex-org/docs-api). Submit an Issue or create a Pull Request.\n# Authentication Details\nSending an API request is easy. We use an Amazon-style request authorization token to secure each request.\n\nRegister for a free API key at https://api.podcastindex.org/\n\nThese headers parameters are required for each request: `User-Agent`, `X-Auth-Date`, `X-Auth-Key`, `Authorization`\n\nSee [Authentication](#auth) for description of parameters.\n# Legal\nLegal\n\n  - [Privacy Policy](https://github.com/Podcastindex-org/legal/blob/main/PrivacyPolicy.md)\n  - [Terms of Service](https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md)\n  - [License](https://github.com/Podcastindex-org/docs-api/blob/master/LICENSE)\n"
+    "description": "Download the openapi spec in [json](pi_api.json) or [yaml](pi_api.yaml) format.\n\n# Overview\n\nThe Podcast Index (Podcast Index LLC) is a software developer focused partnership that provides tools and data to\nanyone who aspires to create new and exciting Podcast experiences without the heavy lifting of indexing,\naggregation and data management.\n\n# Example Code\n\nUsers have provided example code for working the API in the following languages:\n\n  - [AWS Lambda - python](https://github.com/tbowers/python-podcastindex-org-lambda)\n  - [Bash](https://github.com/suorcd/Bash-podcastindex-org-example)\n  - [C#](https://github.com/ComicStrip/csharp-podcastindex-org-example)\n  - [Elisp](https://github.com/sabexx/elisp-example)\n  - [Flutter/Dart](https://github.com/crediblecreative/flutter-dart-podcastindex-org-example)\n  - [Go](https://github.com/ComicStrip/Go-podcastindex-org-example)\n  - [Go](https://github.com/kilobit/podcast-index-client)\n  - [Java](https://github.com/ComicStrip/Java-podcastindex-org-example)\n  - [Java](https://github.com/stucoates/PodcastIndexJavaClient)\n  - [Node.js](https://github.com/ComicStrip/node.js-podcastindex-org-example)\n  - [PHP](https://github.com/Podcastindex-org/example-code)\n  - [Python](https://github.com/tbowers/python-podcastindex-org-example)\n  - [Swift](https://github.com/ComicStrip/Swift-podcastindex-org-example)\n  - ... [More](https://github.com/Podcastindex-org-Examples)\n\nDon't see your desired language, create an example repo and create a\n[Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to your example code project!\n\n# Libraries\n\nUser created libraries for working with the API:\n\n  - Java\n      - [podcast4j](https://github.com/yusufyilmazfr/podcast4j)\n  - .NET\n      - [PodcastIndexSharp](https://www.nuget.org/packages/PodcastIndexSharp)\n  - Node.js/npm/yarn\n      - [podcast-index-api](https://www.npmjs.com/package/podcast-index-api)\n      - [podcastdx-client](https://www.npmjs.com/package/podcastdx-client)\n  - PHP\n      - [podcastindex-php](https://github.com/LowSociety/podcastindex-php)\n  - Python/pip\n      - [python-podcastindex](https://pypi.org/project/python-podcastindex/)\n  - R\n      - [podindexr](https://github.com/rpodcast/podindexr)\n  - Ruby\n      - [podcast-index](https://github.com/jasonyork/podcast-index)\n  - Swift\n      - [PodcastIndexKit](https://github.com/SparrowTek/PodcastIndexKit)\n\nAre we missing a library? Did you create one for a different language? Create a\n[Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to the new library!\n\n# Postman\n\nA collection file for use in the [Postman](https://www.postman.com/) application is available for this API.\n\n  1. Download the contents of the [Postman Docs](https://github.com/Podcastindex-org/docs-api/tree/master/Postman%20Docs) folder.\n  2. Import the `PodcastIndex.postman_collection.json` collection to Postman\n  3. Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman\n  4. Click \"Environments\" on the left sidebar\n  5. Select the checkbox next to the PodcastIndexOrgEnvironment entry\n  6. Set `AuthKey` and `SeceretKey` values under the \"Current Value\" column using your API information \n  7. Click \"Collections\" from the sidebar\n  8. Select PodcastIndex\n  9. Select and run the endpoint to test\n\n# Contributing\n\nThe source for this API documentation is available at\n[https://github.com/Podcastindex-org/docs-api](https://github.com/Podcastindex-org/docs-api).\nSubmit an Issue or create a Pull Request.\n\n# Authentication Details\n\nSending an API request is easy. We use an Amazon-style request authorization token to secure each request.\n\n\nRegister for a free API key at https://api.podcastindex.org/\n\n\nThese headers parameters are required for each request: `User-Agent`, `X-Auth-Date`, `X-Auth-Key`, `Authorization`\n\n\nSee [Authentication](#auth) for description of parameters.\n\n# Legal\n\nLegal\n\n  - [Privacy Policy](https://github.com/Podcastindex-org/legal/blob/main/PrivacyPolicy.md)\n  - [Terms of Service](https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md)\n  - [License](https://github.com/Podcastindex-org/docs-api/blob/master/LICENSE)\n"
   },
+  "servers": [
+    {
+      "url": "https://api.podcastindex.org/api/1.0"
+    }
+  ],
   "tags": [
     {
       "name": "Search",
@@ -53,39 +58,1688 @@
     },
     {
       "name": "Add",
-      "description": "Add new podcast feeds to the index.\n\n**NOTE**: To add to the index, the API Key must have write or publisher permissions.\n"
+      "description": "Add new podcast feeds to the index.\n\n\n**NOTE**: To add to the index, the API Key must have write or publisher permissions.\n"
     }
   ],
-  "servers": [
-    {
-      "url": "https://api.podcastindex.org/api/1.0"
+  "paths": {
+    "/search": {
+      "get": {
+        "tags": [
+          "Apple Replacement"
+        ],
+        "summary": "Search",
+        "description": "Replaces the Apple search API but returns data from the Podcast Index database.\n\n\nNote: No API key needed for this endpoint.\n\n\nExample:\n\n  - Apple: https://itunes.apple.com/search?media=podcast&entity=podcast&term=batman\n  - PodcastIndex: https://api.podcastindex.org/search?term=batman\n",
+        "operationId": "search",
+        "security": [],
+        "servers": [
+          {
+            "url": "https://api.podcastindex.org",
+            "description": "URL for Apple Replacement endpoints"
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/term_itunes"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/itunes_replacement"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/lookup": {
+      "get": {
+        "tags": [
+          "Apple Replacement"
+        ],
+        "summary": "Lookup",
+        "description": "Replaces the Apple podcast lookup API but returns data from the Podcast Index database.\n\n\nNote: No API key needed for this endpoint.\n\n\nExample:\n\n  - Apple: https://itunes.apple.com/lookup?media=podcast&entity=podcast&id=1636765656\n  - PodcastIndex: https://api.podcastindex.org/lookup?entity=podcast&id=1636765656\n",
+        "operationId": "lookup",
+        "security": [],
+        "servers": [
+          {
+            "url": "https://api.podcastindex.org",
+            "description": "URL for Apple Replacement endpoints"
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_feed_podcast_itunes"
+          },
+          {
+            "$ref": "#/components/parameters/entity"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/itunes_replacement"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/search/byterm": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "summary": "Search Podcasts",
+        "description": "This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the feed.\n\n\nExample: https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty\n",
+        "operationId": "search/byterm",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/q"
+          },
+          {
+            "$ref": "#/components/parameters/val"
+          },
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/aponly"
+          },
+          {
+            "$ref": "#/components/parameters/clean"
+          },
+          {
+            "$ref": "#/components/parameters/similar"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/search_byterm"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "PHP",
+            "source": "//Required values\n$apiKey = \"UXKCGDSYGUUEVQJSYDZH\";\n$apiSecret = \"yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|\";\n$apiHeaderTime = time();\n\n//Hash them to get the Authorization token\n$hash = sha1($apiKey.$apiSecret.$apiHeaderTime);\n\n//Set the required headers\n$headers = [\n  \"User-Agent: SuperPodcastPlayer/1.3\",\n  \"X-Auth-Key: $apiKey\",\n  \"X-Auth-Date: $apiHeaderTime\",\n  \"Authorization: $hash\"\n];\n\n//Make the request to an API endpoint\n$ch = curl_init();\ncurl_setopt($ch, CURLOPT_URL,\"https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat\");\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\ncurl_setopt($ch, CURLOPT_HTTPHEADER, $headers);\n\n//Collect and show the results\n$response = curl_exec ($ch);\ncurl_close ($ch);\necho print_r(json_decode($response), TRUE);\n"
+          },
+          {
+            "lang": "C#",
+            "source": "//Required values\nstring apiKey = \"UXKCGDSYGUUEVQJSYDZH\";\nstring apiSecret = \"yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|\";\nTimeSpan t = DateTime.UtcNow - new DateTime(1970, 1, 1);\nint apiHeaderTime = (int)t.TotalSeconds;\n\n//Hash them to get the Authorization token\nstring hash = \"\";\nusing (SHA1Managed sha1 = new SHA1Managed())\n{\n    var hashed = sha1.ComputeHash(Encoding.UTF8.GetBytes(apiKey + apiSecret + apiHeaderTime));\n    var sb = new StringBuilder(hashed.Length * 2);\n\n    foreach (byte b in hashed)\n    {\n        // can be \"x2\" if you want lowercase\n        sb.Append(b.ToString(\"x2\"));\n    }\n\n    hash = sb.ToString();\n}\n\n//Create the web request and add the required headers\nHttpWebRequest request = (HttpWebRequest)WebRequest.Create(\"https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat\");\nrequest.Headers.Add(\"User-Agent\", \"SuperPodcastPlayer/1.3\");\nrequest.Headers.Add(\"X-Auth-Date\", apiHeaderTime.ToString());\nrequest.Headers.Add(\"X-Auth-Key\", apiKey);\nrequest.Headers.Add(\"Authorization\", hash);\n\n//Send the request and collect/show the results\ntry\n{\n    WebResponse webResponse2 = request.GetResponse();\n    Stream stream2 = webResponse2.GetResponseStream();\n    StreamReader reader2 = new StreamReader(stream2);\n\n    Console.WriteLine(reader2.ReadToEnd());\n\n    webResponse2.Close();\n}\ncatch (Exception e)\n{\n    Console.WriteLine(\"Error.\");\n}\n"
+          },
+          {
+            "lang": "Swift",
+            "source": "import Foundation\nimport CommonCrypto\n\nextension String {\n  func sha1() -> String {\n  let data = Data(self.utf8)\n  var digest = [UInt8](repeating: 0, count:Int(CC_SHA1_DIGEST_LENGTH))\n      data.withUnsafeBytes {\n      _ = CC_SHA1($0.baseAddress, CC_LONG(data.count), &digest)\n  }\n  let hexBytes = digest.map { String(format: \"%02hhx\", $0) }\n      return hexBytes.joined()\n  }\n}\n\nlet apiKey = \"UXKCGDSYGUUEVQJSYDZH\"\nlet apiSecret = \"yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|\"\nlet apiHeaderTime = String(Int(Date().timeIntervalSince1970))\nlet hash = (apiKey + apiSecret + apiHeaderTime).sha1()\n\nvar semaphore = DispatchSemaphore (value: 0)\nvar request = URLRequest(url: URL(string: \"https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat\")!,timeoutInterval: Double.infinity)\nrequest.addValue(\"SuperPodcastPlayer/1.3\", forHTTPHeaderField: \"User-Agent\")\nrequest.addValue(apiKey, forHTTPHeaderField: \"X-Auth-Key\")\nrequest.addValue(apiHeaderTime, forHTTPHeaderField: \"X-Auth-Date\")\nrequest.addValue(hash, forHTTPHeaderField: \"Authorization\")\n\nrequest.httpMethod = \"GET\"\n\nlet task = URLSession.shared.dataTask(with: request) { data, response, error in\n    guard let data = data else {\n        print(String(describing: error))\n        return\n    }\n    print(String(data: data, encoding: .utf8)!)\n    semaphore.signal()\n}\n\ntask.resume()\nsemaphore.wait()\n"
+          }
+        ]
+      }
+    },
+    "/search/bytitle": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "summary": "Search Podcasts by Title",
+        "description": "This call returns all of the feeds where the `title` of the feed matches the search term (ignores case).\n\n\nExample \"everything everywhere daily\" will match the podcast\n[Everything Everywhere Daily](https://podcastindex.org/podcast/437685) by \"everything everywhere\" will not.\n\n\nExample: https://api.podcastindex.org/api/1.0/search/bytitle?q=everything+everywhere+daily&pretty\n",
+        "operationId": "search/bytitle",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/q"
+          },
+          {
+            "$ref": "#/components/parameters/val"
+          },
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/clean"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/similar"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/search_byterm"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/search/byperson": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "summary": "Search Episodes by Person",
+        "description": "This call returns all of the episodes where the specified person is mentioned.\n\n\nIt searches the following fields:\n\n  - Person tags\n  - Episode title\n  - Episode description\n  - Feed owner\n  - Feed author\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=adam%20curry&pretty\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=Martin+Mouritzen&pretty\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=Klaus+Schwab&pretty\n",
+        "operationId": "search/byperson",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/q_person"
+          },
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/search_byperson"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/search/music/byterm": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "summary": "Search Music Podcasts",
+        "description": "This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the <feed></feed>\nwhere the [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) is `music`.\n\n\nExample: https://api.podcastindex.org/api/1.0/search/music/byterm?q=able+kirby&pretty\n",
+        "operationId": "search/music/byterm",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/q"
+          },
+          {
+            "$ref": "#/components/parameters/val"
+          },
+          {
+            "$ref": "#/components/parameters/aponly"
+          },
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/clean"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/search_byterm"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/byfeedid": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "By Feed ID",
+        "description": "This call returns everything we know about the feed from the PodcastIndex ID\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n",
+        "operationId": "podcasts/byfeedid",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_feed_podcast_pi"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/podcasts_byfeedid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/byfeedurl": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "By Feed URL",
+        "description": "This call returns everything we know about the feed from the feed URL\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty\n",
+        "operationId": "podcasts/byfeedurl",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/url"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/podcasts_byfeedurl"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/byitunesid": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "By iTunes ID",
+        "description": "This call returns everything we know about the feed from the iTunes ID\n\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632&pretty\n",
+        "operationId": "podcasts/byitunesid",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_feed_podcast_itunes"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/podcasts_byitunesid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/byguid": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "By GUID",
+        "description": "This call returns everything we know about the feed from the feed's GUID.\n\n\nThe GUID is a unique, global identifier for the podcast. See the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byguid?guid=9b024349-ccf0-5f69-a609-6b82873eab3c&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byguid?guid=9b024349-ccf0-5f69-a609-6b82873eab3c&pretty\n",
+        "operationId": "podcasts/byguid",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/guid_feed_podcast"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/podcasts_byguid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/bytag": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "By Tag",
+        "description": "This call returns all feeds that support the specified\n[podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\n\nThe only supported tag is `podcast:value` using the `podcast-value` parameter.\n\n\nWhen called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.\n\n\nWhen called with a `start_at` value, the feeds are returned sorted by the `feedId` starting with the specified value\nup to the max number of feeds to return. The `nextStartAt` specifies the value to pass to the next `start_at`.\nRepeat this sequence until no items are returned.\n\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty\n",
+        "operationId": "podcasts/bytag",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/podcast-value"
+          },
+          {
+            "$ref": "#/components/parameters/max_5000"
+          },
+          {
+            "$ref": "#/components/parameters/start_at"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/podcasts_bytag"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/bymedium": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "By Medium",
+        "description": "This call returns all feeds marked with the specified\n[medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) tag value.\n\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/bymedium?medium=music&pretty\n",
+        "operationId": "podcasts/bymedium",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/medium"
+          },
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/bymedium"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/trending": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "Trending",
+        "description": "This call returns the podcasts/feeds that in the index that are trending.\n\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/trending?pretty\n",
+        "operationId": "podcasts/trending",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          },
+          {
+            "$ref": "#/components/parameters/cat"
+          },
+          {
+            "$ref": "#/components/parameters/notcat"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/podcasts_trending"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/podcasts/dead": {
+      "get": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "Dead",
+        "description": "This call returns all feeds that have been marked dead (`dead` == 1)\n\n\nDead feeds can also be accessed from object storage at https://public.podcastindex.org/podcastindex_dead_feeds.csv\n\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/dead?pretty\n",
+        "operationId": "podcasts/dead",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/podcasts_dead"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/episodes/byfeedid": {
+      "get": {
+        "tags": [
+          "Episodes"
+        ],
+        "summary": "By Feed ID",
+        "description": "This call returns all the episodes we know about for this feed from the PodcastIndex ID.\nEpisodes are in reverse chronological order.\n\n\nWhen using the `enclosure` parameter, only the episode matching the URL is returned.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&pretty\n  - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=169991&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=4058673&pretty\n  - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty\n",
+        "operationId": "episodes/byfeedid",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_feed_episode_pi"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/enclosure"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/episodes_byfeedid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/episodes/byfeedurl": {
+      "get": {
+        "tags": [
+          "Episodes"
+        ],
+        "summary": "By Feed URL",
+        "description": "This call returns all the episodes we know about for this feed from the feed URL.\nEpisodes are in reverse chronological order.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n  - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://closing-the-loop.github.io/feed.xml&pretty\n",
+        "operationId": "episodes/byfeedurl",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/url"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/episodes_byfeedurl"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/episodes/bypodcastguid": {
+      "get": {
+        "tags": [
+          "Episodes"
+        ],
+        "summary": "By Podcast GUID",
+        "description": "This call returns all the episodes we know about for this feed from the [Podcast GUID](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid).\nEpisodes are in reverse chronological order.\n\n\nExample: https://api.podcastindex.org/api/1.0/episodes/bypodcastguid?guid=856cd618-7f34-57ea-9b84-3600f1f65e7f&pretty\n",
+        "operationId": "episodes/bypodcastguid",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/guid_feed_podcast"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/episodes_byfeedurl"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/episodes/byitunesid": {
+      "get": {
+        "tags": [
+          "Episodes"
+        ],
+        "summary": "By iTunes ID",
+        "description": "This call returns all the episodes we know about for this feed from the iTunes ID.\nEpisodes are in reverse chronological order.\n\n\nWhen using the `enclosure` parameter, only the episode matching the URL is returned.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty\n  - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=269169796&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty\n",
+        "operationId": "episodes/byitunesid",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_feed_podcast_itunes"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/enclosure"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/episodes_byitunesid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/episodes/byid": {
+      "get": {
+        "tags": [
+          "Episodes"
+        ],
+        "summary": "By ID",
+        "description": "Get all the metadata for a single episode by passing its id.\n\n\nExample: https://api.podcastindex.org/api/1.0/episodes/byid?id=16795090&pretty\n",
+        "operationId": "episodes/byid",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_episode_pi"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/episodes_byid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/episodes/byguid": {
+      "get": {
+        "tags": [
+          "Episodes"
+        ],
+        "summary": "By GUID",
+        "description": "Get all the metadata for a single episode by passing its guid and the feed id or URL.\n\n\nThe `feedid` or the `feedurl` is required.\n\n\nExamples: \n\n  - Search using Podcast Index feed ID: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedid=920666&pretty\n  - Search using feed URL: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedurl=http://mp3s.nashownotes.com/pc20rss.xml&pretty\n",
+        "operationId": "episodes/byguid",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/guid_episode"
+          },
+          {
+            "$ref": "#/components/parameters/feedurl"
+          },
+          {
+            "$ref": "#/components/parameters/feedid"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/episodes_byguid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/episodes/live": {
+      "get": {
+        "tags": [
+          "Episodes"
+        ],
+        "summary": "Live",
+        "description": "Get all episodes that have been found in the [podcast:liveitem](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#live-item) from the feeds.\n\n\nExamples: \n\n  - https://api.podcastindex.org/api/1.0/episodes/live?pretty\n",
+        "operationId": "episodes/live",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/episodes_live"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/episodes/random": {
+      "get": {
+        "tags": [
+          "Episodes"
+        ],
+        "summary": "Random",
+        "description": "This call returns a random batch of episodes, in no specific order.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/random?notcat=News,Religion&lang=en,es&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/random?max=2&pretty\n",
+        "operationId": "episodes/random",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max_random"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          },
+          {
+            "$ref": "#/components/parameters/cat"
+          },
+          {
+            "$ref": "#/components/parameters/notcat"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/episodes_random"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/recent/episodes": {
+      "get": {
+        "tags": [
+          "Recent"
+        ],
+        "summary": "Episodes",
+        "description": "This call returns the most recent `max` number of episodes globally across the whole index,\nin reverse chronological order.\n\n\nExample: https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty\n",
+        "operationId": "recent/episodes",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max_recent_episodes"
+          },
+          {
+            "$ref": "#/components/parameters/excludeString"
+          },
+          {
+            "$ref": "#/components/parameters/before"
+          },
+          {
+            "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/recent_episodes"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/recent/feeds": {
+      "get": {
+        "tags": [
+          "Recent"
+        ],
+        "summary": "Feeds",
+        "description": "This call returns the most recent `max` feeds, in reverse chronological order.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/feeds?pretty\n  - https://api.podcastindex.org/api/1.0/recent/feeds?max=20&cat=102,health&lang=de,ja&pretty\n",
+        "operationId": "recent/feeds",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max_recent_feeds"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          },
+          {
+            "$ref": "#/components/parameters/cat"
+          },
+          {
+            "$ref": "#/components/parameters/notcat"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/recent_feeds"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/recent/newfeeds": {
+      "get": {
+        "tags": [
+          "Recent"
+        ],
+        "summary": "New Feeds",
+        "description": "This call returns every new feed added to the index over the past 24 hours in reverse chronological order.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty&since=1613805000\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?feedid=2653471&pretty\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?feedid=2653471&desc&pretty\n",
+        "operationId": "recent/newfeeds",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max_recent_feeds"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/feedid_newfeeds"
+          },
+          {
+            "$ref": "#/components/parameters/desc"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/recent_newfeeds"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/recent/newvaluefeeds": {
+      "get": {
+        "tags": [
+          "Recent"
+        ],
+        "summary": "New Value Feeds",
+        "description": "This call returns feeds that have added a `value` tag in reverse chronological order.\n\n\nExample: https://api.podcastindex.org/api/1.0/recent/newvaluefeeds?pretty\n",
+        "operationId": "recent/newvaluefeeds",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max_recent_feeds"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/recent_newvaluefeeds"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/recent/data": {
+      "get": {
+        "tags": [
+          "Recent"
+        ],
+        "summary": "Recent Data",
+        "description": "This call returns every new feed and episode added to the index over the past 24 hours in reverse chronological order.\n\n\nThis is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's\ninternal timestamp.\n\n\nSimilar data can also be accessed using object storage root url https://tracking.podcastindex.org/current\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10&since=1671164867\n",
+        "operationId": "recent/data",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max_recent_data"
+          },
+          {
+            "$ref": "#/components/parameters/since"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/recent_data"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/recent/soundbites": {
+      "get": {
+        "tags": [
+          "Recent"
+        ],
+        "summary": "Soundbites",
+        "description": "This call returns the most recent `max` soundbites that the index has discovered.\n\n\nA soundbite consists of an enclosure url, a start time and a duration.\nIt is documented in the [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#soundbite).\n\n\nExample: https://api.podcastindex.org/api/1.0/recent/soundbites?pretty\n",
+        "operationId": "recent/soundbites",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/max_recent_soundbites"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/recent_soundbites"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/value/byfeedid": {
+      "get": {
+        "tags": [
+          "Value"
+        ],
+        "summary": "By Feed ID",
+        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from the\nPodcastIndex ID.\n\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\n\nNote: No API key needed for this endpoint.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty\n",
+        "operationId": "value/byfeedid",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_feed_episode_pi_single"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/value_byfeedid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/value/byfeedurl": {
+      "get": {
+        "tags": [
+          "Value"
+        ],
+        "summary": "By Feed URL",
+        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from feed URL.\n\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\n\nNote: No API key needed for this endpoint.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty\n",
+        "operationId": "value/byfeedurl",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/url"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/value_byfeedurl"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/value/bypodcastguid": {
+      "get": {
+        "tags": [
+          "Value"
+        ],
+        "summary": "By Feed GUID",
+        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from podcast GUID.\n\n\nNote: No API key needed for this endpoint.\n\n\nExample: https://api.podcastindex.org/api/1.0/value/bypodcastguid?guid=917393e3-1b1e-5cef-ace4-edaa54e1f810&pretty\n",
+        "operationId": "value/bypodcastguid",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/guid_feed_podcast"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/value_bypodcastguid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/value/byepisodeguid": {
+      "get": {
+        "tags": [
+          "Value"
+        ],
+        "summary": "By Episode GUID",
+        "description": "This call returns the information for supporting the podcast episode via one of the \"Value for Value\" methods from\npodcast GUID and the episode GUID.\n\n\nThe `podcastguid` is the GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier\nfor the podcast. See the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\n\nThe `episodeguid` is the unique guid specified for the `<item>` in the feed but may not be globally unique.\n\n\nNote: No API key needed for this endpoint.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=917393e3-1b1e-5cef-ace4-edaa54e1f810&episodeguid=PC20143&pretty\n  - https://api.podcastindex.org/api/1.0/value/byepisodeguid?podcastguid=c73b1a23-1c28-5edb-94c3-10d1745d0877&episodeguid=bdea6759-a7b6-4c0d-9d1e-acca3133f4a9&pretty\n",
+        "operationId": "value/byepisodeguid",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/podcastguid"
+          },
+          {
+            "$ref": "#/components/parameters/episodeguid"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/value_byepisodeguid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/value/batch/byepisodeguid": {
+      "post": {
+        "tags": [
+          "Value"
+        ],
+        "summary": "Batch By Episode GUID",
+        "description": "This call returns the information for supporting the podcast episode via one of the \"Value for Value\" methods from\na JSON object containing one or more podcast GUID and one or more episode GUID for the podcast.\n\n\nThe JSON object key shall be the `podcastguid` from the `podcast:guid` tag in the feed.\nThis value is a unique, global identifier for the podcast. See the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\n\nThe value of the `podcastguid` shall be an array of `episodeguid` values.\nThis is the unique guid specified for the `<item>` in the feed but may not be globally unique.\n\n\nNote: No API key needed for this endpoint.\n",
+        "operationId": "value/batch/byepisodeguid",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "requestBody": {
+          "description": "Get episode value data",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/value_batch_byepisodeguid"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/value_batch_byepisodeguid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/stats/current": {
+      "get": {
+        "tags": [
+          "Stats"
+        ],
+        "summary": "Current",
+        "description": "Return the most recent index statistics.\n\n\nHourly statistics can also be access at https://stats.podcastindex.org/daily_counts.json\n\n\nExample: https://api.podcastindex.org/api/1.0/stats/current?pretty\n",
+        "operationId": "stats/current",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/stats_current"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/categories/list": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "List",
+        "description": "Return all the possible categories supported by the index.\n\n\nExample: https://api.podcastindex.org/api/1.0/categories/list?pretty\n",
+        "operationId": "categories/list",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/categories_list"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/hub/pubnotify": {
+      "get": {
+        "tags": [
+          "Hub"
+        ],
+        "summary": "Pub Notify",
+        "description": "Notify the index that a feed has changed\n\n\nNote: No API key needed for this endpoint.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n",
+        "operationId": "hub/pubnotify",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_feed_podcast_pi_pubnotify"
+          },
+          {
+            "$ref": "#/components/parameters/url_pubnotify"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/hub_pubnotify"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/add/byfeedurl": {
+      "get": {
+        "tags": [
+          "Add"
+        ],
+        "summary": "By Feed URL",
+        "description": "This call adds a podcast to the index using its feed url. If a feed already exists, you will get its existing Feed ID returned.\n\n\n**NOTE**: this endpoint requires an API Key with the **write** permission.\n\n\nExample: https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n",
+        "operationId": "add/byfeedurl:get",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/url"
+          },
+          {
+            "$ref": "#/components/parameters/chash"
+          },
+          {
+            "$ref": "#/components/parameters/itunesid"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/add_byfeedurl"
+          },
+          "302": {
+            "$ref": "#/components/responses/add_byfeedurl"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Add"
+        ],
+        "summary": "By Feed URL",
+        "description": "This call adds a podcast to the index using its feed url. If a feed already exists, you will get its existing Feed ID returned.\n\n\n**NOTE**: this endpoint requires an API Key with the **write** permission.\n\n\nExample: https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n",
+        "operationId": "add/byfeedurl:post",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/url"
+          },
+          {
+            "$ref": "#/components/parameters/itunesid"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/add_byfeedurl"
+          },
+          "302": {
+            "$ref": "#/components/responses/add_byfeedurl"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/add/byitunesid": {
+      "get": {
+        "tags": [
+          "Add"
+        ],
+        "summary": "By iTunes ID",
+        "description": "This call adds a podcast to the index using its iTunes ID. If a feed already exists, it will be noted in the response.\n\n\n**NOTE**: this endpoint requires an API Key with the **write** permission.\n\n\nExample: https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty\n",
+        "operationId": "add/byitunesid:get",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_itunes_add"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/add_byitunesid"
+          },
+          "302": {
+            "$ref": "#/components/responses/add_byitunesid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Add"
+        ],
+        "summary": "By iTunes ID",
+        "description": "This call adds a podcast to the index using its iTunes ID. If a feed already exists, it will be noted in the response.\n\n\n**NOTE**: this endpoint requires an API Key with the **write** permission.\n\n\nExample: https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty\n",
+        "operationId": "add/byitunesid:post",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id_itunes_add"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/add_byitunesid"
+          },
+          "302": {
+            "$ref": "#/components/responses/add_byitunesid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
     }
-  ],
+  },
   "components": {
     "securitySchemes": {
-      "User Agent": {
+      "User-Agent": {
         "type": "apiKey",
         "in": "header",
         "name": "User-Agent",
-        "description": "Please identify the system/product you are using to make this request.\n\n*Example*: `SuperPodcastPlayer/1.3`\n"
+        "description": "Please identify the system/product you are using to make this request.\n\n\n*Example*: `SuperPodcastPlayer/1.3`\n"
       },
-      "API Key": {
+      "API-Key": {
         "type": "apiKey",
         "in": "header",
         "name": "X-Auth-Key",
-        "description": "Your API key string\n\n*Example*: `UXKCGDSYGUUEVQJSYDZH`\n"
+        "description": "Your API key string\n\n\n*Example*: `UXKCGDSYGUUEVQJSYDZH`\n"
       },
       "Date": {
         "type": "apiKey",
         "in": "header",
         "name": "X-Auth-Date",
-        "description": "The current UTC unix epoch time as a string. 3 minute window.\n\nThis value is an integer; round down if needed. The value shall not include a decimal point.\n\nValue generated should match the value shown on the website https://www.epochconverter.com/.\n\n*Example*: `1613713388`\n"
+        "description": "The current UTC unix epoch time as a string. 3 minute window.\n\n\nThis value is an integer; round down if needed. The value shall not include a decimal point.\n\n\nValue generated should match the value shown on the website https://www.epochconverter.com/.\n\n\n*Example*: `1613713388`\n"
       },
       "Authorization": {
         "type": "apiKey",
         "in": "header",
         "name": "Authorization",
-        "description": "A SHA-1 hash of the `X-Auth-Key`, the corresponding secret and the `X-Auth-Date` value concatenated as a string. The resulting hash should be encoded as a hexadecimal value, two digits per byte, using lower case letters for the hex digits \"a\" through \"f\".\n\nThe Authorization header is computed with something like this (pseudo-code):\n\n    authHeader = sha1(apiKey+apiSecret+unixTime)\n\nExample value, uses example values of `X-Auth-Key` and `X-Auth-Date` and an api secret of `yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|`\n\n*Example*: `UXKCGDSYGUUEVQJSYDZH`\n"
+        "description": "A SHA-1 hash of the `X-Auth-Key`, the corresponding secret and the `X-Auth-Date` value concatenated as a string.\nThe resulting hash should be encoded as a hexadecimal value, two digits per byte, using lower case letters for\nthe hex digits \"a\" through \"f\".\n\n\nThe Authorization header is computed with something like this (pseudo-code):\n\n    authHeader = sha1(apiKey+apiSecret+unixTime)\n\nExample value, uses example values of `X-Auth-Key` and `X-Auth-Date` and an api secret of\n`yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|`\n\n\n*Example*: `UXKCGDSYGUUEVQJSYDZH`\n"
       }
     },
     "parameters": {
@@ -102,7 +1756,7 @@
       "pretty": {
         "name": "pretty",
         "in": "query",
-        "description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+        "description": "If present, makes the output “pretty” to help with debugging.\n\n\nParameter shall not have a value\n",
         "schema": {
           "type": "boolean"
         },
@@ -188,7 +1842,7 @@
       "clean": {
         "name": "clean",
         "in": "query",
-        "description": "If present, only non-explicit feeds will be returned. Meaning, feeds where the `itunes:explicit` flag is set to `false`.\n\nParameter shall not have a value\n",
+        "description": "If present, only non-explicit feeds will be returned.\nMeaning, feeds where the `itunes:explicit` flag is set to `false`.\n\n\nParameter shall not have a value\n",
         "schema": {
           "type": "boolean"
         },
@@ -206,7 +1860,7 @@
       "fulltext": {
         "name": "fulltext",
         "in": "query",
-        "description": "If present, return the full text value of any text fields (ex: `description`). If not provided, field value is truncated to 100 words.\n\nParameter shall not have a value\n",
+        "description": "If present, return the full text value of any text fields (ex: `description`).\nIf not provided, field value is truncated to 100 words.\n\n\nParameter shall not have a value\n",
         "schema": {
           "type": "boolean"
         },
@@ -246,7 +1900,7 @@
       "guid_feed_podcast": {
         "name": "guid",
         "in": "query",
-        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\n\nSee the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
         "required": true,
         "schema": {
           "type": "string"
@@ -256,7 +1910,7 @@
       "podcast-value": {
         "name": "podcast-value",
         "in": "query",
-        "description": "Get feeds supporting the `value` tag.\n\nParameter shall not have a value\n",
+        "description": "Get feeds supporting the `value` tag.\n\n\nParameter shall not have a value\n",
         "schema": {
           "type": "boolean"
         },
@@ -287,7 +1941,7 @@
       "medium": {
         "name": "medium",
         "in": "query",
-        "description": "The medium value to search for.\n\nFull list of possible values documented in [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) tag spec.\n",
+        "description": "The medium value to search for.\n\n\nFull list of possible values documented in\n[medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) tag spec.\n",
         "schema": {
           "type": "string",
           "enum": [
@@ -314,7 +1968,7 @@
       "lang": {
         "name": "lang",
         "in": "query",
-        "description": "Specifying a language code (like \"en\") will return only episodes having that specific language.\n\nYou can specify multiple languages by separating them with commas.\n\nIf you also want to return episodes that have no language given, use the token \"unknown\". (ex. en,es,ja,unknown).\n\nValues are not case sensitive.\n",
+        "description": "Specifying a language code (like \"en\") will return only episodes having that specific language.\n\n\nYou can specify multiple languages by separating them with commas.\n\n\nIf you also want to return episodes that have no language given, use the token \"unknown\". (ex. en,es,ja,unknown).\n\n\nValues are not case sensitive.\n",
         "schema": {
           "type": "string"
         },
@@ -332,7 +1986,7 @@
       "cat": {
         "name": "cat",
         "in": "query",
-        "description": "Use this argument to specify that you **ONLY** want episodes with these categories in the results.\n\nSeparate multiple categories with commas.\n\nYou may specify either the Category ID and/or the Category Name.\n\nValues are not case sensitive.\n\nThe `cat` and `notcat` filters can be used together to fine tune a very specific result set.\n\nCategory numbers and names can be found in the [Podcast Namespace documentation](https://github.com/Podcastindex-org/podcast-namespace/blob/main/categories.json)\n",
+        "description": "Use this argument to specify that you **ONLY** want episodes with these categories in the results.\n\n\nSeparate multiple categories with commas.\n\n\nYou may specify either the Category ID and/or the Category Name.\n\n\nValues are not case sensitive.\n\n\nThe `cat` and `notcat` filters can be used together to fine tune a very specific result set.\n\n\nCategory numbers and names can be found in the\n[Podcast Namespace documentation](https://github.com/Podcastindex-org/podcast-namespace/blob/main/categories.json)\n",
         "schema": {
           "type": "string"
         },
@@ -362,7 +2016,7 @@
       "notcat": {
         "name": "notcat",
         "in": "query",
-        "description": "Use this argument to specify categories of episodes to **NOT** show in the results.\n\nSeparate multiple categories with commas.\n\nYou may specify either the Category ID and/or the Category Name.\n\nValues are not case sensitive.\n\nThe `cat` and `notcat` filters can be used together to fine tune a very specific result set.\n\nCategory numbers and names can be found in the [Podcast Namespace documentation](https://github.com/Podcastindex-org/podcast-namespace/blob/main/categories.json)\n",
+        "description": "Use this argument to specify categories of episodes to **NOT** show in the results.\n\n\nSeparate multiple categories with commas.\n\n\nYou may specify either the Category ID and/or the Category Name.\n\n\nValues are not case sensitive.\n\n\nThe `cat` and `notcat` filters can be used together to fine tune a very specific result set.\n\n\nCategory numbers and names can be found in the\n[Podcast Namespace documentation](https://github.com/Podcastindex-org/podcast-namespace/blob/main/categories.json)\n",
         "schema": {
           "type": "string"
         },
@@ -392,7 +2046,7 @@
       "id_feed_episode_pi": {
         "name": "id",
         "in": "query",
-        "description": "The PodcastIndex Feed ID or IDs to search for.\n\nIf searching for multiple IDs, separate values with a comma. A maximum of 200 IDs can be provided.\n",
+        "description": "The PodcastIndex Feed ID or IDs to search for.\n\n\nIf searching for multiple IDs, separate values with a comma. A maximum of 200 IDs can be provided.\n",
         "required": true,
         "schema": {
           "type": "string"
@@ -485,7 +2139,7 @@
       "excludeString": {
         "name": "excludeString",
         "in": "query",
-        "description": "Any item containing this string will be discarded from the result set.\n\nThis may, in certain cases, reduce your set size below your `max` value.\n\nMatches against the `title` and URL properties.\n",
+        "description": "Any item containing this string will be discarded from the result set.\n\n\nThis may, in certain cases, reduce your set size below your `max` value.\n\n\nMatches against the `title` and URL properties.\n",
         "schema": {
           "type": "string"
         },
@@ -494,7 +2148,7 @@
       "before": {
         "name": "before",
         "in": "query",
-        "description": "If you pass a PodcastIndex Episode ID, you will get recent episodes before that ID, allowing you to walk back through the episode history sequentially.\n",
+        "description": "If you pass a PodcastIndex Episode ID, you will get recent episodes before that ID, allowing you to walk back\nthrough the episode history sequentially.\n",
         "schema": {
           "type": "integer"
         },
@@ -515,7 +2169,7 @@
       "feedid_newfeeds": {
         "name": "feedid",
         "in": "query",
-        "description": "The PodcastIndex Feed ID to start from (or go to if `desc` specified).\n\nIf `since` parameter also specified, value of `since` is ignored.\n",
+        "description": "The PodcastIndex Feed ID to start from (or go to if `desc` specified).\n\n\nIf `since` parameter also specified, value of `since` is ignored.\n",
         "required": false,
         "schema": {
           "type": "string"
@@ -525,7 +2179,7 @@
       "desc": {
         "name": "desc",
         "in": "query",
-        "description": "If present, display feeds in descending order.\n\nOnly applicable when using `feedid` parameter.\n\nParameter shall not have a value\n",
+        "description": "If present, display feeds in descending order.\n\n\nOnly applicable when using `feedid` parameter.\n\n\nParameter shall not have a value\n",
         "schema": {
           "type": "boolean"
         },
@@ -564,10 +2218,30 @@
         },
         "example": 75075
       },
+      "podcastguid": {
+        "name": "podcastguid",
+        "in": "query",
+        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\n\nSee the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "917393e3-1b1e-5cef-ace4-edaa54e1f810"
+      },
+      "episodeguid": {
+        "name": "episodeguid",
+        "in": "query",
+        "description": "The guid specified by the `<guid>` in the episode `<item>`.\n",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "PC20143"
+      },
       "id_feed_podcast_pi_pubnotify": {
         "name": "id",
         "in": "query",
-        "description": "The PodcastIndex Feed ID\n\nThe `id` or the `url` is required.\n",
+        "description": "The PodcastIndex Feed ID\n\n\nThe `id` or the `url` is required.\n",
         "required": false,
         "schema": {
           "type": "integer"
@@ -577,7 +2251,7 @@
       "url_pubnotify": {
         "name": "url",
         "in": "query",
-        "description": "Podcast feed URL\n\nThe `id` or the `url` is required.\n",
+        "description": "Podcast feed URL\n\n\nThe `id` or the `url` is required.\n",
         "required": false,
         "allowReserved": true,
         "schema": {
@@ -588,7 +2262,7 @@
       "chash": {
         "name": "chash",
         "in": "query",
-        "description": "The md5 hash of the following feed items in hex format. If known, allows for easier duplicate checking.\n\n  - `title`\n  - `link`\n  - `feedLanguage`\n  - `generator`\n  - `author`\n  - `ownerName`\n  - `ownerEmail` (note: not exposed via the API)\n\nPseudo-code:\n\n      chash = md5(title+link+feedLanguage+generator+author+ownerName+ownerEmail)\n",
+        "description": "The md5 hash of the following feed items in hex format.\nIf known, allows for easier duplicate checking.\n\n  - `title`\n  - `link`\n  - `feedLanguage`\n  - `generator`\n  - `author`\n  - `ownerName`\n  - `ownerEmail` (note: not exposed via the API)\n\nPseudo-code:\n\n      chash = md5(title+link+feedLanguage+generator+author+ownerName+ownerEmail)\n",
         "required": true,
         "allowReserved": true,
         "schema": {
@@ -599,7 +2273,7 @@
       "itunesid": {
         "name": "itunesid",
         "in": "query",
-        "description": "If this parameter is given, and the existing feed has no associated iTunes ID, it will be associated with this ID. If an existing iTunes ID is already associated with this feed it will **NOT** be changed.\n",
+        "description": "If this parameter is given, and the existing feed has no associated iTunes ID, it will be associated with this ID.\nIf an existing iTunes ID is already associated with this feed it will **NOT** be changed.\n",
         "schema": {
           "type": "integer"
         },
@@ -622,17 +2296,17 @@
         "example": 1
       },
       "author": {
-        "description": "The channel-level author element.\n\nUsually iTunes specific, but could be from another namespace if not present.\n",
+        "description": "The channel-level author element.\n\n\nUsually iTunes specific, but could be from another namespace if not present.\n",
         "type": "string",
         "example": "Tony Sindelar"
       },
       "artworkUrl": {
-        "description": "A URL for the artwork associated with the returned media type.\n\nNote: Apple returns the image sized to value in the field name but the PodcastIndex returns the original image specified in the feed.\n",
+        "description": "A URL for the artwork associated with the returned media type.\n\n\nNote: Apple returns the image sized to value in the field name but the PodcastIndex returns the original image\nspecified in the feed.\n",
         "type": "string",
         "example": "https://www.theincomparable.com/imgs/logos/logo-batmanuniversity-3x.jpg"
       },
       "title_feed_censored": {
-        "description": "The name of the feed.\n\nNote: Apple censors the name but PodcastIndex does not.\n",
+        "description": "The name of the feed.\n\n\nNote: Apple censors the name but PodcastIndex does not.\n",
         "type": "string",
         "example": "Batman University"
       },
@@ -717,12 +2391,12 @@
             "example": "Clean"
           },
           "country": {
-            "description": "The country the feed is from.\n\nNote: Right now, always returns \"USA\"\n",
+            "description": "The country the feed is from.\n\n\nNote: Right now, always returns \"USA\"\n",
             "type": "string",
             "example": "USA"
           },
           "currency": {
-            "description": "Currency `*Price` value is in.\n\nNote: will always return \"USD\"\n",
+            "description": "Currency `*Price` value is in.\n\n\nNote: will always return \"USD\"\n",
             "type": "string",
             "example": "USD"
           },
@@ -730,7 +2404,7 @@
             "$ref": "#/components/schemas/url_feed"
           },
           "genreIds": {
-            "description": "List of ids representing the names in the `genres`.\n\nValues are determined by the IDs used in the url of genres on https://podcasts.apple.com/us/genre/podcasts/id26\n",
+            "description": "List of ids representing the names in the `genres`.\n\n\nValues are determined by the IDs used in the url of genres on https://podcasts.apple.com/us/genre/podcasts/id26\n",
             "type": "array",
             "items": {
               "type": "integer"
@@ -752,7 +2426,7 @@
             ]
           },
           "kind": {
-            "description": "The kind of content returned by the search request.\n\nNote: will always return \"podcast\"\n",
+            "description": "The kind of content returned by the search request.\n\n\nNote: will always return \"podcast\"\n",
             "type": "string",
             "example": "podcast"
           },
@@ -805,7 +2479,7 @@
             "$ref": "#/components/schemas/view_url"
           },
           "wrapperType": {
-            "description": "The name of the object returned by the search request.\n\nNote: will always return \"track\"\n",
+            "description": "The name of the object returned by the search request.\n\n\nNote: will always return \"track\"\n",
             "type": "string",
             "example": "track"
           }
@@ -837,8 +2511,8 @@
         "type": "integer",
         "example": 75075
       },
-      "podcastGuid": {
-        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\nSee the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+      "podcastguid": {
+        "description": "The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\n\n\nSee the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
         "type": "string",
         "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
       },
@@ -855,12 +2529,12 @@
         "example": "https://www.theincomparable.com/batmanuniversity/"
       },
       "description_feed": {
-        "description": "The channel-level description\n\nUses the longer of the possible fields in the feed: `<description>`, `<itunes:summary>` and `<content:encoded>`\n",
+        "description": "The channel-level description\n\n\nUses the longer of the possible fields in the feed: `<description>`, `<itunes:summary>` and `<content:encoded>`\n",
         "type": "string",
         "example": "Batman University is a seasonal podcast about you know who. It began with an analysis of episodes of “Batman: The Animated Series” but has now expanded to cover other series, movies, and media. Your professor is Tony Sindelar."
       },
       "ownerName": {
-        "description": "The channel-level owner:name element.\n\nUsually iTunes specific, but could be from another namespace if not present.\n",
+        "description": "The channel-level owner:name element.\n\n\nUsually iTunes specific, but could be from another namespace if not present.\n",
         "type": "string",
         "example": "The Incomparable"
       },
@@ -871,13 +2545,13 @@
         "example": "https://www.theincomparable.com/imgs/logos/logo-batmanuniversity-3x.jpg?cache-buster=2019-06-11"
       },
       "artwork": {
-        "description": "The seemingly best artwork we can find for the feed.\nMight be the same as `image` in most instances.\n",
+        "description": "The seemingly best artwork we can find for the feed.\n\nMight be the same as `image` in most instances.\n",
         "type": "string",
         "format": "URL",
         "example": "https://www.theincomparable.com/imgs/logos/logo-batmanuniversity-3x.jpg?cache-buster=2019-06-11"
       },
       "lastUpdateTime": {
-        "description": "The channel-level pubDate for the feed, if it’s sane.\nIf not, this is a heuristic value, arrived at by analyzing other parts of the feed, like item-level pubDates.\n",
+        "description": "The channel-level pubDate for the feed, if it’s sane.\n\nIf not, this is a heuristic value, arrived at by analyzing other parts of the feed, like item-level pubDates.\n",
         "type": "integer",
         "format": "Unix Epoch",
         "example": 1613394044
@@ -901,7 +2575,7 @@
         "example": 1613394034
       },
       "lastHttpStatus": {
-        "description": "The last http status code we got when pulling this feed from its url.\n\nYou will see some made up status codes sometimes. These are what we use to track state within the feed puller. These all start with 9xx.\n",
+        "description": "The last http status code we got when pulling this feed from its url.\n\n\nYou will see some made up status codes sometimes. These are what we use to track state within the feed puller.\nThese all start with 9xx.\n",
         "type": "integer",
         "example": 200
       },
@@ -922,7 +2596,7 @@
         "example": "my podcast host"
       },
       "language": {
-        "description": "The channel-level language specification of the feed.\nLanguages accord with the [RSS Language Spec](https://www.rssboard.org/rss-language-codes).\n",
+        "description": "The channel-level language specification of the feed.\n\nLanguages accord with the [RSS Language Spec](https://www.rssboard.org/rss-language-codes).\n",
         "type": "string",
         "example": "en-us"
       },
@@ -941,12 +2615,12 @@
         "example": 0
       },
       "medium_feed": {
-        "description": "The value of the `podcast:medium` attribute for the feed.\n\nSee the [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) description in the Podcast Namespace for more information.\n",
+        "description": "The value of the `podcast:medium` attribute for the feed.\n\n\nSee the [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) description in the Podcast Namespace for more information.\n",
         "type": "string",
         "example": "music"
       },
       "dead": {
-        "description": "At some point, we give up trying to process a feed and mark it as dead. This is usually after 1000 errors without a successful pull/parse cycle. Once the feed is marked dead, we only check it once per month.\n",
+        "description": "At some point, we give up trying to process a feed and mark it as dead.\nThis is usually after 1000 errors without a successful pull/parse cycle.\nOnce the feed is marked dead, we only check it once per month.\n",
         "type": "integer",
         "example": 0
       },
@@ -956,17 +2630,17 @@
         "example": 19
       },
       "crawlErrors": {
-        "description": "The number of errors we’ve encountered trying to pull a copy of the feed. Errors are things like a 500 or 404 response, a server timeout, bad encoding, etc.\n",
+        "description": "The number of errors we’ve encountered trying to pull a copy of the feed.\nErrors are things like a 500 or 404 response, a server timeout, bad encoding, etc.\n",
         "type": "integer",
         "example": 0
       },
       "parseErrors": {
-        "description": "The number of errors we’ve encountered trying to parse the feed content. Errors here are things like not well-formed xml, bad character encoding, etc.\n\nWe fix many of these types of issues on the fly when parsing. We only increment the errors count when we can’t fix it.\n",
+        "description": "The number of errors we’ve encountered trying to parse the feed content.\nErrors here are things like not well-formed xml, bad character encoding, etc.\n\n\nWe fix many of these types of issues on the fly when parsing.\nWe only increment the errors count when we can’t fix it.\n",
         "type": "integer",
         "example": 0
       },
       "categories": {
-        "description": "An array of categories, where the index is the Category ID and the value is the Category Name.\n\nAll Category numbers and names are returned by the `categories/list` endpoint.\n",
+        "description": "An array of categories, where the index is the Category ID and the value is the Category Name.\n\n\nAll Category numbers and names are returned by the `categories/list` endpoint.\n",
         "type": "object",
         "example": {
           "104": "Tv",
@@ -975,7 +2649,7 @@
         }
       },
       "locked": {
-        "description": "Tell other podcast platforms whether they are allowed to import this feed. A value of 1 means that any attempt to import this feed into a new platform should be rejected.\nContains the value of the feed's channel-level `podcast:locked` tag where:\n\n  - 0: 'no'\n  - 1: 'yes'\n",
+        "description": "Tell other podcast platforms whether they are allowed to import this feed.\nA value of 1 means that any attempt to import this feed into a new platform should be rejected.\n\nContains the value of the feed's channel-level `podcast:locked` tag where:\n\n  - 0: 'no'\n  - 1: 'yes'\n",
         "type": "integer",
         "enum": [
           0,
@@ -989,7 +2663,7 @@
         "example": 1639321931
       },
       "newestItemPublishTime": {
-        "description": "The time the most recent episode in the feed was published.\n\nNote: some endpoints use `newestItemPubdate` while others use `newestItemPublishTime`.  They return the same information. See https://github.com/Podcastindex-org/api/issues/3 to track when the property name is updated.\n",
+        "description": "The time the most recent episode in the feed was published.\n\n\nNote: some endpoints use `newestItemPubdate` while others use `newestItemPublishTime`. \nThey return the same information. See https://github.com/Podcastindex-org/api/issues/3 to track when the property name is updated.\n",
         "type": "integer",
         "format": "Unix Epoch",
         "example": 1546399813
@@ -1001,7 +2675,7 @@
             "$ref": "#/components/schemas/id_feed"
           },
           "podcastGuid": {
-            "$ref": "#/components/schemas/podcastGuid"
+            "$ref": "#/components/schemas/podcastguid"
           },
           "title": {
             "$ref": "#/components/schemas/title_feed"
@@ -1115,7 +2789,7 @@
         "example": 16795088
       },
       "description_episode": {
-        "description": "The item-level description of the episode.\n\nUses the longer of the possible fields in the feed: `<description>`, `<itunes:summary>` and `<content:encoded>`\n",
+        "description": "The item-level description of the episode.\n\n\nUses the longer of the possible fields in the feed: `<description>`, `<itunes:summary>` and `<content:encoded>`\n",
         "type": "string",
         "example": "Batman University is back in session! James Thomson and Nathan Alderman join Tony for a discussion of Fox’s “Gotham.” Tune in to hear our thoughts on how a half-baked comic book show was reborn into an unmissable train wreck."
       },
@@ -1206,14 +2880,14 @@
         "example": "https://studio.hypercatcher.com/chapters/podcast/http:feed.nashownotes.comrss.xml/episode/http:1322.noagendanotes.com"
       },
       "transcriptUrl": {
-        "description": "Link to the file containing the episode transcript\n\nNote: in most use cases, the `transcripts` value should be used instead\n",
+        "description": "Link to the file containing the episode transcript\n\n\nNote: in most use cases, the `transcripts` value should be used instead\n",
         "type": "string",
         "nullable": true,
         "format": "URL",
         "example": "https://mp3s.nashownotes.com/NA-1322-Captions.srt"
       },
       "transcript": {
-        "description": "This tag is used to link to a transcript or closed captions file. Multiple tags can be present for multiple transcript formats.\nDetailed file format information and example files are [here](https://github.com/Podcastindex-org/podcast-namespace/blob/main/transcripts/transcripts.md).\n",
+        "description": "This tag is used to link to a transcript or closed captions file. Multiple tags can be present for multiple transcript formats.\n\nDetailed file format information and example files are [here](https://github.com/Podcastindex-org/podcast-namespace/blob/main/transcripts/transcripts.md).\n",
         "type": "object",
         "properties": {
           "url": {
@@ -1377,6 +3051,7 @@
       "suggested_v4v": {
         "description": "Suggested amount per second of playback to send. Unit is specific to the `type`.\n",
         "type": "string",
+        "nullable": true,
         "example": "0.00000020000"
       },
       "model_v4v": {
@@ -1424,13 +3099,13 @@
         "example": true
       },
       "customKey": {
-        "description": "The name of a custom record key to send along with the payment. May not be reported.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value) and [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for more information.\n",
+        "description": "The name of a custom record key to send along with the payment. May not be reported.\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)\nand [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md)\nfor more information.\n",
         "type": "string",
         "nullable": true,
         "example": "112111100"
       },
       "customValue": {
-        "description": "A custom value to pass along with the payment. This is considered the value that belongs to the customKey. May not be reported.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value) and [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for more information.\n",
+        "description": "A custom value to pass along with the payment. This is considered the value that belongs to the customKey. May not be reported.\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)\nand [value specification](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md)\nfor more information.\n",
         "type": "string",
         "nullable": true,
         "example": "wal_ZmqFg13NB31oek"
@@ -1470,7 +3145,7 @@
         }
       },
       "value": {
-        "description": "Information for supporting the podcast via one of the \"Value for Value\" methods. May not be reported.\n\nExamples:\n  - `lightning` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n  - `webmonetization` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=779873&pretty\n",
+        "description": "Information for supporting the podcast via one of the \"Value for Value\" methods. May not be reported.\n\n\nExamples:\n  - `lightning` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n  - `webmonetization` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=779873&pretty\n",
         "type": "object",
         "nullable": true,
         "properties": {
@@ -1483,19 +3158,19 @@
         }
       },
       "url_funding": {
-        "description": "URL to site to fund the podcast\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
+        "description": "URL to site to fund the podcast\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
         "type": "string",
         "nullable": true,
         "format": "URL",
         "example": "https://patreon.com/johnchidgey"
       },
       "message": {
-        "description": "Description of `url`\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
+        "description": "Description of `url`\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
         "type": "string",
         "example": "Pragmatic on Patreon"
       },
       "funding": {
-        "description": "Information for donation/funding the podcast. May not be reported.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
+        "description": "Information for donation/funding the podcast. May not be reported.\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding) for more information.\n",
         "type": "object",
         "nullable": true,
         "properties": {
@@ -1515,7 +3190,7 @@
             "$ref": "#/components/schemas/id_feed"
           },
           "podcastGuid": {
-            "$ref": "#/components/schemas/podcastGuid"
+            "$ref": "#/components/schemas/podcastguid"
           },
           "title": {
             "$ref": "#/components/schemas/title_feed"
@@ -1638,7 +3313,7 @@
             "$ref": "#/components/schemas/id_feed"
           },
           "podcastGuid": {
-            "$ref": "#/components/schemas/podcastGuid"
+            "$ref": "#/components/schemas/podcastguid"
           },
           "title": {
             "$ref": "#/components/schemas/title_feed"
@@ -1721,7 +3396,7 @@
         }
       },
       "podcastGuid_query": {
-        "description": "Value passed to request in the `guid` field\n\nThe GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast. See the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+        "description": "Value passed to request in the `guid` field\n\n\nThe GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.\nSee the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
         "type": "string",
         "example": "9b024349-ccf0-5f69-a609-6b82873eab3c"
       },
@@ -1844,7 +3519,7 @@
             "$ref": "#/components/schemas/funding"
           },
           "podcastGuid": {
-            "$ref": "#/components/schemas/podcastGuid"
+            "$ref": "#/components/schemas/podcastguid"
           },
           "valueCreatedOn": {
             "$ref": "#/components/schemas/valueCreatedOn"
@@ -1864,7 +3539,7 @@
         "example": 13143
       },
       "nextStartAt": {
-        "description": "Feed ID to pass to next `start_at` to get next batch of feeds\n\nOnly returned when `start_at` passed to request\n",
+        "description": "Feed ID to pass to next `start_at` to get next batch of feeds\n\n\nOnly returned when `start_at` passed to request\n",
         "type": "integer",
         "example": 322043
       },
@@ -1965,7 +3640,7 @@
         }
       },
       "datePublishedPretty": {
-        "description": "The date and time the episode was published formatted as a human readable string.\n\nNote: uses the PodcastIndex server local time to do conversion.\n",
+        "description": "The date and time the episode was published formatted as a human readable string.\n\n\nNote: uses the PodcastIndex server local time to do conversion.\n",
         "type": "string",
         "example": "January 01, 2019 9:30pm"
       },
@@ -2141,28 +3816,28 @@
         "example": 411960
       },
       "name_person": {
-        "description": "The name of the person.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "description": "The name of the person.\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
         "type": "string",
         "example": "Dave Jones"
       },
       "role": {
-        "description": "Used to identify what role the person serves on the show or episode.\n\nValue should be an official role within the Podcast Taxonomy Project [list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json).\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "description": "Used to identify what role the person serves on the show or episode.\n\n\nValue should be an official role within the Podcast Taxonomy Project\n[list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json).\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
         "type": "string",
         "example": "Host"
       },
       "group": {
-        "description": "The group the person's role is in.\n\nValue should be an official group within the Podcast Taxonomy Project [list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json).\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "description": "The group the person's role is in.\n\n\nValue should be an official group within the Podcast Taxonomy Project\n[list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json).\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
         "type": "string",
         "example": "Cast"
       },
       "href": {
-        "description": "The url to a relevant resource of information about the person, such as a homepage or third-party profile platform.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "description": "The url to a relevant resource of information about the person, such as a homepage or third-party profile platform.\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
         "type": "string",
         "format": "URL",
         "example": "https://engineered.network/img/people/dave-jones.jp"
       },
       "img": {
-        "description": "URL to a picture or avatar of the person.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "description": "URL to a picture or avatar of the person.\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
         "type": "string",
         "format": "URL",
         "example": "https://engineered.network/img/people/dave-jones.jp"
@@ -2191,7 +3866,7 @@
         }
       },
       "persons": {
-        "description": "List of people with an interest in this episode. May not be reported.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
+        "description": "List of people with an interest in this episode. May not be reported.\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person) for more information.\n",
         "type": "array",
         "nullable": true,
         "items": {
@@ -2205,7 +3880,7 @@
         "example": "https://podcastindex.social/@dave/109762601417741559"
       },
       "protocol_socialInteract": {
-        "description": "The protocol in use for interacting with the comment root post. \n\nFor the most up-to-date list of options, see https://github.com/Podcastindex-org/podcast-namespace/blob/main/socialprotocols.txt\n",
+        "description": "The protocol in use for interacting with the comment root post. \n\n\nFor the most up-to-date list of options, see https://github.com/Podcastindex-org/podcast-namespace/blob/main/socialprotocols.txt\n",
         "type": "string",
         "enum": [
           "disabled",
@@ -2252,7 +3927,7 @@
         }
       },
       "socialInteract": {
-        "description": "List the social interact data found in the podcast feed. May not be reported.\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#social-interact) for more information.\n",
+        "description": "List the social interact data found in the podcast feed. May not be reported.\n\n\nSee the [podcast namespace spec](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#social-interact) for more information.\n",
         "type": "array",
         "nullable": true,
         "items": {
@@ -3121,6 +4796,151 @@
           }
         }
       },
+      "id_query_guid": {
+        "description": "The Podcast Index Id of the podcast GUID passed as an argument to the request\n",
+        "type": "integer",
+        "example": 920666
+      },
+      "query_guid_id": {
+        "description": "Object containing the input query data\n",
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/id_query_guid"
+          }
+        }
+      },
+      "query_podcastguid": {
+        "description": "The value of the `podcastguid` argument passed to the request.\n",
+        "type": "string",
+        "example": "917393e3-1b1e-5cef-ace4-edaa54e1f810"
+      },
+      "query_episodeguid": {
+        "description": "The value of the `episodeguid` argument passed to the request.\n",
+        "type": "string",
+        "example": "PC20143"
+      },
+      "query_byepisodeguid": {
+        "description": "Object containing the input query data\n",
+        "type": "object",
+        "properties": {
+          "podcastguid": {
+            "$ref": "#/components/schemas/query_podcastguid"
+          },
+          "episodeguid": {
+            "$ref": "#/components/schemas/query_episodeguid"
+          }
+        }
+      },
+      "value_byepisodeguid": {
+        "description": "Information for supporting the podcast via one of the \"Value for Value\" methods. May not be reported.\n\n\nExamples:\n  - `lightning` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n  - `webmonetization` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=779873&pretty\n",
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "model": {
+            "$ref": "#/components/schemas/model_v4v"
+          },
+          "destinations": {
+            "$ref": "#/components/schemas/destinations_v4v"
+          },
+          "title": {
+            "$ref": "#/components/schemas/title_episode"
+          },
+          "feedTitle": {
+            "$ref": "#/components/schemas/title_feed"
+          }
+        }
+      },
+      "value_batch_byepisodeguid": {
+        "description": "JSON data where key is the `podcastguid` and value is a list of `episodeguid` values.\n",
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "917393e3-1b1e-5cef-ace4-edaa54e1f810": [
+            "PC20141",
+            "PC20142",
+            "PC20143"
+          ],
+          "c73b1a23-1c28-5edb-94c3-10d1745d0877": [
+            "bdea6759-a7b6-4c0d-9d1e-acca3133f4a9"
+          ]
+        }
+      },
+      "guids": {
+        "description": "The `podcastguid` and `episodeguid` values passed to the request.\n",
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "917393e3-1b1e-5cef-ace4-edaa54e1f810": [
+            "PC20141",
+            "PC20142",
+            "PC20143"
+          ],
+          "c73b1a23-1c28-5edb-94c3-10d1745d0877": [
+            "bdea6759-a7b6-4c0d-9d1e-acca3133f4a9"
+          ]
+        }
+      },
+      "query_guids": {
+        "description": "Object containing the input query data\n",
+        "type": "object",
+        "properties": {
+          "guids": {
+            "$ref": "#/components/schemas/guids"
+          }
+        }
+      },
+      "value_byepisodeguid_batch": {
+        "description": "Information for supporting the podcast via one of the \"Value for Value\" methods.\n",
+        "type": "object",
+        "properties": {
+          "podcastGUID": {
+            "$ref": "#/components/schemas/podcastguid"
+          },
+          "guid": {
+            "$ref": "#/components/schemas/guid"
+          },
+          "title": {
+            "$ref": "#/components/schemas/title_episode"
+          },
+          "feedTitle": {
+            "$ref": "#/components/schemas/title_feed"
+          },
+          "model": {
+            "$ref": "#/components/schemas/model_v4v"
+          },
+          "destinations": {
+            "$ref": "#/components/schemas/destinations_v4v"
+          }
+        }
+      },
+      "value_guid_list": {
+        "description": "List of value blocks\n",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/value_byepisodeguid_batch"
+        }
+      },
+      "allfound": {
+        "description": "Indicates if data was found for all `podcastguid` and `episodeguid` values.\n",
+        "type": "boolean",
+        "example": true
+      },
+      "found": {
+        "description": "Number of value data returned.\n",
+        "type": "integer",
+        "example": 4
+      },
       "stats": {
         "description": "An array statistic properties\n",
         "type": "object",
@@ -3935,6 +5755,84 @@
           }
         }
       },
+      "value_bypodcastguid": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "query": {
+                  "$ref": "#/components/schemas/query_guid_id"
+                },
+                "value": {
+                  "$ref": "#/components/schemas/value"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "value_byepisodeguid": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "query": {
+                  "$ref": "#/components/schemas/query_byepisodeguid"
+                },
+                "value": {
+                  "$ref": "#/components/schemas/value_byepisodeguid"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "value_batch_byepisodeguid": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "query": {
+                  "$ref": "#/components/schemas/query_guids"
+                },
+                "value": {
+                  "$ref": "#/components/schemas/value_guid_list"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                },
+                "allFound": {
+                  "$ref": "#/components/schemas/allfound"
+                },
+                "found": {
+                  "$ref": "#/components/schemas/found"
+                }
+              }
+            }
+          }
+        }
+      },
       "stats_current": {
         "description": "Success",
         "content": {
@@ -4037,1570 +5935,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    }
-  },
-  "paths": {
-    "/search": {
-      "get": {
-        "tags": [
-          "Apple Replacement"
-        ],
-        "summary": "Search",
-        "description": "Replaces the Apple search API but returns data from the Podcast Index database.\n\nNote: No API key needed for this endpoint.\n\nExample:\n\n  - Apple: https://itunes.apple.com/search?media=podcast&entity=podcast&term=batman\n  - PodcastIndex: https://api.podcastindex.org/search?term=batman\n",
-        "operationId": "search",
-        "servers": [
-          {
-            "url": "https://api.podcastindex.org",
-            "description": "URL for Apple Replacement endpoints"
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/term_itunes"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/itunes_replacement"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/lookup": {
-      "get": {
-        "tags": [
-          "Apple Replacement"
-        ],
-        "summary": "Lookup",
-        "description": "Replaces the Apple podcast lookup API but returns data from the Podcast Index database.\n\nNote: No API key needed for this endpoint.\n\nExample:\n\n  - Apple: https://itunes.apple.com/lookup?media=podcast&entity=podcast&id=1636765656\n  - PodcastIndex: https://api.podcastindex.org/lookup?entity=podcast&id=1636765656\n",
-        "operationId": "lookup",
-        "servers": [
-          {
-            "url": "https://api.podcastindex.org",
-            "description": "URL for Apple Replacement endpoints"
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id_feed_podcast_itunes"
-          },
-          {
-            "$ref": "#/components/parameters/entity"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/itunes_replacement"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/search/byterm": {
-      "get": {
-        "tags": [
-          "Search"
-        ],
-        "summary": "Search Podcasts",
-        "description": "This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the feed.\n\nExample: https://api.podcastindex.org/api/1.0/search/byterm?q=batman+university&pretty\n",
-        "operationId": "search/byterm",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/q"
-          },
-          {
-            "$ref": "#/components/parameters/val"
-          },
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/aponly"
-          },
-          {
-            "$ref": "#/components/parameters/clean"
-          },
-          {
-            "$ref": "#/components/parameters/similar"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/search_byterm"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        },
-        "x-codeSamples": [
-          {
-            "lang": "PHP",
-            "source": "//Required values\n$apiKey = \"UXKCGDSYGUUEVQJSYDZH\";\n$apiSecret = \"yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|\";\n$apiHeaderTime = time();\n\n//Hash them to get the Authorization token\n$hash = sha1($apiKey.$apiSecret.$apiHeaderTime);\n\n//Set the required headers\n$headers = [\n  \"User-Agent: SuperPodcastPlayer/1.3\",\n  \"X-Auth-Key: $apiKey\",\n  \"X-Auth-Date: $apiHeaderTime\",\n  \"Authorization: $hash\"\n];\n\n//Make the request to an API endpoint\n$ch = curl_init();\ncurl_setopt($ch, CURLOPT_URL,\"https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat\");\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\ncurl_setopt($ch, CURLOPT_HTTPHEADER, $headers);\n\n//Collect and show the results\n$response = curl_exec ($ch);\ncurl_close ($ch);\necho print_r(json_decode($response), TRUE);\n"
-          },
-          {
-            "lang": "C#",
-            "source": "//Required values\nstring apiKey = \"UXKCGDSYGUUEVQJSYDZH\";\nstring apiSecret = \"yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|\";\nTimeSpan t = DateTime.UtcNow - new DateTime(1970, 1, 1);\nint apiHeaderTime = (int)t.TotalSeconds;\n\n//Hash them to get the Authorization token\nstring hash = \"\";\nusing (SHA1Managed sha1 = new SHA1Managed())\n{\n    var hashed = sha1.ComputeHash(Encoding.UTF8.GetBytes(apiKey + apiSecret + apiHeaderTime));\n    var sb = new StringBuilder(hashed.Length * 2);\n\n    foreach (byte b in hashed)\n    {\n        // can be \"x2\" if you want lowercase\n        sb.Append(b.ToString(\"x2\"));\n    }\n\n    hash = sb.ToString();\n}\n\n//Create the web request and add the required headers\nHttpWebRequest request = (HttpWebRequest)WebRequest.Create(\"https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat\");\nrequest.Headers.Add(\"User-Agent\", \"SuperPodcastPlayer/1.3\");\nrequest.Headers.Add(\"X-Auth-Date\", apiHeaderTime.ToString());\nrequest.Headers.Add(\"X-Auth-Key\", apiKey);\nrequest.Headers.Add(\"Authorization\", hash);\n\n//Send the request and collect/show the results\ntry\n{\n    WebResponse webResponse2 = request.GetResponse();\n    Stream stream2 = webResponse2.GetResponseStream();\n    StreamReader reader2 = new StreamReader(stream2);\n\n    Console.WriteLine(reader2.ReadToEnd());\n\n    webResponse2.Close();\n}\ncatch (Exception e)\n{\n    Console.WriteLine(\"Error.\");\n}\n"
-          },
-          {
-            "lang": "Swift",
-            "source": "import Foundation\nimport CommonCrypto\n\nextension String {\n  func sha1() -> String {\n  let data = Data(self.utf8)\n  var digest = [UInt8](repeating: 0, count:Int(CC_SHA1_DIGEST_LENGTH))\n      data.withUnsafeBytes {\n      _ = CC_SHA1($0.baseAddress, CC_LONG(data.count), &digest)\n  }\n  let hexBytes = digest.map { String(format: \"%02hhx\", $0) }\n      return hexBytes.joined()\n  }\n}\n\nlet apiKey = \"UXKCGDSYGUUEVQJSYDZH\"\nlet apiSecret = \"yzJe2eE7XV-3eY576dyRZ6wXyAbndh6LUrCZ8KN|\"\nlet apiHeaderTime = String(Int(Date().timeIntervalSince1970))\nlet hash = (apiKey + apiSecret + apiHeaderTime).sha1()\n\nvar semaphore = DispatchSemaphore (value: 0)\nvar request = URLRequest(url: URL(string: \"https://api.podcastindex.org/api/1.0/search/byterm?q=bastiat\")!,timeoutInterval: Double.infinity)\nrequest.addValue(\"SuperPodcastPlayer/1.3\", forHTTPHeaderField: \"User-Agent\")\nrequest.addValue(apiKey, forHTTPHeaderField: \"X-Auth-Key\")\nrequest.addValue(apiHeaderTime, forHTTPHeaderField: \"X-Auth-Date\")\nrequest.addValue(hash, forHTTPHeaderField: \"Authorization\")\n\nrequest.httpMethod = \"GET\"\n\nlet task = URLSession.shared.dataTask(with: request) { data, response, error in\n    guard let data = data else {\n        print(String(describing: error))\n        return\n    }\n    print(String(data: data, encoding: .utf8)!)\n    semaphore.signal()\n}\n\ntask.resume()\nsemaphore.wait()\n"
-          }
-        ]
-      }
-    },
-    "/search/bytitle": {
-      "get": {
-        "tags": [
-          "Search"
-        ],
-        "summary": "Search Podcasts by Title",
-        "description": "This call returns all of the feeds where the `title` of the feed matches the search term (ignores case).\n\nExample \"everything everywhere daily\" will match the podcast [Everything Everywhere Daily](https://podcastindex.org/podcast/437685) by \"everything everywhere\" will not.\n\nExample: https://api.podcastindex.org/api/1.0/search/bytitle?q=everything+everywhere+daily&pretty\n",
-        "operationId": "search/bytitle",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/q"
-          },
-          {
-            "$ref": "#/components/parameters/val"
-          },
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/clean"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          },
-          {
-            "$ref": "#/components/parameters/similar"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/search_byterm"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/search/byperson": {
-      "get": {
-        "tags": [
-          "Search"
-        ],
-        "summary": "Search Episodes by Person",
-        "description": "This call returns all of the episodes where the specified person is mentioned.\n\nIt searches the following fields:\n\n  - Person tags\n  - Episode title\n  - Episode description\n  - Feed owner\n  - Feed author\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=adam%20curry&pretty\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=Martin+Mouritzen&pretty\n  - https://api.podcastindex.org/api/1.0/search/byperson?q=Klaus+Schwab&pretty\n",
-        "operationId": "search/byperson",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/q_person"
-          },
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/search_byperson"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/search/music/byterm": {
-      "get": {
-        "tags": [
-          "Search"
-        ],
-        "summary": "Search Music Podcasts",
-        "description": "This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the <feed></feed> where the [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) is `music`.\n\nExample: https://api.podcastindex.org/api/1.0/search/music/byterm?q=able+kirby&pretty\n",
-        "operationId": "search/music/byterm",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/q"
-          },
-          {
-            "$ref": "#/components/parameters/val"
-          },
-          {
-            "$ref": "#/components/parameters/aponly"
-          },
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/clean"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/search_byterm"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/podcasts/byfeedid": {
-      "get": {
-        "tags": [
-          "Podcasts"
-        ],
-        "summary": "By Feed ID",
-        "description": "This call returns everything we know about the feed from the PodcastIndex ID\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=75075&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n",
-        "operationId": "podcasts/byfeedid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id_feed_podcast_pi"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/podcasts_byfeedid"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/podcasts/byfeedurl": {
-      "get": {
-        "tags": [
-          "Podcasts"
-        ],
-        "summary": "By Feed URL",
-        "description": "This call returns everything we know about the feed from the feed URL\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty\n",
-        "operationId": "podcasts/byfeedurl",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/url"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/podcasts_byfeedurl"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/podcasts/byitunesid": {
-      "get": {
-        "tags": [
-          "Podcasts"
-        ],
-        "summary": "By iTunes ID",
-        "description": "This call returns everything we know about the feed from the iTunes ID\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/byitunesid?id=1441923632&pretty\n",
-        "operationId": "podcasts/byitunesid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id_feed_podcast_itunes"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/podcasts_byitunesid"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/podcasts/byguid": {
-      "get": {
-        "tags": [
-          "Podcasts"
-        ],
-        "summary": "By GUID",
-        "description": "This call returns everything we know about the feed from the feed's GUID.\n\nThe GUID is a unique, global identifier for the podcast. See the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/podcasts/byguid?guid=9b024349-ccf0-5f69-a609-6b82873eab3c&pretty\n  - Includes `value` and `funding`: https://api.podcastindex.org/api/1.0/podcasts/byguid?guid=9b024349-ccf0-5f69-a609-6b82873eab3c&pretty\n",
-        "operationId": "podcasts/byguid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/guid_feed_podcast"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/podcasts_byguid"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/podcasts/bytag": {
-      "get": {
-        "tags": [
-          "Podcasts"
-        ],
-        "summary": "By Tag",
-        "description": "This call returns all feeds that support the specified [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\nWhen called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.\n\nWhen called with a `start_at` value, the feeds are returned sorted by the `feedId` starting with the specified value up to the max number of feeds to return. The `nextStartAt` specifies the value to pass to the next `start_at`. Repeat this sequence until no items are returned.\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty\n",
-        "operationId": "podcasts/bytag",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/podcast-value"
-          },
-          {
-            "$ref": "#/components/parameters/max_5000"
-          },
-          {
-            "$ref": "#/components/parameters/start_at"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/podcasts_bytag"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/podcasts/bymedium": {
-      "get": {
-        "tags": [
-          "Podcasts"
-        ],
-        "summary": "By Medium",
-        "description": "This call returns all feeds marked with the specified [medium](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium) tag value.\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/bymedium?medium=music&pretty\n",
-        "operationId": "podcasts/bymedium",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/medium"
-          },
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/bymedium"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/podcasts/trending": {
-      "get": {
-        "tags": [
-          "Podcasts"
-        ],
-        "summary": "Trending",
-        "description": "This call returns the podcasts/feeds that in the index that are trending.\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/trending?pretty\n",
-        "operationId": "podcasts/trending",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/since"
-          },
-          {
-            "$ref": "#/components/parameters/lang"
-          },
-          {
-            "$ref": "#/components/parameters/cat"
-          },
-          {
-            "$ref": "#/components/parameters/notcat"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/podcasts_trending"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/podcasts/dead": {
-      "get": {
-        "tags": [
-          "Podcasts"
-        ],
-        "summary": "Dead",
-        "description": "This call returns all feeds that have been marked dead (`dead` == 1)\n\nDead feeds can also be accessed from object storage at https://public.podcastindex.org/podcastindex_dead_feeds.csv\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/dead?pretty\n",
-        "operationId": "podcasts/dead",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/podcasts_dead"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/episodes/byfeedid": {
-      "get": {
-        "tags": [
-          "Episodes"
-        ],
-        "summary": "By Feed ID",
-        "description": "This call returns all the episodes we know about for this feed from the PodcastIndex ID. Episodes are in reverse chronological order.\n\nWhen using the `enclosure` parameter, only the episode matching the URL is returned.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&pretty\n  - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=169991&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=4058673&pretty\n  - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty\n",
-        "operationId": "episodes/byfeedid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id_feed_episode_pi"
-          },
-          {
-            "$ref": "#/components/parameters/since"
-          },
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/enclosure"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/episodes_byfeedid"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/episodes/byfeedurl": {
-      "get": {
-        "tags": [
-          "Episodes"
-        ],
-        "summary": "By Feed URL",
-        "description": "This call returns all the episodes we know about for this feed from the feed URL. Episodes are in reverse chronological order.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n  - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://engineered.network/pragmatic/feed/index.xml&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url=https://closing-the-loop.github.io/feed.xml&pretty\n",
-        "operationId": "episodes/byfeedurl",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/url"
-          },
-          {
-            "$ref": "#/components/parameters/since"
-          },
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/episodes_byfeedurl"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/episodes/bypodcastguid": {
-      "get": {
-        "tags": [
-          "Episodes"
-        ],
-        "summary": "By Podcast GUID",
-        "description": "This call returns all the episodes we know about for this feed from the [Podcast GUID](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid). Episodes are in reverse chronological order.\n\nExample: https://api.podcastindex.org/api/1.0/episodes/bypodcastguid?guid=856cd618-7f34-57ea-9b84-3600f1f65e7f&pretty\n",
-        "operationId": "episodes/bypodcastguid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/guid_feed_podcast"
-          },
-          {
-            "$ref": "#/components/parameters/since"
-          },
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/episodes_byfeedurl"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/episodes/byitunesid": {
-      "get": {
-        "tags": [
-          "Episodes"
-        ],
-        "summary": "By iTunes ID",
-        "description": "This call returns all the episodes we know about for this feed from the iTunes ID. Episodes are in reverse chronological order.\n\nWhen using the `enclosure` parameter, only the episode matching the URL is returned.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=1441923632&pretty\n  - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byitunesid?id=269169796&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty\n",
-        "operationId": "episodes/byitunesid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id_feed_podcast_itunes"
-          },
-          {
-            "$ref": "#/components/parameters/since"
-          },
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/enclosure"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/episodes_byitunesid"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/episodes/byid": {
-      "get": {
-        "tags": [
-          "Episodes"
-        ],
-        "summary": "By ID",
-        "description": "Get all the metadata for a single episode by passing its id.\n\nExample: https://api.podcastindex.org/api/1.0/episodes/byid?id=16795090&pretty\n",
-        "operationId": "episodes/byid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id_episode_pi"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/episodes_byid"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/episodes/byguid": {
-      "get": {
-        "tags": [
-          "Episodes"
-        ],
-        "summary": "By GUID",
-        "description": "Get all the metadata for a single episode by passing its guid and the feed id or URL.\n\nThe `feedid` or the `feedurl` is required.\n\nExamples: \n\n  - Search using Podcast Index feed ID: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedid=920666&pretty\n  - Search using feed URL: https://api.podcastindex.org/api/1.0/episodes/byguid?guid=PC2084&feedurl=http://mp3s.nashownotes.com/pc20rss.xml&pretty\n",
-        "operationId": "episodes/byguid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/guid_episode"
-          },
-          {
-            "$ref": "#/components/parameters/feedurl"
-          },
-          {
-            "$ref": "#/components/parameters/feedid"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/episodes_byguid"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/episodes/live": {
-      "get": {
-        "tags": [
-          "Episodes"
-        ],
-        "summary": "Live",
-        "description": "Get all episodes that have been found in the [podcast:liveitem](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#live-item) from the feeds.\n\nExamples: \n\n  - https://api.podcastindex.org/api/1.0/episodes/live?pretty\n",
-        "operationId": "episodes/live",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/max"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/episodes_live"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/episodes/random": {
-      "get": {
-        "tags": [
-          "Episodes"
-        ],
-        "summary": "Random",
-        "description": "This call returns a random batch of episodes, in no specific order.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/random?notcat=News,Religion&lang=en,es&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/random?max=2&pretty\n",
-        "operationId": "episodes/random",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/max_random"
-          },
-          {
-            "$ref": "#/components/parameters/lang"
-          },
-          {
-            "$ref": "#/components/parameters/cat"
-          },
-          {
-            "$ref": "#/components/parameters/notcat"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/episodes_random"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/recent/episodes": {
-      "get": {
-        "tags": [
-          "Recent"
-        ],
-        "summary": "Episodes",
-        "description": "This call returns the most recent `max` number of episodes globally across the whole index, in reverse chronological order.\n\nExample: https://api.podcastindex.org/api/1.0/recent/episodes?max=7&pretty\n",
-        "operationId": "recent/episodes",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/max_recent_episodes"
-          },
-          {
-            "$ref": "#/components/parameters/excludeString"
-          },
-          {
-            "$ref": "#/components/parameters/before"
-          },
-          {
-            "$ref": "#/components/parameters/fulltext"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/recent_episodes"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/recent/feeds": {
-      "get": {
-        "tags": [
-          "Recent"
-        ],
-        "summary": "Feeds",
-        "description": "This call returns the most recent `max` feeds, in reverse chronological order.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/feeds?pretty\n  - https://api.podcastindex.org/api/1.0/recent/feeds?max=20&cat=102,health&lang=de,ja&pretty\n",
-        "operationId": "recent/feeds",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/max_recent_feeds"
-          },
-          {
-            "$ref": "#/components/parameters/since"
-          },
-          {
-            "$ref": "#/components/parameters/lang"
-          },
-          {
-            "$ref": "#/components/parameters/cat"
-          },
-          {
-            "$ref": "#/components/parameters/notcat"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/recent_feeds"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/recent/newfeeds": {
-      "get": {
-        "tags": [
-          "Recent"
-        ],
-        "summary": "New Feeds",
-        "description": "This call returns every new feed added to the index over the past 24 hours in reverse chronological order.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?pretty&since=1613805000\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?feedid=2653471&pretty\n  - https://api.podcastindex.org/api/1.0/recent/newfeeds?feedid=2653471&desc&pretty\n",
-        "operationId": "recent/newfeeds",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/max_recent_feeds"
-          },
-          {
-            "$ref": "#/components/parameters/since"
-          },
-          {
-            "$ref": "#/components/parameters/feedid_newfeeds"
-          },
-          {
-            "$ref": "#/components/parameters/desc"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/recent_newfeeds"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/recent/newvaluefeeds": {
-      "get": {
-        "tags": [
-          "Recent"
-        ],
-        "summary": "New Value Feeds",
-        "description": "This call returns feeds that have added a `value` tag in reverse chronological order.\n\nExample: https://api.podcastindex.org/api/1.0/recent/newvaluefeeds?pretty\n",
-        "operationId": "recent/newvaluefeeds",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/max_recent_feeds"
-          },
-          {
-            "$ref": "#/components/parameters/since"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/recent_newvaluefeeds"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/recent/data": {
-      "get": {
-        "tags": [
-          "Recent"
-        ],
-        "summary": "Recent Data",
-        "description": "This call returns every new feed and episode added to the index over the past 24 hours in reverse chronological order.\n\nThis is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's internal timestamp.\n\nSimilar data can also be accessed using object storage root url https://tracking.podcastindex.org/current\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10&since=1671164867\n",
-        "operationId": "recent/data",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/max_recent_data"
-          },
-          {
-            "$ref": "#/components/parameters/since"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/recent_data"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/recent/soundbites": {
-      "get": {
-        "tags": [
-          "Recent"
-        ],
-        "summary": "Soundbites",
-        "description": "This call returns the most recent `max` soundbites that the index has discovered.\n\nA soundbite consists of an enclosure url, a start time and a duration. It is documented in the [podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#soundbite).\n\nExample: https://api.podcastindex.org/api/1.0/recent/soundbites?pretty\n",
-        "operationId": "recent/soundbites",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/max_recent_soundbites"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/recent_soundbites"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/value/byfeedid": {
-      "get": {
-        "tags": [
-          "Value"
-        ],
-        "summary": "By Feed ID",
-        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from the PodcastIndex ID.\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedid?id=779873&pretty\n",
-        "operationId": "value/byfeedid",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id_feed_episode_pi_single"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/value_byfeedid"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/value/byfeedurl": {
-      "get": {
-        "tags": [
-          "Value"
-        ],
-        "summary": "By Feed URL",
-        "description": "This call returns the information for supporting the podcast via one of the \"Value for Value\" methods from feed URL.\n\nAdditionally, the value block data can be accessed using static JSON files (updated every 15 minutes).\n\n  - Feeds: https://tracking.podcastindex.org/feedValueBlocks.json\n  - Episodes: https://tracking.podcastindex.org/episodeValueBlocks.json\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://mp3s.nashownotes.com/pc20rss.xml&pretty\n  - https://api.podcastindex.org/api/1.0/value/byfeedurl?url=https://lespoesiesdheloise.fr/@heloise/feed.xml&pretty\n",
-        "operationId": "value/byfeedurl",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/url"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/value_byfeedurl"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/stats/current": {
-      "get": {
-        "tags": [
-          "Stats"
-        ],
-        "summary": "Current",
-        "description": "Return the most recent index statistics.\n\nHourly statistics can also be access at https://stats.podcastindex.org/daily_counts.json\n\nExample: https://api.podcastindex.org/api/1.0/stats/current?pretty\n",
-        "operationId": "stats/current",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/stats_current"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/categories/list": {
-      "get": {
-        "tags": [
-          "Categories"
-        ],
-        "summary": "List",
-        "description": "Return all the possible categories supported by the index.\n\nExample: https://api.podcastindex.org/api/1.0/categories/list?pretty\n",
-        "operationId": "categories/list",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/categories_list"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/hub/pubnotify": {
-      "get": {
-        "tags": [
-          "Hub"
-        ],
-        "summary": "Pub Notify",
-        "description": "Notify the index that a feed has changed\n\nNote: No API key needed for this endpoint.\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n",
-        "operationId": "hub/pubnotify",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id_feed_podcast_pi_pubnotify"
-          },
-          {
-            "$ref": "#/components/parameters/url_pubnotify"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/hub_pubnotify"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/add/byfeedurl": {
-      "get": {
-        "tags": [
-          "Add"
-        ],
-        "summary": "By Feed URL",
-        "description": "This call adds a podcast to the index using its feed url. If a feed already exists, you will get its existing Feed ID returned.\n\n**NOTE**: this endpoint requires an API Key with the **write** permission.\n\nExample: https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n",
-        "operationId": "add/byfeedurl:get",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/url"
-          },
-          {
-            "$ref": "#/components/parameters/chash"
-          },
-          {
-            "$ref": "#/components/parameters/itunesid"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/add_byfeedurl"
-          },
-          "302": {
-            "$ref": "#/components/responses/add_byfeedurl"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Add"
-        ],
-        "summary": "By Feed URL",
-        "description": "This call adds a podcast to the index using its feed url. If a feed already exists, you will get its existing Feed ID returned.\n\n**NOTE**: this endpoint requires an API Key with the **write** permission.\n\nExample: https://api.podcastindex.org/api/1.0/add/byfeedurl?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n",
-        "operationId": "add/byfeedurl:post",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/url"
-          },
-          {
-            "$ref": "#/components/parameters/itunesid"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/add_byfeedurl"
-          },
-          "302": {
-            "$ref": "#/components/responses/add_byfeedurl"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      }
-    },
-    "/add/byitunesid": {
-      "get": {
-        "tags": [
-          "Add"
-        ],
-        "summary": "By iTunes ID",
-        "description": "This call adds a podcast to the index using its iTunes ID. If a feed already exists, it will be noted in the response.\n\n**NOTE**: this endpoint requires an API Key with the **write** permission.\n\nExample: https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty\n",
-        "operationId": "add/byitunesid:get",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id_itunes_add"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/add_byitunesid"
-          },
-          "302": {
-            "$ref": "#/components/responses/add_byitunesid"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Add"
-        ],
-        "summary": "By iTunes ID",
-        "description": "This call adds a podcast to the index using its iTunes ID. If a feed already exists, it will be noted in the response.\n\n**NOTE**: this endpoint requires an API Key with the **write** permission.\n\nExample: https://api.podcastindex.org/api/1.0/add/byitunesid?id=1441923632&pretty\n",
-        "operationId": "add/byitunesid:post",
-        "security": [
-          {
-            "API Key": [],
-            "User Agent": [],
-            "Date": [],
-            "Authorization": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id_itunes_add"
-          },
-          {
-            "$ref": "#/components/parameters/pretty"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/add_byitunesid"
-          },
-          "302": {
-            "$ref": "#/components/responses/add_byitunesid"
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
-          },
-          "401": {
-            "$ref": "#/components/responses/401"
           }
         }
       }

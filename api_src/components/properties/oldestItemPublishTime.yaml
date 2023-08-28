@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The date and time the oldest episode in the feed/index
 type: integer
 format: Unix Epoch

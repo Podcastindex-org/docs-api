@@ -1,7 +1,7 @@
 name: similar
 in: query
 # language=Markdown
-description: >
+description: |
   If present, include similar matches in search response. For `search/byterm`, prioritizes title matches.
 schema:
   type: boolean

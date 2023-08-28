@@ -1,7 +1,7 @@
 name: pretty
 in: query
 # language=Markdown
-description: >
+description: |
   If present, makes the output “pretty” to help with debugging.
 
 

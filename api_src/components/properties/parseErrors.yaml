@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   The number of errors we’ve encountered trying to parse the feed content.
   Errors here are things like not well-formed xml, bad character encoding, etc.
 

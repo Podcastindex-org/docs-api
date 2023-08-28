@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Method for sending payment
 type: string
 example: "keysend"

@@ -1,7 +1,7 @@
 name: entity
 in: query
 # language=Markdown
-description: >
+description: |
   The iTunes entity type to look in
 required: true
 schema:

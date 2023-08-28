@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Total number of feeds returnable by endpoint
 type: integer
 example: 13143

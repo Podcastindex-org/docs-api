@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Soundbite for episode. May not be reported.
 type: object
 nullable: true

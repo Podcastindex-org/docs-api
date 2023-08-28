@@ -1,7 +1,7 @@
 name: medium
 in: query
 # language=Markdown
-description: >
+description: |
   The medium value to search for.
   
   

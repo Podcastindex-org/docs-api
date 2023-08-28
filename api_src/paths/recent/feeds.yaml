@@ -3,7 +3,7 @@ get:
     - Recent
   summary: Feeds
   # language=Markdown
-  description: >
+  description: |
     This call returns the most recent `max` feeds, in reverse chronological order.
 
 

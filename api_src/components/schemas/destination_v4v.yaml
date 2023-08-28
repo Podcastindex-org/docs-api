@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Destination for "Value for Value" payment.
 type: object
 properties:

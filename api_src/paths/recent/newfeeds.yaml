@@ -3,7 +3,7 @@ get:
     - Recent
   summary: New Feeds
   # language=Markdown
-  description: >
+  description: |
     This call returns every new feed added to the index over the past 24 hours in reverse chronological order.
 
 

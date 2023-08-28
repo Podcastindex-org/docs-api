@@ -1,5 +1,5 @@
   # language=Markdown
-description: >
+description: |
   Description of the response
 type: string
 example: "Found matching feed"

@@ -3,7 +3,7 @@ get:
     - Search
   summary: Search Podcasts
   # language=Markdown
-  description: >
+  description: |
     This call returns all of the feeds that match the search terms in the `title`, `author` or `owner` of the feed.
     
 
