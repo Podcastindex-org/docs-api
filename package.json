@@ -18,5 +18,6 @@
     "local": "run-p -cln 'local:*'",
     "local:reload": "livereload . -w 2000 -d -e html,css,js,png,gif,jpg,php,php5,py,rb,erb,coffee,yaml,json",
     "local:server": "http-server docs -c 1 -p 8000"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }
