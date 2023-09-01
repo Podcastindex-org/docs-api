@@ -1233,6 +1233,9 @@
 				{
 					"name": "By Feed ID",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1265,6 +1268,9 @@
 				{
 					"name": "By Feed URL",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1297,6 +1303,9 @@
 				{
 					"name": "By Feed GUID",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1329,6 +1338,9 @@
 				{
 					"name": "By Episode GUID",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1366,6 +1378,9 @@
 				{
 					"name": "Batch By Episode GUID",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1472,6 +1487,9 @@
 				{
 					"name": "Pub Notify",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
