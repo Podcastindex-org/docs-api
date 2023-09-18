@@ -1,7 +1,7 @@
 get:
   tags:
     - Hub
-  summary: Pub Notify
+  summary: Pub Notify (Hub)
   # language=Markdown
   description: |
     Notify the index that a feed has changed
@@ -12,14 +12,18 @@ get:
 
     Examples:
 
-      - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty
-      - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty
-  operationId: hub/pubnotify
+      - https://hub.podcastindex.org/pubnotify?id=920666&pretty
+      - https://hub.podcastindex.org/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty
+  operationId: pubnotify
   security: [] # no security required
+  servers:
+    - url: https://hub.podcastindex.org
+      description: "Server for handling feed publish/update notifications"
   parameters:
     - $ref: '../../components/parameters/id_feed_podcast_pi_pubnotify.yaml'
     - $ref: '../../components/parameters/url_pubnotify.yaml'
-    - $ref: '../../components/parameters/reason_liveonly.yaml'
+    - $ref: '../../components/parameters/reason.yaml'
+    - $ref: '../../components/parameters/podping.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
   responses:
     '200':
