@@ -884,7 +884,7 @@ paths:
         Get all the metadata for a single episode by passing its guid and the feed id or URL.
 
 
-        The `feedid` or the `feedurl` is required.
+        The `feedid`, `feedurl`, or `podcastguid` is required.
 
 
         Examples: 
@@ -901,6 +901,7 @@ paths:
         - $ref: '#/components/parameters/guid_episode'
         - $ref: '#/components/parameters/feedurl'
         - $ref: '#/components/parameters/feedid'
+        - $ref: '#/components/parameters/podcastguid_optional'
         - $ref: '#/components/parameters/fulltext'
         - $ref: '#/components/parameters/pretty'
       responses:
@@ -1980,6 +1981,18 @@ components:
       schema:
         type: string
       example: '920666'
+    podcastguid_optional:
+      name: podcastguid
+      in: query
+      description: |
+        The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.
+
+
+        See the namespace spec for
+        [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.
+      schema:
+        type: string
+      example: 917393e3-1b1e-5cef-ace4-edaa54e1f810
     max_random:
       name: max
       in: query
@@ -4762,6 +4775,8 @@ components:
                 $ref: '#/components/schemas/feedid_query'
               url:
                 $ref: '#/components/schemas/feedurl_query'
+              podcastGuid:
+                $ref: '#/components/schemas/podcastguid'
               guid:
                 $ref: '#/components/schemas/guid_query'
               episode:
