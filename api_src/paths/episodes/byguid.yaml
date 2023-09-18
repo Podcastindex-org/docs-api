@@ -7,7 +7,7 @@ get:
     Get all the metadata for a single episode by passing its guid and the feed id or URL.
 
 
-    The `feedid` or the `feedurl` is required.
+    The `feedid`, `feedurl`, or `podcastguid` is required.
 
 
     Examples: 
@@ -21,6 +21,7 @@ get:
     - $ref: '../../components/parameters/guid_episode.yaml'
     - $ref: '../../components/parameters/feedurl.yaml'
     - $ref: '../../components/parameters/feedid.yaml'
+    - $ref: '../../components/parameters/podcastguid_optional.yaml'
     - $ref: '../../components/parameters/fulltext.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
   responses:

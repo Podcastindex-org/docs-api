@@ -10,6 +10,8 @@ content:
           $ref: '../properties/feedid_query.yaml'
         url:
           $ref: '../properties/feedurl_query.yaml'
+        podcastGuid:
+          $ref: '../properties/podcastguid.yaml'
         guid:
           $ref: '../properties/guid_query.yaml'
         episode:
