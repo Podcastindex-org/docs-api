@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "version": "1.11.0",
+    "version": "1.12.0",
     "title": "PodcastIndex.org API",
     "termsOfService": "https://github.com/Podcastindex-org/legal/blob/main/TermsOfService.md",
     "contact": {
@@ -507,7 +507,7 @@
           "Podcasts"
         ],
         "summary": "By Tag",
-        "description": "This call returns all feeds that support the specified\n[podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\n\nThe only supported tag is `podcast:value` using the `podcast-value` parameter.\n\n\nWhen called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.\n\n\nWhen called with a `start_at` value, the feeds are returned sorted by the `feedId` starting with the specified value\nup to the max number of feeds to return. The `nextStartAt` specifies the value to pass to the next `start_at`.\nRepeat this sequence until no items are returned.\n\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty\n",
+        "description": "This call returns all feeds that support the specified\n[podcast namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) tag.\n\n\nThe only supported tags are:\n  - `podcast:value` using the `podcast-value` parameter\n  - `podcast:valueTimeSplit` using the `podcast-valueTimeSplit` parameter\n\n\nOnly the `podcast-value` or `podcast-valueTimeSplit` parameter should be used. If multiple are specified, the\nfirst parameter is used and the others are ignored.\n\n\nWhen called without a `start_at` value, the top 500 feeds sorted by popularity are returned in descending order.\n\n\nWhen called with a `start_at` value, the feeds are returned sorted by the `feedId` starting with the specified value\nup to the max number of feeds to return. The `nextStartAt` specifies the value to pass to the next `start_at`.\nRepeat this sequence until no items are returned.\n\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&pretty\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-value&max=200&start_at=1&pretty\n  - https://api.podcastindex.org/api/1.0/podcasts/bytag?podcast-valueTimeSplit&pretty\n",
         "operationId": "podcasts/bytag",
         "security": [
           {
@@ -520,6 +520,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/podcast-value"
+          },
+          {
+            "$ref": "#/components/parameters/podcast-valueTimeSplit"
           },
           {
             "$ref": "#/components/parameters/max_5000"
@@ -1913,12 +1916,22 @@
       "podcast-value": {
         "name": "podcast-value",
         "in": "query",
-        "description": "Get feeds supporting the `value` tag.\n\n\nParameter shall not have a value\n",
+        "description": "Get feeds supporting the [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value) tag.\n\n\nParameter shall not have a value\n",
         "schema": {
           "type": "boolean"
         },
         "allowEmptyValue": true,
-        "required": true
+        "required": false
+      },
+      "podcast-valueTimeSplit": {
+        "name": "podcast-valueTimeSplit",
+        "in": "query",
+        "description": "Get feeds supporting the [`podcast:valueTimeSplit`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value-time-split) tag.\n\n\nParameter shall not have a value\n",
+        "schema": {
+          "type": "boolean"
+        },
+        "allowEmptyValue": true,
+        "required": false
       },
       "max_5000": {
         "name": "max",
