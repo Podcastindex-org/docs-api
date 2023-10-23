@@ -3,18 +3,20 @@
   "version": "1.11.0",
   "private": true,
   "devDependencies": {
-    "@redocly/cli": "^1.1.0",
+    "@redocly/cli": "^1.3.0",
     "copyfiles": "^2.4.1",
     "http-server": "^14.1.1",
-    "livereload": "^0.9.3"
+    "livereload": "^0.9.3",
+    "npm-run-all": "^4.1.5"
   },
   "scripts": {
     "preview": "redocly preview-docs",
-    "build": "yarn bundle_json && yarn bundle_yaml",
-    "bundle_json": "redocly bundle -o docs/pi_api --ext json",
-    "bundle_yaml": "redocly bundle -o docs/pi_api --ext yaml",
+    "build": "run-s -cln 'build:*'",
+    "build:json": "redocly bundle -o docs/pi_api --ext json",
+    "build:yaml": "redocly bundle -o docs/pi_api --ext yaml",
     "lint": "redocly lint",
-    "reload": "livereload . -w 2000 -d -e html,css,js,png,gif,jpg,php,php5,py,rb,erb,coffee,yaml,json",
-    "server": "http-server docs -c 1 -p 8000"
+    "local": "run-p -cln 'local:*'",
+    "local:reload": "livereload . -w 2000 -d -e html,css,js,png,gif,jpg,php,php5,py,rb,erb,coffee,yaml,json",
+    "local:server": "http-server docs -c 1 -p 8000"
   }
 }
