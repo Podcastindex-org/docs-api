@@ -2715,6 +2715,11 @@ components:
         The internal PodcastIndex.org episode ID.
       type: integer
       example: 16795088
+    title_episode:
+      description: |
+        Name of the episode
+      type: string
+      example: Gotham
     description_episode:
       description: |
         The item-level description of the episode.
@@ -2857,7 +2862,7 @@ components:
         id:
           $ref: '#/components/schemas/id_episode'
         title:
-          $ref: '#/components/schemas/title_feed'
+          $ref: '#/components/schemas/title_episode'
         link:
           $ref: '#/components/schemas/link_feed'
         description:
@@ -4300,11 +4305,6 @@ components:
           $ref: '#/components/schemas/feeds_data'
         items:
           $ref: '#/components/schemas/items_data'
-    title_episode:
-      description: |
-        Name of the episode
-      type: string
-      example: Gotham
     items_soundbites:
       description: |
         List of soundbites matching request
