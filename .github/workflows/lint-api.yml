@@ -5,13 +5,22 @@ jobs:
     name: Run Linter
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v3.0.0
+      - uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: build # will run `yarn build` command
-      - uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: lint # will run `yarn test` command
+            node-version-file: '.nvmrc'
+            cache: "yarn"
+
+      - name: Install project dependencies
+        run: yarn
+
+      - name: Run Lint
+        run: yarn run build
+
+      - name: Run Lint
+        run: yarn run lint
