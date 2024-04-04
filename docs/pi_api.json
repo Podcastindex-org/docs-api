@@ -2813,6 +2813,11 @@
         "type": "integer",
         "example": 16795088
       },
+      "title_episode": {
+        "description": "Name of the episode\n",
+        "type": "string",
+        "example": "Gotham"
+      },
       "description_episode": {
         "description": "The item-level description of the episode.\n\n\nUses the longer of the possible fields in the feed: `<description>`, `<itunes:summary>` and `<content:encoded>`\n",
         "type": "string",
@@ -2951,7 +2956,7 @@
             "$ref": "#/components/schemas/id_episode"
           },
           "title": {
-            "$ref": "#/components/schemas/title_feed"
+            "$ref": "#/components/schemas/title_episode"
           },
           "link": {
             "$ref": "#/components/schemas/link_feed"
@@ -4779,11 +4784,6 @@
             "$ref": "#/components/schemas/items_data"
           }
         }
-      },
-      "title_episode": {
-        "description": "Name of the episode\n",
-        "type": "string",
-        "example": "Gotham"
       },
       "items_soundbites": {
         "description": "List of soundbites matching request\n",

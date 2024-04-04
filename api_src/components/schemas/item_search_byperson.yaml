@@ -3,7 +3,7 @@ properties:
   id:
     $ref: '../properties/id_episode.yaml'
   title:
-    $ref: '../properties/title_feed.yaml'
+    $ref: '../properties/title_episode.yaml'
   link:
     $ref: '../properties/link_feed.yaml'
   description:
