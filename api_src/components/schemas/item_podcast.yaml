@@ -36,10 +36,14 @@ properties:
     $ref: '../properties/image_episode.yaml'
   feedItunesId:
     $ref: '../properties/itunesId_feed.yaml'
+  feedUrl:
+    $ref: '../properties/url_feed.yaml'
   feedImage:
     $ref: '../properties/image_feed.yaml'
   feedId:
     $ref: '../properties/id_feed.yaml'
+  podcastGuid:
+    $ref: '../properties/podcastguid.yaml'
   feedLanguage:
     $ref: '../properties/language.yaml'
   feedDead:
