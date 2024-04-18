@@ -4021,11 +4021,17 @@
           "feedItunesId": {
             "$ref": "#/components/schemas/itunesId_feed"
           },
+          "feedUrl": {
+            "$ref": "#/components/schemas/url_feed"
+          },
           "feedImage": {
             "$ref": "#/components/schemas/image_feed"
           },
           "feedId": {
             "$ref": "#/components/schemas/id_feed"
+          },
+          "podcastGuid": {
+            "$ref": "#/components/schemas/podcastguid"
           },
           "feedLanguage": {
             "$ref": "#/components/schemas/language"
