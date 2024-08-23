@@ -676,7 +676,7 @@
           "Episodes"
         ],
         "summary": "By Feed ID",
-        "description": "This call returns all the episodes we know about for this feed from the PodcastIndex ID.\nEpisodes are in reverse chronological order.\n\n\nWhen using the `enclosure` parameter, only the episode matching the URL is returned.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&pretty\n  - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=169991&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=4058673&pretty\n  - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty\n",
+        "description": "This call returns all the episodes we know about for this feed from the PodcastIndex ID.\nEpisodes are in reverse chronological order.\n\n\nWhen using the `enclosure` parameter, only the episode matching the URL is returned.\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=75075&newest&pretty\n  - https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504,920666&newest&pretty\n  - Includes `persons`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=169991&pretty\n  - Includes `value`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=4058673&pretty\n  - Using `enclosure`: https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=41504&enclosure=https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3&pretty\n",
         "operationId": "episodes/byfeedid",
         "security": [
           {
@@ -701,6 +701,9 @@
           },
           {
             "$ref": "#/components/parameters/fulltext"
+          },
+          {
+            "$ref": "#/components/parameters/newest"
           },
           {
             "$ref": "#/components/parameters/pretty"
@@ -2087,6 +2090,15 @@
           "type": "string"
         },
         "example": "https://op3.dev/e/mp3s.nashownotes.com/NA-1551-2023-04-30-Final.mp3"
+      },
+      "newest": {
+        "name": "newest",
+        "in": "query",
+        "description": "If present, returns only the most recent (newest) episode for each specified feed id.\n\n\nParameter shall not have a value\n",
+        "schema": {
+          "type": "boolean"
+        },
+        "allowEmptyValue": true
       },
       "id_episode_pi": {
         "name": "id",
