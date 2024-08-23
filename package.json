@@ -3,7 +3,7 @@
   "version": "1.12.1",
   "private": true,
   "devDependencies": {
-    "@redocly/cli": "^1.10.6",
+    "@redocly/cli": "^1.21.0",
     "copyfiles": "^2.4.1",
     "http-server": "^14.1.1",
     "livereload": "^0.9.3",
