@@ -670,6 +670,51 @@
         }
       }
     },
+    "/podcasts/batch/byguid": {
+      "post": {
+        "tags": [
+          "Podcasts"
+        ],
+        "summary": "Batch By Feed GUID",
+        "description": "This call returns everything we know about the feed from the feed's GUID provided in JSON array in the body of the request.\n\n\nThe GUID is a unique, global identifier for the podcast. See the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.\n",
+        "operationId": "podcasts/batch/byguid",
+        "security": [
+          {
+            "API-Key": [],
+            "User-Agent": [],
+            "Date": [],
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/pretty"
+          }
+        ],
+        "requestBody": {
+          "description": "Get episode value data",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/podcasts_batch_byguid"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/podcasts_batch_byguid"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
     "/episodes/byfeedid": {
       "get": {
         "tags": [
@@ -3682,6 +3727,175 @@
           "$ref": "#/components/schemas/feed_dead"
         }
       },
+      "podcasts_batch_byguid": {
+        "description": "JSON array of feed GUIDs\n",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "example": [
+          "917393e3-1b1e-5cef-ace4-edaa54e1f810",
+          "c73b1a23-1c28-5edb-94c3-10d1745d0877"
+        ]
+      },
+      "allfound": {
+        "description": "Indicates if data was found for all `podcastguid` and `episodeguid` values.\n",
+        "type": "boolean",
+        "example": true
+      },
+      "found": {
+        "description": "Number of value data returned.\n",
+        "type": "integer",
+        "example": 4
+      },
+      "inPollingQueue": {
+        "description": "Indicates if feed is currently scheduled to be polled/checked for new episodes.\n",
+        "type": "integer",
+        "nullable": true,
+        "example": 1
+      },
+      "priority": {
+        "description": "How often the feed is checked for updates and new episodes\n\nA value of -1 means never check. A value of 5 means check the most.\n",
+        "type": "integer",
+        "enum": [
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "example": 5
+      },
+      "createdOn": {
+        "description": "The first time the feed was seen by Podcast Index\n",
+        "type": "integer",
+        "format": "Unix Epoch",
+        "example": 1613394034
+      },
+      "valueBlock": {
+        "description": "Information for supporting the podcast via one of the \"Value for Value\" methods. May not be reported.\n\n\nValue is a string of JSON data representing the feed value block data.\n\n\nExamples:\n  - `lightning` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=169991&pretty\n  - `webmonetization` value type: https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=779873&pretty\n",
+        "type": "string"
+      },
+      "feed_podcast_batch": {
+        "description": "Known details of podcast feed\n",
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/id_feed"
+          },
+          "title": {
+            "$ref": "#/components/schemas/title_feed"
+          },
+          "url": {
+            "$ref": "#/components/schemas/url_feed"
+          },
+          "originalUrl": {
+            "$ref": "#/components/schemas/originalUrl"
+          },
+          "link": {
+            "$ref": "#/components/schemas/link_feed"
+          },
+          "description": {
+            "$ref": "#/components/schemas/description_feed"
+          },
+          "author": {
+            "$ref": "#/components/schemas/author"
+          },
+          "ownerName": {
+            "$ref": "#/components/schemas/ownerName"
+          },
+          "image": {
+            "$ref": "#/components/schemas/image_feed"
+          },
+          "artwork": {
+            "$ref": "#/components/schemas/artwork"
+          },
+          "lastUpdateTime": {
+            "$ref": "#/components/schemas/lastUpdateTime"
+          },
+          "lastCrawlTime": {
+            "$ref": "#/components/schemas/lastCrawlTime"
+          },
+          "lastParseTime": {
+            "$ref": "#/components/schemas/lastParseTime"
+          },
+          "inPollingQueue": {
+            "$ref": "#/components/schemas/inPollingQueue"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/priority"
+          },
+          "lastGoodHttpStatusTime": {
+            "$ref": "#/components/schemas/lastGoodHttpStatusTime"
+          },
+          "lastHttpStatus": {
+            "$ref": "#/components/schemas/lastHttpStatus"
+          },
+          "contentType": {
+            "$ref": "#/components/schemas/contentType"
+          },
+          "itunesId": {
+            "$ref": "#/components/schemas/itunesId_feed"
+          },
+          "generator": {
+            "$ref": "#/components/schemas/generator"
+          },
+          "createdOn": {
+            "$ref": "#/components/schemas/createdOn"
+          },
+          "language": {
+            "$ref": "#/components/schemas/language"
+          },
+          "type": {
+            "$ref": "#/components/schemas/type"
+          },
+          "dead": {
+            "$ref": "#/components/schemas/dead"
+          },
+          "crawlErrors": {
+            "$ref": "#/components/schemas/crawlErrors"
+          },
+          "parseErrors": {
+            "$ref": "#/components/schemas/parseErrors"
+          },
+          "categories": {
+            "$ref": "#/components/schemas/categories"
+          },
+          "locked": {
+            "$ref": "#/components/schemas/locked"
+          },
+          "explicit": {
+            "$ref": "#/components/schemas/explicit_feed"
+          },
+          "podcastGuid": {
+            "$ref": "#/components/schemas/podcastguid"
+          },
+          "medium": {
+            "$ref": "#/components/schemas/medium_feed"
+          },
+          "episodeCount": {
+            "$ref": "#/components/schemas/episodeCount"
+          },
+          "imageUrlHash": {
+            "$ref": "#/components/schemas/imageUrlHash"
+          },
+          "newestItemPubdate": {
+            "$ref": "#/components/schemas/newestItemPublishTime"
+          },
+          "valueBlock": {
+            "$ref": "#/components/schemas/valueBlock"
+          }
+        }
+      },
+      "feeds_batch": {
+        "description": "List of feeds with matching GUID\n",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/feed_podcast_batch"
+        }
+      },
       "datePublishedPretty": {
         "description": "The date and time the episode was published formatted as a human readable string.\n\n\nNote: uses the PodcastIndex server local time to do conversion.\n",
         "type": "string",
@@ -4975,16 +5189,6 @@
           "$ref": "#/components/schemas/value_byepisodeguid_batch"
         }
       },
-      "allfound": {
-        "description": "Indicates if data was found for all `podcastguid` and `episodeguid` values.\n",
-        "type": "boolean",
-        "example": true
-      },
-      "found": {
-        "description": "Number of value data returned.\n",
-        "type": "integer",
-        "example": 4
-      },
       "stats": {
         "description": "An array statistic properties\n",
         "type": "object",
@@ -5369,6 +5573,33 @@
                 },
                 "count": {
                   "$ref": "#/components/schemas/count"
+                },
+                "description": {
+                  "$ref": "#/components/schemas/description_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "podcasts_batch_byguid": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/status"
+                },
+                "allFound": {
+                  "$ref": "#/components/schemas/allfound"
+                },
+                "found": {
+                  "$ref": "#/components/schemas/found"
+                },
+                "feeds": {
+                  "$ref": "#/components/schemas/feeds_batch"
                 },
                 "description": {
                   "$ref": "#/components/schemas/description_response"

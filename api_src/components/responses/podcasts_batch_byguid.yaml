@@ -1,0 +1,16 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        allFound:
+          $ref: '../properties/allfound.yaml'
+        found:
+          $ref: '../properties/found.yaml'
+        feeds:
+          $ref: '../properties/feeds_batch.yaml'
+        description:
+          $ref: '../properties/description_response.yaml'

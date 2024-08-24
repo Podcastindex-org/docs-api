@@ -1,0 +1,15 @@
+  # language=Markdown
+description: |
+  How often the feed is checked for updates and new episodes
+  
+  A value of -1 means never check. A value of 5 means check the most.
+type: integer
+enum:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+example: 5

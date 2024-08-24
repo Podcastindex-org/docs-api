@@ -1,0 +1,75 @@
+  # language=Markdown
+description: |
+  Known details of podcast feed
+type: object
+properties:
+  id:
+    $ref: '../properties/id_feed.yaml'
+  title:
+    $ref: '../properties/title_feed.yaml'
+  url:
+    $ref: '../properties/url_feed.yaml'
+  originalUrl:
+    $ref: '../properties/originalUrl.yaml'
+  link:
+    $ref: '../properties/link_feed.yaml'
+  description:
+    $ref: '../properties/description_feed.yaml'
+  author:
+    $ref: '../properties/author.yaml'
+  ownerName:
+    $ref: '../properties/ownerName.yaml'
+  image:
+    $ref: '../properties/image_feed.yaml'
+  artwork:
+    $ref: '../properties/artwork.yaml'
+  lastUpdateTime:
+    $ref: '../properties/lastUpdateTime.yaml'
+  lastCrawlTime:
+    $ref: '../properties/lastCrawlTime.yaml'
+  lastParseTime:
+    $ref: '../properties/lastParseTime.yaml'
+  inPollingQueue:
+    $ref: '../properties/inPollingQueue.yaml'
+  priority:
+    $ref: '../properties/priority.yaml'
+  lastGoodHttpStatusTime:
+    $ref: '../properties/lastGoodHttpStatusTime.yaml'
+  lastHttpStatus:
+    $ref: '../properties/lastHttpStatus.yaml'
+  contentType:
+    $ref: '../properties/contentType.yaml'
+  itunesId:
+    $ref: '../properties/itunesId_feed.yaml'
+  generator:
+    $ref: '../properties/generator.yaml'
+  createdOn:
+    $ref: '../properties/createdOn.yaml'
+  language:
+    $ref: '../properties/language.yaml'
+  type:
+    $ref: '../properties/type.yaml'
+  dead:
+    $ref: '../properties/dead.yaml'
+  crawlErrors:
+    $ref: '../properties/crawlErrors.yaml'
+  parseErrors:
+    $ref: '../properties/parseErrors.yaml'
+  categories:
+    $ref: '../properties/categories.yaml'
+  locked:
+    $ref: '../properties/locked.yaml'
+  explicit:
+    $ref: '../properties/explicit_feed.yaml'
+  podcastGuid:
+    $ref: '../properties/podcastguid.yaml'
+  medium:
+    $ref: '../properties/medium_feed.yaml'
+  episodeCount:
+    $ref: '../properties/episodeCount.yaml'
+  imageUrlHash:
+    $ref: '../properties/imageUrlHash.yaml'
+  newestItemPubdate:
+    $ref: '../properties/newestItemPublishTime.yaml'
+  valueBlock:
+    $ref: '../properties/valueBlock.yaml'

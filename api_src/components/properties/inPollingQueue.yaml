@@ -1,0 +1,6 @@
+  # language=Markdown
+description: |
+  Indicates if feed is currently scheduled to be polled/checked for new episodes.
+type: integer
+nullable: true
+example: 1

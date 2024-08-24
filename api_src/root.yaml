@@ -193,6 +193,8 @@ paths:
     $ref: 'paths/podcasts/trending.yaml'
   '/podcasts/dead':
     $ref: 'paths/podcasts/dead.yaml'
+  '/podcasts/batch/byguid':
+    $ref: 'paths/podcasts/batch/byguid.yaml'
   '/episodes/byfeedid':
     $ref: 'paths/episodes/byfeedid.yaml'
   '/episodes/byfeedurl':

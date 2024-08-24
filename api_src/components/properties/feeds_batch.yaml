@@ -1,0 +1,6 @@
+  # language=Markdown
+description: |
+  List of feeds with matching GUID
+type: array
+items:
+  $ref: 'feed_podcast_batch.yaml'
