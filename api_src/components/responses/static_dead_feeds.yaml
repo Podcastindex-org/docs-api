@@ -1,0 +1,22 @@
+ # language=markdown
+description: |
+  Feed Ids in CSV file format.
+
+
+  Each row is the feed id. No Header.
+
+
+  Example:
+
+
+  ```csv
+  3,
+  38,
+  43,
+  45,
+  56,
+  ```
+content:
+  application/csv:
+    schema:
+      type: object

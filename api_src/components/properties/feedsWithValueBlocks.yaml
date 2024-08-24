@@ -1,0 +1,7 @@
+  # language=Markdown
+description: |
+  Podcast feeds with a
+  [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+  tag in at least 1 episode.
+type: integer
+example: 21916

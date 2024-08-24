@@ -1,0 +1,24 @@
+description: Array of episodes containing value blocks
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          episodeGuid:
+            $ref: "../properties/guid.yaml"
+          episodeId:
+            $ref: "../properties/id_episode.yaml"
+          feedId:
+            $ref: "../properties/id_feed.yaml"
+          feedUrl:
+            $ref: "../properties/url_feed.yaml"
+          itunesId:
+            $ref: "../properties/itunesId_feed.yaml"
+          podcastGuid:
+            $ref: "../properties/podcastguid.yaml"
+          value:
+            $ref: "../properties/value.yaml"
+          valueCreatedOn:
+            $ref: "../properties/valueCreatedOn.yaml"

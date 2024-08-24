@@ -1,0 +1,18 @@
+description: Invalid request
+content:
+  application/xml:
+    schema:
+      type: object
+      properties:
+        Error:
+          type: object
+          properties:
+            Code:
+              type: string
+            RequestId:
+              type: string
+            HostId:
+              type: string
+    example:
+      status: "false"
+      description: "Invalid parameters"

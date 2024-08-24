@@ -1,0 +1,24 @@
+ # language=markdown
+description: |
+  The feed and episode data seen by the Podcast Index.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          $ref: '../properties/status.yaml'
+        feedCount:
+          $ref: '../properties/feedCount.yaml'
+        itemCount:
+          $ref: '../properties/itemCount.yaml'
+        max:
+          $ref: '../properties/max.yaml'
+        since:
+          $ref: '../properties/since.yaml'
+        previousTrackingUrl:
+          description: URL to previous set of data
+          type: string
+          example: "https://tracking.podcastindex.org/1724468201"
+        data:
+          $ref: '../properties/data_static.yaml'

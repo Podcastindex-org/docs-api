@@ -1,0 +1,22 @@
+get:
+  tags:
+    - Static Data
+  summary: Feed Value Blocks
+  # language=Markdown
+  description: |
+    Get all feeds with value blocks.
+
+
+    Access at: https://tracking.podcastindex.org/feedValueBlocks.json
+  operationId: feedValueBlocks.json
+  security: [] # no security required
+  servers:
+    - url: 'https://tracking.podcastindex.org'
+      description: "Podcast Index Tracking"
+  responses:
+    '200':
+      $ref: '../../../components/responses/static_tracking_feed_value_blocks.yaml'
+    '400':
+      $ref: '../../../components/responses/400_static.yaml'
+    '404':
+      $ref: '../../../components/responses/404.yaml'

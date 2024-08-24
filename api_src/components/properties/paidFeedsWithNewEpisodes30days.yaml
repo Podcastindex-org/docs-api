@@ -1,0 +1,7 @@
+  # language=Markdown
+description: |
+  Podcast feeds with a new episode containing a
+  [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+  block released in the last 30 days.
+type: integer
+example: 237389

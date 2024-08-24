@@ -1,0 +1,7 @@
+  # language=Markdown
+description: |
+  Podcast feeds with a
+  [`podcast:medium`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium)
+  tag with a value of `music`.
+type: integer
+example: 3700

@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Static Data
+  summary: Stats Daily Counts
+  # language=Markdown
+  description: |
+    Report a number of statistics about the feeds in Podcast Index's database. Updated daily.
+
+
+    A subset of stats can be retrieved using the API endpoint [stats/current](#get-/stats/current).
+
+
+    View at: https://stats.podcastindex.org/daily_counts.json
+  operationId: daily_counts.json
+  security: [] # no security required
+  servers:
+    - url: 'https://stats.podcastindex.org'
+      description: "Podcast Index Stats"
+  responses:
+    '200':
+      $ref: '../../../components/responses/static_stats_counts.yaml'
+    '400':
+      $ref: '../../../components/responses/400_static.yaml'
+    '404':
+      $ref: '../../../components/responses/404.yaml'

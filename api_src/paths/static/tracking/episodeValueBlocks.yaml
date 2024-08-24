@@ -1,0 +1,22 @@
+get:
+  tags:
+    - Static Data
+  summary: Episode Value Blocks
+  # language=Markdown
+  description: |
+    Get all episodes with value blocks.
+
+
+    Access at: https://tracking.podcastindex.org/episodeValueBlocks.json
+  operationId: episodeValueBlocks.json
+  security: [] # no security required
+  servers:
+    - url: 'https://tracking.podcastindex.org'
+      description: "Podcast Index Tracking"
+  responses:
+    '200':
+      $ref: '../../../components/responses/static_tracking_episode_value_blocks.yaml'
+    '400':
+      $ref: '../../../components/responses/400_static.yaml'
+    '404':
+      $ref: '../../../components/responses/404.yaml'

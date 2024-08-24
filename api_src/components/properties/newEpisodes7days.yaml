@@ -1,0 +1,5 @@
+  # language=Markdown
+description: |
+  Podcast feeds with a new episode containing a released in the last 7 days.
+type: integer
+example: 442061

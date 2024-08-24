@@ -79,7 +79,7 @@ info:
       3. Import the `PodcastIndexOrgEnvironment.postman_environment.json` to Postman
       4. Click "Environments" on the left sidebar
       5. Select the checkbox next to the PodcastIndexOrgEnvironment entry
-      6. Set `AuthKey` and `SeceretKey` values under the "Current Value" column using your API information 
+      6. Set `AuthKey` and `SeceretKey` values under the "Current Value" column using your API information
       7. Click "Collections" from the sidebar
       8. Select PodcastIndex
       9. Select and run the endpoint to test
@@ -698,7 +698,8 @@ paths:
         This call returns all feeds that have been marked dead (`dead` == 1)
 
 
-        Dead feeds can also be accessed from object storage at https://public.podcastindex.org/podcastindex_dead_feeds.csv
+        Hourly statistics can also be access at https://public.podcastindex.org/podcastindex_dead_feeds.csv
+        For details, see [Dead Feeds](#get-/static/public/podcastindex_dead_feeds.csv).
 
 
         Example: https://api.podcastindex.org/api/1.0/podcasts/dead?pretty
@@ -1156,6 +1157,7 @@ paths:
 
 
         Similar data can also be accessed using object storage root url https://tracking.podcastindex.org/current
+        For details, see [Current](#get-/static/tracking/current).
 
 
         Examples:
@@ -1389,7 +1391,12 @@ paths:
         Return the most recent index statistics.
 
 
-        Hourly statistics can also be access at https://stats.podcastindex.org/daily_counts.json
+        Hourly statistics can also be access at https://stats.podcastindex.org/hourly_counts.json
+        For details, see [Stats Hourly Counts](#get-/static/stats/hourly_counts.json).
+
+
+        Daily statistics can also be access at https://stats.podcastindex.org/daily_counts.json.
+        For details, see [Stats Daily Counts](#get-/static/stats/daily_counts.json).
 
 
         Example: https://api.podcastindex.org/api/1.0/stats/current?pretty
@@ -1587,6 +1594,304 @@ paths:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
+  /static/stats/daily_counts.json:
+    get:
+      tags:
+        - Static Data
+      summary: Stats Daily Counts
+      description: |
+        Report a number of statistics about the feeds in Podcast Index's database. Updated daily.
+
+
+        A subset of stats can be retrieved using the API endpoint [stats/current](#get-/stats/current).
+
+
+        View at: https://stats.podcastindex.org/daily_counts.json
+      operationId: daily_counts.json
+      security: []
+      servers:
+        - url: https://stats.podcastindex.org
+          description: Podcast Index Stats
+      responses:
+        '200':
+          $ref: '#/components/responses/static_stats_counts'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
+  /static/stats/hourly_counts.json:
+    get:
+      tags:
+        - Static Data
+      summary: Stats Hourly Counts
+      description: |
+        Report a number of statistics about the feeds in Podcast Index's database. Updated hourly.
+
+
+        A subset of stats can be retrieved using the API endpoint [stats/current](#get-/stats/current).
+
+
+        View at: https://stats.podcastindex.org/hourly_counts.json
+      operationId: hourly_counts.json
+      security: []
+      servers:
+        - url: https://stats.podcastindex.org
+          description: Podcast Index Stats
+      responses:
+        '200':
+          $ref: '#/components/responses/static_stats_counts'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
+  /static/stats/chart-data.json:
+    get:
+      tags:
+        - Static Data
+      summary: v4v Sats
+      description: |
+        Contains the raw data used to populate the graphs at https://stats.podcastindex.org/v4v.
+
+        This is a look at the total [sats](https://www.investopedia.com/terms/s/satoshi.asp) flowing through the Value4Value
+        Lightning podcasting economy over various periods of time.
+
+        We calculate this data based on our visibility as a one percent voluntary split on Podcastindex.org api
+        calls. Therefore, the true numbers could be higher, but they cannot be lower than listed here. This represents our
+        best approximation of how many sats are flowing across the entire ecosystem from listeners to creators, guests (via
+        episode splits), platforms, services and apps.
+
+
+        View at: https://stats.podcastindex.org/chart-data.json
+      operationId: chart-data.json
+      security: []
+      servers:
+        - url: https://stats.podcastindex.org
+          description: Podcast Index Stats
+      responses:
+        '200':
+          $ref: '#/components/responses/static_sats_data'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
+  /static/stats/v4vmusic.json:
+    get:
+      tags:
+        - Static Data
+      summary: v4v Music Chart JSON
+      description: |
+        Contains the ranking of the music tracks played on podcasts that have been boosted the most over the last 7 days.
+
+        Each entry shows the number of listener boosts sent over this time period. The chart is updated hourly.
+
+
+        Can be viewed in a browser at https://podcastindex.top/ (https://stats.podcastindex.org/v4vmusic.html).
+
+
+        View at: https://stats.podcastindex.org/v4vmusic.json
+
+
+        Also available in [OPML](#get-/static/stats/v4vmusic.opml) and [RSS](#get-/static/stats/v4vmusic.rss).
+      operationId: v4vmusic.json
+      security: []
+      servers:
+        - url: https://stats.podcastindex.org
+          description: Podcast Index Stats
+      responses:
+        '200':
+          $ref: '#/components/responses/static_music_json'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
+  /static/stats/v4vmusic.opml:
+    get:
+      tags:
+        - Static Data
+      summary: v4v Music Chart OPML
+      description: |
+        Contains the ranking of the music tracks played on podcasts that have been boosted the most over the last 7 days.
+
+        Each entry shows the number of listener boosts sent over this time period. The chart is updated hourly.
+
+
+        Can be viewed in a browser at https://podcastindex.top/ (https://stats.podcastindex.org/v4vmusic.html).
+
+
+        View at: https://stats.podcastindex.org/v4vmusic.opml
+
+
+        Also available in [JSON](#get-/static/stats/v4vmusic.json) and [RSS](#get-/static/stats/v4vmusic.rss).
+      operationId: v4vmusic.opml
+      security: []
+      servers:
+        - url: https://stats.podcastindex.org
+          description: Podcast Index Stats
+      responses:
+        '200':
+          $ref: '#/components/responses/static_music_opml'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
+  /static/stats/v4vmusic.rss:
+    get:
+      tags:
+        - Static Data
+      summary: v4v Music Chart RSS
+      description: |
+        Contains the ranking of the music tracks played on podcasts that have been boosted the most over the last 7 days.
+
+        Each entry shows the number of listener boosts sent over this time period. The chart is updated hourly.
+
+
+        Can be viewed in a browser at https://podcastindex.top/ (https://stats.podcastindex.org/v4vmusic.html).
+
+
+        View at: https://stats.podcastindex.org/v4vmusic.rss
+
+
+        Also available in [JSON](#get-/static/stats/v4vmusic.json) and [OPML](#get-/static/stats/v4vmusic.opml).
+      operationId: v4vmusic.rss
+      security: []
+      servers:
+        - url: https://stats.podcastindex.org
+          description: Podcast Index Stats
+      responses:
+        '200':
+          $ref: '#/components/responses/static_music_rss'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
+  /static/tracking/current:
+    get:
+      tags:
+        - Static Data
+      summary: Current
+      description: |
+        This call returns every new feed and episode added to the index over the past 24 hours in reverse chronological order.
+
+
+        This is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's
+        internal timestamp.
+
+
+        Similar data can also be retrieved using the API endpoint [recent/data](#get-/recent/data).
+
+
+        Access at: https://tracking.podcastindex.org/current
+
+
+        The prior 24 hours of data (going backwards until all tracked data is received) can be accessed using the timestamp
+        of the previous data set. This is found in the `previousTrackingUrl`.
+        The format of these prior data sets follows the format described below.
+      operationId: current
+      security: []
+      servers:
+        - url: https://tracking.podcastindex.org
+          description: Podcast Index Tracking
+      responses:
+        '200':
+          $ref: '#/components/responses/static_current'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
+  /static/tracking/feedValueBlocks:
+    get:
+      tags:
+        - Static Data
+      summary: Feed Value Blocks
+      description: |
+        Get all feeds with value blocks.
+
+
+        Access at: https://tracking.podcastindex.org/feedValueBlocks.json
+      operationId: feedValueBlocks.json
+      security: []
+      servers:
+        - url: https://tracking.podcastindex.org
+          description: Podcast Index Tracking
+      responses:
+        '200':
+          $ref: '#/components/responses/static_tracking_feed_value_blocks'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
+  /static/tracking/episodeValueBlocks:
+    get:
+      tags:
+        - Static Data
+      summary: Episode Value Blocks
+      description: |
+        Get all episodes with value blocks.
+
+
+        Access at: https://tracking.podcastindex.org/episodeValueBlocks.json
+      operationId: episodeValueBlocks.json
+      security: []
+      servers:
+        - url: https://tracking.podcastindex.org
+          description: Podcast Index Tracking
+      responses:
+        '200':
+          $ref: '#/components/responses/static_tracking_episode_value_blocks'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
+  /static/public/podcastindex_dead_feeds.csv:
+    get:
+      tags:
+        - Static Data
+      summary: Dead Feeds
+      description: |
+        Lists all feed Ids that have been marked dead in the Podcast Index database. The list is updated every X hours.
+
+
+        A subset of stats can be retrieved using the API endpoint [podcasts/dead](#get-/podcasts/dead).
+
+
+        Download from: https://public.podcastindex.org/podcastindex_dead_feeds.csv
+      operationId: podcastindex_dead_feeds.csv
+      security: []
+      servers:
+        - url: https://public.podcastindex.org
+          description: Podcast Index Public
+      responses:
+        '200':
+          $ref: '#/components/responses/static_dead_feeds'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
+  /static/public/podcastindex_feeds.db.tgz:
+    get:
+      tags:
+        - Static Data
+      summary: Feeds Database
+      description: |
+        Compressed database of all non-dead feeds in the Podcast Index database.
+
+
+        Updated daily. Some attributes excluded. No episodes included.
+
+
+        Download from: https://public.podcastindex.org/podcastindex_feeds.db.tgz
+      operationId: podcastindex_feeds_db.tgz
+      security: []
+      servers:
+        - url: https://public.podcastindex.org
+          description: Podcast Index Public
+      responses:
+        '200':
+          $ref: '#/components/responses/static_feeds_db'
+        '400':
+          $ref: '#/components/responses/400_static'
+        '404':
+          $ref: '#/components/responses/404'
 components:
   securitySchemes:
     User-Agent:
@@ -4633,39 +4938,62 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/value_byepisodeguid_batch'
+    feedCountTotal:
+      description: |
+        Total podcast feeds in the index.
+      type: integer
+      example: 4257865
+    episodeCountTotal:
+      description: |
+        Total individual podcast episodes in the index.
+      type: integer
+      example: 143953477
+    feedsWithNewEpisodes3days:
+      description: |
+        Podcast feeds with a new episode released in the last 3 days.
+      type: integer
+      example: 97522
+    feedsWithNewEpisodes10days:
+      description: |
+        Podcast feeds with a new episode released in the last 10 days.
+      type: integer
+      example: 212322
+    feedsWithNewEpisodes30days:
+      description: |
+        Podcast feeds with a new episode released in the last 30 days.
+      type: integer
+      example: 306748
+    feedsWithNewEpisodes90days:
+      description: |
+        Podcast feeds with a new episode released in the last 90 days.
+      type: integer
+      example: 436933
+    feedsWithValueBlocks:
+      description: |
+        Podcast feeds with a
+        [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+        tag in at least 1 episode.
+      type: integer
+      example: 21916
     stats:
       description: |
         An array statistic properties
       type: object
       properties:
         feedCountTotal:
-          description: Total podcast feeds in the index.
-          type: integer
-          example: 4048514
+          $ref: '#/components/schemas/feedCountTotal'
         episodeCountTotal:
-          description: Total individual podcast episodes in the index.
-          type: integer
-          example: 112890355
+          $ref: '#/components/schemas/episodeCountTotal'
         feedsWithNewEpisodes3days:
-          description: Podcast feeds with a new episode released in the last 3 days.
-          type: integer
-          example: 87369
+          $ref: '#/components/schemas/feedsWithNewEpisodes3days'
         feedsWithNewEpisodes10days:
-          description: Podcast feeds with a new episode released in the last 10 days.
-          type: integer
-          example: 242922
+          $ref: '#/components/schemas/feedsWithNewEpisodes10days'
         feedsWithNewEpisodes30days:
-          description: Podcast feeds with a new episode released in the last 30 days.
-          type: integer
-          example: 352744
+          $ref: '#/components/schemas/feedsWithNewEpisodes30days'
         feedsWithNewEpisodes90days:
-          description: Podcast feeds with a new episode released in the last 90 days.
-          type: integer
-          example: 478568
+          $ref: '#/components/schemas/feedsWithNewEpisodes90days'
         feedsWithValueBlocks:
-          description: Podcast feeds with a value block
-          type: integer
-          example: 9772
+          $ref: '#/components/schemas/feedsWithValueBlocks'
     id_category:
       description: |
         The internal PodcastIndex.org category ID.
@@ -4698,6 +5026,169 @@ components:
         - 'true'
         - 'false'
       example: 'true'
+    feedsWithNewEpisodes7days:
+      description: |
+        Podcast feeds with a new episode released in the last 7 days.
+      type: integer
+      example: 179043
+    feedsWithNewEpisodes14days:
+      description: |
+        Podcast feeds with a new episode released in the last 14 days.
+      type: integer
+      example: 239664
+    feedsWithNewEpisodes60days:
+      description: |
+        Podcast feeds with a new episode released in the last 60 days.
+      type: integer
+      example: 382945
+    paidFeedsWithNewEpisodes3days:
+      description: |
+        Podcast feeds with a new episode containing a
+        [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+        block released in the last 3 days.
+      type: integer
+      example: 77638
+    paidFeedsWithNewEpisodes7days:
+      description: |
+        Podcast feeds with a new episode containing a
+        [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+        block released in the last 7 days.
+      type: integer
+      example: 140275
+    paidFeedsWithNewEpisodes10days:
+      description: |
+        Podcast feeds with a new episode containing a
+        [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+        block released in the last 10 days.
+      type: integer
+      example: 165789
+    paidFeedsWithNewEpisodes14days:
+      description: |
+        Podcast feeds with a new episode containing a
+        [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+        block released in the last 14 days.
+      type: integer
+      example: 186602
+    paidFeedsWithNewEpisodes30days:
+      description: |
+        Podcast feeds with a new episode containing a
+        [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+        block released in the last 30 days.
+      type: integer
+      example: 237389
+    paidFeedsWithNewEpisodes60days:
+      description: |
+        Podcast feeds with a new episode containing a
+        [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+        block released in the last 60 days.
+      type: integer
+      example: 77632
+    paidFeedsWithNewEpisodes90days:
+      description: |
+        Podcast feeds with a new episode containing a
+        [`podcast:value`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value)
+        block released in the last 90 days.
+      type: integer
+      example: 335380
+    newEpisodes3days:
+      description: |
+        Podcast feeds with a new episode containing a released in the last 3 days.
+      type: integer
+      example: 212324
+    newEpisodes7days:
+      description: |
+        Podcast feeds with a new episode containing a released in the last 7 days.
+      type: integer
+      example: 442061
+    newEpisodes10days:
+      description: |
+        Podcast feeds with a new episode containing a released in the last 10 days.
+      type: integer
+      example: 684833
+    newEpisodes14days:
+      description: |
+        Podcast feeds with a new episode containing a released in the last 14 days.
+      type: integer
+      example: 907203
+    newEpisodes30days:
+      description: |
+        Podcast feeds with a new episode containing a released in the last 30 days.
+      type: integer
+      example: 1901547
+    newEpisodes60days:
+      description: |
+        Podcast feeds with a new episode containing a released in the last 60 days.
+      type: integer
+      example: 3710750
+    newEpisodes90days:
+      description: |
+        Podcast feeds with a new episode containing a released in the last 90 days.
+      type: integer
+      example: 5498580
+    feedsWithFundingTag:
+      description: |
+        Podcast feeds with a
+        [`podcast:funding`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding)
+        tag in at least 1 episode.
+      type: integer
+      example: 57582
+    feedsWithTranscripts:
+      description: |
+        Podcast feeds with a
+        [`podcast:transcript`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#transcript)
+        tag in at least 1 episode.
+      type: integer
+      example: 61385
+    episodesWithTranscripts:
+      description: |
+        Episodes with a
+        [`podcast:transcript`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#transcript)
+        tag.
+      type: integer
+      example: 3198597
+    feedsWithChapters:
+      description: |
+        Podcast feeds with a
+        [`podcast:chapters`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#chapters)
+        tag in at least 1 episode.
+      type: integer
+      example: 35582
+    episodesWithChapters:
+      description: |
+        Number of episodes with [`podcast:chapters`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#chapters)
+      type: integer
+      example: 652781
+    feedsWithMediumMusic:
+      description: |
+        Podcast feeds with a
+        [`podcast:medium`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium)
+        tag with a value of `music`.
+      type: integer
+      example: 3700
+    feedsWithMediumVideo:
+      description: |
+        Podcast feeds with a
+        [`podcast:medium`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium)
+        tag with a value of `video`.
+      type: integer
+      example: 1288
+    data_static:
+      description: |
+        Object containing the recent data
+      type: object
+      properties:
+        nextSince:
+          description: |
+            Value of `since` in next block of data
+          type: integer
+          format: Unix Epoch
+          example: 1613805249
+        position:
+          $ref: '#/components/schemas/position'
+        feeds:
+          $ref: '#/components/schemas/feeds_data'
+        items:
+          $ref: '#/components/schemas/items_data'
   responses:
     '400':
       description: Invalid request
@@ -4720,6 +5211,8 @@ components:
           schema:
             type: string
           example: Authorization header value either not set or blank.
+    '404':
+      description: Not found
     itunes_replacement:
       description: Success
       content:
@@ -5291,3 +5784,355 @@ components:
                 $ref: '#/components/schemas/status'
               description:
                 $ref: '#/components/schemas/description_response'
+    static_stats_counts:
+      description: Object containing the statistics for the Podcast Index feed data
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              feedCountTotal:
+                $ref: '#/components/schemas/feedCountTotal'
+              episodeCountTotal:
+                $ref: '#/components/schemas/episodeCountTotal'
+              feedsWithNewEpisodes3days:
+                $ref: '#/components/schemas/feedsWithNewEpisodes3days'
+              feedsWithNewEpisodes7days:
+                $ref: '#/components/schemas/feedsWithNewEpisodes7days'
+              feedsWithNewEpisodes10days:
+                $ref: '#/components/schemas/feedsWithNewEpisodes10days'
+              feedsWithNewEpisodes14days:
+                $ref: '#/components/schemas/feedsWithNewEpisodes14days'
+              feedsWithNewEpisodes30days:
+                $ref: '#/components/schemas/feedsWithNewEpisodes30days'
+              feedsWithNewEpisodes60days:
+                $ref: '#/components/schemas/feedsWithNewEpisodes60days'
+              feedsWithNewEpisodes90days:
+                $ref: '#/components/schemas/feedsWithNewEpisodes90days'
+              paidFeedsWithNewEpisodes3days:
+                $ref: '#/components/schemas/paidFeedsWithNewEpisodes3days'
+              paidFeedsWithNewEpisodes7days:
+                $ref: '#/components/schemas/paidFeedsWithNewEpisodes7days'
+              paidFeedsWithNewEpisodes10days:
+                $ref: '#/components/schemas/paidFeedsWithNewEpisodes10days'
+              paidFeedsWithNewEpisodes14days:
+                $ref: '#/components/schemas/paidFeedsWithNewEpisodes14days'
+              paidFeedsWithNewEpisodes30days:
+                $ref: '#/components/schemas/paidFeedsWithNewEpisodes30days'
+              paidFeedsWithNewEpisodes60days:
+                $ref: '#/components/schemas/paidFeedsWithNewEpisodes60days'
+              paidFeedsWithNewEpisodes90days:
+                $ref: '#/components/schemas/paidFeedsWithNewEpisodes90days'
+              newEpisodes3days:
+                $ref: '#/components/schemas/newEpisodes3days'
+              newEpisodes7days:
+                $ref: '#/components/schemas/newEpisodes7days'
+              newEpisodes10days:
+                $ref: '#/components/schemas/newEpisodes10days'
+              newEpisodes14days:
+                $ref: '#/components/schemas/newEpisodes14days'
+              newEpisodes30days:
+                $ref: '#/components/schemas/newEpisodes30days'
+              newEpisodes60days:
+                $ref: '#/components/schemas/newEpisodes60days'
+              newEpisodes90days:
+                $ref: '#/components/schemas/newEpisodes90days'
+              feedsWithValueBlocks:
+                $ref: '#/components/schemas/feedsWithValueBlocks'
+              feedsWithFundingTag:
+                $ref: '#/components/schemas/feedsWithFundingTag'
+              feedsWithTranscripts:
+                $ref: '#/components/schemas/feedsWithTranscripts'
+              episodesWithTranscripts:
+                $ref: '#/components/schemas/episodesWithTranscripts'
+              feedsWithChapters:
+                $ref: '#/components/schemas/feedsWithChapters'
+              episodesWithChapters:
+                $ref: '#/components/schemas/episodesWithChapters'
+              feedsWithMediumMusic:
+                $ref: '#/components/schemas/feedsWithMediumMusic'
+              feedsWithMediumVideo:
+                $ref: '#/components/schemas/feedsWithMediumVideo'
+    400_static:
+      description: Invalid request
+      content:
+        application/xml:
+          schema:
+            type: object
+            properties:
+              Error:
+                type: object
+                properties:
+                  Code:
+                    type: string
+                  RequestId:
+                    type: string
+                  HostId:
+                    type: string
+          example:
+            status: 'false'
+            description: Invalid parameters
+    static_sats_data:
+      description: Object containing the number of sats, transactions, and senders.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              sats:
+                description: Array of sats seen in transactions on the specified date (x)
+                type: array
+                items:
+                  type: object
+                  properties:
+                    x:
+                      description: Date in YYYY-M-D format.
+                      type: string
+                      example: 2024-5-24
+                    'y':
+                      description: Number of sats transacted
+                      type: integer
+                      example: 629594
+              senders:
+                description: Array of senders (supporters) seen in transactions on the specified date (x)
+                type: array
+                items:
+                  type: object
+                  properties:
+                    x:
+                      description: Date in YYYY-M-D format.
+                      type: string
+                      example: 2024-5-24
+                    'y':
+                      description: Number of senders
+                      type: integer
+                      example: 238
+              txs:
+                description: Array of transactions on the specified date (x)
+                type: array
+                items:
+                  type: object
+                  properties:
+                    x:
+                      description: Date in YYYY-M-D format.
+                      type: string
+                      example: 2024-5-24
+                    'y':
+                      description: Number of transactions
+                      type: integer
+                      example: 8212
+              colors:
+                description: Colors used in graphs
+                type: object
+                properties:
+                  txcolor:
+                    type: string
+                    example: '#ff3333'
+                  color14:
+                    type: string
+                    example: '#9370db'
+                  color30:
+                    type: string
+                    example: '#58d68d'
+                  color60:
+                    type: string
+                    example: '#0088cc'
+                  color7:
+                    type: string
+                    example: '#fffa90'
+                  color90:
+                    type: string
+                    example: '#ff8800'
+    static_music_json:
+      description: The hourly Top X music
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              title:
+                description: Title of music
+                type: string
+                example: Podcasting 2.0 Top 100 (Music)
+              description:
+                description: Description of object
+                type: string
+                example: An hourly Top 100 music playlist.
+              timestamp:
+                description: Date updated
+                type: integer
+                example: 1724465107
+              items:
+                description: Array of top X music feeds
+                type: object
+                properties:
+                  rank:
+                    description: Rank in chart
+                    type: integer
+                    example: 1
+                  boosts:
+                    description: Number of boosts
+                    type: string
+                    example: '42'
+                  title:
+                    description: Title of Track
+                    type: string
+                    example: To be in Nashville
+                  image:
+                    $ref: '#/components/schemas/image_episode'
+                  feedId:
+                    $ref: '#/components/schemas/id_feed'
+                  feedUrl:
+                    $ref: '#/components/schemas/url_feed'
+                  feedGuid:
+                    $ref: '#/components/schemas/podcastguid'
+                  itemGuid:
+                    $ref: '#/components/schemas/guid'
+    static_music_opml:
+      description: |
+        The hourly Top X music
+
+
+        Data follows the [OPML spec](https://opml.org/spec2.opml) with additions of
+        [Podcast Namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) attributes.
+
+
+        Example `outline` entry:
+
+        ```xml
+        <outline type="rss" text="To be in Nashville" xmlUrl="https://files.heycitizen.xyz/Songs/Albums/The-Heycitizen-Experience/the heycitizen experience.xml" podcast:feedGuid="a2d2e313-9cbd-5169-b89c-ab07b33ecc33" podcast:itemGuid="ac34129c-c78a-463e-a64f-01405e1f2be4"/>
+        ```
+
+        Attributes:
+
+          - `text`
+            - Title of Track
+            - Example: `"To be in Nashville"`
+          - `xmlUrl`
+            - Feed URL track is in
+            - Example: `"https://files.heycitizen.xyz/Songs/Albums/The-Heycitizen-Experience/the heycitizen experience.xml"`
+          - `podcast:feedGuid`
+            - The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.
+            - See the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.
+            - Example: `"a2d2e313-9cbd-5169-b89c-ab07b33ecc33"`
+          - `podcast:itemGuid`
+            - The unique identifier for the episode
+            - Example: `"ac34129c-c78a-463e-a64f-01405e1f2be4"`
+      content:
+        application/xml:
+          schema:
+            type: object
+    static_music_rss:
+      description: |
+        The hourly Top X music
+
+
+        Data follows the RSS XML spec with additions of
+        [Podcast Namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) attributes.
+
+
+        The [`podcast:remoteItem`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#remote-item)
+        is used to reference the episodes in the music chart.
+      content:
+        application/rss+xml:
+          schema:
+            type: object
+    static_current:
+      description: |
+        The feed and episode data seen by the Podcast Index.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: '#/components/schemas/status'
+              feedCount:
+                $ref: '#/components/schemas/feedCount'
+              itemCount:
+                $ref: '#/components/schemas/itemCount'
+              max:
+                $ref: '#/components/schemas/max'
+              since:
+                $ref: '#/components/schemas/since'
+              previousTrackingUrl:
+                description: URL to previous set of data
+                type: string
+                example: https://tracking.podcastindex.org/1724468201
+              data:
+                $ref: '#/components/schemas/data_static'
+    static_tracking_feed_value_blocks:
+      description: Array of episodes containing value blocks
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  $ref: '#/components/schemas/id_feed'
+                itunesId:
+                  $ref: '#/components/schemas/itunesId_feed'
+                podcastGuid:
+                  $ref: '#/components/schemas/podcastguid'
+                url:
+                  $ref: '#/components/schemas/url_feed'
+                value:
+                  $ref: '#/components/schemas/value'
+                valueCreatedOn:
+                  $ref: '#/components/schemas/valueCreatedOn'
+    static_tracking_episode_value_blocks:
+      description: Array of episodes containing value blocks
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                episodeGuid:
+                  $ref: '#/components/schemas/guid'
+                episodeId:
+                  $ref: '#/components/schemas/id_episode'
+                feedId:
+                  $ref: '#/components/schemas/id_feed'
+                feedUrl:
+                  $ref: '#/components/schemas/url_feed'
+                itunesId:
+                  $ref: '#/components/schemas/itunesId_feed'
+                podcastGuid:
+                  $ref: '#/components/schemas/podcastguid'
+                value:
+                  $ref: '#/components/schemas/value'
+                valueCreatedOn:
+                  $ref: '#/components/schemas/valueCreatedOn'
+    static_dead_feeds:
+      description: |
+        Feed Ids in CSV file format.
+
+
+        Each row is the feed id. No Header.
+
+
+        Example:
+
+
+        ```csv
+        3,
+        38,
+        43,
+        45,
+        56,
+        ```
+      content:
+        application/csv:
+          schema:
+            type: object
+    static_feeds_db:
+      description: |
+        Podcast Index Feeds Database
+      content:
+        application/gzip:
+          schema:
+            type: object

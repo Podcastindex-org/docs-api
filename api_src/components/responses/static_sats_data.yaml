@@ -1,0 +1,70 @@
+description: Object containing the number of sats, transactions, and senders.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        sats:
+          description: Array of sats seen in transactions on the specified date (x)
+          type: array
+          items:
+            type: object
+            properties:
+              x:
+                description: Date in YYYY-M-D format.
+                type: string
+                example: "2024-5-24"
+              y:
+                description: Number of sats transacted
+                type: integer
+                example: 629594
+        senders:
+          description: Array of senders (supporters) seen in transactions on the specified date (x)
+          type: array
+          items:
+            type: object
+            properties:
+              x:
+                description: Date in YYYY-M-D format.
+                type: string
+                example: "2024-5-24"
+              y:
+                description: Number of senders
+                type: integer
+                example: 238
+        txs:
+          description: Array of transactions on the specified date (x)
+          type: array
+          items:
+            type: object
+            properties:
+              x:
+                description: Date in YYYY-M-D format.
+                type: string
+                example: "2024-5-24"
+              y:
+                description: Number of transactions
+                type: integer
+                example: 8212
+        colors:
+          description: Colors used in graphs
+          type: object
+          properties:
+            txcolor:
+              type: string
+              example: "#ff3333"
+            color14:
+              type: string
+              example: "#9370db"
+            color30:
+              type: string
+              example: "#58d68d"
+            color60:
+              type: string
+              example: "#0088cc"
+            color7:
+              type: string
+              example: "#fffa90"
+            color90:
+              type: string
+              example: "#ff8800"

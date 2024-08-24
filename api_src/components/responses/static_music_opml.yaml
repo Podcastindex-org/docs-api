@@ -1,0 +1,34 @@
+ # language=markdown
+description: |
+  The hourly Top X music
+
+
+  Data follows the [OPML spec](https://opml.org/spec2.opml) with additions of
+  [Podcast Namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) attributes.
+
+
+  Example `outline` entry:
+
+  ```xml
+  <outline type="rss" text="To be in Nashville" xmlUrl="https://files.heycitizen.xyz/Songs/Albums/The-Heycitizen-Experience/the heycitizen experience.xml" podcast:feedGuid="a2d2e313-9cbd-5169-b89c-ab07b33ecc33" podcast:itemGuid="ac34129c-c78a-463e-a64f-01405e1f2be4"/>
+  ```
+
+  Attributes:
+
+    - `text`
+      - Title of Track
+      - Example: `"To be in Nashville"`
+    - `xmlUrl`
+      - Feed URL track is in
+      - Example: `"https://files.heycitizen.xyz/Songs/Albums/The-Heycitizen-Experience/the heycitizen experience.xml"`
+    - `podcast:feedGuid`
+      - The GUID from the `podcast:guid` tag in the feed. This value is a unique, global identifier for the podcast.
+      - See the namespace spec for [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.
+      - Example: `"a2d2e313-9cbd-5169-b89c-ab07b33ecc33"`
+    - `podcast:itemGuid`
+      - The unique identifier for the episode
+      - Example: `"ac34129c-c78a-463e-a64f-01405e1f2be4"`
+content:
+  application/xml:
+    schema:
+      type: object

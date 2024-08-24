@@ -1,0 +1,68 @@
+description: Object containing the statistics for the Podcast Index feed data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        feedCountTotal:
+          $ref: "../properties/feedCountTotal.yaml"
+        episodeCountTotal:
+          $ref: "../properties/episodeCountTotal.yaml"
+        feedsWithNewEpisodes3days:
+          $ref: "../properties/feedsWithNewEpisodes3days.yaml"
+        feedsWithNewEpisodes7days:
+          $ref: "../properties/feedsWithNewEpisodes7days.yaml"
+        feedsWithNewEpisodes10days:
+          $ref: "../properties/feedsWithNewEpisodes10days.yaml"
+        feedsWithNewEpisodes14days:
+          $ref: "../properties/feedsWithNewEpisodes14days.yaml"
+        feedsWithNewEpisodes30days:
+          $ref: "../properties/feedsWithNewEpisodes30days.yaml"
+        feedsWithNewEpisodes60days:
+          $ref: "../properties/feedsWithNewEpisodes60days.yaml"
+        feedsWithNewEpisodes90days:
+          $ref: "../properties/feedsWithNewEpisodes90days.yaml"
+        paidFeedsWithNewEpisodes3days:
+          $ref: "../properties/paidFeedsWithNewEpisodes3days.yaml"
+        paidFeedsWithNewEpisodes7days:
+          $ref: "../properties/paidFeedsWithNewEpisodes7days.yaml"
+        paidFeedsWithNewEpisodes10days:
+          $ref: "../properties/paidFeedsWithNewEpisodes10days.yaml"
+        paidFeedsWithNewEpisodes14days:
+          $ref: "../properties/paidFeedsWithNewEpisodes14days.yaml"
+        paidFeedsWithNewEpisodes30days:
+          $ref: "../properties/paidFeedsWithNewEpisodes30days.yaml"
+        paidFeedsWithNewEpisodes60days:
+          $ref: "../properties/paidFeedsWithNewEpisodes60days.yaml"
+        paidFeedsWithNewEpisodes90days:
+          $ref: "../properties/paidFeedsWithNewEpisodes90days.yaml"
+        newEpisodes3days:
+          $ref: "../properties/newEpisodes3days.yaml"
+        newEpisodes7days:
+          $ref: "../properties/newEpisodes7days.yaml"
+        newEpisodes10days:
+          $ref: "../properties/newEpisodes10days.yaml"
+        newEpisodes14days:
+          $ref: "../properties/newEpisodes14days.yaml"
+        newEpisodes30days:
+          $ref: "../properties/newEpisodes30days.yaml"
+        newEpisodes60days:
+          $ref: "../properties/newEpisodes60days.yaml"
+        newEpisodes90days:
+          $ref: "../properties/newEpisodes90days.yaml"
+        feedsWithValueBlocks:
+          $ref: "../properties/feedsWithValueBlocks.yaml"
+        feedsWithFundingTag:
+          $ref: "../properties/feedsWithFundingTag.yaml"
+        feedsWithTranscripts:
+          $ref: "../properties/feedsWithTranscripts.yaml"
+        episodesWithTranscripts:
+          $ref: "../properties/episodesWithTranscripts.yaml"
+        feedsWithChapters:
+          $ref: "../properties/feedsWithChapters.yaml"
+        episodesWithChapters:
+          $ref: "../properties/episodesWithChapters.yaml"
+        feedsWithMediumMusic:
+          $ref: "../properties/feedsWithMediumMusic.yaml"
+        feedsWithMediumVideo:
+          $ref: "../properties/feedsWithMediumVideo.yaml"

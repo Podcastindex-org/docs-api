@@ -4,37 +4,16 @@ description: |
 type: object
 properties:
   feedCountTotal:
-    # language=Markdown
-    description: Total podcast feeds in the index.
-    type: integer
-    example: 4048514
+    $ref: "feedCountTotal.yaml"
   episodeCountTotal:
-    # language=Markdown
-    description: Total individual podcast episodes in the index.
-    type: integer
-    example: 112890355
+    $ref: "episodeCountTotal.yaml"
   feedsWithNewEpisodes3days:
-    # language=Markdown
-    description: Podcast feeds with a new episode released in the last 3 days.
-    type: integer
-    example: 87369
+    $ref: "feedsWithNewEpisodes3days.yaml"
   feedsWithNewEpisodes10days:
-    # language=Markdown
-    description: Podcast feeds with a new episode released in the last 10 days.
-    type: integer
-    example: 242922
+    $ref: "feedsWithNewEpisodes10days.yaml"
   feedsWithNewEpisodes30days:
-    # language=Markdown
-    description: Podcast feeds with a new episode released in the last 30 days.
-    type: integer
-    example: 352744
+    $ref: "feedsWithNewEpisodes30days.yaml"
   feedsWithNewEpisodes90days:
-    # language=Markdown
-    description: Podcast feeds with a new episode released in the last 90 days.
-    type: integer
-    example: 478568
+    $ref: "feedsWithNewEpisodes90days.yaml"
   feedsWithValueBlocks:
-    # language=Markdown
-    description: Podcast feeds with a value block
-    type: integer
-    example: 9772
+    $ref: "feedsWithValueBlocks.yaml"
