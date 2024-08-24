@@ -1,0 +1,7 @@
+  # language=Markdown
+description: |
+  Episodes with a
+  [`podcast:transcript`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#transcript)
+  tag.
+type: integer
+example: 3198597

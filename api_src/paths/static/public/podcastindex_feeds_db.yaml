@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Static Data
+  summary: Feeds Database
+  # language=Markdown
+  description: |
+    Compressed database of all non-dead feeds in the Podcast Index database.
+
+
+    Updated daily. Some attributes excluded. No episodes included.
+
+
+    Download from: https://public.podcastindex.org/podcastindex_feeds.db.tgz
+  operationId: podcastindex_feeds_db.tgz
+  security: [] # no security required
+  servers:
+    - url: 'https://public.podcastindex.org'
+      description: "Podcast Index Public"
+  responses:
+    '200':
+      $ref: '../../../components/responses/static_feeds_db.yaml'
+    '400':
+      $ref: '../../../components/responses/400_static.yaml'
+    '404':
+      $ref: '../../../components/responses/404.yaml'

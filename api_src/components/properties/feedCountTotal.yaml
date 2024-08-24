@@ -1,0 +1,5 @@
+  # language=Markdown
+description: |
+  Total podcast feeds in the index.
+type: integer
+example: 4257865

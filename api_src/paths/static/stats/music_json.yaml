@@ -1,0 +1,30 @@
+get:
+  tags:
+    - Static Data
+  summary: v4v Music Chart JSON
+  # language=Markdown
+  description: |
+    Contains the ranking of the music tracks played on podcasts that have been boosted the most over the last 7 days.
+
+    Each entry shows the number of listener boosts sent over this time period. The chart is updated hourly.
+
+
+    Can be viewed in a browser at https://podcastindex.top/ (https://stats.podcastindex.org/v4vmusic.html).
+
+
+    View at: https://stats.podcastindex.org/v4vmusic.json
+
+
+    Also available in [OPML](#get-/static/stats/v4vmusic.opml) and [RSS](#get-/static/stats/v4vmusic.rss).
+  operationId: v4vmusic.json
+  security: [ ] # no security required
+  servers:
+    - url: 'https://stats.podcastindex.org'
+      description: "Podcast Index Stats"
+  responses:
+    '200':
+      $ref: '../../../components/responses/static_music_json.yaml'
+    '400':
+      $ref: '../../../components/responses/400_static.yaml'
+    '404':
+      $ref: '../../../components/responses/404.yaml'

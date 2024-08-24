@@ -1,0 +1,5 @@
+  # language=Markdown
+description: |
+  Total individual podcast episodes in the index.
+type: integer
+example: 143953477

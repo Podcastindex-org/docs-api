@@ -1,0 +1,34 @@
+get:
+  tags:
+    - Static Data
+  summary: Current
+  # language=Markdown
+  description: |
+    This call returns every new feed and episode added to the index over the past 24 hours in reverse chronological order.
+
+
+    This is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's
+    internal timestamp.
+
+
+    Similar data can also be retrieved using the API endpoint [recent/data](#get-/recent/data).
+
+
+    Access at: https://tracking.podcastindex.org/current
+
+
+    The prior 24 hours of data (going backwards until all tracked data is received) can be accessed using the timestamp
+    of the previous data set. This is found in the `previousTrackingUrl`.
+    The format of these prior data sets follows the format described below.
+  operationId: current
+  security: [] # no security required
+  servers:
+    - url: 'https://tracking.podcastindex.org'
+      description: "Podcast Index Tracking"
+  responses:
+    '200':
+      $ref: '../../../components/responses/static_current.yaml'
+    '400':
+      $ref: '../../../components/responses/400_static.yaml'
+    '404':
+      $ref: '../../../components/responses/404.yaml'

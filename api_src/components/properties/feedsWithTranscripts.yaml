@@ -1,0 +1,7 @@
+  # language=Markdown
+description: |
+  Podcast feeds with a
+  [`podcast:transcript`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#transcript)
+  tag in at least 1 episode.
+type: integer
+example: 61385

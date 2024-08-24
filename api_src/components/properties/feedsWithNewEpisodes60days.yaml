@@ -1,0 +1,5 @@
+  # language=Markdown
+description: |
+  Podcast feeds with a new episode released in the last 60 days.
+type: integer
+example: 382945

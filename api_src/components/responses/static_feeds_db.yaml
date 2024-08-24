@@ -1,0 +1,7 @@
+ # language=markdown
+description: |
+  Podcast Index Feeds Database
+content:
+  application/gzip:
+    schema:
+      type: object

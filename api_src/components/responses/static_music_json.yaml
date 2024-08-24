@@ -1,0 +1,45 @@
+description: The hourly Top X music
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        title:
+          description: Title of music
+          type: string
+          example: "Podcasting 2.0 Top 100 (Music)"
+        description:
+          description: Description of object
+          type: string
+          example: "An hourly Top 100 music playlist."
+        timestamp:
+          description: Date updated
+          type: integer
+          example: 1724465107
+        items:
+          description: Array of top X music feeds
+          type: object
+          properties:
+            rank:
+              description: Rank in chart
+              type: integer
+              example: 1
+            boosts:
+              description: Number of boosts
+              type: string
+              example: "42"
+            title:
+              description: Title of Track
+              type: string
+              example: "To be in Nashville"
+            image:
+              $ref: "../properties/image_episode.yaml"
+            feedId:
+              $ref: "../properties/id_feed.yaml"
+            feedUrl:
+              $ref: "../properties/url_feed.yaml"
+            feedGuid:
+              $ref: "../properties/podcastguid.yaml"
+            itemGuid:
+              $ref: "../properties/guid.yaml"
+

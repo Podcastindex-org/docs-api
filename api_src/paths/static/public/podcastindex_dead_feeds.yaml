@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Static Data
+  summary: Dead Feeds
+  # language=Markdown
+  description: |
+    Lists all feed Ids that have been marked dead in the Podcast Index database. The list is updated every X hours.
+
+
+    A subset of stats can be retrieved using the API endpoint [podcasts/dead](#get-/podcasts/dead).
+
+
+    Download from: https://public.podcastindex.org/podcastindex_dead_feeds.csv
+  operationId: podcastindex_dead_feeds.csv
+  security: [] # no security required
+  servers:
+    - url: 'https://public.podcastindex.org'
+      description: "Podcast Index Public"
+  responses:
+    '200':
+      $ref: '../../../components/responses/static_dead_feeds.yaml'
+    '400':
+      $ref: '../../../components/responses/400_static.yaml'
+    '404':
+      $ref: '../../../components/responses/404.yaml'

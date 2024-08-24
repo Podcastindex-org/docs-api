@@ -546,7 +546,7 @@
 								}
 							]
 						},
-						"description": "This call returns all feeds that have been marked dead (`dead` == 1)\n\nDead feeds can also be accessed from object storage at https://public.podcastindex.org/podcastindex_dead_feeds.csv\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/dead?pretty\n"
+						"description": "This call returns all feeds that have been marked dead (`dead` == 1)\n\n\nHourly statistics can also be access at https://public.podcastindex.org/podcastindex_dead_feeds.csv\nFor details, see [Dead Feeds](#get-/static/public/podcastindex_dead_feeds.csv).\n\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/dead?pretty"
 					},
 					"response": []
 				},
@@ -1231,7 +1231,7 @@
 								}
 							]
 						},
-						"description": "This call returns every new feed and episode added to the index over the past 24 hours in reverse chronological order.\n\nThis is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's\ninternal timestamp.\n\nSimilar data can also be accessed using object storage root url https://tracking.podcastindex.org/current\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10&since=1671164867\n"
+						"description": "This call returns every new feed and episode added to the index over the past 24 hours in reverse chronological order.\n\n\nThis is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's\ninternal timestamp.\n\n\nSimilar data can also be accessed using object storage root url https://tracking.podcastindex.org/current\nFor details, see [Current](#get-/static/tracking/current).\n\n\nExamples:\n\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10\n  - https://api.podcastindex.org/api/1.0/recent/data?pretty&max=10&since=1671164867"
 					},
 					"response": []
 				},
@@ -1486,7 +1486,7 @@
 								}
 							]
 						},
-						"description": "Return the most recent index statistics.\n\nHourly statistics can also be access at https://stats.podcastindex.org/daily_counts.json\n\nExample: https://api.podcastindex.org/api/1.0/stats/current?pretty\n"
+						"description": "Return the most recent index statistics.\n\n\nHourly statistics can also be access at https://stats.podcastindex.org/hourly_counts.json\nFor details, see [Stats Hourly Counts](#get-/static/stats/hourly_counts.json).\n\n\nDaily statistics can also be access at https://stats.podcastindex.org/daily_counts.json.\nFor details, see [Stats Daily Counts](#get-/static/stats/daily_counts.json).\n\n\nExample: https://api.podcastindex.org/api/1.0/stats/current?pretty"
 					},
 					"response": []
 				}
@@ -1744,9 +1744,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseAppleUrl}}/search?term=batman",
+							"raw": "https://api.podcastindex.org/search?term=batman",
 							"host": [
-								"{{baseAppleUrl}}"
+								"https://api.podcastindex.org"
 							],
 							"path": [
 								"search"
@@ -1778,9 +1778,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseAppleUrl}}/lookup?id=1441923632&entity=podcast",
+							"raw": "https://api.podcastindex.org/lookup?id=1441923632&entity=podcast",
 							"host": [
-								"{{baseAppleUrl}}"
+								"https://api.podcastindex.org"
 							],
 							"path": [
 								"lookup"
@@ -1805,6 +1805,264 @@
 							]
 						},
 						"description": "Replaces the Apple podcast lookup API but returns data from the Podcast Index database.\n\nNote: No API key needed for this endpoint.\n\nExample:\n\n  - Apple: https://itunes.apple.com/lookup?media=podcast&entity=podcast&id=1636765656\n  - PodcastIndex: https://api.podcastindex.org/lookup?entity=podcast&id=1636765656"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Static Data",
+			"item": [
+				{
+					"name": "Dead Feeds",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://public.podcastindex.org/podcastindex_dead_feeds.csv",
+							"host": [
+								"https://public.podcastindex.org"
+							],
+							"path": [
+								"podcastindex_dead_feeds.csv"
+							],
+							"query": [
+							]
+						},
+						"description": "Lists all feed Ids that have been marked dead in the Podcast Index database. The list is updated every X hours.\n\n\nA subset of stats can be retrieved using the API endpoint [podcasts/dead](#get-/podcasts/dead).\n\n\nDownload from: https://public.podcastindex.org/podcastindex_dead_feeds.csv"
+					},
+					"response": []
+				},
+				{
+					"name": "Feeds Database",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://public.podcastindex.org/podcastindex_feeds.db.tgz",
+							"host": [
+								"https://public.podcastindex.org"
+							],
+							"path": [
+								"podcastindex_feeds.db.tgz"
+							],
+							"query": [
+							]
+						},
+						"description": "Compressed database of all non-dead feeds in the Podcast Index database.\n\n\nUpdated daily. Some attributes excluded. No episodes included.\n\n\nDownload from: https://public.podcastindex.org/podcastindex_feeds.db.tgz"
+					},
+					"response": []
+				},
+				{
+					"name": "Stats Daily Counts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://stats.podcastindex.org/daily_counts.json",
+							"host": [
+								"https://stats.podcastindex.org"
+							],
+							"path": [
+								"daily_counts.json"
+							],
+							"query": [
+							]
+						},
+						"description": "Report a number of statistics about the feeds in Podcast Index's database. Updated daily.\n\n\nA subset of stats can be retrieved using the API endpoint [stats/current](#get-/stats/current).\n\n\nView at: https://stats.podcastindex.org/daily_counts.json"
+					},
+					"response": []
+				},
+				{
+					"name": "Stats Hourly Counts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://stats.podcastindex.org/hourly_counts.json",
+							"host": [
+								"https://stats.podcastindex.org"
+							],
+							"path": [
+								"hourly_counts.json"
+							],
+							"query": [
+							]
+						},
+						"description": "Report a number of statistics about the feeds in Podcast Index's database. Updated hourly.\n\n\nA subset of stats can be retrieved using the API endpoint [stats/current](#get-/stats/current).\n\n\nView at: https://stats.podcastindex.org/hourly_counts.json"
+					},
+					"response": []
+				},
+				{
+					"name": "v4v Music Chart JSON",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://stats.podcastindex.org/v4vmusic.json",
+							"host": [
+								"https://stats.podcastindex.org"
+							],
+							"path": [
+								"v4vmusic.json"
+							],
+							"query": [
+							]
+						},
+						"description": "Contains the ranking of the music tracks played on podcasts that have been boosted the most over the last 7 days.\n\nEach entry shows the number of listener boosts sent over this time period. The chart is updated hourly.\n\n\nCan be viewed in a browser at https://podcastindex.top/ (https://stats.podcastindex.org/v4vmusic.html).\n\n\nView at: https://stats.podcastindex.org/v4vmusic.json\n\n\nAlso available in [OPML](#get-/static/stats/v4vmusic.opml) and [RSS](#get-/static/stats/v4vmusic.rss)."
+					},
+					"response": []
+				},
+				{
+					"name": "v4v Music Chart OPML",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://stats.podcastindex.org/v4vmusic.opml",
+							"host": [
+								"https://stats.podcastindex.org"
+							],
+							"path": [
+								"v4vmusic.opml"
+							],
+							"query": [
+							]
+						},
+						"description": "Contains the ranking of the music tracks played on podcasts that have been boosted the most over the last 7 days.\n\nEach entry shows the number of listener boosts sent over this time period. The chart is updated hourly.\n\n\nCan be viewed in a browser at https://podcastindex.top/ (https://stats.podcastindex.org/v4vmusic.html).\n\n\nView at: https://stats.podcastindex.org/v4vmusic.opml\n\n\nAlso available in [JSON](#get-/static/stats/v4vmusic.json) and [RSS](#get-/static/stats/v4vmusic.rss)."
+					},
+					"response": []
+				},
+				{
+					"name": "v4v Music Chart RSS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://stats.podcastindex.org/v4vmusic.rss",
+							"host": [
+								"https://stats.podcastindex.org"
+							],
+							"path": [
+								"v4vmusic.rss"
+							],
+							"query": [
+							]
+						},
+						"description": "Contains the ranking of the music tracks played on podcasts that have been boosted the most over the last 7 days.\n\nEach entry shows the number of listener boosts sent over this time period. The chart is updated hourly.\n\n\nCan be viewed in a browser at https://podcastindex.top/ (https://stats.podcastindex.org/v4vmusic.html).\n\n\nView at: https://stats.podcastindex.org/v4vmusic.rss\n\n\nAlso available in [JSON](#get-/static/stats/v4vmusic.json) and [OPML](#get-/static/stats/v4vmusic.opml)."
+					},
+					"response": []
+				},
+				{
+					"name": "v4v Sats",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://stats.podcastindex.org/chart-data.json",
+							"host": [
+								"https://stats.podcastindex.org"
+							],
+							"path": [
+								"chart-data.json"
+							],
+							"query": [
+							]
+						},
+						"description": "Contains the raw data used to populate the graphs at https://stats.podcastindex.org/v4v.\n\nThis is a look at the total [sats](https://www.investopedia.com/terms/s/satoshi.asp) flowing through the Value4Value\nLightning podcasting economy over various periods of time.\n\nWe calculate this data based on our visibility as a one percent voluntary split on Podcastindex.org api\ncalls. Therefore, the true numbers could be higher, but they cannot be lower than listed here. This represents our\nbest approximation of how many sats are flowing across the entire ecosystem from listeners to creators, guests (via\nepisode splits), platforms, services and apps.\n\n\nView at: https://stats.podcastindex.org/chart-data.json"
+					},
+					"response": []
+				},
+				{
+					"name": "Current",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tracking.podcastindex.org/current",
+							"host": [
+								"https://tracking.podcastindex.org"
+							],
+							"path": [
+								"current"
+							],
+							"query": [
+							]
+						},
+						"description": "This call returns every new feed and episode added to the index over the past 24 hours in reverse chronological order.\n\n\nThis is similar to `/recent/feeds` but uses the date the feed was found by the index rather than the feed's\ninternal timestamp.\n\n\nSimilar data can also be retrieved using the API endpoint [recent/data](#get-/recent/data).\n\n\nAccess at: https://tracking.podcastindex.org/current\n\n\nThe prior 24 hours of data (going backwards until all tracked data is received) can be accessed using the timestamp\nof the previous data set. This is found in the `previousTrackingUrl`.\nThe format of these prior data sets follows the format described below."
+					},
+					"response": []
+				},
+				{
+					"name": "Episode Value Blocks",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tracking.podcastindex.org/episodeValueBlocks.json",
+							"host": [
+								"https://tracking.podcastindex.org"
+							],
+							"path": [
+								"episodeValueBlocks.json"
+							],
+							"query": [
+							]
+						},
+						"description": "Get all episodes with value blocks.\n\n\nAccess at: https://tracking.podcastindex.org/episodeValueBlocks.json"
+					},
+					"response": []
+				},
+				{
+					"name": "Feed Value Blocks",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tracking.podcastindex.org/feedValueBlocks.json",
+							"host": [
+								"https://tracking.podcastindex.org"
+							],
+							"path": [
+								"feedValueBlocks.json"
+							],
+							"query": [
+							]
+						},
+						"description": "Get all feeds with value blocks.\n\n\nAccess at: https://tracking.podcastindex.org/feedValueBlocks.json"
 					},
 					"response": []
 				}
@@ -1846,10 +2104,6 @@
 		{
 			"key": "baseUrl",
 			"value": "https://api.podcastindex.org/api/1.0"
-		},
-		{
-			"key": "baseAppleUrl",
-			"value": "https://api.podcastindex.org/"
 		}
 	]
 }

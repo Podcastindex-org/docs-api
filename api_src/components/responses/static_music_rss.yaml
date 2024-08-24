@@ -1,0 +1,15 @@
+ # language=markdown
+description: |
+  The hourly Top X music
+
+
+  Data follows the RSS XML spec with additions of
+  [Podcast Namespace](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md) attributes.
+
+
+  The [`podcast:remoteItem`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#remote-item)
+  is used to reference the episodes in the music chart.
+content:
+  "application/rss+xml":
+    schema:
+      type: object

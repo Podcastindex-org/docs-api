@@ -1,0 +1,5 @@
+  # language=Markdown
+description: |
+  Number of episodes with [`podcast:chapters`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#chapters)
+type: integer
+example: 652781

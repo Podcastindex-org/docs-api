@@ -1,0 +1,18 @@
+  # language=Markdown
+description: |
+  Object containing the recent data
+type: object
+properties:
+  nextSince:
+      # language=Markdown
+    description: |
+      Value of `since` in next block of data
+    type: integer
+    format: Unix Epoch
+    example: 1613805249
+  position:
+    $ref: '../properties/position.yaml'
+  feeds:
+    $ref: '../properties/feeds_data.yaml'
+  items:
+    $ref: '../properties/items_data.yaml'
