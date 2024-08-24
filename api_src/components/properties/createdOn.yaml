@@ -1,0 +1,6 @@
+  # language=Markdown
+description: |
+  The first time the feed was seen by Podcast Index
+type: integer
+format: Unix Epoch
+example: 1613394034

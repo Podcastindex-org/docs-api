@@ -21,7 +21,7 @@ post:
     Example: https://api.podcastindex.org/api/1.0/add/batch/byfeedurl?pretty
   operationId: add/batch/byfeedurl
   security:
-    - $ref: '../../components/security/security.yaml'
+    - $ref: '../../../components/security/security.yaml'
   parameters:
     - $ref: '../../../components/parameters/pretty.yaml'
   requestBody:

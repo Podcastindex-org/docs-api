@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Podcasts
+  summary: Batch By Feed GUID
+  # language=Markdown
+  description: |
+    This call returns everything we know about the feed from the feed's GUID provided in JSON array in the body of the request.
+
+
+    The GUID is a unique, global identifier for the podcast. See the namespace spec for
+    [guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details.
+  operationId: podcasts/batch/byguid
+  security:
+    - $ref: '../../../components/security/security.yaml'
+  parameters:
+    - $ref: '../../../components/parameters/pretty.yaml'
+  requestBody:
+    description: Get episode value data
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/schemas/podcasts_batch_byguid.yaml'
+  responses:
+    '200':
+      $ref: '../../../components/responses/podcasts_batch_byguid.yaml'
+    '400':
+      $ref: '../../../components/responses/400.yaml'
+    '401':
+      $ref: '../../../components/responses/401.yaml'

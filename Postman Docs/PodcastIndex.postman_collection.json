@@ -549,6 +549,43 @@
 						"description": "This call returns all feeds that have been marked dead (`dead` == 1)\n\nDead feeds can also be accessed from object storage at https://public.podcastindex.org/podcastindex_dead_feeds.csv\n\nExample: https://api.podcastindex.org/api/1.0/podcasts/dead?pretty\n"
 					},
 					"response": []
+				},
+				{
+					"name": "Batch By Feed GUID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"856cd618-7f34-57ea-9b84-3600f1f65e7f\",\n    \"917393e3-1b1e-5cef-ace4-edaa54e1f810\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/podcasts/batch/byguid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"podcasts",
+								"batch",
+								"byguid"
+							],
+							"query": [
+								{
+									"key": "pretty",
+									"value": "",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This call returns everything we know about the feed from the feed's GUID provided in JSON array in the body of the request.\n\n\nThe GUID is a unique, global identifier for the podcast. See the namespace spec for\n[guid](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid) for details."
+					},
+					"response": []
 				}
 			]
 		},

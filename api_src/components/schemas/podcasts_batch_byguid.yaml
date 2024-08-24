@@ -1,0 +1,9 @@
+  # language=Markdown
+description: |
+  JSON array of feed GUIDs
+type: array
+items:
+  type: string
+example:
+  - 917393e3-1b1e-5cef-ace4-edaa54e1f810
+  - c73b1a23-1c28-5edb-94c3-10d1745d0877
