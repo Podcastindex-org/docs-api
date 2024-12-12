@@ -1,5 +1,5 @@
   # language=Markdown
 description: |
-  A CRC32 hash of the `image` URL with the protocol (`http://`, `https://`) removed.
+  A CRC32 hash of the `image` URL with the protocol (`http://`, `https://`) removed. 64bit integer.
 type: integer
-example: 1639321931
+example: 3969216649
