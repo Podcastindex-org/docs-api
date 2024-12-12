@@ -2685,7 +2685,8 @@
       "imageUrlHash": {
         "description": "A CRC32 hash of the `image` URL with the protocol (`http://`, `https://`) removed.\n",
         "type": "integer",
-        "example": 1639321931
+        "format": "int64",
+        "example": 3969216649
       },
       "newestItemPublishTime": {
         "description": "The time the most recent episode in the feed was published.\n\n\nNote: some endpoints use `newestItemPubdate` while others use `newestItemPublishTime`. \nThey return the same information. See https://github.com/Podcastindex-org/api/issues/3 to track when the property name is updated.\n",

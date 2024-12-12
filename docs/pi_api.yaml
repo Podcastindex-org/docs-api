@@ -2620,7 +2620,8 @@ components:
       description: |
         A CRC32 hash of the `image` URL with the protocol (`http://`, `https://`) removed.
       type: integer
-      example: 1639321931
+      format: int64
+      example: 3969216649
     newestItemPublishTime:
       description: |
         The time the most recent episode in the feed was published.
