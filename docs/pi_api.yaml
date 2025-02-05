@@ -2970,9 +2970,8 @@ components:
       example: 0
     imageUrlHash:
       description: |
-        A CRC32 hash of the `image` URL with the protocol (`http://`, `https://`) removed.
+        A CRC32 hash of the `image` URL with the protocol (`http://`, `https://`) removed. 64bit integer.
       type: integer
-      format: int64
       example: 3969216649
     newestItemPublishTime:
       description: |
