@@ -67,6 +67,9 @@ info:
           - [PodcastIndexKit](https://github.com/SparrowTek/PodcastIndexKit)
       - Kotlin
           - [PodcastIndex-SDK](https://github.com/mr3y-the-programmer/PodcastIndex-SDK)
+      - Go
+          - [podcastindex](https://github.com/jjgmckenzie/podcastindex)
+          - [podcastindex-go](https://github.com/koalahl/podcastindex-go)
 
     Are we missing a library? Did you create one for a different language? Create a
     [Pull Request](https://github.com/Podcastindex-org/docs-api/pulls) with a link to the new library!
