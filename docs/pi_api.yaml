@@ -1443,6 +1443,40 @@ paths:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
+  /pubnotify:
+    get:
+      tags:
+        - Hub
+      summary: Pub Notify (Hub)
+      description: |
+        Notify the index that a feed has changed
+
+
+        Note: No API key needed for this endpoint.
+
+
+        Examples:
+
+          - https://hub.podcastindex.org/pubnotify?id=920666&pretty
+          - https://hub.podcastindex.org/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty
+      operationId: pubnotify
+      security: []
+      servers:
+        - url: https://hub.podcastindex.org
+          description: Server for handling feed publish/update notifications
+      parameters:
+        - $ref: '#/components/parameters/id_feed_podcast_pi_pubnotify'
+        - $ref: '#/components/parameters/url_pubnotify'
+        - $ref: '#/components/parameters/reason'
+        - $ref: '#/components/parameters/podping'
+        - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          $ref: '#/components/responses/hub_pubnotify'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
   /hub/pubnotify:
     get:
       tags:
@@ -1464,6 +1498,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/id_feed_podcast_pi_pubnotify'
         - $ref: '#/components/parameters/url_pubnotify'
+        - $ref: '#/components/parameters/reason_liveonly'
         - $ref: '#/components/parameters/pretty'
       responses:
         '200':
@@ -2529,6 +2564,47 @@ components:
       schema:
         type: string
       example: https://feeds.theincomparable.com/batmanuniversity
+    reason:
+      name: reason
+      in: query
+      description: |
+        Send a [podping](https://github.com/Podcastindex-org/podping-hivewriter#podping-reasons) with the specified reason.
+
+
+        To just send an `update` podping, the `podping` parameter can be used instead.
+      schema:
+        type: string
+        enum:
+          - ''
+          - live
+          - liveEnd
+      example: ''
+    podping:
+      name: podping
+      in: query
+      description: |
+        Send a [podping](https://github.com/Podcastindex-org/podping-hivewriter#podping-reasons) with an `update` reason.
+
+
+        Parameter shall not have a value
+      schema:
+        type: boolean
+      allowEmptyValue: true
+    reason_liveonly:
+      name: reason
+      in: query
+      description: |
+        Send a [podping](https://github.com/Podcastindex-org/podping-hivewriter#podping-reasons) with the specified reason.
+
+
+        To just send an `update` podping, use the [https://hub.podcastindex.org/pubnotify](#get-/pubnotify) server instead.
+      schema:
+        type: string
+        enum:
+          - ''
+          - live
+          - liveEnd
+      example: ''
     chash:
       name: chash
       in: query

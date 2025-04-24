@@ -1528,6 +1528,59 @@
 			"name": "hub",
 			"item": [
 				{
+					"name": "Pub Notify (Hub)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hub.podcastindex.org/pubnotify",
+							"host": [
+								"https://hub.podcastindex.org"
+							],
+							"path": [
+								"pubnotify"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "75075",
+									"description": "The PodcastIndex Feed ID\n\nThe `id` or the `url` is required.",
+									"disabled": true
+								},
+								{
+									"key": "url",
+									"value": "https://feeds.theincomparable.com/batmanuniversity",
+									"description": "The Podcast Feed URL\n\nThe `id` or the `url` is required.",
+									"disabled": true
+								},
+								{
+									"key": "reason",
+									"value": "",
+									"description": "Send a [podping](https://github.com/Podcastindex-org/podping-hivewriter#podping-reasons) with the specified reason.\n\nTo just send an `update` podping, the `podping` parameter can be used instead.\n",
+									"disabled": true
+								},
+								{
+									"key": "podping",
+									"value": "",
+									"description": "Send a [podping](https://github.com/Podcastindex-org/podping-hivewriter#podping-reasons) with an `update` reason.\n\nParameter shall not have a value\n",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": "",
+									"description": "If present, makes the output “pretty” to help with debugging.\n\nParameter shall not have a value\n",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Notify the index that a feed has changed\n\nNote: No API key needed for this endpoint.\n\nExamples:\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?id=920666&pretty\n  - https://api.podcastindex.org/api/1.0/hub/pubnotify?url=https://feeds.theincomparable.com/batmanuniversity&pretty\n"
+					},
+					"response": []
+				},
+				{
 					"name": "Pub Notify",
 					"request": {
 						"auth": {
@@ -1555,6 +1608,12 @@
 									"key": "url",
 									"value": "https://feeds.theincomparable.com/batmanuniversity",
 									"description": "The Podcast Feed URL\n\nThe `id` or the `url` is required.",
+									"disabled": true
+								},
+								{
+									"key": "reason",
+									"value": "",
+									"description": "Send a [podping](https://github.com/Podcastindex-org/podping-hivewriter#podping-reasons) with the specified reason.\n\nTo just send an `update` podping, use the [https://hub.podcastindex.org/pubnotify](#get-/pubnotify) server instead.\n",
 									"disabled": true
 								},
 								{

@@ -240,6 +240,8 @@ paths:
     $ref: 'paths/stats/current.yaml'
   '/categories/list':
     $ref: 'paths/categories/list.yaml'
+  '/pubnotify':
+    $ref: 'paths/hub/hub.pubnotify.yaml'
   '/hub/pubnotify':
     $ref: 'paths/hub/pubnotify.yaml'
   '/add/byfeedurl':
