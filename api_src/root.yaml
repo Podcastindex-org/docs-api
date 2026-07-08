@@ -55,7 +55,7 @@ info:
       - Node.js/npm/yarn
           - [podcast-index-api](https://www.npmjs.com/package/podcast-index-api)
           - [podcastdx-client](https://www.npmjs.com/package/podcastdx-client)
-          - [podcastindex-mcp](https://github.com/conorbronsdon/podcastindex-mcp)
+          - [podcastindex-mcp](https://www.npmjs.com/package/podcastindex-mcp)
       - PHP
           - [podcastindex-php](https://github.com/LowSociety/podcastindex-php)
       - Python/pip
