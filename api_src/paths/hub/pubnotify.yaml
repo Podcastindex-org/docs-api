@@ -19,6 +19,7 @@ get:
   parameters:
     - $ref: '../../components/parameters/id_feed_podcast_pi_pubnotify.yaml'
     - $ref: '../../components/parameters/url_pubnotify.yaml'
+    - $ref: '../../components/parameters/reason_liveonly.yaml'
     - $ref: '../../components/parameters/pretty.yaml'
   responses:
     '200':

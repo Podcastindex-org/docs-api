@@ -1,0 +1,15 @@
+name: reason
+in: query
+# language=Markdown
+description: |
+  Send a [podping](https://github.com/Podcastindex-org/podping-hivewriter#podping-reasons) with the specified reason.
+
+
+  To just send an `update` podping, use the [https://hub.podcastindex.org/pubnotify](#get-/pubnotify) server instead.
+schema:
+  type: string
+  enum:
+    - ""
+    - "live"
+    - "liveEnd"
+example: ""
